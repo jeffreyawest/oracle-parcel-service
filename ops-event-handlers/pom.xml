@@ -1,0 +1,67 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+  <!-- ==================================================================================== -->
+
+  <parent>
+    <artifactId>ops-common</artifactId>
+    <groupId>com.oracle.demo.ops</groupId>
+    <version>3.0</version>
+    <relativePath>../ops-common/pom.xml</relativePath>
+  </parent>
+
+  <!-- ==================================================================================== -->
+
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.oracle.demo.ops</groupId>
+  <artifactId>ops-event-handlers</artifactId>
+  <packaging>jar</packaging>
+  <version>3.0</version>
+  <name>ops-event-handlers</name>
+
+  <!-- ==================================================================================== -->
+
+    <scm>
+      <connection>scm:svn:${project.scm.url}</connection>
+      <developerConnection>scm:svn:${project.scm.url}</developerConnection>
+      <url>${ops.scm.url}/${path.from.top}</url>
+    </scm>
+  
+  <!-- ==================================================================================== -->
+
+  <dependencies>
+    
+    <dependency>
+      <groupId>com.oracle.demo.ops</groupId>
+      <artifactId>ops-services</artifactId>
+      <version>3.0</version>
+      <type>ejb</type>
+      <scope>provided</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>com.oracle.demo.ops</groupId>
+      <artifactId>ops-domain-services</artifactId>
+      <scope>provided</scope>
+    </dependency>
+
+    <!-- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ -->
+
+    <dependency>
+      <groupId>com.oracle.demo.ops</groupId>
+      <artifactId>ops-domain-model</artifactId>
+      <scope>provided</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>com.oracle.demo.ops</groupId>
+      <artifactId>ops-util</artifactId>
+    </dependency>
+
+    <dependency>
+      <groupId>com.oracle.demo.ops</groupId>
+      <artifactId>ops-domain-model</artifactId>
+    </dependency>
+
+  </dependencies>
+</project>

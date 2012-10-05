@@ -1,0 +1,45 @@
+<ui:composition
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:cc="http://java.sun.com/jsf/composite"
+    xmlns:p="http://primefaces.org/ui"
+    >
+
+  <cc:interface>
+    <cc:attribute
+        name="shippingService"
+        required="true"
+        type="com.oracle.demo.ops.domain.ShippingService"/>
+  </cc:interface>
+
+  <cc:implementation>
+
+    <h:panelGrid columns="2"
+                 columnClasses="label, value">
+
+      <h:outputText value="Name: "/>
+      <p:inputText required="true"
+                   label="Shipping_svc_Name"
+                   value="#{cc.attrs.shippingService.name}"/>
+
+      <h:outputText value="Description: "/>
+      <p:inputText required="true"
+                   label="Shipping_service_Description"
+                   value="#{cc.attrs.shippingService.description}"/>
+
+      <h:outputText value="Cost: "/>
+      <p:inputText required="true"
+                   label="Shipping_service_Description"
+                   value="#{cc.attrs.shippingService.cost}"/>
+
+      <h:outputText value="Delivery Estimate: "/>
+      <p:inputText required="true"
+                   label="Shipping_service_DeliveryEstimate"
+                   value="#{cc.attrs.shippingService.deliveryEstimate}"/>
+
+    </h:panelGrid>
+
+  </cc:implementation>
+
+</ui:composition>

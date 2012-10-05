@@ -1,0 +1,116 @@
+<!--
+Copyright (c) 2000, 2010, Oracle and/or its affiliates. All rights reserved.
+
+Oracle is a registered trademarks of Oracle Corporation and/or its affiliates.
+
+This software is the confidential and proprietary information of
+Oracle Corporation. You shall not disclose such confidential and
+proprietary information and shall use it only in accordance with the
+terms of the license agreement you entered into with Oracle.
+
+This notice may not be removed or altered.
+-->
+
+<!--
+This is the XML DTD for the report-group.xml configuration file.
+The configuration file should include a DOCTYPE of the following form:
+
+<!DOCTYPE report-group SYSTEM "report-group.dtd">
+
+Since  : Coherence 3.4
+Authors: ew
+-->
+
+<!--
+The report-group element is the root element of the report-group descriptor.
+
+Used in: n/a
+-->
+<!ELEMENT report-group
+  (frequency, output-directory?, report-list)>
+
+<!--
+The frequency element is the duration between each execution of the reports in
+the report list.
+
+Used in: report-group
+-->
+<!ELEMENT frequency (#PCDATA)>
+
+<!--
+The output-directory element is the location for the output files.
+
+Used in: report-group
+-->
+<!ELEMENT output-directory (#PCDATA)>
+
+<!--
+The report-list element contains a list of report configurations.
+
+Used in: report-group
+-->
+<!ELEMENT report-list
+  (report-config+)>
+
+<!--
+The report-config element contains the report configuration location and
+corresponding initialization parameters.
+
+Used in: report-group
+-->
+<!ELEMENT report-config
+  (location, init-params?)>
+
+<!--
+The init-params element contains a list of initialization parameters.
+
+Used in: report-config
+-->
+<!ELEMENT init-params
+  (init-param*)>
+
+<!--
+The init-param element contains an initialization parameter for a report.
+
+Used in: init-params
+-->
+<!ELEMENT init-param
+  ((param-name | param-type), param-value)>
+
+<!--
+The param-name element specifies the name of the initialization parameter.
+
+Used in: init-param
+-->
+<!ELEMENT param-name (#PCDATA)>
+
+<!--
+The param-type element specifies the Java type of the initialization parameter.
+
+Supported types are:
+  - string   - indicates that the value is a java.lang.String
+  - long     - indicates that the value is a java.lang.Long
+  - double   - indicates that the value is a java.lang.Double
+
+Used in: init-param
+-->
+<!ELEMENT param-type (#PCDATA)>
+
+<!--
+The param-value element specifies a value of the initialization parameter.
+
+The value is in a format specific to the type of the parameter.
+
+Used in: init-param
+-->
+<!ELEMENT param-value (#PCDATA)>
+
+
+<!--
+The location element contains a path to a report configuration descriptor that
+conforms to the report-config.dtd.  This path could be either a file or a URL.
+
+Used in: report-list
+-->
+<!ELEMENT location (#PCDATA)>
+

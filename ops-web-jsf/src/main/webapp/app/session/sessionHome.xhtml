@@ -1,0 +1,34 @@
+<ui:composition
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:p="http://primefaces.org/ui"
+    xmlns:session="http://java.sun.com/jsf/composite/session"
+    template="/templates/common/layout.xhtml">
+
+    <ui:define name="content">
+
+      <p:panel header="WebLogic Session ID Components">
+        <session:sessionIdComponents/>
+      </p:panel>
+
+      <p:panel header="Session Information">
+
+        <h:form prependId="false">
+          <p:commandButton value="Invalidate Session"
+                           update="@all"
+                           process="@this"
+                           action="#{sessionControllerBean.invalidateSession}">
+          </p:commandButton>
+        </h:form>
+
+        <session:attributesDataTable sessionAttributes="#{sessionControllerBean.sessionAttributes}"/>
+
+      </p:panel>
+    </ui:define>
+
+  <ui:define name="readme">
+    This page shows the contents of the HTTP Session object and allows you to invalidate the session, thereby creating a new one.
+  </ui:define>
+
+</ui:composition>

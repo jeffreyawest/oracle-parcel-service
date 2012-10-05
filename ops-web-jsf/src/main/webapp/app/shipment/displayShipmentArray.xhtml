@@ -1,0 +1,14 @@
+<ui:composition
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:p="http://primefaces.org/ui"
+    xmlns:shipment="http://java.sun.com/jsf/composite/shipment"
+    template="/templates/common/layout.xhtml">
+
+    <ui:define name="content">
+      <p:panel header="Shipments for #{shipmentControllerBean.queryTitle}">
+        <shipment:dataTable shipmentList="#{shipmentControllerBean.shipmentList}"/>
+      </p:panel>
+    </ui:define>
+
+  </ui:composition>

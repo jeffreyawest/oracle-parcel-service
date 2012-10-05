@@ -1,0 +1,29 @@
+<cache-config>
+	<caching-scheme-mapping>
+		<cache-mapping>
+			<cache-name>*</cache-name>
+			<scheme-name>eclipselink-distributed</scheme-name>
+		</cache-mapping>
+	</caching-scheme-mapping>
+	<caching-schemes>
+		<distributed-scheme>
+			<scheme-name>eclipselink-distributed</scheme-name>
+			<service-name>EclipseLinkJPA</service-name>
+			<!--
+        Configure a wrapper serializer to support serialization of relationships.
+      -->
+			<serializer>
+				<class-name>oracle.eclipselink.coherence.integrated.cache.WrapperSerializer</class-name>
+			</serializer>
+			<backing-map-scheme>
+				<!--
+          Backing map scheme with no eviction policy.
+        -->
+				<local-scheme>
+					<scheme-name>unlimited-backing-map</scheme-name>
+				</local-scheme>
+			</backing-map-scheme>
+			<autostart>true</autostart>
+		</distributed-scheme>
+	</caching-schemes>
+</cache-config>

@@ -1,0 +1,44 @@
+<ui:composition
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:cc="http://java.sun.com/jsf/composite"
+    xmlns:f="http://java.sun.com/jsf/core"
+    >
+
+  <cc:interface>
+    <cc:attribute
+        name="sessionAttributes"
+        required="true"/>
+  </cc:interface>
+
+  <cc:implementation>
+
+    <h:dataTable value="#{cc.attrs.sessionAttributes}"
+                 var="att"
+                 styleClass="data-table"
+                 headerClass="table-header"
+                 rowClasses="row-odd,row-even">
+
+      <f:facet name="header">Session Attributes</f:facet>
+
+      <h:column>
+        <f:facet name="header">Key</f:facet>
+        <h:outputText value="#{att.key}"/>
+      </h:column>
+
+      <h:column>
+        <f:facet name="header">Value Class</f:facet>
+        <h:outputText value="#{att.value.class}"/>
+      </h:column>
+
+      <h:column>
+        <f:facet name="header">Value</f:facet>
+        <h:outputText value="#{att.value}"/>
+      </h:column>
+
+    </h:dataTable>
+
+  </cc:implementation>
+
+</ui:composition>

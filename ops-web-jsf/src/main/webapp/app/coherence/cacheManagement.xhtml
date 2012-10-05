@@ -1,0 +1,40 @@
+<ui:composition
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:p="http://primefaces.org/ui"
+    template="/templates/common/layout.xhtml">
+
+    <ui:define name="content">
+      <h:form prependId="false">
+
+        <p:panel id="panel" header="Cache Management Operations">
+
+          <p:messages/>
+
+            <h:panelGrid columns="2" cellpadding="10" border="1">
+              <h:outputText value="Shipment Map Listener"/>
+
+              <h:panelGroup>
+                <p:commandButton update="panel"
+                                 value="Add"
+                                 actionListener="#{coherenceControllerBean.addShipmentMapListenerActionListener}"/>
+
+                <p:commandButton update="panel"
+                                 value="Remove"
+                                 actionListener="#{coherenceControllerBean.removeShipmentMapListenerActionListener}"/>
+              </h:panelGroup>
+              
+            </h:panelGrid>
+
+
+        </p:panel>
+      </h:form>
+    </ui:define>
+
+  <ui:define name="readme">
+    This page allows you to do associate a Coherence Map Listener to the Cohernece cache with the name "shipment".
+    When a new shipment is added to the queue it will log a message to the console.
+  </ui:define>
+
+</ui:composition>

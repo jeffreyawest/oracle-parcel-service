@@ -1,0 +1,54 @@
+<ui:composition
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:cc="http://java.sun.com/jsf/composite"
+    xmlns:p="http://primefaces.org/ui"
+    xmlns:f="http://java.sun.com/jsf/core"
+    >
+
+  <cc:interface>
+    <cc:attribute
+        name="event"
+        required="false"/>
+    <cc:attribute
+        name="tableId"
+        required="false"/>
+
+  </cc:interface>
+
+  <cc:implementation>
+
+    <h:panelGrid id="#{cc.attrs.tableId}"
+                 columns="2"
+                 columnClasses="label, value"
+                 styleClass="grid"
+                 headerClass="table-header">
+
+      <f:facet name="header">
+        <h:outputText value="Input Event Details"/>
+      </f:facet>
+
+      <h:outputText value="Parcel Status"/>
+      <h:selectOneMenu required="true"
+                       value="#{cc.attrs.event.parcelStatus}">
+        <f:selectItems value="#{ReferenceValueBean.parcelStatusMap}"/>
+      </h:selectOneMenu>
+
+      <h:outputText value="Parcel Location Postal Code"/>
+      <p:inputText required="false"
+                   label="#{cc.id}_addressLine2"
+                   value="#{cc.attrs.event.location}"/>
+
+      <h:outputText value="Event Date"/>
+      <p:calendar value="#{cc.attrs.event.eventDate.time}" mode="popup"/>
+
+      <h:outputText value="Message"/>
+      <p:inputText required="true"
+                   label="#{cc.id}_message"
+                   value="#{cc.attrs.event.message}"/>
+    </h:panelGrid>
+
+  </cc:implementation>
+
+</ui:composition>

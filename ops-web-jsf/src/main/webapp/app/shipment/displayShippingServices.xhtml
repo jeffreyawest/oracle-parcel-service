@@ -1,0 +1,27 @@
+<ui:composition
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:p="http://primefaces.org/ui"
+    xmlns:shippingService="http://java.sun.com/jsf/composite/shippingService"
+    template="/templates/common/layout.xhtml">
+
+  <ui:define name="content">
+    <p:panel header="Shipping Services">
+
+      <h:panelGrid columns="3">
+
+        <shippingService:dataTable shippingServiceList="#{shipmentControllerBean.allShippingServices}"/>
+
+        <p:spacer width="75"/>
+
+        <h:graphicImage library="images"
+                        style="width:400px; height:300px; vertical-align: top; right:0;"
+                        name="customerServicePerson.jpg"/>
+
+      </h:panelGrid>
+
+    </p:panel>
+  </ui:define>
+
+</ui:composition>

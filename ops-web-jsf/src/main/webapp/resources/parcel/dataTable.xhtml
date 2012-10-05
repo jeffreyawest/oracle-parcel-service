@@ -1,0 +1,78 @@
+<ui:composition
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:p="http://primefaces.org/ui"
+    xmlns:cc="http://java.sun.com/jsf/composite"
+    xmlns:f="http://java.sun.com/jsf/core"
+    >
+
+  <cc:interface>
+    <cc:attribute
+        name="parcelList"
+        type="java.util.List"/>
+
+    <cc:attribute
+        name="dataTableId"
+        default="parcelDataTable"
+        type="java.lang.String"/>
+
+  </cc:interface>
+
+  <cc:implementation>
+
+    <p:dataTable value="#{cc.attrs.parcelList}"
+                 id="#{cc.attrs.dataTableId}"
+                 var="parcel"
+                 widgetVar="var#{cc.attrs.dataTableId}"
+                 styleClass="data-table"
+                 headerClass="table-header"
+                 rowClasses="row-odd,row-even"
+                 columnClasses="column-center">
+
+      <f:facet name="header">Parcels</f:facet>
+
+      <p:column>
+        <f:facet name="header">ID</f:facet>
+        <h:outputText value="#{parcel.id}"/>
+      </p:column>
+
+      <p:column>
+        <f:facet name="header">Created</f:facet>
+        <h:outputText value="#{parcel.createdDate}"/>
+      </p:column>
+
+      <p:column>
+        <f:facet name="header">Status</f:facet>
+        <h:outputText value="#{parcel.parcelStatus}"/>
+      </p:column>
+
+      <p:column>
+        <f:facet name="header">Contents</f:facet>
+        <h:outputText value="#{parcel.contents}"/>
+      </p:column>
+
+      <p:column>
+        <f:facet name="header">Weight</f:facet>
+        <h:outputText value="#{parcel.weight}"/>
+      </p:column>
+
+      <p:column>
+        <f:facet name="header">Height</f:facet>
+        <h:outputText value="#{parcel.height}"/>
+      </p:column>
+
+      <p:column>
+        <f:facet name="header">Length</f:facet>
+        <h:outputText value="#{parcel.length}"/>
+      </p:column>
+
+      <p:column>
+        <f:facet name="header">Width</f:facet>
+        <h:outputText value="#{parcel.width}"/>
+      </p:column>
+
+    </p:dataTable>
+  </cc:implementation>
+
+</ui:composition>

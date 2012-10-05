@@ -1,0 +1,55 @@
+<ui:composition
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:cc="http://java.sun.com/jsf/composite"
+    xmlns:f="http://java.sun.com/jsf/core"
+    >
+
+
+  <cc:interface>
+    <cc:attribute
+        name="parcel"
+        required="true"/>
+
+    <cc:attribute
+        name="tableId"
+        required="true"/>
+  </cc:interface>
+
+  <cc:implementation>
+
+    <h:panelGrid id="#{cc.attrs.tableId}"
+                 columns="2"
+                 columnClasses="label, value"
+                 styleClass="data-table"
+                 border="1"
+                 headerClass="table-header"
+                 rowClasses="row-odd,row-even">
+
+      <f:facet name="header">
+        <h:outputText value="Parcel ID=[#{cc.attrs.parcel.id}]"/>
+      </f:facet>
+
+      <h:outputText value="Shipment Created"/>
+      <h:outputText value="#{cc.attrs.parcel.createdDate}"/>
+
+      <h:outputText value="Shipment ID"/>
+      <h:outputText value="#{cc.attrs.parcel.shipmentId}"/>
+
+      <h:outputText value="Status"/>
+      <h:outputText value="#{cc.attrs.parcel.parcelStatus}"/>
+
+      <h:outputText value="Contents"/>
+      <h:outputText value="#{cc.attrs.parcel.contents}"/>
+
+      <h:outputText value="Dimensions (H x W x L)"/>
+      <h:outputText value="#{cc.attrs.parcel.height} x #{cc.attrs.parcel.width} x #{cc.attrs.parcel.length}"/>
+
+      <h:outputText value="Weight"/>
+      <h:outputText value="#{cc.attrs.parcel.weight}"/>
+
+    </h:panelGrid>
+  </cc:implementation>
+
+</ui:composition>

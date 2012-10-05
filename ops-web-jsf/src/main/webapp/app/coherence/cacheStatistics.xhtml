@@ -1,0 +1,107 @@
+<ui:composition
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:p="http://primefaces.org/ui" xmlns:f="http://java.sun.com/jsf/core"
+    template="/templates/common/layout.xhtml">
+
+    <ui:define name="content">
+      <h:form prependId="false">
+        <p:panel id="panel" header="Coherence Cache Statistics">
+
+          <p:messages/>
+
+          <h:dataTable value="#{coherenceControllerBean.cacheStatistics}"
+                       var="cacheStats"
+                       styleClass="data-table"
+                       headerClass="table-header"
+                       rowClasses="row-odd,row-even"
+                       columnClasses="column-left,column-center, column-left, column-left">
+
+            <f:facet name="header">Cache Statistics</f:facet>
+
+            <h:column>
+              <f:facet name="header">Name</f:facet>
+              <h:outputText value="#{cacheStats.cacheName}"/>
+            </h:column>
+
+            <h:column>
+              <f:facet name="header">Size</f:facet>
+              <h:outputText value="#{cacheStats.size}"/>
+            </h:column>
+
+            <h:column>
+              <f:facet name="header">Cache Service Name</f:facet>
+              <h:outputText value="#{cacheStats.cacheServiceName}"/>
+            </h:column>
+
+            <h:column>
+              <f:facet name="header">Cache Service Type</f:facet>
+              <h:outputText value="#{cacheStats.cacheServiceType}"/>
+            </h:column>
+
+            <h:column>
+              <f:facet name="header">Caches for Service</f:facet>
+              <h:dataTable value="#{cacheStats.cacheNames}"
+                           var="cacheName"
+                           styleClass="data-table"
+                           headerClass="table-header"
+                           rowClasses="row-odd,row-even"
+                           columnClasses="column-left,column-center, column-left, column-left">
+
+                <h:column>
+                  <f:facet name="header">Name</f:facet>
+                  <h:outputText value="#{cacheName}"/>
+                </h:column>
+
+              </h:dataTable>
+            </h:column>
+
+            <h:column>
+              <f:facet name="header">Members</f:facet>
+              <h:dataTable value="#{cacheStats.serviceMembers}"
+                           var="member"
+                           styleClass="data-table"
+                           headerClass="table-header"
+                           rowClasses="row-odd,row-even"
+                           columnClasses="column-left,column-left, column-left, column-left">
+
+                <h:column>
+                  <f:facet name="header">Member Name</f:facet>
+                  <h:outputText value="#{member.memberName}"/>
+                </h:column>
+
+                <h:column>
+                  <f:facet name="header">Role</f:facet>
+                  <h:outputText value="#{member.roleName}"/>
+                </h:column>
+                <h:column>
+                  <f:facet name="header">Process</f:facet>
+                  <h:outputText value="#{member.processName}"/>
+                </h:column>
+
+                <h:column>
+                  <f:facet name="header">Address</f:facet>
+                  <h:outputText value="#{member.address.hostAddress}"/>
+                </h:column>
+
+                <h:column>
+                  <f:facet name="header">Port</f:facet>
+                  <h:outputText value="#{member.port}"/>
+                </h:column>
+
+              </h:dataTable>
+
+            </h:column>
+
+          </h:dataTable>
+
+        </p:panel>
+      </h:form>
+    </ui:define>
+
+  <ui:define name="readme">
+    This page shows information about the caches that are 'interesting' to the application.  These include the primary entities for OPS and the coherence-notification-cache.
+  </ui:define>
+
+</ui:composition>

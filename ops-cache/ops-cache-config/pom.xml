@@ -1,0 +1,69 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+  <!-- ==================================================================================== -->
+
+  <parent>
+    <artifactId>ops-common</artifactId>
+    <groupId>com.oracle.demo.ops</groupId>
+    <version>3.0</version>
+    <relativePath>../../ops-common/pom.xml</relativePath>
+  </parent>
+
+  <!-- ==================================================================================== -->
+
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.oracle.demo.ops</groupId>
+  <artifactId>ops-cache-config</artifactId>
+  <version>3.0</version>
+  <packaging>jar</packaging>
+  <name>ops-cache-config</name>
+
+  <!-- ==================================================================================== -->
+
+  <properties>
+    <path.from.top>oracle-parcel-service/ops-domain/${project.artifactId}</path.from.top>
+  </properties>
+
+  <!-- ==================================================================================== -->
+
+  <build>
+
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <configuration>
+          <source>1.6</source>
+          <target>1.6</target>
+          <debug>false</debug>
+          <encoding>UTF-8</encoding>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+
+  <!-- ==================================================================================== -->
+
+  <dependencies>
+    <dependency>
+      <groupId>com.oracle.coherence</groupId>
+      <artifactId>coherence</artifactId>
+    </dependency>
+ <!--
+    
+    <dependency>
+      <groupId>com.oracle.persistence</groupId>
+      <artifactId>toplink-grid</artifactId>
+      <scope>provided</scope>
+    </dependency>
+-->
+    <dependency>
+      <groupId>org.eclipse.persistence</groupId>
+      <artifactId>eclipselink</artifactId>
+      <scope>provided</scope>
+    </dependency>
+
+  </dependencies>
+
+</project>

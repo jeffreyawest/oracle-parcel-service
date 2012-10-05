@@ -1,0 +1,52 @@
+
+<ui:composition
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:p="http://primefaces.org/ui"
+    xmlns:cc="http://java.sun.com/jsf/composite"
+    xmlns:f="http://java.sun.com/jsf/core"
+    >
+
+  <cc:interface>
+    <cc:attribute
+        name="parcel"
+        type="com.oracle.demo.ops.domain.Parcel"/>
+
+  </cc:interface>
+
+  <cc:implementation>
+
+    <p:column>
+      <f:facet name="header">ID</f:facet>
+      <h:outputText value="#{cc.attrs.parcel.id}"/>
+    </p:column>
+
+    <p:column>
+      <f:facet name="header">Created</f:facet>
+      <h:outputText value="#{cc.attrs.parcel.createdDate}"/>
+    </p:column>
+
+    <p:column>
+      <f:facet name="header">Status</f:facet>
+      <h:outputText value="#{cc.attrs.parcel.parcelStatus}"/>
+    </p:column>
+
+    <p:column>
+      <f:facet name="header">Contents</f:facet>
+      <h:outputText value="#{cc.attrs.parcel.contents}"/>
+    </p:column>
+
+    <p:column>
+      <f:facet name="header">Weight</f:facet>
+      <h:outputText value="#{cc.attrs.parcel.weight}"/>
+    </p:column>
+
+    <p:column>
+      <f:facet name="header">W x L x H</f:facet>
+      <h:outputText value="#{cc.attrs.parcel.width} x #{cc.attrs.parcel.length} x #{cc.attrs.parcel.height}"/>
+    </p:column>
+
+  </cc:implementation>
+
+</ui:composition>

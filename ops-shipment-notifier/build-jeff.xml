@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="module_ops-shipment-notifier" default="dist">
+
+  <property file="../build.override.properties"/>
+  <property file="../build.properties"/>
+
+  <path id="ops-domain-model.classpath">
+    <pathelement location="../ops-application-ear/APP-INF/lib/ops-domain-model-2.0.jar"/>
+  </path>
+
+  <path id="ops-shipment-notifier.module.production.classpath">
+    <path refid="ops-domain-model.classpath"/>
+    <path refid="library.coherence.classpath"/>
+  </path>
+
+  <path id="library.coherence.classpath">
+    <pathelement location="${coherence.home}/lib/coherence.jar"/>
+  </path>
+
+  <path id="ops-shipment-notifier.module.sourcepath">
+    <dirset dir=".">
+      <include name="src/"/>
+    </dirset>
+  </path>
+
+
+  <property name="ops-shipment-notifier.output.dir" value="out"/>
+  <property name="compiler.args.ops-shipment-notifier" value=""/>
+  <property name="ops-shipment-notifier.archive" value="../ops-application-ear/APP-INF/lib/ops-shipment-notifier.jar"/>
+
+  <target name="compile" depends="clean">
+
+    <mkdir dir="${ops-shipment-notifier.output.dir}"/>
+
+    <javac destdir="${ops-shipment-notifier.output.dir}"
+           fork="true"
+           debug="true"
+           executable="${jdk.home.1.6}/bin/javac">
+      <compilerarg line="${compiler.args.ops-shipment-notifier}"/>
+
+      <classpath refid="ops-shipment-notifier.module.production.classpath"/>
+      <src refid="ops-shipment-notifier.module.sourcepath"/>
+
+    </javac>
+
+  </target>
+
+  <target name="dist" depends="compile">
+
+    <jar destfile="${ops-shipment-notifier.archive}">
+
+      <zipfileset dir="./out"/>
+
+      <zipfileset dir="src/com/oracle/demo/ops/shipment/notifier/" prefix="com/oracle/demo/ops/shipment/notifier/">
+        <include name="**/*.png"/>
+      </zipfileset>
+
+      <!--<zipfileset file="../coherence-config/ops-pof-config.xml"/>-->
+    </jar>
+
+  </target>
+
+  <target name="clean">
+    <delete dir="${ops-shipment-notifier.output.dir}"/>
+    <delete file="${ops-shipment-notifier.archive}"/>
+  </target>
+
+</project>

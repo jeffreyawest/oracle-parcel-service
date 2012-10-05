@@ -1,0 +1,19 @@
+<ui:composition xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui"
+
+                template="/templates/common/layout.xhtml">
+
+  <ui:define name="content">
+    <p:panel header="GeoData Summary">
+
+      <h:outputText value="Current GeoData Records: #{geolocationControllerBean.geoDataSize}"/>
+
+    </p:panel>
+  </ui:define>
+
+  <ui:define name="readme">
+    This page provides a count of the PostalGeolocation entities that are currently in the database.
+  </ui:define>
+
+</ui:composition>

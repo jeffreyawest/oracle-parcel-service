@@ -1,0 +1,20 @@
+<ui:composition
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:p="http://primefaces.org/ui"
+    xmlns:geo="http://java.sun.com/jsf/composite/geo"
+
+    template="/templates/common/layout.xhtml">
+
+  <ui:define name="content">
+    <p:panel header="Geolocation Result">
+
+      <geo:table postalGeo="#{geolocationControllerBean.lookupResult}"/>
+
+    </p:panel>
+  </ui:define>
+
+  <ui:define name="readme">
+    This page shows the result of a Geo-Postal lookup using a custom composite for the PostalGeolocation entity.
+  </ui:define>
+
+</ui:composition>

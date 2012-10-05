@@ -1,0 +1,14 @@
+<ui:composition
+    xmlns:parcel="http://java.sun.com/jsf/composite/parcel"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    template="/templates/common/layout.xhtml">
+
+  <ui:define name="content">
+    <parcel:dataTable parcelList="#{parcelControllerBean.allParcels}"/>
+  </ui:define>
+
+  <ui:define name="readme">
+    This page shows a list of ALL Parcel entities from the database using the 'dataTable' Composite defined for the entity in /resources/parcel.
+  </ui:define>
+
+</ui:composition>

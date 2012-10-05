@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+         xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+  <!-- ==================================================================================== -->
+
+  <parent>
+    <artifactId>ops-common-deployable</artifactId>
+    <groupId>com.oracle.demo.ops</groupId>
+    <version>3.0</version>
+    <relativePath>../ops-common/ops-common-deployable/pom.xml</relativePath>
+  </parent>
+
+  <!-- ==================================================================================== -->
+
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.oracle.demo.ops</groupId>
+  <artifactId>ops-rest</artifactId>
+  <version>3.0</version>
+  <packaging>war</packaging>
+  <name>ops-rest</name>
+  <url>https://www.samplecode.oracle.com/sf/projects/oracle-parcel-svc</url>
+
+  <!-- ==================================================================================== -->
+
+  <properties>
+    <path.from.top>oracle-parcel-service/ops-ee/${project.artifactId}</path.from.top>
+  </properties>
+
+  <!-- ==================================================================================== -->
+
+  <scm>
+    <connection>scm:svn:${project.scm.url}</connection>
+    <developerConnection>scm:svn:${project.scm.url}</developerConnection>
+    <url>${ops.scm.url}/${path.from.top}</url>
+  </scm>
+
+  <!-- ==================================================================================== -->
+
+  <build>
+    <defaultGoal>install</defaultGoal>
+
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-war-plugin</artifactId>
+        <version>2.1.1</version>
+        <configuration>
+          <failOnMissingWebXml>false</failOnMissingWebXml>
+          <archive>
+            <manifestEntries>
+              <Extension-Name>${project.artifactId}</Extension-Name>
+
+              <Specification-Title>${project.description}</Specification-Title>
+              <Specification-Version>${project.version}</Specification-Version>
+              <Specification-Vendor>Oracle</Specification-Vendor>
+
+              <Implementation-Title>${project.artifactId}</Implementation-Title>
+              <Implementation-Version>${project.version}.${maven.build.timestamp}</Implementation-Version>
+              <Implementation-Vendor>Oracle</Implementation-Vendor>
+              <Implementation-Vendor-Id>${project.groupId}</Implementation-Vendor-Id>
+
+              <Extension-List>coherence</Extension-List>
+              <!--<Extension-List>coherence active-cache</Extension-List>-->
+
+              <coherence-Extension-Name>coherence</coherence-Extension-Name>
+              <coherence-Specification-Version>3.7.1.1</coherence-Specification-Version>
+
+            </manifestEntries>
+          </archive>
+        </configuration>
+      </plugin>
+
+      <plugin>
+        <groupId>com.oracle.weblogic</groupId>
+        <artifactId>wls-maven-plugin</artifactId>
+      </plugin>
+
+    </plugins>
+  </build>
+
+  <!-- ==================================================================================== -->
+
+  <dependencies>
+    <!-- JAX-RS DEPENDENCIES -->
+
+    <dependency>
+      <groupId>com.sun.jersey</groupId>
+      <artifactId>jersey-json</artifactId>
+      <version>1.1.5.1</version>
+      <scope>provided</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>org.codehaus.jackson</groupId>
+      <artifactId>jackson-jaxrs</artifactId>
+      <version>1.1.1</version>
+      <scope>provided</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>com.sun.jersey</groupId>
+      <artifactId>jersey-bundle</artifactId>
+      <version>1.1.5.1</version>
+      <scope>provided</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>org.codehaus.jettison</groupId>
+      <artifactId>jettison</artifactId>
+      <version>1.1</version>
+      <scope>provided</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>javax.ws.rs</groupId>
+      <artifactId>jsr311-api</artifactId>
+      <version>1.1.1</version>
+      <scope>provided</scope>
+    </dependency>
+
+    <!-- OPS Dependencies -->
+
+    <dependency>
+      <groupId>com.oracle.demo.ops</groupId>
+      <artifactId>ops-services</artifactId>
+      <type>ejb</type>
+      <version>3.0</version>
+    </dependency>
+
+    <dependency>
+      <groupId>com.oracle.demo.ops</groupId>
+      <artifactId>ops-domain-services</artifactId>
+      <version>3.0</version>
+      <type>ejb</type>
+    </dependency>
+
+    <dependency>
+      <groupId>com.oracle.demo.ops</groupId>
+      <artifactId>ops-domain-model</artifactId>
+    </dependency>
+
+    <dependency>
+      <groupId>com.oracle.demo.ops</groupId>
+      <artifactId>ops-util</artifactId>
+    </dependency>
+
+  </dependencies>
+
+</project>

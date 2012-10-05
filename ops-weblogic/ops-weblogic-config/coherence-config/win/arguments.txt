@@ -1,0 +1,6 @@
+-Dtangosol.coherence.management.remote=true
+-Dtangosol.coherence.management=all
+-Dtangosol.coherence.distributed.localstorage=true
+-Dtangosol.coherence.session.localstorage=true
+-Dtangosol.coherence.cacheconfig=C:/Dropbox/mycode/OPS/java.net/ops-r2/oracle-parcel-service/ops-ee/ops-ee-tlg-ear/src/main/application/APP-INF/classes/coherence-cache-config.xml
+-Xmanagement:autodiscovery=false,authenticate=false,ssl=false,port=8191

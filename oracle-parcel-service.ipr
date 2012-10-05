@@ -1,0 +1,1300 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AntConfiguration">
+    <defaultAnt bundledAnt="true" />
+  </component>
+  <component name="ArtifactManager">
+    <artifact type="ejb-jar" name="ops-domain-services-impl:ejb">
+      <output-path>$PROJECT_DIR$/ops-ee/ops-domain-services/target</output-path>
+      <root id="archive" name="ops-domain-services-3.0.jar">
+        <element id="artifact" artifact-name="ops-domain-services-impl:ejb exploded" />
+      </root>
+    </artifact>
+    <artifact type="exploded-ejb" name="ops-domain-services-impl:ejb exploded">
+      <output-path>$PROJECT_DIR$/ops-ee/ops-domain-services/target/ops-domain-services-3.0</output-path>
+      <root id="root">
+        <element id="javaee-facet-resources" facet="ops-domain-services-impl/ejb/EJB" />
+        <element id="module-output" name="ops-domain-services-impl" />
+      </root>
+    </artifact>
+    <artifact type="war" name="ops-ee-web-jsf:war">
+      <output-path>$PROJECT_DIR$/ops-ee-web-jsf/target</output-path>
+      <root id="archive" name="ops-web-jsf.war">
+        <element id="artifact" artifact-name="ops-ee-web-jsf:war exploded" />
+      </root>
+    </artifact>
+    <artifact type="exploded-war" name="ops-ee-web-jsf:war exploded">
+      <output-path>$PROJECT_DIR$/ops-ee-web-jsf/target/ops-web-jsf</output-path>
+      <root id="root">
+        <element id="javaee-facet-resources" facet="ops-ee-web-jsf/web/Web" />
+        <element id="directory" name="WEB-INF">
+          <element id="directory" name="classes">
+            <element id="module-output" name="ops-ee-web-jsf" />
+          </element>
+          <element id="directory" name="lib">
+            <element id="library" level="project" name="Maven: org.primefaces:primefaces:3.2" />
+            <element id="library" level="project" name="Maven: org.primefaces.themes:cupertino:1.0.3" />
+            <element id="archive" name="ops-domain-services.jar">
+              <element id="module-output" name="ops-domain-services" />
+            </element>
+            <element id="archive" name="ops-services.jar">
+              <element id="module-output" name="ops-services" />
+            </element>
+            <element id="archive" name="ops-util.jar">
+              <element id="module-output" name="ops-util" />
+            </element>
+            <element id="archive" name="ops-domain-model.jar">
+              <element id="module-output" name="ops-domain-model" />
+            </element>
+          </element>
+        </element>
+      </root>
+    </artifact>
+    <artifact type="ejb-jar" name="ops-services-impl:ejb">
+      <output-path>$PROJECT_DIR$/ops-ee/ops-services/ops-services/target</output-path>
+      <root id="archive" name="ops-services-3.0.jar">
+        <element id="artifact" artifact-name="ops-services-impl:ejb exploded" />
+      </root>
+    </artifact>
+    <artifact type="exploded-ejb" name="ops-services-impl:ejb exploded">
+      <output-path>$PROJECT_DIR$/ops-ee/ops-services/ops-services/target/ops-services-3.0</output-path>
+      <root id="root">
+        <element id="javaee-facet-resources" facet="ops-services-impl/ejb/EJB" />
+        <element id="module-output" name="ops-services-impl" />
+      </root>
+    </artifact>
+    <artifact type="war" name="ops-ee-message-driven:war">
+      <output-path>$PROJECT_DIR$/ops-ee-message-driven/target</output-path>
+      <root id="archive" name="ops-message-driven.war">
+        <element id="artifact" artifact-name="ops-ee-message-driven:war exploded" />
+      </root>
+    </artifact>
+    <artifact type="exploded-war" name="ops-ee-message-driven:war exploded">
+      <output-path>$PROJECT_DIR$/ops-ee-message-driven/target/ops-message-driven</output-path>
+      <root id="root">
+        <element id="javaee-facet-resources" facet="ops-ee-message-driven/web/Web" />
+        <element id="directory" name="WEB-INF">
+          <element id="directory" name="classes">
+            <element id="module-output" name="ops-ee-message-driven" />
+          </element>
+          <element id="directory" name="lib">
+            <element id="archive" name="ops-services.jar">
+              <element id="module-output" name="ops-services" />
+            </element>
+            <element id="archive" name="ops-util.jar">
+              <element id="module-output" name="ops-util" />
+            </element>
+            <element id="archive" name="ops-domain-services.jar">
+              <element id="module-output" name="ops-domain-services" />
+            </element>
+            <element id="archive" name="ops-domain-model.jar">
+              <element id="module-output" name="ops-domain-model" />
+            </element>
+            <element id="archive" name="ops-event-handlers.jar">
+              <element id="module-output" name="ops-event-handlers" />
+            </element>
+          </element>
+        </element>
+      </root>
+    </artifact>
+    <artifact type="war" name="ops-jax-ws-parcel:war">
+      <output-path>$PROJECT_DIR$/ops-ws/ops-ws-parcel/target</output-path>
+      <root id="archive" name="ops-ws-parcel.war">
+        <element id="artifact" artifact-name="ops-jax-ws-parcel:war exploded" />
+      </root>
+    </artifact>
+    <artifact type="exploded-war" name="ops-jax-ws-parcel:war exploded">
+      <output-path>$PROJECT_DIR$/ops-ws/ops-ws-parcel/target/ops-ws-parcel</output-path>
+      <root id="root">
+        <element id="javaee-facet-resources" facet="ops-jax-ws-parcel/web/Web" />
+        <element id="directory" name="WEB-INF">
+          <element id="directory" name="classes">
+            <element id="module-output" name="ops-jax-ws-parcel" />
+          </element>
+          <element id="directory" name="lib">
+            <element id="library" level="project" name="Maven: org.apache.ws.commons.schema:XmlSchema:1.4.7" />
+            <element id="library" level="project" name="Maven: com.oracle.demo.ops:ops-util:3.0" />
+            <element id="library" level="project" name="Maven: com.oracle.demo.ops:ops-domain-services:ejb:3.0" />
+            <element id="library" level="project" name="Maven: org.eclipse.persistence:eclipselink:2.3.0" />
+            <element id="library" level="project" name="Maven: com.oracle.demo.ops:ops-domain-model:3.0" />
+            <element id="library" level="project" name="Maven: com.oracle.demo.ops:ops-services:ejb:3.0" />
+            <element id="library" level="project" name="Maven: com.oracle.demo.ops:ops-domain-services:3.0" />
+          </element>
+        </element>
+      </root>
+    </artifact>
+    <artifact type="war" name="ops-jax-ws-shipment:war">
+      <output-path>$PROJECT_DIR$/ops-ws/ops-ws-shipment/target</output-path>
+      <root id="archive" name="ops-ws-shipment.war">
+        <element id="artifact" artifact-name="ops-jax-ws-shipment:war exploded" />
+      </root>
+    </artifact>
+    <artifact type="exploded-war" name="ops-jax-ws-shipment:war exploded">
+      <output-path>$PROJECT_DIR$/ops-ws/ops-ws-shipment/target/ops-ws-shipment</output-path>
+      <root id="root">
+        <element id="javaee-facet-resources" facet="ops-jax-ws-shipment/web/Web" />
+        <element id="directory" name="WEB-INF">
+          <element id="directory" name="classes">
+            <element id="module-output" name="ops-jax-ws-shipment" />
+          </element>
+          <element id="directory" name="lib">
+            <element id="library" level="project" name="Maven: org.apache.ws.commons.schema:XmlSchema:1.4.7" />
+            <element id="library" level="project" name="Maven: com.oracle.demo.ops:ops-util:3.0" />
+            <element id="library" level="project" name="Maven: com.oracle.demo.ops:ops-domain-model:3.0" />
+            <element id="library" level="project" name="Maven: com.oracle.demo.ops:ops-domain-services:ejb:3.0" />
+            <element id="library" level="project" name="Maven: org.eclipse.persistence:eclipselink:2.3.0" />
+            <element id="library" level="project" name="Maven: com.oracle.demo.ops:ops-services:ejb:3.0" />
+            <element id="library" level="project" name="Maven: com.oracle.demo.ops:ops-domain-services:3.0" />
+          </element>
+        </element>
+      </root>
+    </artifact>
+    <artifact type="war" name="ops-ee-rest:war">
+      <output-path>$PROJECT_DIR$/ops-ee-rest/target</output-path>
+      <root id="archive" name="ops-rest.war">
+        <element id="artifact" artifact-name="ops-ee-rest:war exploded" />
+      </root>
+    </artifact>
+    <artifact type="exploded-war" name="ops-ee-rest:war exploded">
+      <output-path>$PROJECT_DIR$/ops-ee-rest/target/ops-rest</output-path>
+      <root id="root">
+        <element id="javaee-facet-resources" facet="ops-ee-rest/web/Web" />
+        <element id="directory" name="WEB-INF">
+          <element id="directory" name="classes">
+            <element id="module-output" name="ops-ee-rest" />
+          </element>
+          <element id="directory" name="lib">
+            <element id="archive" name="ops-services.jar">
+              <element id="module-output" name="ops-services" />
+            </element>
+            <element id="archive" name="ops-util.jar">
+              <element id="module-output" name="ops-util" />
+            </element>
+            <element id="archive" name="ops-domain-services.jar">
+              <element id="module-output" name="ops-domain-services" />
+            </element>
+            <element id="archive" name="ops-domain-model.jar">
+              <element id="module-output" name="ops-domain-model" />
+            </element>
+          </element>
+        </element>
+      </root>
+    </artifact>
+    <artifact type="ejb-jar" name="ops-domain-services-api:ejb">
+      <output-path>$PROJECT_DIR$/ops-ee/ops-domain-services-api/target</output-path>
+      <root id="archive" name="ops-domain-services-api-3.0.jar">
+        <element id="artifact" artifact-name="ops-domain-services-api:ejb exploded" />
+      </root>
+    </artifact>
+    <artifact type="exploded-ejb" name="ops-domain-services-api:ejb exploded">
+      <output-path>$PROJECT_DIR$/ops-ee/ops-domain-services-api/target/ops-domain-services-api-3.0</output-path>
+      <root id="root">
+        <element id="javaee-facet-resources" facet="ops-domain-services-api/ejb/EJB" />
+        <element id="module-output" name="ops-domain-services-api" />
+      </root>
+    </artifact>
+    <artifact type="ejb-jar" name="ops-domain-services-tlg:ejb">
+      <output-path>$PROJECT_DIR$/ops-ee/ops-domain-services-tlg/target</output-path>
+      <root id="archive" name="ops-domain-services-tlg-3.0.jar">
+        <element id="artifact" artifact-name="ops-domain-services-tlg:ejb exploded" />
+      </root>
+    </artifact>
+    <artifact type="exploded-ejb" name="ops-domain-services-tlg:ejb exploded">
+      <output-path>$PROJECT_DIR$/ops-ee/ops-domain-services-tlg/target/ops-domain-services-tlg-3.0</output-path>
+      <root id="root">
+        <element id="javaee-facet-resources" facet="ops-domain-services-tlg/ejb/EJB" />
+        <element id="module-output" name="ops-domain-services-tlg" />
+      </root>
+    </artifact>
+    <artifact type="ejb-jar" name="ops-services (1):ejb">
+      <output-path>$PROJECT_DIR$/ops-ee/ops-services/ops-services/target</output-path>
+      <root id="archive" name="ops-services-3.0.jar">
+        <element id="artifact" artifact-name="ops-services (1):ejb exploded" />
+      </root>
+    </artifact>
+    <artifact type="exploded-ejb" name="ops-services (1):ejb exploded">
+      <output-path>$PROJECT_DIR$/ops-ee/ops-services/ops-services/target/ops-services-3.0</output-path>
+      <root id="root">
+        <element id="javaee-facet-resources" facet="ops-services (1)/ejb/EJB" />
+        <element id="module-output" name="ops-services (1)" />
+      </root>
+    </artifact>
+    <artifact type="ejb-jar" name="ops-services:ejb">
+      <output-path>$PROJECT_DIR$/ops-services/target</output-path>
+      <root id="archive" name="ops-services.jar">
+        <element id="artifact" artifact-name="ops-services:ejb exploded" />
+      </root>
+    </artifact>
+    <artifact type="exploded-ejb" name="ops-services:ejb exploded">
+      <output-path>$PROJECT_DIR$/ops-services/target/ops-services</output-path>
+      <root id="root">
+        <element id="javaee-facet-resources" facet="ops-services/ejb/EJB" />
+        <element id="module-output" name="ops-services" />
+      </root>
+    </artifact>
+    <artifact type="ejb-jar" name="ops-domain-services:ejb">
+      <output-path>$PROJECT_DIR$/ops-domain-services/target</output-path>
+      <root id="archive" name="ops-domain-services.jar">
+        <element id="artifact" artifact-name="ops-domain-services:ejb exploded" />
+      </root>
+    </artifact>
+    <artifact type="exploded-ejb" name="ops-domain-services:ejb exploded">
+      <output-path>$PROJECT_DIR$/ops-domain-services/target/ops-domain-services</output-path>
+      <root id="root">
+        <element id="javaee-facet-resources" facet="ops-domain-services/ejb/EJB" />
+        <element id="module-output" name="ops-domain-services" />
+      </root>
+    </artifact>
+    <artifact type="war" name="ConferencePlanner:war">
+      <output-path>$PROJECT_DIR$/../../../../../code/conference-planner/target</output-path>
+      <root id="archive" name="ConferencePlanner.war">
+        <element id="artifact" artifact-name="ConferencePlanner:war exploded" />
+      </root>
+    </artifact>
+    <artifact type="exploded-war" name="ConferencePlanner:war exploded">
+      <output-path>$PROJECT_DIR$/../../../../../code/conference-planner/target/ConferencePlanner-1.0-SNAPSHOT</output-path>
+      <root id="root">
+        <element id="javaee-facet-resources" facet="ConferencePlanner/web/Web" />
+        <element id="directory" name="WEB-INF">
+          <element id="directory" name="classes">
+            <element id="module-output" name="ConferencePlanner" />
+          </element>
+          <element id="directory" name="lib">
+            <element id="library" level="project" name="Maven: org.primefaces:primefaces:3.2" />
+          </element>
+        </element>
+      </root>
+    </artifact>
+    <artifact type="war" name="ops-rest:war">
+      <output-path>$PROJECT_DIR$/ops-rest/target</output-path>
+      <root id="archive" name="ops-rest.war">
+        <element id="artifact" artifact-name="ops-rest:war exploded" />
+      </root>
+    </artifact>
+    <artifact type="exploded-war" name="ops-rest:war exploded">
+      <output-path>$PROJECT_DIR$/ops-rest/target/ops-rest</output-path>
+      <root id="root">
+        <element id="javaee-facet-resources" facet="ops-rest/web/Web" />
+        <element id="directory" name="WEB-INF">
+          <element id="directory" name="classes">
+            <element id="module-output" name="ops-rest" />
+          </element>
+          <element id="directory" name="lib">
+            <element id="library" level="project" name="Maven: org.codehaus.jackson:jackson-core-asl:1.1.1" />
+            <element id="library" level="project" name="Maven: org.codehaus.jackson:jackson-mapper-asl:1.1.1" />
+            <element id="archive" name="ops-services.jar">
+              <element id="module-output" name="ops-services" />
+            </element>
+            <element id="library" level="project" name="Maven: org.apache.commons:commons-io:1.3.2" />
+            <element id="archive" name="ops-util.jar">
+              <element id="module-output" name="ops-util" />
+            </element>
+            <element id="archive" name="ops-domain-services.jar">
+              <element id="module-output" name="ops-domain-services" />
+            </element>
+            <element id="archive" name="ops-domain-model.jar">
+              <element id="module-output" name="ops-domain-model" />
+            </element>
+          </element>
+        </element>
+      </root>
+    </artifact>
+    <artifact type="war" name="ops-message-driven:war">
+      <output-path>$PROJECT_DIR$/ops-message-driven/target</output-path>
+      <root id="archive" name="ops-message-driven.war">
+        <element id="artifact" artifact-name="ops-message-driven:war exploded" />
+      </root>
+    </artifact>
+    <artifact type="exploded-war" name="ops-message-driven:war exploded">
+      <output-path>$PROJECT_DIR$/ops-message-driven/target/ops-message-driven</output-path>
+      <root id="root">
+        <element id="javaee-facet-resources" facet="ops-message-driven/web/Web" />
+        <element id="directory" name="WEB-INF">
+          <element id="directory" name="classes">
+            <element id="module-output" name="ops-message-driven" />
+          </element>
+          <element id="directory" name="lib">
+            <element id="archive" name="ops-services.jar">
+              <element id="module-output" name="ops-services" />
+            </element>
+            <element id="library" level="project" name="Maven: org.apache.commons:commons-io:1.3.2" />
+            <element id="library" level="project" name="Maven: org.codehaus.jackson:jackson-core-asl:1.8.3" />
+            <element id="library" level="project" name="Maven: org.codehaus.jackson:jackson-mapper-asl:1.8.3" />
+            <element id="archive" name="ops-util.jar">
+              <element id="module-output" name="ops-util" />
+            </element>
+            <element id="archive" name="ops-domain-services.jar">
+              <element id="module-output" name="ops-domain-services" />
+            </element>
+            <element id="archive" name="ops-domain-model.jar">
+              <element id="module-output" name="ops-domain-model" />
+            </element>
+            <element id="archive" name="ops-event-handlers.jar">
+              <element id="module-output" name="ops-event-handlers" />
+            </element>
+          </element>
+        </element>
+      </root>
+    </artifact>
+    <artifact type="war" name="ops-web-jsf:war">
+      <output-path>$PROJECT_DIR$/ops-web-jsf/target</output-path>
+      <root id="archive" name="ops-common-deployable.war">
+        <element id="artifact" artifact-name="ops-web-jsf:war exploded" />
+      </root>
+    </artifact>
+    <artifact type="exploded-war" name="ops-web-jsf:war exploded">
+      <output-path>$PROJECT_DIR$/ops-web-jsf/target/ops-common-deployable</output-path>
+      <root id="root">
+        <element id="javaee-facet-resources" facet="ops-web-jsf/web/Web" />
+        <element id="directory" name="WEB-INF">
+          <element id="directory" name="classes">
+            <element id="module-output" name="ops-web-jsf" />
+          </element>
+          <element id="directory" name="lib">
+            <element id="library" level="project" name="Maven: org.primefaces:primefaces:3.4.1" />
+            <element id="library" level="project" name="Maven: org.primefaces.themes:cupertino:1.0.3" />
+            <element id="archive" name="ops-domain-services.jar">
+              <element id="module-output" name="ops-domain-services" />
+            </element>
+            <element id="archive" name="ops-services.jar">
+              <element id="module-output" name="ops-services" />
+            </element>
+            <element id="library" level="project" name="Maven: org.apache.commons:commons-io:1.3.2" />
+            <element id="library" level="project" name="Maven: org.codehaus.jackson:jackson-core-asl:1.8.3" />
+            <element id="library" level="project" name="Maven: org.codehaus.jackson:jackson-mapper-asl:1.8.3" />
+            <element id="archive" name="ops-util.jar">
+              <element id="module-output" name="ops-util" />
+            </element>
+            <element id="archive" name="ops-domain-model.jar">
+              <element id="module-output" name="ops-domain-model" />
+            </element>
+          </element>
+        </element>
+      </root>
+    </artifact>
+    <artifact type="war" name="ops-ws-shipment:war">
+      <output-path>$PROJECT_DIR$/ops-ws/ops-ws-shipment/target</output-path>
+      <root id="archive" name="ops-ws-shipment.war">
+        <element id="artifact" artifact-name="ops-ws-shipment:war exploded" />
+      </root>
+    </artifact>
+    <artifact type="exploded-war" name="ops-ws-shipment:war exploded">
+      <output-path>$PROJECT_DIR$/ops-ws/ops-ws-shipment/target/ops-ws-shipment</output-path>
+      <root id="root">
+        <element id="javaee-facet-resources" facet="ops-ws-shipment/web/Web" />
+        <element id="directory" name="WEB-INF">
+          <element id="directory" name="classes">
+            <element id="module-output" name="ops-ws-shipment" />
+          </element>
+          <element id="directory" name="lib">
+            <element id="library" level="project" name="Maven: org.apache.ws.commons.schema:XmlSchema:1.4.7" />
+            <element id="archive" name="ops-util.jar">
+              <element id="module-output" name="ops-util" />
+            </element>
+            <element id="library" level="project" name="Maven: org.codehaus.jackson:jackson-core-asl:1.8.3" />
+            <element id="archive" name="ops-domain-model.jar">
+              <element id="module-output" name="ops-domain-model" />
+            </element>
+            <element id="archive" name="ops-domain-services.jar">
+              <element id="module-output" name="ops-domain-services" />
+            </element>
+            <element id="archive" name="ops-services.jar">
+              <element id="module-output" name="ops-services" />
+            </element>
+            <element id="library" level="project" name="Maven: org.apache.commons:commons-io:1.3.2" />
+            <element id="library" level="project" name="Maven: org.codehaus.jackson:jackson-mapper-asl:1.8.3" />
+          </element>
+        </element>
+      </root>
+    </artifact>
+    <artifact type="war" name="ops-ws-parcel:war">
+      <output-path>$PROJECT_DIR$/ops-ws/ops-ws-parcel/target</output-path>
+      <root id="archive" name="ops-ws-parcel.war">
+        <element id="artifact" artifact-name="ops-ws-parcel:war exploded" />
+      </root>
+    </artifact>
+    <artifact type="exploded-war" name="ops-ws-parcel:war exploded">
+      <output-path>$PROJECT_DIR$/ops-ws/ops-ws-parcel/target/ops-ws-parcel</output-path>
+      <root id="root">
+        <element id="javaee-facet-resources" facet="ops-ws-parcel/web/Web" />
+        <element id="directory" name="WEB-INF">
+          <element id="directory" name="classes">
+            <element id="module-output" name="ops-ws-parcel" />
+          </element>
+          <element id="directory" name="lib">
+            <element id="library" level="project" name="Maven: org.apache.ws.commons.schema:XmlSchema:1.4.7" />
+            <element id="archive" name="ops-util.jar">
+              <element id="module-output" name="ops-util" />
+            </element>
+            <element id="library" level="project" name="Maven: org.codehaus.jackson:jackson-core-asl:1.8.3" />
+            <element id="archive" name="ops-domain-services.jar">
+              <element id="module-output" name="ops-domain-services" />
+            </element>
+            <element id="archive" name="ops-domain-model.jar">
+              <element id="module-output" name="ops-domain-model" />
+            </element>
+            <element id="archive" name="ops-services.jar">
+              <element id="module-output" name="ops-services" />
+            </element>
+            <element id="library" level="project" name="Maven: org.apache.commons:commons-io:1.3.2" />
+            <element id="library" level="project" name="Maven: org.codehaus.jackson:jackson-mapper-asl:1.8.3" />
+          </element>
+        </element>
+      </root>
+    </artifact>
+  </component>
+  <component name="CCaseConfig">
+    <option name="checkoutReserved" value="false" />
+    <option name="markExternalChangeAsUpToDate" value="true" />
+    <option name="checkInUseHijack" value="true" />
+    <option name="useUcmModel" value="true" />
+    <option name="synchOutside" value="false" />
+    <option name="isHistoryResticted" value="true" />
+    <option name="useIdenticalSwitch" value="true" />
+    <option name="synchActivitiesOnRefresh" value="true" />
+    <option name="lastScr" value="" />
+    <option name="scrTextFileName" value="" />
+    <option name="historyRevisionsNumber" value="4" />
+  </component>
+  <component name="CompilerConfiguration">
+    <option name="DEFAULT_COMPILER" value="Javac" />
+    <resourceExtensions />
+    <wildcardResourcePatterns>
+      <entry name="?*.properties" />
+      <entry name="?*.xml" />
+      <entry name="?*.gif" />
+      <entry name="?*.png" />
+      <entry name="?*.jpeg" />
+      <entry name="?*.jpg" />
+      <entry name="?*.html" />
+      <entry name="?*.dtd" />
+      <entry name="?*.tld" />
+      <entry name="?*.ftl" />
+    </wildcardResourcePatterns>
+    <annotationProcessing enabled="false" useClasspath="true" />
+  </component>
+  <component name="CopyrightManager" default="">
+    <module2copyright />
+  </component>
+  <component name="DaemonCodeAnalyzer">
+    <disable_hints />
+  </component>
+  <component name="DebuggerManager">
+    <breakpoint_any>
+      <breakpoint>
+        <option name="NOTIFY_CAUGHT" value="true" />
+        <option name="NOTIFY_UNCAUGHT" value="true" />
+        <option name="ENABLED" value="false" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="false" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+      <breakpoint>
+        <option name="NOTIFY_CAUGHT" value="true" />
+        <option name="NOTIFY_UNCAUGHT" value="true" />
+        <option name="ENABLED" value="false" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="false" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+    </breakpoint_any>
+    <breakpoint_rules />
+    <ui_properties />
+  </component>
+  <component name="DependencyValidationManager">
+    <option name="SKIP_IMPORT_STATEMENTS" value="false" />
+  </component>
+  <component name="Encoding" useUTFGuessing="true" native2AsciiForPropertiesFiles="false">
+    <file url="file://$PROJECT_DIR$/../../../../../code/conference-planner" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../../../../weblogic-12c-user-examples/steve.button/html5-demos/sse-coolclock-wls" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../../../../weblogic-12c-user-examples/steve.button/html5-demos/sse-trade-wls" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../../../../weblogic-12c-user-examples/steve.button/html5-demos/websocket-chat-wls" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../../../../weblogic-12c-user-examples/steve.button/html5-demos/websocket-counter-wls" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../../../../weblogic-12c-user-examples/steve.button/html5-demos/websocket-helloworld-wls" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../../../../weblogic-12c-user-examples/steve.button/html5-demos/websocket-snake-wls" charset="UTF-8" />
+  </component>
+  <component name="EntryPointsManager">
+    <entry_points version="2.0" />
+  </component>
+  <component name="FrameworkDetectionExcludesConfiguration">
+    <file type="ejb" url="file://$PROJECT_DIR$/ops-domain-services" />
+    <file type="ejb" url="file://$PROJECT_DIR$/ops-ee/ops-domain-services-api" />
+    <file type="ejb" url="file://$PROJECT_DIR$/ops-ee/ops-domain-services-tlg" />
+    <file type="ejb" url="file://$PROJECT_DIR$/ops-services" />
+    <file type="web" url="file://$PROJECT_DIR$/../../../../../code/conference-planner" />
+    <file type="web" url="file://$PROJECT_DIR$/ops-message-driven" />
+    <file type="web" url="file://$PROJECT_DIR$/ops-rest" />
+    <file type="web" url="file://$PROJECT_DIR$/ops-web-jsf" />
+    <file type="web" url="file://$PROJECT_DIR$/ops-ws/ops-ws-parcel" />
+    <file type="web" url="file://$PROJECT_DIR$/ops-ws/ops-ws-shipment" />
+  </component>
+  <component name="IdProvider" IDEtalkID="BCF7CC29F7DE2F4A85D5ED9BDAA55C05" />
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_STRING" value="-target 1.6" />
+  </component>
+  <component name="JavadocGenerationManager">
+    <option name="OUTPUT_DIRECTORY" />
+    <option name="OPTION_SCOPE" value="protected" />
+    <option name="OPTION_HIERARCHY" value="true" />
+    <option name="OPTION_NAVIGATOR" value="true" />
+    <option name="OPTION_INDEX" value="true" />
+    <option name="OPTION_SEPARATE_INDEX" value="true" />
+    <option name="OPTION_DOCUMENT_TAG_USE" value="false" />
+    <option name="OPTION_DOCUMENT_TAG_AUTHOR" value="false" />
+    <option name="OPTION_DOCUMENT_TAG_VERSION" value="false" />
+    <option name="OPTION_DOCUMENT_TAG_DEPRECATED" value="true" />
+    <option name="OPTION_DEPRECATED_LIST" value="true" />
+    <option name="OTHER_OPTIONS" value="" />
+    <option name="HEAP_SIZE" />
+    <option name="LOCALE" />
+    <option name="OPEN_IN_BROWSER" value="true" />
+  </component>
+  <component name="JsfProjectComponent">
+    <option name="faceletsSupport" value="ENABLED" />
+  </component>
+  <component name="MavenProjectsManager">
+    <option name="originalFiles">
+      <list>
+        <option value="$PROJECT_DIR$/pom.xml" />
+      </list>
+    </option>
+    <option name="activeProfiles">
+      <list>
+        <option value="deploy-local-admin" />
+      </list>
+    </option>
+    <option name="ignoredFiles">
+      <set>
+        <option value="$PROJECT_DIR$/ops-ee/pom.xml" />
+        <option value="$PROJECT_DIR$/ops-weblogic-stop/pom.xml" />
+      </set>
+    </option>
+  </component>
+  <component name="ModuleEditorState">
+    <option name="LAST_EDITED_MODULE_NAME" />
+    <option name="LAST_EDITED_TAB_NAME" />
+  </component>
+  <component name="Osmorc">
+    <option name="manifestSynchronizationType" value="AutomaticallySynchronize" />
+  </component>
+  <component name="Palette2">
+    <group name="Swing">
+      <item class="com.intellij.uiDesigner.HSpacer" tooltip-text="Horizontal Spacer" icon="/com/intellij/uiDesigner/icons/hspacer.png" removable="false" auto-create-binding="false" can-attach-label="false">
+        <default-constraints vsize-policy="1" hsize-policy="6" anchor="0" fill="1" />
+      </item>
+      <item class="com.intellij.uiDesigner.VSpacer" tooltip-text="Vertical Spacer" icon="/com/intellij/uiDesigner/icons/vspacer.png" removable="false" auto-create-binding="false" can-attach-label="false">
+        <default-constraints vsize-policy="6" hsize-policy="1" anchor="0" fill="2" />
+      </item>
+      <item class="javax.swing.JPanel" icon="/com/intellij/uiDesigner/icons/panel.png" removable="false" auto-create-binding="false" can-attach-label="false">
+        <default-constraints vsize-policy="3" hsize-policy="3" anchor="0" fill="3" />
+      </item>
+      <item class="javax.swing.JScrollPane" icon="/com/intellij/uiDesigner/icons/scrollPane.png" removable="false" auto-create-binding="false" can-attach-label="true">
+        <default-constraints vsize-policy="7" hsize-policy="7" anchor="0" fill="3" />
+      </item>
+      <item class="javax.swing.JButton" icon="/com/intellij/uiDesigner/icons/button.png" removable="false" auto-create-binding="true" can-attach-label="false">
+        <default-constraints vsize-policy="0" hsize-policy="3" anchor="0" fill="1" />
+        <initial-values>
+          <property name="text" value="Button" />
+        </initial-values>
+      </item>
+      <item class="javax.swing.JRadioButton" icon="/com/intellij/uiDesigner/icons/radioButton.png" removable="false" auto-create-binding="true" can-attach-label="false">
+        <default-constraints vsize-policy="0" hsize-policy="3" anchor="8" fill="0" />
+        <initial-values>
+          <property name="text" value="RadioButton" />
+        </initial-values>
+      </item>
+      <item class="javax.swing.JCheckBox" icon="/com/intellij/uiDesigner/icons/checkBox.png" removable="false" auto-create-binding="true" can-attach-label="false">
+        <default-constraints vsize-policy="0" hsize-policy="3" anchor="8" fill="0" />
+        <initial-values>
+          <property name="text" value="CheckBox" />
+        </initial-values>
+      </item>
+      <item class="javax.swing.JLabel" icon="/com/intellij/uiDesigner/icons/label.png" removable="false" auto-create-binding="false" can-attach-label="false">
+        <default-constraints vsize-policy="0" hsize-policy="0" anchor="8" fill="0" />
+        <initial-values>
+          <property name="text" value="Label" />
+        </initial-values>
+      </item>
+      <item class="javax.swing.JTextField" icon="/com/intellij/uiDesigner/icons/textField.png" removable="false" auto-create-binding="true" can-attach-label="true">
+        <default-constraints vsize-policy="0" hsize-policy="6" anchor="8" fill="1">
+          <preferred-size width="150" height="-1" />
+        </default-constraints>
+      </item>
+      <item class="javax.swing.JPasswordField" icon="/com/intellij/uiDesigner/icons/passwordField.png" removable="false" auto-create-binding="true" can-attach-label="true">
+        <default-constraints vsize-policy="0" hsize-policy="6" anchor="8" fill="1">
+          <preferred-size width="150" height="-1" />
+        </default-constraints>
+      </item>
+      <item class="javax.swing.JFormattedTextField" icon="/com/intellij/uiDesigner/icons/formattedTextField.png" removable="false" auto-create-binding="true" can-attach-label="true">
+        <default-constraints vsize-policy="0" hsize-policy="6" anchor="8" fill="1">
+          <preferred-size width="150" height="-1" />
+        </default-constraints>
+      </item>
+      <item class="javax.swing.JTextArea" icon="/com/intellij/uiDesigner/icons/textArea.png" removable="false" auto-create-binding="true" can-attach-label="true">
+        <default-constraints vsize-policy="6" hsize-policy="6" anchor="0" fill="3">
+          <preferred-size width="150" height="50" />
+        </default-constraints>
+      </item>
+      <item class="javax.swing.JTextPane" icon="/com/intellij/uiDesigner/icons/textPane.png" removable="false" auto-create-binding="true" can-attach-label="true">
+        <default-constraints vsize-policy="6" hsize-policy="6" anchor="0" fill="3">
+          <preferred-size width="150" height="50" />
+        </default-constraints>
+      </item>
+      <item class="javax.swing.JEditorPane" icon="/com/intellij/uiDesigner/icons/editorPane.png" removable="false" auto-create-binding="true" can-attach-label="true">
+        <default-constraints vsize-policy="6" hsize-policy="6" anchor="0" fill="3">
+          <preferred-size width="150" height="50" />
+        </default-constraints>
+      </item>
+      <item class="javax.swing.JComboBox" icon="/com/intellij/uiDesigner/icons/comboBox.png" removable="false" auto-create-binding="true" can-attach-label="true">
+        <default-constraints vsize-policy="0" hsize-policy="2" anchor="8" fill="1" />
+      </item>
+      <item class="javax.swing.JTable" icon="/com/intellij/uiDesigner/icons/table.png" removable="false" auto-create-binding="true" can-attach-label="false">
+        <default-constraints vsize-policy="6" hsize-policy="6" anchor="0" fill="3">
+          <preferred-size width="150" height="50" />
+        </default-constraints>
+      </item>
+      <item class="javax.swing.JList" icon="/com/intellij/uiDesigner/icons/list.png" removable="false" auto-create-binding="true" can-attach-label="false">
+        <default-constraints vsize-policy="6" hsize-policy="2" anchor="0" fill="3">
+          <preferred-size width="150" height="50" />
+        </default-constraints>
+      </item>
+      <item class="javax.swing.JTree" icon="/com/intellij/uiDesigner/icons/tree.png" removable="false" auto-create-binding="true" can-attach-label="false">
+        <default-constraints vsize-policy="6" hsize-policy="6" anchor="0" fill="3">
+          <preferred-size width="150" height="50" />
+        </default-constraints>
+      </item>
+      <item class="javax.swing.JTabbedPane" icon="/com/intellij/uiDesigner/icons/tabbedPane.png" removable="false" auto-create-binding="true" can-attach-label="false">
+        <default-constraints vsize-policy="3" hsize-policy="3" anchor="0" fill="3">
+          <preferred-size width="200" height="200" />
+        </default-constraints>
+      </item>
+      <item class="javax.swing.JSplitPane" icon="/com/intellij/uiDesigner/icons/splitPane.png" removable="false" auto-create-binding="false" can-attach-label="false">
+        <default-constraints vsize-policy="3" hsize-policy="3" anchor="0" fill="3">
+          <preferred-size width="200" height="200" />
+        </default-constraints>
+      </item>
+      <item class="javax.swing.JSpinner" icon="/com/intellij/uiDesigner/icons/spinner.png" removable="false" auto-create-binding="true" can-attach-label="true">
+        <default-constraints vsize-policy="0" hsize-policy="6" anchor="8" fill="1" />
+      </item>
+      <item class="javax.swing.JSlider" icon="/com/intellij/uiDesigner/icons/slider.png" removable="false" auto-create-binding="true" can-attach-label="false">
+        <default-constraints vsize-policy="0" hsize-policy="6" anchor="8" fill="1" />
+      </item>
+      <item class="javax.swing.JSeparator" icon="/com/intellij/uiDesigner/icons/separator.png" removable="false" auto-create-binding="false" can-attach-label="false">
+        <default-constraints vsize-policy="6" hsize-policy="6" anchor="0" fill="3" />
+      </item>
+      <item class="javax.swing.JProgressBar" icon="/com/intellij/uiDesigner/icons/progressbar.png" removable="false" auto-create-binding="true" can-attach-label="false">
+        <default-constraints vsize-policy="0" hsize-policy="6" anchor="0" fill="1" />
+      </item>
+      <item class="javax.swing.JToolBar" icon="/com/intellij/uiDesigner/icons/toolbar.png" removable="false" auto-create-binding="false" can-attach-label="false">
+        <default-constraints vsize-policy="0" hsize-policy="6" anchor="0" fill="1">
+          <preferred-size width="-1" height="20" />
+        </default-constraints>
+      </item>
+      <item class="javax.swing.JToolBar$Separator" icon="/com/intellij/uiDesigner/icons/toolbarSeparator.png" removable="false" auto-create-binding="false" can-attach-label="false">
+        <default-constraints vsize-policy="0" hsize-policy="0" anchor="0" fill="1" />
+      </item>
+      <item class="javax.swing.JScrollBar" icon="/com/intellij/uiDesigner/icons/scrollbar.png" removable="false" auto-create-binding="true" can-attach-label="false">
+        <default-constraints vsize-policy="6" hsize-policy="0" anchor="0" fill="2" />
+      </item>
+    </group>
+  </component>
+  <component name="ProjectCodeStyleSettingsManager">
+    <option name="PER_PROJECT_SETTINGS">
+      <value>
+        <XML>
+          <option name="XML_LEGACY_SETTINGS_IMPORTED" value="true" />
+        </XML>
+      </value>
+    </option>
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="false">
+    <OptionsSetting value="true" id="Add" />
+    <OptionsSetting value="true" id="Remove" />
+    <OptionsSetting value="true" id="Checkout" />
+    <OptionsSetting value="true" id="Update" />
+    <OptionsSetting value="true" id="Status" />
+    <OptionsSetting value="true" id="Edit" />
+    <ConfirmationsSetting value="0" id="Add" />
+    <ConfirmationsSetting value="0" id="Remove" />
+  </component>
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/ops-cache/ops-cache.iml" filepath="$PROJECT_DIR$/ops-cache/ops-cache.iml" group="ops-cache and modules" />
+      <module fileurl="file://$PROJECT_DIR$/ops-cache/ops-cache-config/ops-cache-config.iml" filepath="$PROJECT_DIR$/ops-cache/ops-cache-config/ops-cache-config.iml" group="ops-cache and modules" />
+      <module fileurl="file://$PROJECT_DIR$/ops-cache/ops-cache-listener/ops-cache-listener.iml" filepath="$PROJECT_DIR$/ops-cache/ops-cache-listener/ops-cache-listener.iml" group="ops-cache and modules" />
+      <module fileurl="file://$PROJECT_DIR$/ops-common/ops-common.iml" filepath="$PROJECT_DIR$/ops-common/ops-common.iml" group="ops-common and modules" />
+      <module fileurl="file://$PROJECT_DIR$/ops-common/ops-common-deployable/ops-common-deployable.iml" filepath="$PROJECT_DIR$/ops-common/ops-common-deployable/ops-common-deployable.iml" group="ops-common and modules" />
+      <module fileurl="file://$PROJECT_DIR$/ops-common/ops-common-ejb/ops-common-ejb.iml" filepath="$PROJECT_DIR$/ops-common/ops-common-ejb/ops-common-ejb.iml" group="ops-common and modules" />
+      <module fileurl="file://$PROJECT_DIR$/ops-common/ops-common-ws/ops-common-ws.iml" filepath="$PROJECT_DIR$/ops-common/ops-common-ws/ops-common-ws.iml" group="ops-common and modules" />
+      <module fileurl="file://$PROJECT_DIR$/ops-domain-model/ops-domain-model.iml" filepath="$PROJECT_DIR$/ops-domain-model/ops-domain-model.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ops-domain-services/ops-domain-services.iml" filepath="$PROJECT_DIR$/ops-domain-services/ops-domain-services.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ops-event-handlers/ops-event-handlers.iml" filepath="$PROJECT_DIR$/ops-event-handlers/ops-event-handlers.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ops-message-driven/ops-message-driven.iml" filepath="$PROJECT_DIR$/ops-message-driven/ops-message-driven.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ops-rest/ops-rest.iml" filepath="$PROJECT_DIR$/ops-rest/ops-rest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ops-services/ops-services.iml" filepath="$PROJECT_DIR$/ops-services/ops-services.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ops-shipment-notifier/ops-shipment-notifier.iml" filepath="$PROJECT_DIR$/ops-shipment-notifier/ops-shipment-notifier.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ops-soapui/ops-soapui.iml" filepath="$PROJECT_DIR$/ops-soapui/ops-soapui.iml" group="ops-soapui and modules" />
+      <module fileurl="file://$PROJECT_DIR$/ops-util/ops-util.iml" filepath="$PROJECT_DIR$/ops-util/ops-util.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ops-web-jsf/ops-web-jsf.iml" filepath="$PROJECT_DIR$/ops-web-jsf/ops-web-jsf.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ops-weblogic/ops-weblogic.iml" filepath="$PROJECT_DIR$/ops-weblogic/ops-weblogic.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ops-ws/ops-ws.iml" filepath="$PROJECT_DIR$/ops-ws/ops-ws.iml" group="ops-ws and modules" />
+      <module fileurl="file://$PROJECT_DIR$/ops-ws/ops-ws-parcel/ops-ws-parcel.iml" filepath="$PROJECT_DIR$/ops-ws/ops-ws-parcel/ops-ws-parcel.iml" group="ops-ws and modules" />
+      <module fileurl="file://$PROJECT_DIR$/ops-ws/ops-ws-shipment/ops-ws-shipment.iml" filepath="$PROJECT_DIR$/ops-ws/ops-ws-shipment/ops-ws-shipment.iml" group="ops-ws and modules" />
+      <module fileurl="file://$PROJECT_DIR$/oracle-parcel-service.iml" filepath="$PROJECT_DIR$/oracle-parcel-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ops-soapui/soapui-rest/soapui-rest.iml" filepath="$PROJECT_DIR$/ops-soapui/soapui-rest/soapui-rest.iml" group="ops-soapui and modules" />
+      <module fileurl="file://$PROJECT_DIR$/ops-soapui/soapui-ws/soapui-ws.iml" filepath="$PROJECT_DIR$/ops-soapui/soapui-ws/soapui-ws.iml" group="ops-soapui and modules" />
+    </modules>
+  </component>
+  <component name="ProjectReloadState">
+    <option name="STATE" value="0" />
+  </component>
+  <component name="ProjectResources">
+    <default-html-doctype>http://www.w3.org/1999/xhtml</default-html-doctype>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_7" assert-keyword="true" jdk-15="true" project-jdk-name="1.7" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/out" />
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="Remote" factoryName="Remote">
+      <option name="USE_SOCKET_TRANSPORT" value="true" />
+      <option name="SERVER_MODE" value="false" />
+      <option name="SHMEM_ADDRESS" value="javadebug" />
+      <option name="HOST" value="localhost" />
+      <option name="PORT" value="5005" />
+      <method>
+        <option name="AntTarget" enabled="false" />
+        <option name="Maven.BeforeRunTask" enabled="false" />
+      </method>
+    </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <module name="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="HTML_FILE_NAME" />
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <option name="VM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <method>
+        <option name="AntTarget" enabled="false" />
+        <option name="Make" enabled="true" />
+        <option name="Maven.BeforeRunTask" enabled="false" />
+      </method>
+    </configuration>
+    <configuration default="true" type="Application" factoryName="Application">
+      <extension name="coverage" enabled="false" merge="false" runner="idea" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="" />
+      <envs />
+      <method>
+        <option name="AntTarget" enabled="false" />
+        <option name="Make" enabled="true" />
+        <option name="Maven.BeforeRunTask" enabled="false" />
+      </method>
+    </configuration>
+    <configuration default="true" type="JUnit" factoryName="JUnit">
+      <extension name="coverage" enabled="false" merge="false" runner="idea" />
+      <extension name="snapshooter" />
+      <module name="" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <envs />
+      <patterns />
+      <method>
+        <option name="AntTarget" enabled="false" />
+        <option name="Make" enabled="true" />
+        <option name="Maven.BeforeRunTask" enabled="false" />
+      </method>
+    </configuration>
+    <list size="0" />
+    <configuration name="&lt;template&gt;" type="WebApp" default="true" selected="false">
+      <Host>localhost</Host>
+      <Port>5050</Port>
+    </configuration>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false" />
+  <component name="StarteamConfiguration">
+    <option name="SERVER" value="" />
+    <option name="PORT" value="49201" />
+    <option name="USER" value="" />
+    <option name="PASSWORD" value="" />
+    <option name="PROJECT" value="" />
+    <option name="VIEW" value="" />
+    <option name="ALTERNATIVE_WORKING_PATH" value="" />
+    <option name="LOCK_ON_CHECKOUT" value="false" />
+    <option name="UNLOCK_ON_CHECKIN" value="false" />
+  </component>
+  <component name="SvnBranchConfigurationManager">
+    <option name="myConfigurationMap">
+      <map>
+        <entry key="$PROJECT_DIR$">
+          <value>
+            <SvnBranchConfiguration>
+              <option name="trunkUrl" value="https://svn.java.net/svn/oracle-pacel-svc~ops-ee6/oracle-parcel-service" />
+            </SvnBranchConfiguration>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="mySupportsUserInfoFilter" value="true" />
+  </component>
+  <component name="VcsDirectoryMappings">
+    <mapping directory="$PROJECT_DIR$" vcs="svn" />
+  </component>
+  <component name="WebServicesPlugin" addRequiredLibraries="true" />
+  <component name="libraryTable">
+    <library name="Maven: com.oracle.coherence:coherence:3.7.1">
+      <CLASSES>
+        <root url="jar:///u01/wls1211/coherence_3.7/lib/coherence.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES />
+    </library>
+    <library name="Maven: com.oracle.demo.ops:ops-domain-services:3.0">
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/ops-domain-services/pom.xml!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$PROJECT_DIR$/ops-ee/ops-domain-services/pom-javadoc.jar!/" />
+        <root url="jar://$PROJECT_DIR$/ops-domain-services/pom-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$PROJECT_DIR$/ops-ee/ops-domain-services/pom-sources.jar!/" />
+        <root url="jar://$PROJECT_DIR$/ops-domain-services/pom-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: com.oracle.demo.ops:ops-services-impl:3.0">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/com/oracle/demo/ops/ops-services-impl/3.0/ops-services-impl-3.0.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$PROJECT_DIR$/ops-ee/ops-services/ops-services/pom-javadoc.jar!/" />
+        <root url="jar://$MAVEN_REPOSITORY$/com/oracle/demo/ops/ops-services-impl/3.0/ops-services-impl-3.0-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$PROJECT_DIR$/ops-ee/ops-services/ops-services/pom-sources.jar!/" />
+        <root url="jar://$MAVEN_REPOSITORY$/com/oracle/demo/ops/ops-services-impl/3.0/ops-services-impl-3.0-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: com.oracle.demo.ops:ops-services-impl:ejb:3.0">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/com/oracle/demo/ops/ops-services-impl/3.0/ops-services-impl-3.0.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$PROJECT_DIR$/ops-ee/ops-services/ops-services/pom-javadoc.jar!/" />
+        <root url="jar://$MAVEN_REPOSITORY$/com/oracle/demo/ops/ops-services-impl/3.0/ops-services-impl-3.0-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$PROJECT_DIR$/ops-ee/ops-services/ops-services/pom-sources.jar!/" />
+        <root url="jar://$MAVEN_REPOSITORY$/com/oracle/demo/ops/ops-services-impl/3.0/ops-services-impl-3.0-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: com.oracle.weblogic:wljmsclient:12.1.1.0">
+      <CLASSES>
+        <root url="jar:///u01/wls1211/wlserver_12.1/server/lib/wljmsclient.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES />
+    </library>
+    <library name="Maven: com.sun.jersey:jersey-bundle:1.1.5.1">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/com/sun/jersey/jersey-bundle/1.1.5.1/jersey-bundle-1.1.5.1.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/com/sun/jersey/jersey-bundle/1.1.5.1/jersey-bundle-1.1.5.1-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/com/sun/jersey/jersey-bundle/1.1.5.1/jersey-bundle-1.1.5.1-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: com.sun.jersey:jersey-core:1.1.5.1">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/com/sun/jersey/jersey-core/1.1.5.1/jersey-core-1.1.5.1.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/com/sun/jersey/jersey-core/1.1.5.1/jersey-core-1.1.5.1-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/com/sun/jersey/jersey-core/1.1.5.1/jersey-core-1.1.5.1-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: com.sun.jersey:jersey-json:1.1.5.1">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/com/sun/jersey/jersey-json/1.1.5.1/jersey-json-1.1.5.1.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/com/sun/jersey/jersey-json/1.1.5.1/jersey-json-1.1.5.1-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/com/sun/jersey/jersey-json/1.1.5.1/jersey-json-1.1.5.1-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: com.sun.org.apache.xml.internal:resolver:20050927">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/com/sun/org/apache/xml/internal/resolver/20050927/resolver-20050927.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/com/sun/org/apache/xml/internal/resolver/20050927/resolver-20050927-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/com/sun/org/apache/xml/internal/resolver/20050927/resolver-20050927-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: com.sun.xml.bind:jaxb-impl:2.1.12">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/com/sun/xml/bind/jaxb-impl/2.1.12/jaxb-impl-2.1.12.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/com/sun/xml/bind/jaxb-impl/2.1.12/jaxb-impl-2.1.12-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/com/sun/xml/bind/jaxb-impl/2.1.12/jaxb-impl-2.1.12-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: com.sun.xml.bind:jaxb-impl:2.1.6">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/com/sun/xml/bind/jaxb-impl/2.1.6/jaxb-impl-2.1.6.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/com/sun/xml/bind/jaxb-impl/2.1.6/jaxb-impl-2.1.6-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/com/sun/xml/bind/jaxb-impl/2.1.6/jaxb-impl-2.1.6-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: com.sun.xml.messaging.saaj:saaj-impl:1.3">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/com/sun/xml/messaging/saaj/saaj-impl/1.3/saaj-impl-1.3.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/com/sun/xml/messaging/saaj/saaj-impl/1.3/saaj-impl-1.3-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/com/sun/xml/messaging/saaj/saaj-impl/1.3/saaj-impl-1.3-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: com.sun.xml.stream.buffer:streambuffer:0.7">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/com/sun/xml/stream/buffer/streambuffer/0.7/streambuffer-0.7.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/com/sun/xml/stream/buffer/streambuffer/0.7/streambuffer-0.7-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/com/sun/xml/stream/buffer/streambuffer/0.7/streambuffer-0.7-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: com.sun.xml.stream:sjsxp:1.0">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/com/sun/xml/stream/sjsxp/1.0/sjsxp-1.0.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/com/sun/xml/stream/sjsxp/1.0/sjsxp-1.0-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/com/sun/xml/stream/sjsxp/1.0/sjsxp-1.0-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: com.sun.xml.ws:jaxws-rt:2.1.3">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/com/sun/xml/ws/jaxws-rt/2.1.3/jaxws-rt-2.1.3.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/com/sun/xml/ws/jaxws-rt/2.1.3/jaxws-rt-2.1.3-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/com/sun/xml/ws/jaxws-rt/2.1.3/jaxws-rt-2.1.3-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: javax.activation:activation:1.1">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/javax/activation/activation/1.1/activation-1.1.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/javax/activation/activation/1.1/activation-1.1-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/javax/activation/activation/1.1/activation-1.1-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: javax.ws.rs:jsr311-api:1.1.1">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/javax/ws/rs/jsr311-api/1.1.1/jsr311-api-1.1.1.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/javax/ws/rs/jsr311-api/1.1.1/jsr311-api-1.1.1-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/javax/ws/rs/jsr311-api/1.1.1/jsr311-api-1.1.1-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: javax.xml.bind:jaxb-api:2.1">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/javax/xml/bind/jaxb-api/2.1/jaxb-api-2.1.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/javax/xml/bind/jaxb-api/2.1/jaxb-api-2.1-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/javax/xml/bind/jaxb-api/2.1/jaxb-api-2.1-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: javax.xml.soap:saaj-api:1.3">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/javax/xml/soap/saaj-api/1.3/saaj-api-1.3.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/javax/xml/soap/saaj-api/1.3/saaj-api-1.3-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/javax/xml/soap/saaj-api/1.3/saaj-api-1.3-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: javax.xml.stream:stax-api:1.0">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/javax/xml/stream/stax-api/1.0/stax-api-1.0.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/javax/xml/stream/stax-api/1.0/stax-api-1.0-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/javax/xml/stream/stax-api/1.0/stax-api-1.0-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: javax.xml.stream:stax-api:1.0-2">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/javax/xml/stream/stax-api/1.0-2/stax-api-1.0-2.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/javax/xml/stream/stax-api/1.0-2/stax-api-1.0-2-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/javax/xml/stream/stax-api/1.0-2/stax-api-1.0-2-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: javax.xml.ws:jaxws-api:2.1">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/javax/xml/ws/jaxws-api/2.1/jaxws-api-2.1.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/javax/xml/ws/jaxws-api/2.1/jaxws-api-2.1-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/javax/xml/ws/jaxws-api/2.1/jaxws-api-2.1-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: javax:javaee-api:6.0">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/javax/javaee-api/6.0/javaee-api-6.0.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/javax/javaee-api/6.0/javaee-api-6.0-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/javax/javaee-api/6.0/javaee-api-6.0-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: junit:junit:3.8">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/junit/junit/3.8/junit-3.8.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/junit/junit/3.8/junit-3.8-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/junit/junit/3.8/junit-3.8-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: org.apache.commons:commons-io:1.3.2">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/commons/commons-io/1.3.2/commons-io-1.3.2.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/commons/commons-io/1.3.2/commons-io-1.3.2-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/commons/commons-io/1.3.2/commons-io-1.3.2-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: org.apache.ws.commons.schema:XmlSchema:1.4.7">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/ws/commons/schema/XmlSchema/1.4.7/XmlSchema-1.4.7.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/ws/commons/schema/XmlSchema/1.4.7/XmlSchema-1.4.7-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/ws/commons/schema/XmlSchema/1.4.7/XmlSchema-1.4.7-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: org.codehaus.jackson:jackson-core-asl:1.1.1">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/codehaus/jackson/jackson-core-asl/1.1.1/jackson-core-asl-1.1.1.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/org/codehaus/jackson/jackson-core-asl/1.1.1/jackson-core-asl-1.1.1-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/codehaus/jackson/jackson-core-asl/1.1.1/jackson-core-asl-1.1.1-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: org.codehaus.jackson:jackson-core-asl:1.8.3">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/codehaus/jackson/jackson-core-asl/1.8.3/jackson-core-asl-1.8.3.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/org/codehaus/jackson/jackson-core-asl/1.8.3/jackson-core-asl-1.8.3-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/codehaus/jackson/jackson-core-asl/1.8.3/jackson-core-asl-1.8.3-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: org.codehaus.jackson:jackson-jaxrs:1.1.1">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/codehaus/jackson/jackson-jaxrs/1.1.1/jackson-jaxrs-1.1.1.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/org/codehaus/jackson/jackson-jaxrs/1.1.1/jackson-jaxrs-1.1.1-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/codehaus/jackson/jackson-jaxrs/1.1.1/jackson-jaxrs-1.1.1-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: org.codehaus.jackson:jackson-mapper-asl:1.1.1">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/codehaus/jackson/jackson-mapper-asl/1.1.1/jackson-mapper-asl-1.1.1.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/org/codehaus/jackson/jackson-mapper-asl/1.1.1/jackson-mapper-asl-1.1.1-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/codehaus/jackson/jackson-mapper-asl/1.1.1/jackson-mapper-asl-1.1.1-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: org.codehaus.jackson:jackson-mapper-asl:1.8.3">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/codehaus/jackson/jackson-mapper-asl/1.8.3/jackson-mapper-asl-1.8.3.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/org/codehaus/jackson/jackson-mapper-asl/1.8.3/jackson-mapper-asl-1.8.3-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/codehaus/jackson/jackson-mapper-asl/1.8.3/jackson-mapper-asl-1.8.3-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: org.codehaus.jettison:jettison:1.1">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/codehaus/jettison/jettison/1.1/jettison-1.1.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/org/codehaus/jettison/jettison/1.1/jettison-1.1-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/codehaus/jettison/jettison/1.1/jettison-1.1-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: org.eclipse.persistence:eclipselink:2.3.0">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/eclipse/persistence/eclipselink/2.3.0/eclipselink-2.3.0.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/org/eclipse/persistence/eclipselink/2.3.0/eclipselink-2.3.0-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/eclipse/persistence/eclipselink/2.3.0/eclipselink-2.3.0-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: org.jvnet.staxex:stax-ex:1.2">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/jvnet/staxex/stax-ex/1.2/stax-ex-1.2.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/org/jvnet/staxex/stax-ex/1.2/stax-ex-1.2-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/jvnet/staxex/stax-ex/1.2/stax-ex-1.2-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: org.jvnet:mimepull:1.1">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/jvnet/mimepull/1.1/mimepull-1.1.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/org/jvnet/mimepull/1.1/mimepull-1.1-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/jvnet/mimepull/1.1/mimepull-1.1-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: org.primefaces.themes:cupertino:1.0.3">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/primefaces/themes/cupertino/1.0.3/cupertino-1.0.3.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/org/primefaces/themes/cupertino/1.0.3/cupertino-1.0.3-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/primefaces/themes/cupertino/1.0.3/cupertino-1.0.3-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: org.primefaces:primefaces:3.4.1">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/primefaces/primefaces/3.4.1/primefaces-3.4.1.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/org/primefaces/primefaces/3.4.1/primefaces-3.4.1-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/primefaces/primefaces/3.4.1/primefaces-3.4.1-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: stax:stax-api:1.0.1">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/stax/stax-api/1.0.1/stax-api-1.0.1.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/stax/stax-api/1.0.1/stax-api-1.0.1-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/stax/stax-api/1.0.1/stax-api-1.0.1-sources.jar!/" />
+      </SOURCES>
+    </library>
+  </component>
+</project>
+

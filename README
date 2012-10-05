@@ -1,0 +1,124 @@
+So... how do you get this running? :)  Lucky for you this is wired with maven and fairly automated.
+
+Prerequisites
+========================================
+1) Oracle Database 11g (Express Edition works fine).
+  -- default application configuration: user/pass: ops_user/ops_user jdbc: localhost:1521:xe
+  -- DDL (SQL) can be found in oracle-parcel-service/ops-domain-model/src/main/resources/ddl
+
+2) Maven (3.0+) set on your path with the appropriate environment variables (like M2_HOME).
+  --- Be sure to configure the proxy settings for maven if you need to.  This can be done by editing the $M2_HOME/conf/settings.xml file
+
+3) WebLogic Maven Plugin installed.  the installWebLogicMavenPlugin.sh script can serve as an example.
+
+4) WebLogic ZIP distribution installed in your local maven repository, for standalone mode.  [LINK]
+
+5) WebLogic and Coherence installed from the WebLogic installer (easiest).  Alternatively, you can work to update the scripts and environment variables to suit your needs.
+
+6) If taking the clustered approach, start the Node Manager from the command line or configure the node manager as an xinetd service.  An example script for the command line is in ops-weblogic/startNodeManager.sh (and .bat)
+
+
+First you need to decide if you want to run this standalone or in a cluster...
+
+
+Standalone
+========================================
+This approach creates a WebLogic domain configuration in the project structure and you must use Maven to start and stop the WebLogic server instance.
+
+Steps:
+
+1) From oracle-parcel-service/ops-weblogic: mvn -P configure-embedded-wls
+  -- This will do the following:
+  i)   Install WebLogic into ops-weblogic/Oracle/Middleware
+  ii)  Start the server (on port 7001)
+  iii) Run WLST to configure it
+  iv)  Stop the server instance
+
+2) From oracle-parcel-service: mvn install -P enable-embedded-wls
+  -- This will do the following:
+  i)  Ensure the WebLogic Server is started
+  ii) Compile, Package and Deploy all deployable apps in OPS to the WebLogic Server Instance
+
+3) Access the application at the following URL: http://127.0.0.1:7001/ops
+
+At this point, you can edit the application and/or simply use it.
+
+4) Stop the embedded WLS instance by executing, from oracle-parcel-service/ops-weblogic: mvn -P stop-embedded-wls
+
+
+Cluster - It's not as hard as you think!
+========================================
+
+1) edit the common/pom.xml file.  inside you will find some properties that may need to change, based on your environment.  Here is the default set:
+
+  <properties>
+    <MIDDLEWARE_HOME>/u01/wls1211/</MIDDLEWARE_HOME>
+    <WEBLOGIC_HOME>${MIDDLEWARE_HOME}/wlserver_12.1</WEBLOGIC_HOME>
+    <COHERENCE_HOME>${MIDDLEWARE_HOME}/coherence_3.7</COHERENCE_HOME>
+    ...
+
+2) edit the ops-weblogic/ops-environment.properties file.  This is a separate file needed by the WLST scripts.  Yes, it would be ideal if they were in a single place, but I haven't gotten around to making that work :)
+
+Be sure to edit the JDBC URL to point to your Oracle XE Database.
+
+WEBLOGIC_HOME=/u01/wls1211/wlserver_12.1
+NM_HOME=/u01/wls1211/common/nodemanager
+MIDDLEWARE_HOME=/u01/wls1211
+COHERENCE_HOME=/u01/wls1211/coherence_3.7
+USER_PROJECTS=/u01/wls1211/user_projects
+OPS_HOME=/labs/content/oracle-parcel-service
+JDBC_URL=jdbc:oracle:thin:@localhost:1521:xe
+
+3) from the oracle-parcel-service directory, execute 'mvn package' to validate that everything compiles.  If this is the
+ first time using maven on your system, it will take some time to download dependencies and plugins.
+
+4) change to the ops-weblogic directory and execute the following command:
+
+  $WEBLOGIC_HOME/common/bin/wlst.sh/bat -loadProperties=ops-environment.properties
+
+  This will do the following:
+
+  1) create a domain named 'ops_domain' in $USER_PROJECTS (ops-environment.properties)
+  2) Configure some resources in WLST offline mode like:
+      JMS resources
+      JDBC resources
+      JTA Timeout
+  3) connect to the node manager
+  4) start the admin server
+  5) configure some things in WLST online mode
+  6) deploy some shared libraries for:
+      Coherence
+      TopLink Grid
+      WebLogic Spring Enhancements (not actually required for Spring apps to work)
+      Active Cache
+      Coherence*Web
+  7) stop the admin server
+
+5) Next, you need to start the admin server for the domain.  You can do this by navigating to $USER_PROJECTS/ops_domain and executing startWebLogic.sh.  This will block your command window, so you may want to use 'nohup' and start it in the background.
+
+6) Log into the admin console at http://localhost:7001/console.
+
+6) (Node Manager still running...) Navigate to Environment->Servers->ms-1 and choose the 'Control' tab.
+
+7) Scroll to the bottom of the page and click the 'Start' button to start the server.  This will tell the Node Manager to start the server.
+
+8) Assuming no problems, the ms-1 server will start.  You can look for errors in the $USER_PROJECTS/ops_domain/servers/ms-1/logs/ms-1.out file
+
+9) open a command prompt and go to the oracle-parcel-service directory (from the lab files)
+
+10) execute: mvn install -P enable-weblogic-deployment,deploy-local
+
+11) open http://localhost:7101/ops.
+
+12) switch to admin mode at the bottom of the page
+
+13) load geodata
+
+14) go to simulator
+
+15) simulate 1 parcel.  Save parcel and shipment ID's
+
+16) select 'Track' and track the parcel or shipment.
+
+
+

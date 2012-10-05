@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-mappings version="1.1" xmlns="http://www.eclipse.org/eclipselink/xsds/persistence/orm"
+                 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                 xsi:schemaLocation="http://www.eclipse.org/eclipselink/xsds/persistence/orm http://www.eclipse.org/eclipselink/xsds/eclipselink_orm_2_3.xsd">
+  <!-- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ -->
+
+  <mapped-superclass class="com.oracle.demo.ops.domain.BaseObject">
+    <attributes>
+      <id name="id">
+        <generated-value generator="SEQ_BASE_ID"/>
+        <sequence-generator name="SEQ_BASE_ID"/>
+      </id>
+    </attributes>
+  </mapped-superclass>
+
+  <!-- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ -->
+
+  <mapped-superclass class="com.oracle.demo.ops.domain.BaseEntity">
+
+    <entity-listeners>
+      <entity-listener class="com.oracle.demo.ops.jpa.BaseEntityListener"/>
+    </entity-listeners>
+
+    <attributes>
+      <basic name="createdDate">
+        <temporal>TIMESTAMP</temporal>
+      </basic>
+
+      <basic name="modifiedDate">
+        <temporal>TIMESTAMP</temporal>
+      </basic>
+    </attributes>
+  </mapped-superclass>
+
+  <!-- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ -->
+
+  <entity class="com.oracle.demo.ops.domain.Address">
+  </entity>
+
+  <!-- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ -->
+
+  <entity class="com.oracle.demo.ops.domain.Parcel">
+    <cache>
+      <expiry>2000</expiry>
+    </cache>
+    <named-query name="Parcel.findAll">
+      <query>select p from Parcel p order by p.createdDate desc</query>
+    </named-query>
+
+    <named-query name="Parcel.findByShipmentId">
+      <query>select p from Parcel p where p.shipmentId=:shipmentId order by p.createdDate desc</query>
+    </named-query>
+
+    <attributes>
+      <basic name="parcelStatus">
+        <enumerated>STRING</enumerated>
+      </basic>
+    </attributes>
+  </entity>
+
+  <!-- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ -->
+
+  <entity class="com.oracle.demo.ops.domain.ParcelEvent">
+    <sequence-generator name="SEQ_PARCEL_LOG_ID"/>
+
+    <named-query name="ParcelEvent.findByParcelId">
+      <query>select e from ParcelEvent e where e.parcelId =:id order by e.eventDate desc</query>
+    </named-query>
+
+    <named-query name="ParcelEvent.findAll">
+      <query>Select event from ParcelEvent event order by event.eventDate desc</query>
+    </named-query>
+
+
+    <attributes>
+
+      <basic name="eventDate">
+        <column name="EVENT_DATE"/>
+        <temporal>TIMESTAMP</temporal>
+      </basic>
+
+    </attributes>
+  </entity>
+
+  <!-- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ -->
+
+  <entity class="com.oracle.demo.ops.domain.Shipment">
+
+    <sequence-generator name="SEQ_SHIPMENT_ID"/>
+
+    <named-query name="Shipment.findByExternalReferenceId">
+      <query>select s from Shipment s where s.externalReferenceId = :id</query>
+    </named-query>
+
+    <named-query name="Shipment.findAll">
+      <query>select s from Shipment s order by s.createdDate desc</query>
+    </named-query>
+
+    <entity-listeners>
+      <entity-listener class="com.oracle.demo.ops.jpa.ShipmentListener"/>
+    </entity-listeners>
+
+    <attributes>
+      <basic name="externalReferenceId">
+        <column unique="true"/>
+      </basic>
+
+      <basic name="shippingServiceName">
+        <enumerated>STRING</enumerated>
+      </basic>
+
+      <one-to-many name="parcels"
+                   target-entity="com.oracle.demo.ops.domain.Parcel"
+                   fetch="EAGER">
+        <order-by>id ASC</order-by>
+        <cascade>
+          <cascade-all/>
+        </cascade>
+      </one-to-many>
+
+      <one-to-one name="fromAddress">
+        <cascade>
+          <cascade-all/>
+        </cascade>
+      </one-to-one>
+
+      <one-to-one name="toAddress">
+        <cascade>
+          <cascade-all/>
+        </cascade>
+      </one-to-one>
+
+    </attributes>
+  </entity>
+
+  <!-- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ -->
+
+  <entity class="com.oracle.demo.ops.domain.ShippingService">
+    <named-query name="ShippingService.findall">
+      <query>select s from ShippingService s order by s.name asc</query>
+    </named-query>
+
+    <attributes>
+      <id name="name"/>
+    </attributes>
+  </entity>
+
+  <!-- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ -->
+
+  <entity class="com.oracle.demo.ops.domain.PostalGeolocation">
+    <named-query name="PostalGeolocation.findByCityState">
+      <query>select g from PostalGeolocation g where g.city=:city and g.state=:state</query>
+    </named-query>
+
+    <named-query name="PostalGeolocation.findByPostalCode">
+      <query>select g from PostalGeolocation g where g.postalCode=:postalCode</query>
+    </named-query>
+
+    <attributes>
+      <id name="postalCode"/>
+    </attributes>
+
+  </entity>
+</entity-mappings>

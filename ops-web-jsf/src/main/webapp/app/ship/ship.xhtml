@@ -1,0 +1,379 @@
+<ui:composition
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:p="http://primefaces.org/ui"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:address="http://java.sun.com/jsf/composite/address"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:f="http://java.sun.com/jsf/core"
+    template="/templates/common/layout.xhtml">
+
+<ui:define name="head">
+  <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+</ui:define>
+
+<ui:define name="content">
+
+<p:panel header="Create a New Shipment" id="div-1">
+
+<h:form prependId="false" id="wiz_form">
+
+<p:growl id="growl" sticky="true" showDetail="true"/>
+
+<p:wizard widgetVar="wiz"
+          flowListener="#{shipmentWizardBean.onFlowProcess}">
+
+<!-- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ -->
+
+<p:tab id="from_tab" title="Sender Information">
+  <p:panel header="Sender Information">
+    <p:messages errorClass="error"/>
+
+    <h:panelGrid columns="3">
+
+      <address:gridInput id="fromAddress_input"/>
+
+      <p:spacer width="75"/>
+
+      <h:graphicImage library="images" name="boxStack.jpg"
+                      style="width: 300px; height: 224px; vertical-align: top; -webkit-box-shadow: 5px 5px 7px #000;border:1px solid black; -webkit-border-radius: 20px;"/>
+    </h:panelGrid>
+
+  </p:panel>
+</p:tab>
+
+<!-- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ -->
+
+<p:tab id="to_tab" title="Recipient Information">
+  <p:panel header="Recipient Information">
+    <p:messages errorClass="error"/>
+
+    <h:panelGrid columns="3">
+
+      <address:gridInput id="toAddress_input"/>
+
+      <p:spacer width="75"/>
+
+      <h:graphicImage library="images" name="parcelSorting.jpg"
+                      style="width: 300px; height: 224px; vertical-align: top; -webkit-box-shadow: 5px 5px 7px #000;border:1px solid black; -webkit-border-radius: 20px;"/>
+    </h:panelGrid>
+
+  </p:panel>
+</p:tab>
+
+<!-- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ -->
+
+<p:tab id="parcels_tab" title="Parcel Details">
+
+  <p:panel id="parcels_panel" header="Add/Define Parcels for this Shipment">
+
+    <p:messages errorClass="error"/>
+
+    <h:panelGrid id="wiz_step_grid"
+                 columns="3"
+                 style="position: relative;"
+                 columnClasses="label, value"
+                 rowClasses="row-top-align">
+
+      <p:panelGrid id="parcel_input_grid"
+                   columns="2"
+                   style="position: relative;"
+                   headerClass="table-header"
+                   columnClasses="label, value">
+
+        <f:facet name="header">Provide Parcel Details:</f:facet>
+
+        <h:outputLabel value="Contents: *"
+                       for="parcel_contents"
+                       class="shipmentfont"/>
+        <h:panelGroup>
+          <p:inputText id="parcel_contents"
+                       value="#{shipmentWizardBean.parcelContents}"/>
+          <p:message for="parcel_contents"/>
+        </h:panelGroup>
+
+        <h:outputLabel value="Weight: *"
+                       for="parcel_weight"
+                       class="shipmentfont"/>
+        <h:panelGroup>
+          <p:inputText id="parcel_weight"
+                       value="#{shipmentWizardBean.parcelWeight}"/>
+          <p:message for="parcel_weight"/>
+        </h:panelGroup>
+
+        <h:outputLabel value="Height: *"
+                       for="parcel_height"
+                       class="shipmentfont"/>
+        <h:panelGroup>
+          <p:inputText id="parcel_height"
+                       value="#{shipmentWizardBean.parcelHeight}"/>
+          <p:message for="parcel_height"/>
+        </h:panelGroup>
+
+        <h:outputLabel value="Width: *"
+                       for="parcel_width"
+                       class="shipmentfont"/>
+        <h:panelGroup>
+          <p:inputText id="parcel_width"
+                       value="#{shipmentWizardBean.parcelWidth}"/>
+          <p:message for="parcel_width"/>
+        </h:panelGroup>
+
+
+        <h:outputLabel value="Length: *"
+                       for="parcel_length"
+                       class="shipmentfont"/>
+        <h:panelGroup>
+          <p:inputText id="parcel_length"
+                       value="#{shipmentWizardBean.parcelLength}"/>
+          <p:message for="parcel_length"/>
+        </h:panelGroup>
+
+        <f:facet name="footer">
+          <p:commandButton value="Add"
+                           id="btnAdd"
+                           icon="ui-icon-plus"
+                           process="@this parcel_input_grid"
+                           update="wiz_step_grid growl"
+                           actionListener="#{shipmentWizardBean.addParcelActionListener}"/>
+        </f:facet>
+
+      </p:panelGrid>
+
+      <p:spacer width="25"/>
+
+      <h:panelGroup style="position: absolute; top: 0px;">
+        <p:dataTable value="#{shipmentWizardBean.parcelList}"
+                     id="parcel_dataTable"
+                     var="parcel"
+                     styleClass="data-table"
+                     headerClass="table-header"
+                     rowClasses="row-odd,row-even"
+                     columnClasses="column-center">
+
+          <f:facet name="header">Specified Parcels</f:facet>
+
+          <p:column>
+            <f:facet name="header">Contents</f:facet>
+            <h:outputText value="#{parcel.contents}"/>
+          </p:column>
+
+          <p:column>
+            <f:facet name="header">Weight</f:facet>
+            <h:outputText value="#{parcel.weight}"/>
+          </p:column>
+
+          <p:column>
+            <f:facet name="header">Height</f:facet>
+            <h:outputText value="#{parcel.height}"/>
+          </p:column>
+
+          <p:column>
+            <f:facet name="header">Width</f:facet>
+            <h:outputText value="#{parcel.width}"/>
+          </p:column>
+
+          <p:column>
+            <f:facet name="header">Length</f:facet>
+            <h:outputText value="#{parcel.length}"/>
+          </p:column>
+        </p:dataTable>
+
+      </h:panelGroup>
+
+    </h:panelGrid>
+
+  </p:panel>
+</p:tab>
+
+<!-- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ -->
+
+<p:tab id="service_tab" title="Shipping Service">
+
+  <p:panel id="service_panel" header="Select Shipping Service">
+
+    <p:messages errorClass="error"/>
+
+    <h:panelGrid id="service_panel_grid"
+                 columns="4"
+                 style="width: 100%;">
+
+      <h:panelGrid id="service_panel_grid2"
+                   columns="1"
+                   headerClass="table-header"
+                   style="width: 100%;">
+
+        <p:selectOneRadio value="#{shipmentWizardBean.selectedServiceName}"
+                          valueChangeListener="#{shipmentWizardBean.selectService}"
+                          layout="pageDirection"
+                          id="select_one_service">
+
+          <f:selectItems value="#{shipmentWizardBean.shippingServiceList}"
+                         var="service"
+                         itemLabel="#{service.name.toString()}"
+                         itemValue="#{service.name.toString()}"/>
+
+          <p:ajax process="@this" update="pnlCost serviceImage"/>
+
+        </p:selectOneRadio>
+
+        <h:panelGroup id="pnlCost">
+          <h:panelGrid columns="2" styleClass="data-table">
+            <f:facet name="header">Service Details</f:facet>
+
+            <h:outputText value="Cost: "/>
+            <h:outputText value="#{shipmentWizardBean.selectedService.cost}"/>
+
+            <h:outputText value="Delivery Estimate: "/>
+            <h:outputText value="#{shipmentWizardBean.selectedService.deliveryEstimate} Days"/>
+
+            <h:outputText value="Description: "/>
+            <h:outputText value="#{shipmentWizardBean.selectedService.description}"/>
+          </h:panelGrid>
+
+        </h:panelGroup>
+      </h:panelGrid>
+
+      <p:spacer width="25"/>
+
+      <h:graphicImage
+          id="serviceImage"
+          library="images"
+          name="shippingService/#{shipmentWizardBean.selectedService.name.toString()}.jpg"
+          style="height:250px;vertical-align: top; -webkit-box-shadow: 5px 5px 7px #000;border:1px solid black; -webkit-border-radius: 20px;"/>
+
+    </h:panelGrid>
+
+  </p:panel>
+</p:tab>
+
+<!-- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ -->
+
+<p:tab id="confirm_tab" title="Confirm &amp; Submit">
+
+  <p:panel id="confirmation_panel"
+           header="Confirmation">
+
+    <h:panelGrid columns="2"
+                 width="100%"
+                 style="position:relative;">
+
+      <h:panelGrid columns="1"
+                   style="position:relative;">
+
+        <h:panelGrid columns="2"
+                     style="position:relative;">
+
+          <h:panelGroup style="position:relative;">
+            <p:panel header="From Address">
+              <address:fourLine address="#{shipmentWizardBean.fromAddress}"/>
+            </p:panel>
+          </h:panelGroup>
+
+          <h:panelGroup style="position:relative;">
+            <p:panel header="To Address">
+              <address:fourLine address="#{shipmentWizardBean.toAddress}"/>
+            </p:panel>
+          </h:panelGroup>
+
+        </h:panelGrid>
+
+        <p:panel header="Service">
+          <h:outputText value="Service: "/>
+          <h:outputText value="#{shipmentWizardBean.selectedServiceName}"/>
+        </p:panel>
+
+        <p:panel header="Parcels">
+          <p:dataTable value="#{shipmentWizardBean.parcelList}"
+                       id="parcelDataTable"
+                       var="parcel"
+                       widgetVar="varParcelDataRable"
+                       styleClass="data-table"
+                       headerClass="table-header"
+                       rowClasses="row-odd,row-even"
+                       columnClasses="column-center">
+
+            <p:column>
+              <f:facet name="header">Contents</f:facet>
+              <h:outputText value="#{parcel.contents}"/>
+            </p:column>
+
+            <p:column>
+              <f:facet name="header">Weight</f:facet>
+              <h:outputText value="#{parcel.weight}"/>
+            </p:column>
+
+            <p:column>
+              <f:facet name="header">W x L x H</f:facet>
+              <h:outputText value="#{parcel.width} x #{parcel.length} x #{parcel.height}"/>
+            </p:column>
+
+          </p:dataTable>
+        </p:panel>
+
+      </h:panelGrid>
+
+      <h:panelGroup>
+
+        <p:panel header="Tracking Map" style="position:absolute;top:0px;right:0px;">
+
+          <f:view contentType="text/html">
+
+            <p:gmap center="#{shipmentWizardBean.mapModelWrapper.mapCenter}"
+                    zoom="3"
+                    id="trackingMap"
+                    type="HYBRID"
+                    style="width:400px;height:300px;"
+                    streetView="false"
+                    model="#{shipmentWizardBean.mapModelWrapper.mapModel}">
+
+              <p:ajax event="overlaySelect" listener="#{shipmentWizardBean.onMarkerSelect}"/>
+
+              <p:gmapInfoWindow>
+
+                <p:outputPanel style="text-align:center;display:block;margin:auto:">
+                  <h:outputText value="#{shipmentWizardBean.marker.title}"/>
+                </p:outputPanel>
+
+              </p:gmapInfoWindow>
+            </p:gmap>
+
+          </f:view>
+
+        </p:panel>
+
+      </h:panelGroup>
+
+    </h:panelGrid>
+
+    <h:panelGroup style="position: absolute;float:right;right:10px;bottom:10px;">
+
+      <h:outputText value="Simulate Tracking Events after Submit??"/>
+      <h:selectBooleanCheckbox value="#{shipmentWizardBean.simulateEvents}"/>
+
+      <p:commandButton value="Submit"
+                       style="float:right;"
+                       ajax="false"
+                       action="#{shipmentWizardBean.finish}">
+      </p:commandButton>
+
+    </h:panelGroup>
+
+  </p:panel>
+</p:tab>
+
+<!-- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ -->
+
+</p:wizard>
+
+
+</h:form>
+
+</p:panel>
+</ui:define>
+
+<ui:define name="readme">
+  This page utilizes the PrimeFaces Wizard component and also uses Ajax and Partial
+  Page Refresh when you add parcels to the shipment. You can optionally simulate ParcelEvents
+  that will simulate the shipment flowing along a pre-determined path through the United States.
+</ui:define>
+</ui:composition>

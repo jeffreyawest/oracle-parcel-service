@@ -1,0 +1,60 @@
+<ui:composition
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:cc="http://java.sun.com/jsf/composite"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:parcel="http://java.sun.com/jsf/composite/parcel"
+    xmlns:address="http://java.sun.com/jsf/composite/address"
+    >
+
+<cc:interface>
+    <cc:attribute
+            name="shipmentList"
+            required="true"
+            type="java.util.List"/>
+  </cc:interface>
+
+  <cc:implementation>
+
+    <h:dataTable value="#{cc.attrs.shipmentList}"
+                 var="shipment"
+                 styleClass="data-table"
+                 headerClass="table-header"
+                 rowClasses="row-odd,row-even"                
+                 columnClasses="column-center, column-left">
+
+      <f:facet name="header">Shipments</f:facet>
+
+      <h:column>
+        <f:facet name="header">ID</f:facet>
+        <h:outputText value="#{shipment.id}"/>
+      </h:column>
+
+      <h:column>
+        <f:facet name="header">Created</f:facet>
+        <h:outputText value="#{shipment.createdDate}"/>
+      </h:column>
+
+      <h:column>
+        <f:facet name="header">To Address</f:facet>
+        <address:table address="#{shipment.toAddress}"/>
+      </h:column>
+      <h:column>
+        <f:facet name="header">From Address</f:facet>
+        <address:table address="#{shipment.fromAddress}"/>
+      </h:column>
+
+      <h:column>
+        <f:facet name="header">Service</f:facet>
+        <h:outputText value="#{shipment.shippingServiceName}"/>
+      </h:column>
+
+      <h:column>
+        <f:facet name="header">Parcels</f:facet>
+        <parcel:dataTable parcelList="#{shipment.parcels}"/>
+      </h:column>
+    </h:dataTable>
+  </cc:implementation>
+
+  </ui:composition>

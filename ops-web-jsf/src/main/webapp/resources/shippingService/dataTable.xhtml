@@ -1,0 +1,52 @@
+<ui:composition
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:cc="http://java.sun.com/jsf/composite"
+    xmlns:f="http://java.sun.com/jsf/core"
+    >
+
+
+  <cc:interface>
+    <cc:attribute
+        name="shippingServiceList"
+        required="false"
+        type="java.util.List"/>
+
+  </cc:interface>
+
+  <cc:implementation>
+
+    <h:dataTable value="#{cc.attrs.shippingServiceList}"
+                 var="service"
+                 styleClass="data-table"
+                 headerClass="table-header"
+                 rowClasses="row-odd,row-even"
+                 columnClasses="column-center, column-left">
+
+      <f:facet name="header">Shipping Services</f:facet>
+
+      <h:column>
+        <f:facet name="header">Name</f:facet>
+        <h:outputText value="#{service.name}"/>
+      </h:column>
+
+      <h:column>
+        <f:facet name="header">Description</f:facet>
+        <h:outputText value="#{service.description}"/>
+      </h:column>
+
+      <h:column>
+        <f:facet name="header">Cost</f:facet>
+        <h:outputText value="#{service.cost}"/>
+      </h:column>
+
+      <h:column>
+        <f:facet name="header">Delivery Estimate</f:facet>
+        <h:outputText value="#{service.deliveryEstimate} Days"/>
+      </h:column>
+
+    </h:dataTable>
+  </cc:implementation>
+
+</ui:composition>

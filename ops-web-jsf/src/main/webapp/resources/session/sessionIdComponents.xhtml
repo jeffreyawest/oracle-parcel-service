@@ -1,0 +1,44 @@
+<ui:composition
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:cc="http://java.sun.com/jsf/composite"
+    >
+
+  <cc:interface/>
+
+  <cc:implementation>
+    <h:panelGroup layout="block"
+                  id="sessionData"
+                  class="session_id_header"
+                  style="visibility: visible">
+
+      <h:outputText style="font-weight: bold;" value="Server: "/>
+      <h:outputText value="#{sessionControllerBean.webLogicServerName}"/>
+      <br/>
+
+      <h:outputText style="font-weight: bold;" value="Full ID: "/>
+      <h:outputText value="#{sessionControllerBean.wlFullSessionId}"/>
+      <br/>
+
+      <h:outputText style="font-weight: bold;" value="Session ID: "/>
+      <h:outputText value="#{sessionControllerBean.wlSessionId}"/>
+      <br/>
+
+      <h:outputText style="font-weight: bold;" value="Primary JVM ID: "/>
+      <h:outputText value="#{sessionControllerBean.wlSessionPrimaryJvmId}"/>
+      <br/>
+
+      <h:outputText style="font-weight: bold;" value="Secondary JVM ID: "/>
+      <h:outputText value="#{sessionControllerBean.wlSessionSecondaryJvmId}"/>
+      <br/>
+
+      <h:outputText style="font-weight: bold;" value="Session Created Date: "/>
+      <h:outputText value="#{sessionControllerBean.wlSessionCreatedDate}"/>
+      <br/>
+
+    </h:panelGroup>
+
+  </cc:implementation>
+
+</ui:composition>

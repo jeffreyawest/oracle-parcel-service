@@ -1,0 +1,390 @@
+<!--
+Copyright (c) 2000, 2010, Oracle and/or its affiliates. All rights reserved.
+
+Oracle is a registered trademarks of Oracle Corporation and/or its affiliates.
+
+This software is the confidential and proprietary information of
+Oracle Corporation. You shall not disclose such confidential and
+proprietary information and shall use it only in accordance with the
+terms of the license agreement you entered into with Oracle.
+
+This notice may not be removed or altered.
+-->
+
+<!--
+This is the XML DTD for the report-config.xml configuration file.
+The configuration file should include a DOCTYPE of the following form:
+
+<!DOCTYPE report-config SYSTEM "report-config.dtd">
+
+Since  : Coherence 3.4
+Authors: ew
+-->
+
+<!--
+The report-config element is the root element of the report configuration
+descriptor.
+
+Used in: n/a
+-->
+<!ELEMENT report-config
+  (report+)>
+
+<!--
+The report element contains information necessary to generate a JMX based
+report.
+
+Used in: report-config
+-->
+<!ELEMENT report
+  (description?, file-name, delim?, hide-headers?, filters?, query, row)>
+
+<!--
+The description element contains a descriptive heading for the report.
+-->
+<!ELEMENT description (#PCDATA)>
+
+<!--
+The file-name element contains the file name for the generated report.
+The file name could be either absolute or relative to a directory specified in
+the corresponding report-group descriptor.
+
+If the specified file exists then the new report lines will be appended to the
+file; otherwise a new report file will be created.
+
+The file name may contain any of the three special macros: {sequence}, {node}
+and {date}.
+
+The {sequence} macro is replaced with an execution counter (a sequential
+number), which is used to generate new files for each report execution.
+
+The {node} macro is replaced with the member id of the report executing node.
+Use this macro to create different files for reports executed on different
+cluster nodes.
+
+The {date} macro is replaced with the current date (YYYYMMDD).
+
+Note: a process running the reporter requires read/write/create access to the
+location where the output files are created.
+-->
+
+<!ELEMENT file-name (#PCDATA)>
+
+<!--
+The delim element specifies a character that is used to separate column or
+array values.
+
+Valid values: "{tab}", "{space}", or any non-whitespace character.
+-->
+<!ELEMENT delim (#PCDATA)>
+
+<!--
+The hide-headers element specifies whether the description and the column
+headers should be included in the report.
+
+Used in: report
+
+Valid values are true or false (default).
+-->
+<!ELEMENT hide-headers (#PCDATA)>
+
+<!--
+The filters element contains a group of filter elements.
+
+Used in: report
+-->
+<!ELEMENT filters
+  (filter*)>
+
+<!--
+The filter element defines a set of filters that can be used in the report.
+
+Used in: filters
+-->
+<!ELEMENT filter
+  (type?, params?)>
+
+<!--
+The params element identifies an argument column or a filter reference.
+
+Used in: filter, column
+-->
+<!ELEMENT params
+  (filter-ref+ | column-ref+)>
+
+<!--
+The query element contains information necessary to consruct a JMX query to
+find all MBeans contributing to the report or column.
+
+Used in: report, column
+-->
+<!ELEMENT query
+  (pattern, filter-ref?, params?)>
+
+<!--
+The pattern element contains a JMX query or Object name to be included in the
+report.
+
+Example: include all Node MBeans in the report or column.
+  <query>
+    <pattern>Coherence:type=Node,*</pattern>
+  </query>
+
+Example: include only the Cluster MBean in the report or column
+  <query>
+    <pattern>Coherence:type=Cluster</pattern>
+  </query>
+
+The pattern string allows macro substitutions with runtime values that
+come from report columns.
+
+Example: to provide a cache name into the query pattern one can define a
+    system property called reporter.cacheName and use the following construct:
+
+  <report>
+    <query>
+      <pattern>Coherence:type=Cache,name={CacheName},*</pattern>
+    </query>
+
+    <row>
+      <column id="CacheName">
+        <type>property</type>
+        <name>reporter.cacheName</name>
+      </column>
+    </row>
+  </report>
+
+Sometimes a query pattern is known to result in a list of MBean names that
+have a well known key attribute. That key attribute could be used to retrieve
+an attribute from a related (joined) MBean.
+
+Example: since "Coherence:type=Service,*" pattern is known to result in
+    MBeans in the following format: "Coherence:type=Service,nodeId=NNN",
+    the configuration below is used to print teh MemberName attribute from a
+    corresponding NodeMBean along with the ServiceName attribute for
+    the ServiceMBean.
+
+  <report>
+    <query>
+      <pattern>Coherence:type=Service,*</pattern>
+      <params>
+         <column-ref>MemberName</column-ref>
+         <column-ref>NodeId</column-ref>
+         <column-ref>ServiceName</column-ref>
+      </params>
+    </query>
+
+    <row>
+      <column id="MemberName">
+        <type>attribute<type>
+        <name>MemberName</name>
+        <query>
+          <pattern>Coherence:type=Node,nodeId={NodeId}</pattern>
+        <query>
+      <column>
+
+      <column id="NodeId">
+        <type>key</type>
+        <name>nodeId</name>
+      </column>
+
+      <column id="ServiceName">
+        <type>key</type>
+        <name>name</name>
+      </column>
+    </row>
+  </report>
+-->
+<!ELEMENT pattern (#PCDATA)>
+
+<!--
+The row element contains a list of columns to be included in the report.
+
+Used in: report-config
+-->
+<!ELEMENT row
+  (column+)>
+
+<!--
+The column element contatins information that the Reporter uses to generate a
+report column.
+
+Used in: row
+-->
+<!ELEMENT column
+  (type?, name?, header?, delim?, query?, hidden?, column-ref?, function-name?,
+   params?, data-type?, value?, group-by?, subquery?, return-neg?)>
+
+<!--
+The type element identifies an XmlFilter or XmlColumn implementation.
+
+The column/type element defines the type of the column in the report.
+
+Valid values:
+
+  attribute  A column which contains the data from a MBean attribute (default).
+
+  key        A column which contains the value from a MBean key attribute.
+
+  method     A column which contains the result of an MBean method invocation.
+
+  function   A column which contains the result of a function or aggregation.
+             See function-name below.
+
+  global     A column that contains a value not related to any specific MBean.
+             Global column names are {report-time},  {report-count}, {node-id}.
+
+  constant   A column which contains a constant string of numeric value.
+
+  property   A column which contains a value of a Java system property.
+
+
+The filter/type element defines the type of the filter in the report.
+
+Valid values:
+
+  equals     Filter which compares the result of two or more column references
+             for a value equality.
+
+  greater    Filter which compares the results of two column references
+             for "greater than" condition. If any of the values is resolved to
+             null, the evaluation yields false. (This approach is equivalent
+             to the way the NULL values are handled by SQL.)
+
+  less       Filter which compares the results of two column references
+             for "less than" condition. If any of the values is resolved to
+             null, the evaluation yields false.
+
+  not        Filter which returns the logical "not" of a filter reference.
+
+  and        Filter which returns the logical "and" of two filter references.
+
+  or         Filter which returns the logical "or" of two filter references.
+
+
+Used in: filter, column
+-->
+<!ELEMENT type (#PCDATA)>
+
+<!--
+The function-name is the name of the calculation to apply to the associated
+MBean attribute values.
+
+This element is only valid when the column type is "function".
+
+Valid values:
+    sum       The sum of all retrieved attribute values.
+    avg       The average value for all retrieved attribute values.
+    min       The minimum numeric value for all retrieved attribute values.
+    max       The maximum numeric value for all retrieved attribute values.
+    add       The sum of values for two column references.
+    subtract  The difference between values for two column references.
+    multiply  The product of values for two column references.
+    divide    The ratio between values for two column references.
+
+Used in: column
+-->
+
+<!ELEMENT function-name (#PCDATA)>
+
+<!--
+The name element represents an attribute or method name on the MBean. For
+composite data types the name element can contain a forward slash (/)
+delimited name sequence.
+
+Used in: column
+-->
+<!ELEMENT name (#PCDATA)>
+
+<!--
+The header element contains the column header. If this item is omitted, the
+value of the "name" element is used instead.
+
+Used in: column
+-->
+<!ELEMENT header (#PCDATA)>
+
+<!--
+The filter-ref element contains a reference to a filter id. The filter-ref
+is used to pass a filter as an argument to a query or another filter.
+
+Used in: params
+-->
+<!ELEMENT filter-ref (#PCDATA)>
+
+<!--
+The column-ref element contains a reference to a column identifier. The
+column-ref is used to pass a column value as an argument to a filter or
+another column.
+
+Used in: params
+-->
+<!ELEMENT column-ref (#PCDATA)>
+
+<!--
+The data-type element contains the data type of a constant column.
+
+Valid values: double, string.
+
+Used in: column
+-->
+<!ELEMENT data-type (#PCDATA)>
+
+<!--
+The value element contains the value of a constant column.
+
+Used in: column
+-->
+<!ELEMENT value (#PCDATA)>
+
+<!--
+The hide element specifies whether or not the column value should be hidden in
+the report.
+
+Used in: column
+-->
+<!ELEMENT hidden (#PCDATA)>
+
+<!--
+The group-by element specifies whether the column should be included
+in the "group by" clause of the query.
+
+Valid values are true or false (default).
+
+Used in : column
+-->
+<!ELEMENT group-by (#PCDATA)>
+
+<!--
+The subquery element specifies whether the column is included
+as part of a subquery
+
+Valid values are true or false (default).
+
+Used in : column
+-->
+<!ELEMENT subquery (#PCDATA)>
+
+<!--
+The return-neg element specifies if a negative value should be returned to the
+query.  Negative values are considered "error" or "not available" codes on
+Coherence MBeans.  By default these codes will be returned as zero to not impact
+and column calculations.
+
+Valid values are true or false (default).
+
+Used in : column
+-->
+<!ELEMENT return-neg (#PCDATA)>
+
+<!--
+The identifier of the filter. The value can be used as a filter-ref.
+-->
+<!ATTLIST filter id CDATA #IMPLIED>
+
+<!--
+The identifier of the column. The value can be used as a column-ref.
+-->
+<!ATTLIST column id CDATA #IMPLIED>
+
+

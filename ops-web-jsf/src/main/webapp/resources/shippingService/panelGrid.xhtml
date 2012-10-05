@@ -1,0 +1,35 @@
+<ui:composition
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:cc="http://java.sun.com/jsf/composite"
+    >
+
+  <cc:interface>
+    <cc:attribute
+        name="service"
+        required="false"
+        />
+
+  </cc:interface>
+
+  <cc:implementation>
+
+    <h:panelGrid columns="2">
+
+      <h:outputText value="Name"/>
+      <h:outputText value="#{cc.attrs.service.name}"/>
+
+      <h:outputText value="Description"/>
+      <h:outputText value="#{cc.attrs.service.description}"/>
+
+      <h:outputText value="Cost"/>
+      <h:outputText value="#{cc.attrs.service.cost}"/>
+
+      <h:outputText value="Delivery Estimate"/>
+      <h:outputText value="#{cc.attrs.service.deliveryEstimate}"/>
+    </h:panelGrid>
+
+  </cc:implementation>
+
+</ui:composition>

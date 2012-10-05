@@ -1,0 +1,3 @@
+#!/bin/bash
+
+runit com.oracle.demo.ops.shipment.notifier.TestPublish &

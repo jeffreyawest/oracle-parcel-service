@@ -1,0 +1,46 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+  <!-- ==================================================================================== -->
+
+  <parent>
+    <groupId>com.oracle.demo.ops</groupId>
+    <artifactId>ops-common</artifactId>
+    <version>3.0</version>
+    <relativePath>../ops-common/pom.xml</relativePath>
+  </parent>
+
+  <!-- ==================================================================================== -->
+
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.oracle.demo.ops</groupId>
+  <artifactId>ops-ws</artifactId>
+  <packaging>pom</packaging>
+  <version>3.0</version>
+  <url>https://www.samplecode.oracle.com/sf/projects/oracle-parcel-svc</url>
+  <name>ops-ws</name>
+
+  <!-- ==================================================================================== -->
+
+  <properties>
+    <path.from.top>oracle-parcel-service/ops-ee/${project.artifactId}</path.from.top>
+  </properties>
+
+  <!-- ==================================================================================== -->
+
+  <scm>
+    <connection>scm:svn:${project.scm.url}</connection>
+    <developerConnection>scm:svn:${project.scm.url}</developerConnection>
+    <url>${ops.scm.url}/${path.from.top}</url>
+  </scm>
+
+  <!-- ==================================================================================== -->
+
+  <modules>
+    <module>ops-ws-parcel</module>
+    <module>ops-ws-shipment</module>
+  </modules>
+
+  <!-- ==================================================================================== -->
+
+</project>

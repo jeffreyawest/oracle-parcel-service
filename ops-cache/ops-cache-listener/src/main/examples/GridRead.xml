@@ -1,0 +1,48 @@
+<cache-config>
+	<caching-scheme-mapping>
+		<cache-mapping>
+			<cache-name>*</cache-name>
+			<scheme-name>eclipselink-distributed-readonly</scheme-name>
+		</cache-mapping>
+	</caching-scheme-mapping>
+
+  <caching-schemes>
+		<distributed-scheme>
+			<scheme-name>eclipselink-distributed-readonly</scheme-name>
+			<service-name>EclipseLinkJPAReadOnly</service-name>
+			<!--
+        Configure a wrapper serializer to support serialization of relationships.
+      -->
+			<serializer>
+				<class-name>oracle.eclipselink.coherence.integrated.cache.WrapperSerializer</class-name>
+			</serializer>
+			<backing-map-scheme>
+				<read-write-backing-map-scheme>
+					<internal-cache-scheme>
+						<local-scheme/>
+					</internal-cache-scheme>
+					<!--
+            Define the cache scheme.
+          -->
+					<cachestore-scheme>
+						<class-scheme>
+							<class-name>oracle.eclipselink.coherence.integrated.EclipseLinkJPACacheLoader</class-name>
+							<init-params>
+								<init-param>
+									<param-type>java.lang.String</param-type>
+									<param-value>{cache-name}</param-value>
+								</init-param>
+								<init-param>
+									<param-type>java.lang.String</param-type>
+									<param-value>employee-pu</param-value>
+								</init-param>
+							</init-params>
+						</class-scheme>
+					</cachestore-scheme>
+					<read-only>true</read-only>
+				</read-write-backing-map-scheme>
+			</backing-map-scheme>
+			<autostart>true</autostart>
+		</distributed-scheme>
+	</caching-schemes>
+</cache-config>

@@ -1,0 +1,301 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+  <!-- ==================================================================================== -->
+
+  <artifactId>ops-common</artifactId>
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.oracle.demo.ops</groupId>
+  <packaging>pom</packaging>
+  <version>3.0</version>
+  <name>ops-common</name>
+  <url>https://www.samplecode.oracle.com/sf/projects/oracle-parcel-svc</url>
+
+  <!-- ==================================================================================== -->
+
+  <properties>
+    <MIDDLEWARE_HOME>/u01/wls1211/</MIDDLEWARE_HOME>
+    <WEBLOGIC_HOME>${MIDDLEWARE_HOME}/wlserver_12.1</WEBLOGIC_HOME>
+    <COHERENCE_HOME>${MIDDLEWARE_HOME}/coherence_3.7</COHERENCE_HOME>
+
+    <WL_VERSION>12.1.1.0</WL_VERSION>
+
+
+    <XmlSchema.version>1.4.7</XmlSchema.version>
+    <coherence.version>3.7.1</coherence.version>
+    <eclipselink.version>2.1.2</eclipselink.version>
+    <javax.persistence.version>2.0.0</javax.persistence.version>
+
+    <ops.scm.url>https://svn.java.net/svn/oracle-pacel-svc~ops-ee6</ops.scm.url>
+
+  </properties>
+
+  <!-- ==================================================================================== -->
+
+  <modules>
+    <module>ops-common-deployable</module>
+    <module>ops-common-ejb</module>
+    <module>ops-common-ws</module>
+  </modules>
+
+  <!-- ==================================================================================== -->
+  <profiles>
+
+  </profiles>
+  <!-- ======================================================== -->
+
+  <build>
+    <defaultGoal>install</defaultGoal>
+    <finalName>${project.artifactId}</finalName>
+
+    <!-- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ -->
+
+    <plugins>
+
+      <plugin>
+        <artifactId>maven-deploy-plugin</artifactId>
+        <version>2.6</version>
+        <configuration>
+          <skip>true</skip>
+        </configuration>
+      </plugin>
+
+    </plugins>
+
+    <!-- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ -->
+
+    <pluginManagement>
+      <plugins>
+
+        <plugin>
+          <groupId>com.oracle.weblogic</groupId>
+          <artifactId>wls-maven-plugin</artifactId>
+          <version>12.1.1.0</version>
+          <configuration>
+            <middlewareHome>${MIDDLEWARE_HOME}</middlewareHome>
+            <weblogicHome>${WEBLOGIC_HOME}</weblogicHome>
+          </configuration>
+        </plugin>
+
+        <!--
+          This plugin sets the source and target language levels to Java 1.6
+        -->
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-compiler-plugin</artifactId>
+          <configuration>
+            <source>1.6</source>
+            <target>1.6</target>
+            <debug>false</debug>
+            <encoding>UTF-8</encoding>
+          </configuration>
+        </plugin>
+
+        <!-- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ -->
+
+        <!--
+         This plugin creates a manifest for JAR files that includes the maven related information
+         as well as the build timestamp for the build.  This can be used to make JAR files deployable
+         as Java EE libraries to WebLogic if desired
+        -->
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-jar-plugin</artifactId>
+
+          <configuration>
+            <archive>
+              <manifestEntries>
+                <Extension-Name>${project.artifactId}</Extension-Name>
+
+                <Specification-Title>${project.description}</Specification-Title>
+                <Specification-Version>${project.version}</Specification-Version>
+                <Specification-Vendor>Oracle</Specification-Vendor>
+
+                <Implementation-Title>${project.description}</Implementation-Title>
+                <Implementation-Version>${project.version}.${maven.build.timestamp}
+                </Implementation-Version>
+                <Implementation-Vendor>Oracle</Implementation-Vendor>
+                <Implementation-Vendor-Id>${project.groupId}</Implementation-Vendor-Id>
+              </manifestEntries>
+            </archive>
+          </configuration>
+        </plugin>
+
+      </plugins>
+    </pluginManagement>
+
+  </build>
+
+  <!-- ==================================================================================== -->
+
+  <dependencies>
+
+    <!-- This makes the JAVA EE 6 API available for all chile projects,
+which is all projects in this app -->
+    <dependency>
+      <groupId>javax</groupId>
+      <artifactId>javaee-api</artifactId>
+      <version>6.0</version>
+      <scope>provided</scope>
+    </dependency>
+
+  </dependencies>
+
+  <!-- ==================================================================================== -->
+
+  <dependencyManagement>
+    <dependencies>
+
+      <!-- Used for WSDL generation in Spring WS -->
+      <dependency>
+        <groupId>org.apache.ws.commons.schema</groupId>
+        <artifactId>XmlSchema</artifactId>
+        <version>${XmlSchema.version}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>com.oracle.demo.ops</groupId>
+        <artifactId>ops-services</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>com.oracle.demo.ops</groupId>
+        <artifactId>ops-domain-services</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>com.oracle.demo.ops</groupId>
+        <artifactId>ops-domain-services-tlg</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>com.oracle.demo.ops</groupId>
+        <artifactId>ops-event-handlers</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>com.oracle.demo.ops</groupId>
+        <artifactId>ops-domain-model</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>com.oracle.demo.ops</groupId>
+        <artifactId>ops-util</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>com.oracle.weblogic</groupId>
+        <artifactId>weblogic-spring</artifactId>
+        <version>${WL_VERSION}</version>
+        <scope>system</scope>
+        <systemPath>${WEBLOGIC_HOME}/server/lib/weblogic-spring.jar</systemPath>
+      </dependency>
+
+      <dependency>
+        <groupId>com.oracle.weblogic</groupId>
+        <artifactId>weblogic</artifactId>
+        <version>${WL_VERSION}</version>
+        <scope>system</scope>
+        <systemPath>${WEBLOGIC_HOME}/server/lib/weblogic.jar</systemPath>
+      </dependency>
+
+      <dependency>
+        <groupId>com.oracle.weblogic</groupId>
+        <artifactId>wljmsclient</artifactId>
+        <version>${WL_VERSION}</version>
+        <scope>system</scope>
+        <systemPath>${WEBLOGIC_HOME}/server/lib/wljmsclient.jar</systemPath>
+      </dependency>
+
+      <dependency>
+        <groupId>com.oracle.weblogic</groupId>
+        <artifactId>wlclient</artifactId>
+        <version>${WL_VERSION}</version>
+        <scope>system</scope>
+        <systemPath>${WEBLOGIC_HOME}/server/lib/wlclient.jar</systemPath>
+      </dependency>
+
+      <dependency>
+        <groupId>com.oracle.coherence</groupId>
+        <artifactId>coherence</artifactId>
+        <version>${coherence.version}</version>
+        <scope>system</scope>
+        <systemPath>${COHERENCE_HOME}/lib/coherence.jar</systemPath>
+      </dependency>
+
+
+      <dependency>
+        <groupId>org.eclipse.persistence</groupId>
+        <artifactId>eclipselink</artifactId>
+        <version>2.3.0</version>
+      </dependency>
+
+      <!--
+      <dependency>
+        <groupId>org.eclipse.persistence</groupId>
+        <artifactId>javax.persistence</artifactId>
+        <version>2.0.0</version>
+        <scope>system</scope>
+        <systemPath></systemPath>
+      </dependency>-->
+
+    </dependencies>
+
+  </dependencyManagement>
+
+  <!-- ==================================================================================== -->
+
+  <repositories>
+    <repository>
+      <id>EclipseLink Repo</id>
+      <!-- note that ampersands in this URL are escaped because this is in an xml file -
+             un-escape them to use in browser
+      -->
+      <url>http://www.eclipse.org/downloads/download.php?r=1&amp;nf=1&amp;file=/rt/eclipselink/maven.repo</url>
+
+      <snapshots>
+        <enabled>true</enabled>
+      </snapshots>
+    </repository>
+
+    <repository>
+      <id>maven2-repository.dev.java.net</id>
+      <name>Java.net Repository for Maven 2</name>
+      <url>http://download.java.net/maven/2/</url>
+    </repository>
+
+  </repositories>
+
+  <!-- ==================================================================================== -->
+
+  <pluginRepositories>
+
+    <pluginRepository>
+      <id>maven2-repository.dev.java.net</id>
+      <url>http://download.java.net/maven/2/</url>
+    </pluginRepository>
+
+    <pluginRepository>
+      <id>eviwarePluginRepository</id>
+      <url>http://www.soapui.org/repository/maven2/</url>
+    </pluginRepository>
+
+  </pluginRepositories>
+
+  <!-- ==================================================================================== -->
+
+  <distributionManagement>
+    <repository>
+      <id>repo</id>
+      <name>Repository Name</name>
+      <url>file://C:/Data/tools/maven-repository</url>
+    </repository>
+  </distributionManagement>
+
+</project>

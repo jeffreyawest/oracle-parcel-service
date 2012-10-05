@@ -1,0 +1,74 @@
+<ui:composition
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:p="http://primefaces.org/ui"
+    template="/templates/common/layout.xhtml">
+
+  <ui:define name="content">
+
+    <h:form prependId="false">
+
+      <p:dialog modal="true"
+                widgetVar="statusDialog"
+                header="Running Simulation"
+                draggable="false"
+                closable="false">
+
+        <p:graphicImage value="/resources/images/ajaxloadingbar.gif"/>
+
+      </p:dialog>
+
+      <p:confirmDialog
+          message="This will simulate shipments and parcels with Parcel Log Events.  If you entered a large number of shipments or parcels this may take a while.  Continue?"
+          hideEffect="explode"
+          header="Begin Simulation"
+          severity="alert"
+          widgetVar="confirmation">
+
+        <p:commandButton value="Begin"
+                         update="panel"
+                         onstart="confirmation.hide();statusDialog.show();status_message_poll.start();"
+                         oncomplete="statusDialog.hide();status_message_poll.stop();"
+                         actionListener="#{simulatorControllerBean.beginSimulation}"/>
+
+        <p:commandButton
+            value="Abort"
+            onclick="confirmation.hide()"
+            type="button"/>
+
+      </p:confirmDialog>
+
+      <p:panel id="panel" header="Simulate Events">
+
+        <p:messages/>
+
+
+        <h:panelGrid columns="2" cellpadding="10">
+
+          <h:panelGroup layout="block">
+            <h:panelGrid columns="2" cellpadding="10">
+              <h:outputText value="Number of Shipments"/>
+              <p:inputText value="#{simulatorControllerBean.inputNumberOfShipments}"/>
+
+              <h:outputText value="Number of Parcels per Shipment"/>
+              <p:inputText value="#{simulatorControllerBean.inputNumberOfParcelsPerShipment}"/>
+
+              <h:outputText value="Delay between Shipments"/>
+              <p:inputText value="#{simulatorControllerBean.inputShipmentDelay}"/>
+
+              <h:outputText value="Delay between Parcel Events"/>
+              <p:inputText value="#{simulatorControllerBean.inputParcelEventDelay}"/>
+
+              <p:commandButton value="Begin Simulation"
+                               global="false"
+                               onclick="confirmation.show()"/>
+            </h:panelGrid>
+          </h:panelGroup>
+        </h:panelGrid>
+      </p:panel>
+    </h:form>
+
+  </ui:define>
+
+</ui:composition>

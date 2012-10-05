@@ -1,0 +1,107 @@
+<ui:composition
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:cc="http://java.sun.com/jsf/composite"
+    xmlns:p="http://primefaces.org/ui"
+    xmlns:f="http://java.sun.com/jsf/core"
+    >
+
+  <cc:interface>
+
+    <cc:attribute
+        name="id"
+        default="addressInput"
+        required="false"/>
+
+  </cc:interface>
+
+  <cc:implementation>
+
+    <h:panelGrid columns="3">
+
+      <p:outputLabel style="white-space: pre;"
+                     for="id_#{cc.id}_addressee"
+                     value="In Care Of:"/>
+      <p:inputText
+          label="Addressee (to/from)"
+          id="id_#{cc.id}_addressee"
+          required="true"
+          size="30"
+          requiredMessage="Addressee is required!"
+          value="#{addressInputBean.address.addressee}"/>
+      <p:message for="id_#{cc.id}_addressee" display="icon"/>
+
+      <p:outputLabel style="white-space: pre;"
+                     for="id_#{cc.id}_addressLine1"
+                     value="Address Line 1:"/>
+      <p:inputText
+          label="Address Line 1"
+          id="id_#{cc.id}_addressLine1"
+          update="adressInputMessages"
+          required="true"
+          size="30"
+          requiredMessage="Address Line 1 is required!"
+          value="#{addressInputBean.address.addressLine1}"/>
+      <p:message for="id_#{cc.id}_addressLine1" display="icon"/>
+
+      <p:outputLabel style="white-space: pre;"
+                     for="id_#{cc.id}_addressLine2"
+                     value="Address Line 2: "/>
+      <p:inputText
+          label="Address Line 2"
+          id="id_#{cc.id}_addressLine2"
+          size="30"
+          value="#{addressInputBean.address.addressLine2}"/>
+      <p:message for="id_#{cc.id}_addressLine2" display="icon"/>
+
+      <p:outputLabel style="white-space: pre;"
+                     for="id_#{cc.id}_zip"
+                     value="Postal Code: "/>
+      <p:inputText
+          label="Postal Code"
+          id="id_#{cc.id}_zip"
+          required="true"
+          size="8"
+          requiredMessage="Postal Code is required"
+          value="#{addressInputBean.address.postalCode}"/>
+      <p:message for="id_#{cc.id}_zip" display="icon"/>
+
+      <h:panelGroup></h:panelGroup>
+      <p:commandButton value="Validate"
+                       id="btnValidatePostalCode"
+                       actionListener="#{addressInputBean.processPostalCode}"
+                       process="@this id_#{cc.id}_zip"
+                       update="id_#{cc.id}_city id_#{cc.id}_state"/>
+      <p:message for="btnValidatePostalCode" display="icon"/>
+
+      <p:outputLabel style="white-space: pre;"
+                     for="id_#{cc.id}_city"
+                     value="City: "/>
+      <p:inputText
+          label="City"
+          id="id_#{cc.id}_city"
+          widgetVar="varCity"
+          size="30"
+          disabled="true"
+          value="#{addressInputBean.address.city}"/>
+      <h:panelGroup></h:panelGroup>
+
+      <p:outputLabel style="white-space: pre;"
+                     for="id_#{cc.id}_state"
+                     value="State: "/>
+      <p:selectOneMenu
+          label="State"
+          id="id_#{cc.id}_state"
+          widgetVar="varState"
+          disabled="true"
+          value="#{addressInputBean.address.state}">
+        <f:selectItems value="#{ReferenceValueBean.stateMap}"/>
+      </p:selectOneMenu>
+      <h:panelGroup></h:panelGroup>
+
+    </h:panelGrid>
+
+  </cc:implementation>
+
+</ui:composition>

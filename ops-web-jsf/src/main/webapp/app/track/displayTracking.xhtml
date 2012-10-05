@@ -1,0 +1,157 @@
+<ui:composition
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:address="http://java.sun.com/jsf/composite/address"
+    xmlns:parcelLog="http://java.sun.com/jsf/composite/parcelLog"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:p="http://primefaces.org/ui"
+    xmlns:f="http://java.sun.com/jsf/core"
+    template="/templates/common/layout.xhtml">
+
+  <ui:define name="head">
+    <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+  </ui:define>
+
+  <ui:define name="content">
+
+    <h:form prependId="false" id="form">
+
+      <p:poll interval="5"
+              listener="#{parcelTrackingControllerBean.updatePoll}"
+              update=":form:trackingPanel :form:trackingMap :form:parcelDataTable" />
+
+      <p:growl id="growl" life="3000"/>
+
+      <p:panel header="Details for Shipment Number: #{parcelTrackingControllerBean.shipment.id}">
+
+        <h:panelGrid columns="2"
+
+                     style="position:relative;width:100%;">
+
+          <h:panelGrid columns="1"
+                       width="50%"
+                       style="position:relative;">
+
+            <h:panelGrid columns="2"
+                         style="position:relative;width: 100%">
+
+              <h:panelGroup style="float:left;top:0;left:0;width: 100%;">
+                <p:panel header="To Address">
+                  <address:fourLine address="#{parcelTrackingControllerBean.shipment.toAddress}"/>
+                </p:panel>
+              </h:panelGroup>
+
+              <h:panelGroup style="float:right;top:0;right:0;width: 100%;">
+
+                <p:panel header="From Address">
+                  <address:fourLine address="#{parcelTrackingControllerBean.shipment.fromAddress}"/>
+                </p:panel>
+
+              </h:panelGroup>
+            </h:panelGrid>
+
+            <p:panel header="Service">
+              <h:outputText value="Service: "/>
+              <h:outputText value="#{parcelTrackingControllerBean.shipment.shippingServiceName}"/>
+            </p:panel>
+
+            <p:panel header="Parcels">
+
+              <p:dataTable value="#{parcelTrackingControllerBean.shipment.parcels}"
+                           id="parcelDataTable"
+                           var="parcel"
+                           widgetVar="varParcelDataRable"
+                           styleClass="data-table"
+                           headerClass="table-header"
+                           rowClasses="row-odd,row-even"
+                           columnClasses="column-center">
+
+                <p:column style="width:4%">
+                  <f:facet name="header">Track</f:facet>
+
+                  <p:commandButton id="selectButton"
+                                   update=":form:trackingPanel :form:trackingMap :form:parcelDataTable"
+                                   process="@this"
+                                   widgetVar="jsMyButton"
+                                   icon="ui-icon-search"
+                                   ajax="true"
+                                   tile="Display">
+
+                    <f:setPropertyActionListener value="#{parcel}"
+                                                 target="#{parcelTrackingControllerBean.newParcel}"/>
+                  </p:commandButton>
+
+                </p:column>
+
+                <p:column>
+                  <f:facet name="header">ID</f:facet>
+                  <h:outputText value="#{parcel.id}"/>
+                </p:column>
+
+                <p:column>
+                  <f:facet name="header">Status</f:facet>
+                  <h:outputText value="#{parcel.parcelStatus.toString()}"/>
+                </p:column>
+
+                <p:column>
+                  <f:facet name="header">Contents</f:facet>
+                  <h:outputText value="#{parcel.contents}"/>
+                </p:column>
+
+                <p:column>
+                  <f:facet name="header">Weight</f:facet>
+                  <h:outputText value="#{parcel.weight}"/>
+                </p:column>
+
+                <p:column>
+                  <f:facet name="header">W x L x H</f:facet>
+                  <h:outputText value="#{parcel.width} x #{parcel.length} x #{parcel.height}"/>
+                </p:column>
+
+              </p:dataTable>
+            </p:panel>
+
+          </h:panelGrid>
+
+          <h:panelGroup style="position:absolute;float:right;top:0;right:0;">
+
+            <p:panel header="Tracking Map for Parcel ID=[#{parcelTrackingControllerBean.parcel.id}]">
+
+              <f:view contentType="text/html">
+                <p:gmap center="#{parcelTrackingControllerBean.mapModelWrapper.mapCenter}"
+                        zoom="#{parcelTrackingControllerBean.mapModelWrapper.zoomLevel}"
+                        id="trackingMap"
+                        type="HYBRID"
+                        style="width:400px;height:300px;"
+                        streetView="false"
+                        model="#{parcelTrackingControllerBean.mapModelWrapper.mapModel}">
+
+                  <p:ajax event="overlaySelect" listener="#{parcelTrackingControllerBean.onMarkerSelect}"/>
+
+                  <p:gmapInfoWindow>
+                    <p:outputPanel style="text-align:center;display:block;margin:auto:">
+                      <h:outputText value="#{parcelTrackingControllerBean.marker.title}"/>
+                    </p:outputPanel>
+
+                  </p:gmapInfoWindow>
+                </p:gmap>
+              </f:view>
+
+            </p:panel>
+          </h:panelGroup>
+
+        </h:panelGrid>
+      </p:panel>
+
+      <p:panel id="trackingPanel"
+               widgetVar="varTrackingPanel"
+               header="Tracking Log for Parcel ID: #{parcelTrackingControllerBean.parcel.id}">
+
+        <parcelLog:dataTable parcelLogEventList="#{parcelTrackingControllerBean.parcelLog}"
+                             tableId="tblParcelEventLog"/>
+
+      </p:panel>
+    </h:form>
+  </ui:define>
+
+</ui:composition>

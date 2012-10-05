@@ -1,0 +1,73 @@
+<ui:composition
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:p="http://primefaces.org/ui"
+    template="/templates/common/layout.xhtml">
+
+  <ui:define name="content">
+
+    <p:panel header="Track a Package or Shipment">
+
+      <h:form prependId="false">
+
+        <p:growl id="growl" life="3000"/>
+
+        <h:panelGrid columns="3">
+
+          <h:panelGrid columns="2">
+
+            <h:outputText value="Search by Parcel ID: "/>
+            <p:inputText id="inputParcelId"
+                         value="#{parcelTrackingControllerBean.inputParcelId}"/>
+
+            <h:panelGroup/>
+            <p:commandButton value="Submit"
+                             style="float:right;"
+                             process="inputParcelId @this"
+                             update="growl"
+                             actionListener="#{parcelTrackingControllerBean.trackParcel}"
+                             action="displayTracking"/>
+
+            <h:outputText value="Search by Shipment ID: "/>
+
+            <p:inputText id="inputShipmentId"
+                         value="#{parcelTrackingControllerBean.inputShipmentId}"/>
+
+            <h:panelGroup/>
+            <p:commandButton value="Submit"
+                             style="float:right;"
+                             process="inputShipmentId @this"
+                             update="growl"
+                             actionListener="#{parcelTrackingControllerBean.trackShipment}"
+                             action="displayTracking"/>
+
+            <h:outputText value="Search By Ext. Reference ID: "/>
+
+            <p:inputText id="inputExternalId" value="#{parcelTrackingControllerBean.inputExternalId}"/>
+
+            <h:panelGroup/>
+
+            <p:commandButton value="Submit"
+                             style="float:right;"
+                             process="inputExternalId @this"
+                             update="growl"
+                             actionListener="#{parcelTrackingControllerBean.trackShipmentByExternalId}"
+                             action="displayTracking"/>
+
+          </h:panelGrid>
+
+          <p:spacer width="75"/>
+
+          <h:graphicImage library="images"
+                          style="height:250px; float:right; right:0px;"
+                          name="trackPackage.jpg"/>
+        </h:panelGrid>
+
+      </h:form>
+
+    </p:panel>
+
+  </ui:define>
+
+</ui:composition>

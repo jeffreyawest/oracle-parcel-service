@@ -1,0 +1,63 @@
+{
+   "results" : [
+      {
+         "address_components" : [
+            {
+               "long_name" : "75275",
+               "short_name" : "75275",
+               "types" : [ "postal_code" ]
+            },
+            {
+               "long_name" : "Dallas",
+               "short_name" : "Dallas",
+               "types" : [ "locality", "political" ]
+            },
+            {
+               "long_name" : "Dallas",
+               "short_name" : "Dallas",
+               "types" : [ "administrative_area_level_2", "political" ]
+            },
+            {
+               "long_name" : "Texas",
+               "short_name" : "TX",
+               "types" : [ "administrative_area_level_1", "political" ]
+            },
+            {
+               "long_name" : "United States",
+               "short_name" : "US",
+               "types" : [ "country", "political" ]
+            }
+         ],
+         "formatted_address" : "Dallas, TX 75275, USA",
+         "geometry" : {
+            "bounds" : {
+               "northeast" : {
+                  "lat" : 32.84468320,
+                  "lng" : -96.7788460
+               },
+               "southwest" : {
+                  "lat" : 32.83464140,
+                  "lng" : -96.78687950
+               }
+            },
+            "location" : {
+               "lat" : 32.840,
+               "lng" : -96.780
+            },
+            "location_type" : "APPROXIMATE",
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 32.84468320,
+                  "lng" : -96.7788460
+               },
+               "southwest" : {
+                  "lat" : 32.83877930,
+                  "lng" : -96.78687950
+               }
+            }
+         },
+         "types" : [ "postal_code" ]
+      }
+   ],
+   "status" : "OK"
+}

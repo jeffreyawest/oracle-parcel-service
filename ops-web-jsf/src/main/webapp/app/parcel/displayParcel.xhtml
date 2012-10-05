@@ -1,0 +1,25 @@
+<ui:composition
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:parcelLog="http://java.sun.com/jsf/composite/parcelLog"
+    xmlns:parcel="http://java.sun.com/jsf/composite/parcel"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    template="/templates/common/layout.xhtml">
+
+  <ui:define name="content">
+
+    <parcel:table tableId="parcelTable" parcel="#{parcelControllerBean.parcel}"/>
+
+    <br/>
+
+    <parcelLog:dataTable
+        tableId="parcelLogTable"
+        parcelLogEventList="#{parcelControllerBean.parcelLog}"/>
+
+  </ui:define>
+
+  <ui:define name="readme">
+    This page shows a single Parcel using the Composite named 'table' defined for the Parcel entity in '/resources/parcel'.
+    The value is retrieved from the 'parcel' attribute of the ParcelControllerBean.  Other pages may set this as an outcome in order to display a single parcel.
+  </ui:define>
+
+</ui:composition>

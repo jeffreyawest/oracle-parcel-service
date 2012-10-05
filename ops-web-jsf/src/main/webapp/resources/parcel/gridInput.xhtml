@@ -1,0 +1,47 @@
+<ui:composition
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:cc="http://java.sun.com/jsf/composite"
+    xmlns:p="http://primefaces.org/ui"
+    >
+
+  <cc:interface>
+    <cc:attribute
+        name="parcel"
+        required="true"
+        type="com.oracle.demo.ops.domain.Parcel"/>
+  </cc:interface>
+
+  <cc:implementation>
+
+    <h:panelGrid columns="2" columnClasses="label, value">
+      <h:outputText value="Parcel Contents: *" class="shipmentfont"/>
+      <p:inputText required="true"
+                   label="parcel_contents"
+                   value="#{cc.attrs.contents}"/>
+
+      <h:outputText value="Parcel Weight: " class="shipmentfont"/>
+      <p:inputText required="true"
+                   label="parcel_weight"
+                   value="#{cc.attrs.weight}"/>
+
+      <h:outputText value="Parcel Height: *" class="shipmentfont"/>
+      <p:inputText required="true"
+                   label="parcel_height"
+                   value="#{cc.attrs.height}"/>
+
+      <h:outputText value="Parcel Width: *" class="shipmentfont"/>
+      <p:inputText required="true"
+                   label="parcel_width"
+                   value="#{cc.attrs.width}"/>
+
+      <h:outputText value="Parcel Length: *" class="shipmentfont"/>
+      <p:inputText required="true"
+                   label="parcel_length"
+                   value="#{cc.attrs.length}"/>
+    </h:panelGrid>
+
+  </cc:implementation>
+
+</ui:composition>

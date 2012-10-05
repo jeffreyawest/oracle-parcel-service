@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:composite="http://java.sun.com/jsf/composite">
+
+<composite:interface>
+
+</composite:interface>
+
+<composite:implementation>
+  #{timeBean.time}
+  <div id="clock" style="font-size: 20px; border:2px solid blue"/>
+  <h:outputScript name="js/app.js" target="head"/>
+
+</composite:implementation>
+
+</html>

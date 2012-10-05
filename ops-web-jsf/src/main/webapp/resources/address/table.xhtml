@@ -1,0 +1,48 @@
+<ui:composition
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:cc="http://java.sun.com/jsf/composite"
+    xmlns:f="http://java.sun.com/jsf/core"
+    >
+
+<cc:interface>
+    <cc:attribute
+        required="false"
+        name="address"
+        type="com.oracle.demo.ops.domain.Address"/>
+
+    <cc:attribute
+        required="false"
+        name="header"/>
+  </cc:interface>
+
+  <cc:implementation>
+
+    <h:panelGrid columns="2" styleClass="data-table">
+      <f:facet name="header">
+        <h:outputText value="#{cc.attrs.header}"/>
+      </f:facet>
+
+      <h:outputText value="Addressee"/>
+      <h:outputText value="#{cc.attrs.address.addressee}"/>
+
+      <h:outputText value="Line 1"/>
+      <h:outputText value="#{cc.attrs.address.addressLine1}"/>
+
+      <h:outputText value="Line 2"/>
+      <h:outputText value="#{cc.attrs.address.addressLine2}"/>
+
+      <h:outputText value="City"/>
+      <h:outputText value="#{cc.attrs.address.city}"/>
+
+      <h:outputText value="State"/>
+      <h:outputText value="#{cc.attrs.address.state}"/>
+
+      <h:outputText value="Postal Code"/>
+      <h:outputText value="#{cc.attrs.address.postalCode}"/>
+    </h:panelGrid>
+
+  </cc:implementation>
+
+  </ui:composition>

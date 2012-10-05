@@ -1,0 +1,49 @@
+<ui:composition
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:cc="http://java.sun.com/jsf/composite"
+    xmlns:f="http://java.sun.com/jsf/core"
+    >
+
+  <cc:interface>
+    <cc:attribute
+        name="parcelEvent"
+        required="true"/>
+  </cc:interface>
+
+  <cc:implementation>
+
+    <h:panelGrid
+        columns="2"
+        columnClasses="label, value"
+        styleClass="grid"
+        border="1"
+        headerClass="table-header"
+        rowClasses="row-odd,row-even">
+
+      <f:facet name="header">Parcel Log Event</f:facet>
+
+      <h:outputText value="Event ID"/>
+      <h:outputText value="#{cc.attrs.parcelEvent.id}"/>
+
+      <h:outputText value="Parcel ID"/>
+      <h:outputText value="#{cc.attrs.parcelEvent.parcelId}"/>
+
+      <h:outputText value="Date"/>
+      <h:outputText value="#{cc.attrs.parcelEvent.eventDate}"/>
+
+      <h:outputText value="Location"/>
+      <h:outputText value="#{cc.attrs.parcelEvent.location}"/>
+
+      <h:outputText value="Status"/>
+      <h:outputText value="#{cc.attrs.parcelEvent.parcelStatus}"/>
+
+      <h:outputText value="Message"/>
+      <h:outputText value="#{cc.attrs.parcelEvent.message}"/>
+
+    </h:panelGrid>
+
+  </cc:implementation>
+
+</ui:composition>

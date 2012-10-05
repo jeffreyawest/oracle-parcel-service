@@ -1,0 +1,60 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>com.oracle.demo.ops</groupId>
+  <artifactId>oracle-parcel-service</artifactId>
+  <version>3.0</version>
+  <packaging>pom</packaging>
+
+  <properties>
+    <ops.scm.url>https://www.samplecode.oracle.com/svn/ops-r2/</ops.scm.url>
+  </properties>
+
+  <scm>
+    <connection>scm:svn:${ops.scm.url}</connection>
+    <developerConnection>scm:svn:${ops.scm.url}/oracle-parcel-service</developerConnection>
+    <url>${ops.scm.url}/oracle-parcel-service</url>
+  </scm>
+
+  <name>oracle-parcel-service</name>
+
+  <modules>
+    <module>ops-common</module>
+
+    <module>ops-weblogic</module>
+    <module>ops-util</module>
+    <module>ops-domain-model</module>
+    <module>ops-domain-services</module>
+    <module>ops-services</module>
+
+    <module>ops-event-handlers</module>
+
+    <module>ops-web-jsf</module>
+    <module>ops-message-driven</module>
+
+    <module>ops-rest</module>
+    <module>ops-ws</module>
+    <module>ops-soapui</module>
+
+    <module>ops-cache</module>
+    <module>ops-shipment-notifier</module>
+
+  </modules>
+
+  <build>
+    <defaultGoal>install</defaultGoal>
+
+    <plugins>
+      <plugin>
+        <artifactId>maven-deploy-plugin</artifactId>
+        <version>2.6</version>
+        <configuration>
+          <skip>true</skip>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+
+</project>

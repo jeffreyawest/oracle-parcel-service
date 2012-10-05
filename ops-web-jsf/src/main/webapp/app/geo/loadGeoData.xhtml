@@ -1,0 +1,43 @@
+<ui:composition xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui"
+
+                template="/templates/common/layout.xhtml">
+
+  <ui:define name="content">
+
+    <p:panel header="Load Geo-Postal Data from CSV File">
+
+      <div>
+        <p>
+          Upload a CSV with GEO Data in the format: "zip","city","state","latitude","longitude"
+        </p>
+      </div>
+
+      <h:form enctype="multipart/form-data">
+
+        <p:fileUpload fileUploadListener="#{geolocationControllerBean.handleFileUpload}"
+                      mode="advanced"
+                      update="messages"
+                      auto="true"
+                      sizeLimit="10000000"
+                      allowTypes="/(\.|\/)(csv)$/"/>
+
+        <p:growl id="messages"
+                 showDetail="true"/>
+
+        <p:commandButton id="idLoadData"
+                         value="Load Data (This will take some time)"
+                         action="#{geolocationControllerBean.loadGeoData}"/>
+
+      </h:form>
+    </p:panel>
+  </ui:define>
+
+  <ui:define name="readme">
+    This page allows you to upload a CSV file that contains PostalGeolocation data "zip","city","state","latitude","longitude".
+    First, choose the file to upload.
+    Once the upload is complete the application will begin loading the data.
+  </ui:define>
+
+</ui:composition>

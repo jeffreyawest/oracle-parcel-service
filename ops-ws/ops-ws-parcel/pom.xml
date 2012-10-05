@@ -1,0 +1,110 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+  <!-- ==================================================================================== -->
+
+  <parent>
+    <groupId>com.oracle.demo.ops</groupId>
+    <artifactId>ops-common-ws</artifactId>
+    <version>3.0</version>
+    <relativePath>../../ops-common/ops-common-ws/pom.xml</relativePath>
+  </parent>
+
+  <!-- ==================================================================================== -->
+
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.oracle.demo.ops</groupId>
+  <artifactId>ops-ws-parcel</artifactId>
+  <packaging>war</packaging>
+  <version>3.0</version>
+  <url>https://www.samplecode.oracle.com/sf/projects/oracle-parcel-svc</url>
+  <name>ops-ws-parcel</name>
+
+  <!-- ==================================================================================== -->
+
+  <profiles>
+    <!--<profile>
+      <id>generate-jaxws-artifacts</id>
+      <activation>
+        <activeByDefault>false</activeByDefault>
+      </activation>
+
+      <build>
+        <plugins>
+        </plugins>
+
+      </build>
+
+    </profile>-->
+  </profiles>
+
+  <!-- ==================================================================================== -->
+
+  <build>
+    <defaultGoal>install</defaultGoal>
+    <plugins>
+
+      <!--<plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>jaxws-maven-plugin</artifactId>
+        <configuration>
+          <sei>com.oracle.demo.ops.ws.sei.parcel.ParcelWebService</sei>
+        </configuration>
+      </plugin>-->
+
+
+      <plugin>
+        <groupId>com.oracle.weblogic</groupId>
+        <artifactId>wls-maven-plugin</artifactId>
+      </plugin>
+
+    </plugins>
+  </build>
+
+  <!-- ==================================================================================== -->
+  
+  <dependencies>
+
+    <dependency>
+      <groupId>com.sun.xml.ws</groupId>
+      <artifactId>jaxws-rt</artifactId>
+      <version>2.1.3</version>
+      <scope>provided</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>org.apache.ws.commons.schema</groupId>
+      <artifactId>XmlSchema</artifactId>
+    </dependency>
+    
+    <!-- ++++++++++++++++++++++++++++++++++++++++++ -->
+
+    <dependency>
+      <groupId>com.oracle.demo.ops</groupId>
+      <artifactId>ops-util</artifactId>
+    </dependency>
+
+    <dependency>
+      <groupId>com.oracle.demo.ops</groupId>
+      <artifactId>ops-domain-services</artifactId>
+      <scope>compile</scope>
+      <version>3.0</version>
+      <type>ejb</type>
+    </dependency>
+
+    <dependency>
+      <groupId>com.oracle.demo.ops</groupId>
+      <artifactId>ops-domain-model</artifactId>
+      <scope>compile</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>com.oracle.demo.ops</groupId>
+      <artifactId>ops-services</artifactId>
+      <scope>compile</scope>
+      <version>3.0</version>
+      <type>ejb</type>
+    </dependency>
+
+  </dependencies>
+</project>

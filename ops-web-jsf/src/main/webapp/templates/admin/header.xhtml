@@ -1,0 +1,74 @@
+<ui:composition
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:p="http://primefaces.org/ui"
+    >
+
+  <table width="100%">
+    <tr>
+      <td align="left">
+        <h:outputLink value="/ops/index.faces">
+          <h:graphicImage library="images"
+                          name="logo.png"/>
+        </h:outputLink>
+      </td>
+
+      <td align="right">
+        <h:outputLink value="/app/index.faces">
+          <h:graphicImage library="images"
+                          style="width:127px;height: 42px;"
+                          name="logo_weblogic12c_black.gif"/>
+        </h:outputLink>
+      </td>
+    </tr>
+  </table>
+
+  <h:form prependId="false" id="menuBar_" style="background-color:red;color: blue">
+
+    <p:menubar autoSubmenuDisplay="true" style="font-size: 14px;font-weight: bold;">
+      <p:menuitem ajax="false" value="Ship" url="/app/ship/ship.faces"/>
+      <p:menuitem ajax="false" value="Track" url="/app/track/track.faces"/>
+
+      <p:submenu label="Services" icon="ui-icon ui-icon-document">
+        <p:menuitem ajax="false" value="List All Services" url="/app/shippingService/listServices.faces"/>
+        <p:menuitem ajax="false" value="Add Service" url="/app/shippingService/addService.faces"/>
+      </p:submenu>
+
+      <!--<p:menuitem ajax="false" value="About" url="/app/about/about.faces"/>-->
+
+      <p:submenu label="Shipment" icon="ui-icon ui-icon-document">
+        <p:menuitem ajax="false" value="List All Shipments" url="/app/shipment/listShipments.faces"/>
+        <p:menuitem ajax="false" value="List Shipping Services" url="/app/shipment/displayShippingServices.faces"/>
+      </p:submenu>
+
+      <p:submenu label="Parcel" icon="ui-icon ui-icon-document">
+        <p:menuitem ajax="false" value="Update Parcel Log" url="/app/parcel/updateParcelLog.faces"/>
+        <p:menuitem ajax="false" value="List All Parcels" url="/app/parcel/listAllParcels.faces"/>
+      </p:submenu>
+
+      <p:submenu label="Events" icon="ui-icon ui-icon-document">
+        <p:menuitem ajax="false" value="List All Events" url="/app/parcelevent/listParcelEvents.faces"/>
+      </p:submenu>
+
+      <p:submenu label="Geolocation" icon="ui-icon ui-icon-document">
+        <p:menuitem ajax="false" value="Lookup" url="/app/geo/lookupGeoData.faces"/>
+        <p:menuitem ajax="false" value="Load" url="/app/geo/loadGeoData.faces"/>
+        <p:menuitem ajax="false" value="Summary" url="/app/geo/geoDataSummary.faces"/>
+      </p:submenu>
+
+      <p:submenu label="Coherence" icon="ui-icon ui-icon-document">
+        <p:menuitem ajax="false" value="Coherence Management Page" url="/app/coherence/cacheManagement.faces"/>
+        <p:menuitem ajax="false" value="Coherence Cache Sizes" url="/app/coherence/cacheStatistics.faces"/>
+        <p:menuitem ajax="false" value="Coherence Cache Test" url="/app/coherence/cacheLookupTest.faces"/>
+      </p:submenu>
+
+      <p:menuitem ajax="false" value="Session" url="/app/session/sessionHome.faces"/>
+
+      <p:menuitem ajax="false" value="Simulation" url="/app/simulation/beginSimulation.faces"/>
+
+    </p:menubar>
+
+  </h:form>
+  <hr/>
+</ui:composition>

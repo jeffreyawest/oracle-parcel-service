@@ -1,0 +1,2005 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project activeEnvironment="Default" name="OPS EE6 REST" resourceRoot="" soapui-version="4.5.1"
+                    xmlns:con="http://eviware.com/soapui/config">
+  <con:settings/>
+  <con:interface xsi:type="con:RestService" wadlVersion="http://wadl.dev.java.net/2009/02" name="OPS EE6 REST" type="rest"
+                 basePath="/ops-rest/resource/" definitionUrl="http://127.0.0.1:7101/ops-rest/resource/application.wadl"
+                 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <con:settings/>
+    <con:definitionCache type="TEXT" rootPart="http://127.0.0.1:7101/ops-rest/resource/application.wadl">
+      <con:part>
+        <con:url>http://127.0.0.1:7101/ops-rest/resource/application.wadl</con:url>
+        <con:content><![CDATA[<ns0:application xmlns:ns0="http://wadl.dev.java.net/2009/02">
+  <ns0:doc ns1:generatedBy="Jersey: 1.9 09/02/2011 11:17 AM" xmlns:ns1="http://jersey.java.net/"/>
+  <ns0:grammars>
+    <ns0:include href="application.wadl/xsd1.xsd">
+      <ns0:doc title="Generated" xml:lang="en"/>
+    </ns0:include>
+    <ns0:include href="application.wadl/xsd0.xsd">
+      <ns0:doc title="Generated" xml:lang="en"/>
+    </ns0:include>
+  </ns0:grammars>
+  <ns0:resources base="http://127.0.0.1:7101/ops-rest/resource/">
+    <ns0:resource path="shipment">
+      <ns0:method id="putJSON" name="PUT">
+        <ns0:request>
+          <ns0:representation element="ns2:Shipment" mediaType="application/json" xmlns:ns2="http://demo.oracle.com/ops/domain/schema/shipping"/>
+        </ns0:request>
+        <ns0:response>
+          <ns0:representation element="ns3:Shipment" mediaType="application/json" xmlns:ns3="http://demo.oracle.com/ops/domain/schema/shipping"/>
+        </ns0:response>
+      </ns0:method>
+      <ns0:method id="putJXML" name="PUT">
+        <ns0:request>
+          <ns0:representation element="ns4:Shipment" mediaType="application/xml" xmlns:ns4="http://demo.oracle.com/ops/domain/schema/shipping"/>
+        </ns0:request>
+        <ns0:response>
+          <ns0:representation element="ns5:Shipment" mediaType="application/xml" xmlns:ns5="http://demo.oracle.com/ops/domain/schema/shipping"/>
+        </ns0:response>
+      </ns0:method>
+      <ns0:resource path="/create">
+        <ns0:method id="createShipment" name="POST">
+          <ns0:request>
+            <ns0:representation mediaType="application/x-www-form-urlencoded">
+              <ns0:param name="to_addressLine1" style="query" type="ns6:string" xmlns:ns6="http://www.w3.org/2001/XMLSchema"/>
+              <ns0:param name="to_addressLine2" style="query" type="ns7:string" xmlns:ns7="http://www.w3.org/2001/XMLSchema"/>
+              <ns0:param name="to_city" style="query" type="ns8:string" xmlns:ns8="http://www.w3.org/2001/XMLSchema"/>
+              <ns0:param name="to_state" style="query" type="ns9:string" xmlns:ns9="http://www.w3.org/2001/XMLSchema"/>
+              <ns0:param name="to_postalCode" style="query" type="ns10:string" xmlns:ns10="http://www.w3.org/2001/XMLSchema"/>
+              <ns0:param name="from_addressLine1" style="query" type="ns11:string" xmlns:ns11="http://www.w3.org/2001/XMLSchema"/>
+              <ns0:param name="from_addressLine2" style="query" type="ns12:string" xmlns:ns12="http://www.w3.org/2001/XMLSchema"/>
+              <ns0:param name="from_city" style="query" type="ns13:string" xmlns:ns13="http://www.w3.org/2001/XMLSchema"/>
+              <ns0:param name="from_state" style="query" type="ns14:string" xmlns:ns14="http://www.w3.org/2001/XMLSchema"/>
+              <ns0:param name="from_postalCode" style="query" type="ns15:string" xmlns:ns15="http://www.w3.org/2001/XMLSchema"/>
+              <ns0:param name="parcel_contents" style="query" type="ns16:string" xmlns:ns16="http://www.w3.org/2001/XMLSchema"/>
+              <ns0:param name="parcel_weight" style="query" type="ns17:string" xmlns:ns17="http://www.w3.org/2001/XMLSchema"/>
+              <ns0:param name="parcel_height" style="query" type="ns18:string" xmlns:ns18="http://www.w3.org/2001/XMLSchema"/>
+              <ns0:param name="parcel_width" style="query" type="ns19:string" xmlns:ns19="http://www.w3.org/2001/XMLSchema"/>
+              <ns0:param name="parcel_length" style="query" type="ns20:string" xmlns:ns20="http://www.w3.org/2001/XMLSchema"/>
+            </ns0:representation>
+          </ns0:request>
+          <ns0:response>
+            <ns0:representation element="ns21:Shipment" mediaType="application/json" xmlns:ns21="http://demo.oracle.com/ops/domain/schema/shipping"/>
+          </ns0:response>
+        </ns0:method>
+        <ns0:method id="postJSON" name="POST">
+          <ns0:request>
+            <ns0:representation element="ns22:Shipment" mediaType="application/json" xmlns:ns22="http://demo.oracle.com/ops/domain/schema/shipping"/>
+          </ns0:request>
+          <ns0:response>
+            <ns0:representation element="ns23:Shipment" mediaType="application/json" xmlns:ns23="http://demo.oracle.com/ops/domain/schema/shipping"/>
+          </ns0:response>
+        </ns0:method>
+      </ns0:resource>
+      <ns0:resource path="/all">
+        <ns0:method id="listShipments_default" name="GET">
+          <ns0:response>
+            <ns0:representation mediaType="application/json"/>
+          </ns0:response>
+        </ns0:method>
+      </ns0:resource>
+      <ns0:resource path="/all.json">
+        <ns0:method id="listShipments_json" name="GET">
+          <ns0:response>
+            <ns0:representation mediaType="application/json"/>
+          </ns0:response>
+        </ns0:method>
+      </ns0:resource>
+      <ns0:resource path="/all.xml">
+        <ns0:method id="listShipments_xml" name="GET">
+          <ns0:response>
+            <ns0:representation mediaType="application/xml"/>
+          </ns0:response>
+        </ns0:method>
+      </ns0:resource>
+      <ns0:resource path="{id}">
+        <ns0:param name="id" style="template" type="ns24:int" xmlns:ns24="http://www.w3.org/2001/XMLSchema"/>
+        <ns0:method id="getShipmentById_default" name="GET">
+          <ns0:response>
+            <ns0:representation element="ns25:Shipment" mediaType="application/json" xmlns:ns25="http://demo.oracle.com/ops/domain/schema/shipping"/>
+          </ns0:response>
+        </ns0:method>
+      </ns0:resource>
+      <ns0:resource path="{id}.json">
+        <ns0:param name="id" style="template" type="ns26:int" xmlns:ns26="http://www.w3.org/2001/XMLSchema"/>
+        <ns0:method id="getShipmentById_json" name="GET">
+          <ns0:response>
+            <ns0:representation element="ns27:Shipment" mediaType="application/json" xmlns:ns27="http://demo.oracle.com/ops/domain/schema/shipping"/>
+          </ns0:response>
+        </ns0:method>
+      </ns0:resource>
+      <ns0:resource path="{id}.xml">
+        <ns0:param name="id" style="template" type="ns28:int" xmlns:ns28="http://www.w3.org/2001/XMLSchema"/>
+        <ns0:method id="getShipmentById_xml" name="GET">
+          <ns0:response>
+            <ns0:representation element="ns29:Shipment" mediaType="application/xml" xmlns:ns29="http://demo.oracle.com/ops/domain/schema/shipping"/>
+          </ns0:response>
+        </ns0:method>
+      </ns0:resource>
+      <ns0:resource path="/prototype.json">
+        <ns0:method id="getShipmentPrototype" name="GET">
+          <ns0:response>
+            <ns0:representation element="ns30:Shipment" mediaType="application/json" xmlns:ns30="http://demo.oracle.com/ops/domain/schema/shipping"/>
+          </ns0:response>
+        </ns0:method>
+      </ns0:resource>
+    </ns0:resource>
+    <ns0:resource path="2/parcel">
+      <ns0:resource path="/ping">
+        <ns0:method id="ping" name="GET">
+          <ns0:response>
+            <ns0:representation mediaType="application/json"/>
+          </ns0:response>
+        </ns0:method>
+      </ns0:resource>
+      <ns0:resource path="log/list.json">
+        <ns0:param name="path" style="template" type="ns31:string" xmlns:ns31="http://www.w3.org/2001/XMLSchema"/>
+        <ns0:method id="getAllParcelEvents" name="GET">
+          <ns0:response>
+            <ns0:representation mediaType="application/json"/>
+            <ns0:representation mediaType="application/xml"/>
+          </ns0:response>
+        </ns0:method>
+      </ns0:resource>
+      <ns0:resource path="{id}{path:.*}">
+        <ns0:param name="id" style="template" type="ns32:int" xmlns:ns32="http://www.w3.org/2001/XMLSchema"/>
+        <ns0:param name="path" style="template" type="ns33:string" xmlns:ns33="http://www.w3.org/2001/XMLSchema"/>
+        <ns0:method id="getParcelById" name="GET">
+          <ns0:response>
+            <ns0:representation mediaType="application/json"/>
+            <ns0:representation mediaType="application/xml"/>
+          </ns0:response>
+        </ns0:method>
+      </ns0:resource>
+      <ns0:resource path="/parcelManager">
+        <ns0:method id="testParcelManagerAvailable" name="GET">
+          <ns0:response>
+            <ns0:representation mediaType="text/html"/>
+          </ns0:response>
+        </ns0:method>
+      </ns0:resource>
+      <ns0:resource path="/all{path:.*}">
+        <ns0:param name="path" style="template" type="ns34:string" xmlns:ns34="http://www.w3.org/2001/XMLSchema"/>
+        <ns0:method id="listParcels" name="GET">
+          <ns0:response>
+            <ns0:representation mediaType="application/json"/>
+            <ns0:representation mediaType="application/xml"/>
+          </ns0:response>
+        </ns0:method>
+      </ns0:resource>
+      <ns0:resource path="log/{id}{path:.*}">
+        <ns0:param name="id" style="template" type="ns35:int" xmlns:ns35="http://www.w3.org/2001/XMLSchema"/>
+        <ns0:param name="path" style="template" type="ns36:string" xmlns:ns36="http://www.w3.org/2001/XMLSchema"/>
+        <ns0:method id="getParcelEvents_default" name="GET">
+          <ns0:response>
+            <ns0:representation mediaType="application/json"/>
+            <ns0:representation mediaType="application/xml"/>
+          </ns0:response>
+        </ns0:method>
+      </ns0:resource>
+      <ns0:resource path="/log/{id}/add.json">
+        <ns0:param name="id" style="template" type="ns37:int" xmlns:ns37="http://www.w3.org/2001/XMLSchema"/>
+        <ns0:method id="postLogEvent2" name="POST">
+          <ns0:request>
+            <ns0:representation element="ns38:ParcelEvent" mediaType="application/json" xmlns:ns38="http://demo.oracle.com/ops/domain/schema/shipping"/>
+          </ns0:request>
+          <ns0:response>
+            <ns0:representation mediaType="application/json"/>
+          </ns0:response>
+        </ns0:method>
+      </ns0:resource>
+      <ns0:resource path="/log/add.json">
+        <ns0:method id="putLogEvent" name="PUT">
+          <ns0:request>
+            <ns0:representation element="ns39:ParcelEvent" mediaType="application/json" xmlns:ns39="http://demo.oracle.com/ops/domain/schema/shipping"/>
+          </ns0:request>
+          <ns0:response>
+            <ns0:representation element="ns40:ParcelEvent" mediaType="application/json" xmlns:ns40="http://demo.oracle.com/ops/domain/schema/shipping"/>
+          </ns0:response>
+        </ns0:method>
+        <ns0:method id="postLogEvent" name="POST">
+          <ns0:request>
+            <ns0:representation element="ns41:ParcelEvent" mediaType="application/json" xmlns:ns41="http://demo.oracle.com/ops/domain/schema/shipping"/>
+          </ns0:request>
+          <ns0:response>
+            <ns0:representation element="ns42:ParcelEvent" mediaType="application/json" xmlns:ns42="http://demo.oracle.com/ops/domain/schema/shipping"/>
+          </ns0:response>
+        </ns0:method>
+      </ns0:resource>
+    </ns0:resource>
+    <ns0:resource path="parcel">
+      <ns0:method id="listParcels_json" name="GET">
+        <ns0:response>
+          <ns0:representation mediaType="application/json"/>
+          <ns0:representation mediaType="application/xml"/>
+        </ns0:response>
+      </ns0:method>
+      <ns0:resource path="/ping">
+        <ns0:method id="ping" name="GET">
+          <ns0:response>
+            <ns0:representation mediaType="application/json"/>
+            <ns0:representation mediaType="application/xml"/>
+          </ns0:response>
+        </ns0:method>
+      </ns0:resource>
+      <ns0:resource path="all/log.json">
+        <ns0:param name="path" style="template" type="ns43:string" xmlns:ns43="http://www.w3.org/2001/XMLSchema"/>
+        <ns0:method id="getAllParcelEvents" name="GET">
+          <ns0:response>
+            <ns0:representation mediaType="application/json"/>
+            <ns0:representation mediaType="application/xml"/>
+          </ns0:response>
+        </ns0:method>
+      </ns0:resource>
+      <ns0:resource path="/validate">
+        <ns0:method id="testParcelManagerAvailable" name="GET">
+          <ns0:response>
+            <ns0:representation mediaType="text/html"/>
+          </ns0:response>
+        </ns0:method>
+      </ns0:resource>
+      <ns0:resource path="{id}">
+        <ns0:param name="id" style="template" type="ns44:int" xmlns:ns44="http://www.w3.org/2001/XMLSchema"/>
+        <ns0:method id="getParcelById_default" name="GET">
+          <ns0:response>
+            <ns0:representation element="ns45:Parcel" mediaType="application/xml" xmlns:ns45="http://demo.oracle.com/ops/domain/schema/shipping"/>
+            <ns0:representation element="ns46:Parcel" mediaType="application/json" xmlns:ns46="http://demo.oracle.com/ops/domain/schema/shipping"/>
+          </ns0:response>
+        </ns0:method>
+      </ns0:resource>
+      <ns0:resource path="{id}.json">
+        <ns0:param name="id" style="template" type="ns47:int" xmlns:ns47="http://www.w3.org/2001/XMLSchema"/>
+        <ns0:method id="getParcelById_json" name="GET">
+          <ns0:response>
+            <ns0:representation element="ns48:Parcel" mediaType="application/json" xmlns:ns48="http://demo.oracle.com/ops/domain/schema/shipping"/>
+          </ns0:response>
+        </ns0:method>
+      </ns0:resource>
+      <ns0:resource path="{id}.xml">
+        <ns0:param name="id" style="template" type="ns49:int" xmlns:ns49="http://www.w3.org/2001/XMLSchema"/>
+        <ns0:method id="getParcelById_xml" name="GET">
+          <ns0:response>
+            <ns0:representation element="ns50:Parcel" mediaType="text/xml" xmlns:ns50="http://demo.oracle.com/ops/domain/schema/shipping"/>
+          </ns0:response>
+        </ns0:method>
+      </ns0:resource>
+      <ns0:resource path="{id}/log">
+        <ns0:param name="id" style="template" type="ns51:int" xmlns:ns51="http://www.w3.org/2001/XMLSchema"/>
+        <ns0:method id="getParcelEvents_default" name="GET">
+          <ns0:response>
+            <ns0:representation element="ns52:ParcelEvent" mediaType="application/json" xmlns:ns52="http://demo.oracle.com/ops/domain/schema/shipping"/>
+            <ns0:representation element="ns53:ParcelEvent" mediaType="application/xml" xmlns:ns53="http://demo.oracle.com/ops/domain/schema/shipping"/>
+          </ns0:response>
+        </ns0:method>
+      </ns0:resource>
+      <ns0:resource path="{id}/log.json">
+        <ns0:param name="id" style="template" type="ns54:int" xmlns:ns54="http://www.w3.org/2001/XMLSchema"/>
+        <ns0:method id="getParcelEvents_json" name="GET">
+          <ns0:response>
+            <ns0:representation element="ns55:ParcelEvent" mediaType="application/json" xmlns:ns55="http://demo.oracle.com/ops/domain/schema/shipping"/>
+            <ns0:representation element="ns56:ParcelEvent" mediaType="application/xml" xmlns:ns56="http://demo.oracle.com/ops/domain/schema/shipping"/>
+          </ns0:response>
+        </ns0:method>
+      </ns0:resource>
+      <ns0:resource path="{id}/log.xml">
+        <ns0:param name="id" style="template" type="ns57:int" xmlns:ns57="http://www.w3.org/2001/XMLSchema"/>
+        <ns0:method id="getParcelEvents_xml" name="GET">
+          <ns0:response>
+            <ns0:representation element="ns58:ParcelEvent" mediaType="application/xml" xmlns:ns58="http://demo.oracle.com/ops/domain/schema/shipping"/>
+          </ns0:response>
+        </ns0:method>
+      </ns0:resource>
+      <ns0:resource path="/log/{id}/add.json">
+        <ns0:param name="id" style="template" type="ns59:int" xmlns:ns59="http://www.w3.org/2001/XMLSchema"/>
+        <ns0:method id="postLogEvent2" name="POST">
+          <ns0:request>
+            <ns0:representation element="ns60:ParcelEvent" mediaType="application/json" xmlns:ns60="http://demo.oracle.com/ops/domain/schema/shipping"/>
+            <ns0:representation element="ns61:ParcelEvent" mediaType="application/xml" xmlns:ns61="http://demo.oracle.com/ops/domain/schema/shipping"/>
+          </ns0:request>
+          <ns0:response>
+            <ns0:representation mediaType="application/json"/>
+            <ns0:representation mediaType="application/xml"/>
+          </ns0:response>
+        </ns0:method>
+      </ns0:resource>
+      <ns0:resource path="/log/prototype.json">
+        <ns0:method id="parcelLogPrototype" name="POST">
+          <ns0:response>
+            <ns0:representation mediaType="application/json"/>
+            <ns0:representation mediaType="application/xml"/>
+          </ns0:response>
+        </ns0:method>
+      </ns0:resource>
+    </ns0:resource>
+    <ns0:resource path="geolocation">
+      <ns0:resource path="/{postalCode}">
+        <ns0:param name="postalCode" style="template" type="ns62:string" xmlns:ns62="http://www.w3.org/2001/XMLSchema"/>
+        <ns0:method id="searchPostalCode" name="GET">
+          <ns0:response>
+            <ns0:representation element="ns63:PostalGeolocation" mediaType="application/json" xmlns:ns63="http://demo.oracle.com/ops/domain/schema/common"/>
+          </ns0:response>
+        </ns0:method>
+      </ns0:resource>
+    </ns0:resource>
+    <ns0:resource path="parcelService">
+      <ns0:method id="getXml" name="GET">
+        <ns0:response>
+          <ns0:representation mediaType="application/xml"/>
+        </ns0:response>
+      </ns0:method>
+      <ns0:method id="putXml" name="PUT">
+        <ns0:request>
+          <ns0:representation mediaType="application/xml"/>
+        </ns0:request>
+      </ns0:method>
+      <ns0:resource path="/parcel/create">
+        <ns0:method id="createParcel" name="POST">
+          <ns0:request>
+            <ns0:representation element="ns64:Parcel" mediaType="application/json" xmlns:ns64="http://demo.oracle.com/ops/domain/schema/shipping"/>
+          </ns0:request>
+          <ns0:response>
+            <ns0:representation element="ns65:Parcel" mediaType="application/json" xmlns:ns65="http://demo.oracle.com/ops/domain/schema/shipping"/>
+          </ns0:response>
+        </ns0:method>
+      </ns0:resource>
+      <ns0:resource path="parcel/test">
+        <ns0:method id="testParcelManagerAvailable" name="GET">
+          <ns0:response>
+            <ns0:representation mediaType="text/html"/>
+          </ns0:response>
+        </ns0:method>
+      </ns0:resource>
+      <ns0:resource path="/parcel/list">
+        <ns0:method id="listParcels" name="GET">
+          <ns0:response>
+            <ns0:representation mediaType="application/json"/>
+          </ns0:response>
+        </ns0:method>
+      </ns0:resource>
+      <ns0:resource path="/shipment/list">
+        <ns0:method id="listShipments" name="GET">
+          <ns0:response>
+            <ns0:representation mediaType="application/json"/>
+          </ns0:response>
+        </ns0:method>
+      </ns0:resource>
+      <ns0:resource path="shipment/test">
+        <ns0:method id="testShipmentManagerAvailable" name="GET">
+          <ns0:response>
+            <ns0:representation mediaType="text/html"/>
+          </ns0:response>
+        </ns0:method>
+      </ns0:resource>
+      <ns0:resource path="/shipment/track/{id}">
+        <ns0:param name="id" style="template" type="ns66:int" xmlns:ns66="http://www.w3.org/2001/XMLSchema"/>
+        <ns0:method id="locateShipment" name="GET">
+          <ns0:response>
+            <ns0:representation element="ns67:Shipment" mediaType="application/json" xmlns:ns67="http://demo.oracle.com/ops/domain/schema/shipping"/>
+          </ns0:response>
+        </ns0:method>
+      </ns0:resource>
+      <ns0:resource path="/shipment/create1">
+        <ns0:method id="createShipmentFromWizard" name="POST">
+          <ns0:request>
+            <ns0:representation element="ns68:Shipment" mediaType="application/json" xmlns:ns68="http://demo.oracle.com/ops/domain/schema/shipping"/>
+          </ns0:request>
+          <ns0:response>
+            <ns0:representation element="ns69:Shipment" mediaType="application/json" xmlns:ns69="http://demo.oracle.com/ops/domain/schema/shipping"/>
+          </ns0:response>
+        </ns0:method>
+      </ns0:resource>
+      <ns0:resource path="/shipment/create">
+        <ns0:method id="createShipmentFromWizard" name="POST">
+          <ns0:request>
+            <ns0:representation mediaType="application/x-www-form-urlencoded">
+              <ns0:param name="to_addressLine1" style="query" type="ns70:string" xmlns:ns70="http://www.w3.org/2001/XMLSchema"/>
+              <ns0:param name="to_addressLine2" style="query" type="ns71:string" xmlns:ns71="http://www.w3.org/2001/XMLSchema"/>
+              <ns0:param name="to_city" style="query" type="ns72:string" xmlns:ns72="http://www.w3.org/2001/XMLSchema"/>
+              <ns0:param name="to_state" style="query" type="ns73:string" xmlns:ns73="http://www.w3.org/2001/XMLSchema"/>
+              <ns0:param name="to_postalCode" style="query" type="ns74:string" xmlns:ns74="http://www.w3.org/2001/XMLSchema"/>
+              <ns0:param name="from_addressLine1" style="query" type="ns75:string" xmlns:ns75="http://www.w3.org/2001/XMLSchema"/>
+              <ns0:param name="from_addressLine2" style="query" type="ns76:string" xmlns:ns76="http://www.w3.org/2001/XMLSchema"/>
+              <ns0:param name="from_city" style="query" type="ns77:string" xmlns:ns77="http://www.w3.org/2001/XMLSchema"/>
+              <ns0:param name="from_state" style="query" type="ns78:string" xmlns:ns78="http://www.w3.org/2001/XMLSchema"/>
+              <ns0:param name="from_postalCode" style="query" type="ns79:string" xmlns:ns79="http://www.w3.org/2001/XMLSchema"/>
+              <ns0:param name="parcel_contents" style="query" type="ns80:string" xmlns:ns80="http://www.w3.org/2001/XMLSchema"/>
+              <ns0:param name="parcel_weight" style="query" type="ns81:string" xmlns:ns81="http://www.w3.org/2001/XMLSchema"/>
+              <ns0:param name="parcel_height" style="query" type="ns82:string" xmlns:ns82="http://www.w3.org/2001/XMLSchema"/>
+              <ns0:param name="parcel_width" style="query" type="ns83:string" xmlns:ns83="http://www.w3.org/2001/XMLSchema"/>
+              <ns0:param name="parcel_length" style="query" type="ns84:string" xmlns:ns84="http://www.w3.org/2001/XMLSchema"/>
+            </ns0:representation>
+          </ns0:request>
+          <ns0:response>
+            <ns0:representation element="ns85:Shipment" mediaType="application/json" xmlns:ns85="http://demo.oracle.com/ops/domain/schema/shipping"/>
+          </ns0:response>
+        </ns0:method>
+      </ns0:resource>
+    </ns0:resource>
+    <ns0:resource path="2/shipment">
+      <ns0:method id="putJSON" name="PUT">
+        <ns0:request>
+          <ns0:representation element="ns86:Shipment" mediaType="application/json" xmlns:ns86="http://demo.oracle.com/ops/domain/schema/shipping"/>
+        </ns0:request>
+        <ns0:response>
+          <ns0:representation element="ns87:Shipment" mediaType="application/json" xmlns:ns87="http://demo.oracle.com/ops/domain/schema/shipping"/>
+        </ns0:response>
+      </ns0:method>
+      <ns0:method id="postJSON" name="POST">
+        <ns0:request>
+          <ns0:representation element="ns88:Shipment" mediaType="application/json" xmlns:ns88="http://demo.oracle.com/ops/domain/schema/shipping"/>
+        </ns0:request>
+        <ns0:response>
+          <ns0:representation element="ns89:Shipment" mediaType="application/json" xmlns:ns89="http://demo.oracle.com/ops/domain/schema/shipping"/>
+        </ns0:response>
+      </ns0:method>
+      <ns0:resource path="{id}{path:.*}">
+        <ns0:param name="id" style="template" type="ns90:int" xmlns:ns90="http://www.w3.org/2001/XMLSchema"/>
+        <ns0:param name="path" style="template" type="ns91:string" xmlns:ns91="http://www.w3.org/2001/XMLSchema"/>
+        <ns0:method id="getShipmentById" name="GET">
+          <ns0:response>
+            <ns0:representation mediaType="application/json"/>
+            <ns0:representation mediaType="text/xml"/>
+          </ns0:response>
+        </ns0:method>
+      </ns0:resource>
+      <ns0:resource path="/prototype.json">
+        <ns0:method id="getShipmentPrototype" name="GET">
+          <ns0:response>
+            <ns0:representation element="ns92:Shipment" mediaType="application/json" xmlns:ns92="http://demo.oracle.com/ops/domain/schema/shipping"/>
+          </ns0:response>
+        </ns0:method>
+      </ns0:resource>
+      <ns0:resource path="/all{path:.*}">
+        <ns0:param name="path" style="template" type="ns93:string" xmlns:ns93="http://www.w3.org/2001/XMLSchema"/>
+        <ns0:method id="listShipments" name="GET">
+          <ns0:response>
+            <ns0:representation mediaType="application/json"/>
+            <ns0:representation mediaType="text/xml"/>
+          </ns0:response>
+        </ns0:method>
+      </ns0:resource>
+    </ns0:resource>
+  </ns0:resources>
+</ns0:application>]]></con:content>
+        <con:type>http://wadl.dev.java.net/2009/02</con:type>
+      </con:part>
+      <con:part>
+        <con:url>http://127.0.0.1:7101/ops-rest/resource/application.wadl/xsd1.xsd</con:url>
+        <con:content><![CDATA[<xsd:schema targetNamespace="http://demo.oracle.com/ops/domain/schema/common" xmlns:ns0="http://demo.oracle.com/ops/domain/schema/common" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:complexType name="Address">
+    <xsd:complexContent>
+      <xsd:extension base="ns0:BaseEntity">
+        <xsd:sequence>
+          <xsd:element name="Addressee" type="xsd:string" form="qualified" minOccurs="0"/>
+          <xsd:element name="AddressLine1" type="xsd:string" form="qualified" minOccurs="0"/>
+          <xsd:element name="AddressLine2" type="xsd:string" form="qualified" minOccurs="0"/>
+          <xsd:element name="City" type="xsd:string" form="qualified" minOccurs="0"/>
+          <xsd:element name="State" type="xsd:string" form="qualified" minOccurs="0"/>
+          <xsd:element name="PostalCode" type="xsd:string" form="qualified" minOccurs="0"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="BaseEntity" abstract="true">
+    <xsd:complexContent>
+      <xsd:extension base="ns0:BaseObject">
+        <xsd:sequence>
+          <xsd:element name="CreatedDate" type="xsd:dateTime" form="qualified" minOccurs="0"/>
+          <xsd:element name="ModifiedDate" type="xsd:dateTime" form="qualified" minOccurs="0"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="BaseParameter" abstract="true">
+    <xsd:complexContent>
+      <xsd:extension base="ns0:BaseEntity">
+        <xsd:sequence>
+          <xsd:element name="Name" type="xsd:string" form="qualified" minOccurs="0"/>
+          <xsd:element name="Value" type="xsd:string" form="qualified" minOccurs="0"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="BaseObject" abstract="true">
+    <xsd:sequence>
+      <xsd:element name="Id" type="xsd:int" form="qualified"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="PostalGeolocationType">
+    <xsd:sequence>
+      <xsd:element name="PostalCode" type="xsd:string" form="qualified"/>
+      <xsd:element name="City" type="xsd:string" form="qualified"/>
+      <xsd:element name="State" type="xsd:string" form="qualified"/>
+      <xsd:element name="Latitude" type="xsd:double" form="qualified"/>
+      <xsd:element name="Longitude" type="xsd:double" form="qualified"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="PostalGeolocation" type="ns0:PostalGeolocationType"/>
+</xsd:schema>]]></con:content>
+        <con:type>http://www.w3.org/2001/XMLSchema</con:type>
+      </con:part>
+      <con:part>
+        <con:url>http://127.0.0.1:7101/ops-rest/resource/application.wadl/xsd0.xsd</con:url>
+        <con:content><![CDATA[<xsd:schema targetNamespace="http://demo.oracle.com/ops/domain/schema/shipping" xmlns:ns1="http://demo.oracle.com/ops/domain/schema/common" xmlns:ns0="http://demo.oracle.com/ops/domain/schema/shipping" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:import schemaLocation="xsd1.xsd" namespace="http://demo.oracle.com/ops/domain/schema/common"/>
+  <xsd:complexType name="ParcelType">
+    <xsd:complexContent>
+      <xsd:extension base="ns1:BaseEntity">
+        <xsd:sequence>
+          <xsd:element name="ShipmentId" type="xsd:int" form="qualified"/>
+          <xsd:element name="Contents" type="xsd:string" form="qualified"/>
+          <xsd:element name="Height" type="xsd:int" form="qualified"/>
+          <xsd:element name="Width" type="xsd:int" form="qualified"/>
+          <xsd:element name="Length" type="xsd:int" form="qualified"/>
+          <xsd:element name="Weight" type="xsd:int" form="qualified"/>
+          <xsd:element name="ParcelStatus" type="ns0:ParcelStatus" form="qualified"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="ParcelEventType">
+    <xsd:complexContent>
+      <xsd:extension base="ns1:BaseEntity">
+        <xsd:sequence>
+          <xsd:element name="ParcelId" type="xsd:int" form="qualified"/>
+          <xsd:element name="EventDate" type="xsd:dateTime" form="qualified"/>
+          <xsd:element name="ParcelStatus" type="ns0:ParcelStatus" form="qualified"/>
+          <xsd:element name="Location" type="xsd:string" form="qualified"/>
+          <xsd:element name="Message" type="xsd:string" form="qualified"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="ShipmentType">
+    <xsd:complexContent>
+      <xsd:extension base="ns1:BaseEntity">
+        <xsd:sequence>
+          <xsd:element name="ExternalReferenceId" type="xsd:string" form="qualified"/>
+          <xsd:element name="ToAddress" type="ns1:Address" form="qualified"/>
+          <xsd:element name="FromAddress" type="ns1:Address" form="qualified"/>
+          <xsd:element name="ShippingServiceName" type="ns0:ShippingServiceName" form="qualified"/>
+          <xsd:element name="Parcel" type="ns0:ParcelType" form="qualified" maxOccurs="unbounded"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="ParcelEvent" type="ns0:ParcelEventType"/>
+  <xsd:element name="Parcel" type="ns0:ParcelType"/>
+  <xsd:element name="Shipment" type="ns0:ShipmentType"/>
+  <xsd:simpleType name="ParcelStatus">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="BILLING_INFO_RECEIVED"/>
+      <xsd:enumeration value="PARCEL_RECEIVED"/>
+      <xsd:enumeration value="IN_TRANSIT"/>
+      <xsd:enumeration value="OUT_FOR_DELIVERY"/>
+      <xsd:enumeration value="DELIVERED"/>
+      <xsd:enumeration value="DELIVERY_EXCEPTION"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="ShippingServiceName">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="BASIC"/>
+      <xsd:enumeration value="EXPEDITED"/>
+      <xsd:enumeration value="OVERNIGHT"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+</xsd:schema>]]></con:content>
+        <con:type>http://www.w3.org/2001/XMLSchema</con:type>
+      </con:part>
+    </con:definitionCache>
+    <con:endpoints>
+      <con:endpoint>http://127.0.0.1:7101</con:endpoint>
+    </con:endpoints>
+    <con:resource name="shipment" path="shipment">
+      <con:settings/>
+      <con:parameters/>
+      <con:resource name="/create" path="/create">
+        <con:settings/>
+        <con:parameters/>
+        <con:method name="POST - createShipment" method="POST">
+          <con:settings/>
+          <con:parameters/>
+          <con:representation type="REQUEST" id="">
+            <con:mediaType>application/x-www-form-urlencoded</con:mediaType>
+            <con:params/>
+            <con:element xsi:nil="true"/>
+            <con:description xsi:nil="true"/>
+          </con:representation>
+          <con:representation type="RESPONSE" id="">
+            <con:mediaType>application/json</con:mediaType>
+            <con:params/>
+            <con:element xmlns:ship="http://demo.oracle.com/ops/domain/schema/shipping">ship:Shipment</con:element>
+            <con:description xsi:nil="true"/>
+          </con:representation>
+          <con:request name="Request 1">
+            <con:settings/>
+            <con:endpoint>http://127.0.0.1:7101</con:endpoint>
+            <con:parameters/>
+          </con:request>
+        </con:method>
+        <con:method name="POST - postJSON" method="POST">
+          <con:settings/>
+          <con:parameters/>
+          <con:representation type="REQUEST" id="">
+            <con:mediaType>application/json</con:mediaType>
+            <con:params/>
+            <con:element xmlns:ship="http://demo.oracle.com/ops/domain/schema/shipping">ship:Shipment</con:element>
+            <con:description xsi:nil="true"/>
+          </con:representation>
+          <con:representation type="RESPONSE" id="">
+            <con:mediaType>application/json</con:mediaType>
+            <con:params/>
+            <con:element xmlns:ship="http://demo.oracle.com/ops/domain/schema/shipping">ship:Shipment</con:element>
+            <con:description xsi:nil="true"/>
+          </con:representation>
+          <con:request name="Request 1">
+            <con:settings/>
+            <con:endpoint>http://127.0.0.1:7101</con:endpoint>
+            <con:parameters/>
+          </con:request>
+        </con:method>
+      </con:resource>
+      <con:resource name="/all" path="/all">
+        <con:settings/>
+        <con:parameters/>
+        <con:method name="GET - listShipments_default" method="GET">
+          <con:settings/>
+          <con:parameters/>
+          <con:representation type="RESPONSE" id="">
+            <con:mediaType>application/json</con:mediaType>
+            <con:params/>
+            <con:element xsi:nil="true"/>
+            <con:description xsi:nil="true"/>
+          </con:representation>
+          <con:request name="Request 1">
+            <con:settings/>
+            <con:endpoint>http://127.0.0.1:7101</con:endpoint>
+            <con:parameters/>
+          </con:request>
+        </con:method>
+      </con:resource>
+      <con:resource name="/all.json" path="/all.json">
+        <con:settings/>
+        <con:parameters/>
+        <con:method name="GET - listShipments_json" method="GET">
+          <con:settings/>
+          <con:parameters/>
+          <con:representation type="RESPONSE" id="">
+            <con:mediaType>application/json</con:mediaType>
+            <con:params/>
+            <con:element xsi:nil="true"/>
+            <con:description xsi:nil="true"/>
+          </con:representation>
+          <con:request name="Request 1">
+            <con:settings/>
+            <con:endpoint>http://127.0.0.1:7101</con:endpoint>
+            <con:parameters/>
+          </con:request>
+        </con:method>
+      </con:resource>
+      <con:resource name="/all.xml" path="/all.xml">
+        <con:settings/>
+        <con:parameters/>
+        <con:method name="GET - listShipments_xml" method="GET">
+          <con:settings/>
+          <con:parameters/>
+          <con:representation type="RESPONSE" id="">
+            <con:mediaType>application/xml</con:mediaType>
+            <con:params/>
+            <con:element xsi:nil="true"/>
+            <con:description xsi:nil="true"/>
+          </con:representation>
+          <con:request name="Request 1">
+            <con:settings/>
+            <con:endpoint>http://127.0.0.1:7101</con:endpoint>
+            <con:parameters/>
+          </con:request>
+        </con:method>
+      </con:resource>
+      <con:resource name="{id}" path="{id}">
+        <con:settings/>
+        <con:parameters>
+          <con:parameter>
+            <con:name>id</con:name>
+            <con:value xsi:nil="true"/>
+            <con:style>TEMPLATE</con:style>
+            <con:type xmlns:xs="http://www.w3.org/2001/XMLSchema">xs:int</con:type>
+            <con:default xsi:nil="true"/>
+          </con:parameter>
+        </con:parameters>
+        <con:method name="GET - getShipmentById_default" method="GET">
+          <con:settings/>
+          <con:parameters/>
+          <con:representation type="RESPONSE" id="">
+            <con:mediaType>application/json</con:mediaType>
+            <con:params/>
+            <con:element xmlns:ship="http://demo.oracle.com/ops/domain/schema/shipping">ship:Shipment</con:element>
+            <con:description xsi:nil="true"/>
+          </con:representation>
+          <con:request name="Request 1">
+            <con:settings/>
+            <con:endpoint>http://127.0.0.1:7101</con:endpoint>
+            <con:parameters/>
+          </con:request>
+        </con:method>
+      </con:resource>
+      <con:resource name="{id}.json" path="{id}.json">
+        <con:settings/>
+        <con:parameters>
+          <con:parameter>
+            <con:name>id</con:name>
+            <con:value xsi:nil="true"/>
+            <con:style>TEMPLATE</con:style>
+            <con:type xmlns:xs="http://www.w3.org/2001/XMLSchema">xs:int</con:type>
+            <con:default xsi:nil="true"/>
+          </con:parameter>
+        </con:parameters>
+        <con:method name="GET - getShipmentById_json" method="GET">
+          <con:settings/>
+          <con:parameters/>
+          <con:representation type="RESPONSE" id="">
+            <con:mediaType>application/json</con:mediaType>
+            <con:params/>
+            <con:element xmlns:ship="http://demo.oracle.com/ops/domain/schema/shipping">ship:Shipment</con:element>
+            <con:description xsi:nil="true"/>
+          </con:representation>
+          <con:request name="Request 1">
+            <con:settings/>
+            <con:endpoint>http://127.0.0.1:7101</con:endpoint>
+            <con:parameters/>
+          </con:request>
+        </con:method>
+      </con:resource>
+      <con:resource name="{id}.xml" path="{id}.xml">
+        <con:settings/>
+        <con:parameters>
+          <con:parameter>
+            <con:name>id</con:name>
+            <con:value xsi:nil="true"/>
+            <con:style>TEMPLATE</con:style>
+            <con:type xmlns:xs="http://www.w3.org/2001/XMLSchema">xs:int</con:type>
+            <con:default xsi:nil="true"/>
+          </con:parameter>
+        </con:parameters>
+        <con:method name="GET - getShipmentById_xml" method="GET">
+          <con:settings/>
+          <con:parameters/>
+          <con:representation type="RESPONSE" id="">
+            <con:mediaType>application/xml</con:mediaType>
+            <con:params/>
+            <con:element xmlns:ship="http://demo.oracle.com/ops/domain/schema/shipping">ship:Shipment</con:element>
+            <con:description xsi:nil="true"/>
+          </con:representation>
+          <con:request name="Request 1">
+            <con:settings/>
+            <con:endpoint>http://127.0.0.1:7101</con:endpoint>
+            <con:parameters/>
+          </con:request>
+        </con:method>
+      </con:resource>
+      <con:resource name="/prototype.json" path="/prototype.json">
+        <con:settings/>
+        <con:parameters/>
+        <con:method name="GET - getShipmentPrototype" method="GET">
+          <con:settings/>
+          <con:parameters/>
+          <con:representation type="RESPONSE" id="">
+            <con:mediaType>application/json</con:mediaType>
+            <con:params/>
+            <con:element xmlns:ship="http://demo.oracle.com/ops/domain/schema/shipping">ship:Shipment</con:element>
+            <con:description xsi:nil="true"/>
+          </con:representation>
+          <con:request name="Request 1">
+            <con:settings/>
+            <con:endpoint>http://127.0.0.1:7101</con:endpoint>
+            <con:parameters/>
+          </con:request>
+        </con:method>
+      </con:resource>
+      <con:method name="PUT - putJSON" method="PUT">
+        <con:settings/>
+        <con:parameters/>
+        <con:representation type="REQUEST" id="">
+          <con:mediaType>application/json</con:mediaType>
+          <con:params/>
+          <con:element xmlns:ship="http://demo.oracle.com/ops/domain/schema/shipping">ship:Shipment</con:element>
+          <con:description xsi:nil="true"/>
+        </con:representation>
+        <con:representation type="RESPONSE" id="">
+          <con:mediaType>application/json</con:mediaType>
+          <con:params/>
+          <con:element xmlns:ship="http://demo.oracle.com/ops/domain/schema/shipping">ship:Shipment</con:element>
+          <con:description xsi:nil="true"/>
+        </con:representation>
+        <con:request name="Request 1">
+          <con:settings/>
+          <con:endpoint>http://127.0.0.1:7101</con:endpoint>
+          <con:parameters/>
+        </con:request>
+      </con:method>
+      <con:method name="PUT - putJXML" method="PUT">
+        <con:settings/>
+        <con:parameters/>
+        <con:representation type="REQUEST" id="">
+          <con:mediaType>application/xml</con:mediaType>
+          <con:params/>
+          <con:element xmlns:ship="http://demo.oracle.com/ops/domain/schema/shipping">ship:Shipment</con:element>
+          <con:description xsi:nil="true"/>
+        </con:representation>
+        <con:representation type="RESPONSE" id="">
+          <con:mediaType>application/xml</con:mediaType>
+          <con:params/>
+          <con:element xmlns:ship="http://demo.oracle.com/ops/domain/schema/shipping">ship:Shipment</con:element>
+          <con:description xsi:nil="true"/>
+        </con:representation>
+        <con:request name="Request 1">
+          <con:settings/>
+          <con:endpoint>http://127.0.0.1:7101</con:endpoint>
+          <con:parameters/>
+        </con:request>
+      </con:method>
+    </con:resource>
+    <con:resource name="2/parcel" path="2/parcel">
+      <con:settings/>
+      <con:parameters/>
+      <con:resource name="/ping" path="/ping">
+        <con:settings/>
+        <con:parameters/>
+        <con:method name="GET - ping" method="GET">
+          <con:settings/>
+          <con:parameters/>
+          <con:representation type="RESPONSE" id="">
+            <con:mediaType>application/json</con:mediaType>
+            <con:params/>
+            <con:element xsi:nil="true"/>
+            <con:description xsi:nil="true"/>
+          </con:representation>
+          <con:request name="Request 1">
+            <con:settings/>
+            <con:endpoint>http://127.0.0.1:7101</con:endpoint>
+            <con:parameters/>
+          </con:request>
+        </con:method>
+      </con:resource>
+      <con:resource name="log/list.json" path="log/list.json">
+        <con:settings/>
+        <con:parameters>
+          <con:parameter>
+            <con:name>path</con:name>
+            <con:value xsi:nil="true"/>
+            <con:style>TEMPLATE</con:style>
+            <con:type xmlns:xs="http://www.w3.org/2001/XMLSchema">xs:string</con:type>
+            <con:default xsi:nil="true"/>
+          </con:parameter>
+        </con:parameters>
+        <con:method name="GET - getAllParcelEvents" method="GET">
+          <con:settings/>
+          <con:parameters/>
+          <con:representation type="RESPONSE" id="">
+            <con:mediaType>application/json</con:mediaType>
+            <con:params/>
+            <con:element xsi:nil="true"/>
+            <con:description xsi:nil="true"/>
+          </con:representation>
+          <con:representation type="RESPONSE" id="">
+            <con:mediaType>application/xml</con:mediaType>
+            <con:params/>
+            <con:element xsi:nil="true"/>
+            <con:description xsi:nil="true"/>
+          </con:representation>
+          <con:request name="Request 1">
+            <con:settings/>
+            <con:endpoint>http://127.0.0.1:7101</con:endpoint>
+            <con:parameters/>
+          </con:request>
+        </con:method>
+      </con:resource>
+      <con:resource name="{id}{path:.*}" path="{id}{path:.*}">
+        <con:settings/>
+        <con:parameters>
+          <con:parameter>
+            <con:name>id</con:name>
+            <con:value xsi:nil="true"/>
+            <con:style>TEMPLATE</con:style>
+            <con:type xmlns:xs="http://www.w3.org/2001/XMLSchema">xs:int</con:type>
+            <con:default xsi:nil="true"/>
+          </con:parameter>
+          <con:parameter>
+            <con:name>path</con:name>
+            <con:value xsi:nil="true"/>
+            <con:style>TEMPLATE</con:style>
+            <con:type xmlns:xs="http://www.w3.org/2001/XMLSchema">xs:string</con:type>
+            <con:default xsi:nil="true"/>
+          </con:parameter>
+        </con:parameters>
+        <con:method name="GET - getParcelById" method="GET">
+          <con:settings/>
+          <con:parameters/>
+          <con:representation type="RESPONSE" id="">
+            <con:mediaType>application/json</con:mediaType>
+            <con:params/>
+            <con:element xsi:nil="true"/>
+            <con:description xsi:nil="true"/>
+          </con:representation>
+          <con:representation type="RESPONSE" id="">
+            <con:mediaType>application/xml</con:mediaType>
+            <con:params/>
+            <con:element xsi:nil="true"/>
+            <con:description xsi:nil="true"/>
+          </con:representation>
+          <con:request name="Request 1">
+            <con:settings/>
+            <con:endpoint>http://127.0.0.1:7101</con:endpoint>
+            <con:parameters/>
+          </con:request>
+        </con:method>
+      </con:resource>
+      <con:resource name="/parcelManager" path="/parcelManager">
+        <con:settings/>
+        <con:parameters/>
+        <con:method name="GET - testParcelManagerAvailable" method="GET">
+          <con:settings/>
+          <con:parameters/>
+          <con:representation type="RESPONSE" id="">
+            <con:mediaType>text/html</con:mediaType>
+            <con:params/>
+            <con:element xsi:nil="true"/>
+            <con:description xsi:nil="true"/>
+          </con:representation>
+          <con:request name="Request 1">
+            <con:settings/>
+            <con:endpoint>http://127.0.0.1:7101</con:endpoint>
+            <con:parameters/>
+          </con:request>
+        </con:method>
+      </con:resource>
+      <con:resource name="/all{path:.*}" path="/all{path:.*}">
+        <con:settings/>
+        <con:parameters>
+          <con:parameter>
+            <con:name>path</con:name>
+            <con:value xsi:nil="true"/>
+            <con:style>TEMPLATE</con:style>
+            <con:type xmlns:xs="http://www.w3.org/2001/XMLSchema">xs:string</con:type>
+            <con:default xsi:nil="true"/>
+          </con:parameter>
+        </con:parameters>
+        <con:method name="GET - listParcels" method="GET">
+          <con:settings/>
+          <con:parameters/>
+          <con:representation type="RESPONSE" id="">
+            <con:mediaType>application/json</con:mediaType>
+            <con:params/>
+            <con:element xsi:nil="true"/>
+            <con:description xsi:nil="true"/>
+          </con:representation>
+          <con:representation type="RESPONSE" id="">
+            <con:mediaType>application/xml</con:mediaType>
+            <con:params/>
+            <con:element xsi:nil="true"/>
+            <con:description xsi:nil="true"/>
+          </con:representation>
+          <con:request name="Request 1">
+            <con:settings/>
+            <con:endpoint>http://127.0.0.1:7101</con:endpoint>
+            <con:parameters/>
+          </con:request>
+        </con:method>
+      </con:resource>
+      <con:resource name="log/{id}{path:.*}" path="log/{id}{path:.*}">
+        <con:settings/>
+        <con:parameters>
+          <con:parameter>
+            <con:name>id</con:name>
+            <con:value xsi:nil="true"/>
+            <con:style>TEMPLATE</con:style>
+            <con:type xmlns:xs="http://www.w3.org/2001/XMLSchema">xs:int</con:type>
+            <con:default xsi:nil="true"/>
+          </con:parameter>
+          <con:parameter>
+            <con:name>path</con:name>
+            <con:value xsi:nil="true"/>
+            <con:style>TEMPLATE</con:style>
+            <con:type xmlns:xs="http://www.w3.org/2001/XMLSchema">xs:string</con:type>
+            <con:default xsi:nil="true"/>
+          </con:parameter>
+        </con:parameters>
+        <con:method name="GET - getParcelEvents_default" method="GET">
+          <con:settings/>
+          <con:parameters/>
+          <con:representation type="RESPONSE" id="">
+            <con:mediaType>application/json</con:mediaType>
+            <con:params/>
+            <con:element xsi:nil="true"/>
+            <con:description xsi:nil="true"/>
+          </con:representation>
+          <con:representation type="RESPONSE" id="">
+            <con:mediaType>application/xml</con:mediaType>
+            <con:params/>
+            <con:element xsi:nil="true"/>
+            <con:description xsi:nil="true"/>
+          </con:representation>
+          <con:request name="Request 1">
+            <con:settings/>
+            <con:endpoint>http://127.0.0.1:7101</con:endpoint>
+            <con:parameters/>
+          </con:request>
+        </con:method>
+      </con:resource>
+      <con:resource name="/log/{id}/add.json" path="/log/{id}/add.json">
+        <con:settings/>
+        <con:parameters>
+          <con:parameter>
+            <con:name>id</con:name>
+            <con:value xsi:nil="true"/>
+            <con:style>TEMPLATE</con:style>
+            <con:type xmlns:xs="http://www.w3.org/2001/XMLSchema">xs:int</con:type>
+            <con:default xsi:nil="true"/>
+          </con:parameter>
+        </con:parameters>
+        <con:method name="POST - postLogEvent2" method="POST">
+          <con:settings/>
+          <con:parameters/>
+          <con:representation type="REQUEST" id="">
+            <con:mediaType>application/json</con:mediaType>
+            <con:params/>
+            <con:element xmlns:ship="http://demo.oracle.com/ops/domain/schema/shipping">ship:ParcelEvent</con:element>
+            <con:description xsi:nil="true"/>
+          </con:representation>
+          <con:representation type="RESPONSE" id="">
+            <con:mediaType>application/json</con:mediaType>
+            <con:params/>
+            <con:element xsi:nil="true"/>
+            <con:description xsi:nil="true"/>
+          </con:representation>
+          <con:request name="Request 1">
+            <con:settings/>
+            <con:endpoint>http://127.0.0.1:7101</con:endpoint>
+            <con:parameters/>
+          </con:request>
+        </con:method>
+      </con:resource>
+      <con:resource name="/log/add.json" path="/log/add.json">
+        <con:settings/>
+        <con:parameters/>
+        <con:method name="PUT - putLogEvent" method="PUT">
+          <con:settings/>
+          <con:parameters/>
+          <con:representation type="REQUEST" id="">
+            <con:mediaType>application/json</con:mediaType>
+            <con:params/>
+            <con:element xmlns:ship="http://demo.oracle.com/ops/domain/schema/shipping">ship:ParcelEvent</con:element>
+            <con:description xsi:nil="true"/>
+          </con:representation>
+          <con:representation type="RESPONSE" id="">
+            <con:mediaType>application/json</con:mediaType>
+            <con:params/>
+            <con:element xmlns:ship="http://demo.oracle.com/ops/domain/schema/shipping">ship:ParcelEvent</con:element>
+            <con:description xsi:nil="true"/>
+          </con:representation>
+          <con:request name="Request 1">
+            <con:settings/>
+            <con:endpoint>http://127.0.0.1:7101</con:endpoint>
+            <con:parameters/>
+          </con:request>
+        </con:method>
+        <con:method name="POST - postLogEvent" method="POST">
+          <con:settings/>
+          <con:parameters/>
+          <con:representation type="REQUEST" id="">
+            <con:mediaType>application/json</con:mediaType>
+            <con:params/>
+            <con:element xmlns:ship="http://demo.oracle.com/ops/domain/schema/shipping">ship:ParcelEvent</con:element>
+            <con:description xsi:nil="true"/>
+          </con:representation>
+          <con:representation type="RESPONSE" id="">
+            <con:mediaType>application/json</con:mediaType>
+            <con:params/>
+            <con:element xmlns:ship="http://demo.oracle.com/ops/domain/schema/shipping">ship:ParcelEvent</con:element>
+            <con:description xsi:nil="true"/>
+          </con:representation>
+          <con:request name="Request 1">
+            <con:settings/>
+            <con:endpoint>http://127.0.0.1:7101</con:endpoint>
+            <con:parameters/>
+          </con:request>
+        </con:method>
+      </con:resource>
+    </con:resource>
+    <con:resource name="parcel" path="parcel">
+      <con:settings/>
+      <con:parameters/>
+      <con:resource name="/ping" path="/ping">
+        <con:settings/>
+        <con:parameters/>
+        <con:method name="GET - ping" method="GET">
+          <con:settings/>
+          <con:parameters/>
+          <con:representation type="RESPONSE" id="">
+            <con:mediaType>application/json</con:mediaType>
+            <con:params/>
+            <con:element xsi:nil="true"/>
+            <con:description xsi:nil="true"/>
+          </con:representation>
+          <con:representation type="RESPONSE" id="">
+            <con:mediaType>application/xml</con:mediaType>
+            <con:params/>
+            <con:element xsi:nil="true"/>
+            <con:description xsi:nil="true"/>
+          </con:representation>
+          <con:request name="Request 1">
+            <con:settings/>
+            <con:endpoint>http://127.0.0.1:7101</con:endpoint>
+            <con:parameters/>
+          </con:request>
+        </con:method>
+      </con:resource>
+      <con:resource name="all/log.json" path="all/log.json">
+        <con:settings/>
+        <con:parameters>
+          <con:parameter>
+            <con:name>path</con:name>
+            <con:value xsi:nil="true"/>
+            <con:style>TEMPLATE</con:style>
+            <con:type xmlns:xs="http://www.w3.org/2001/XMLSchema">xs:string</con:type>
+            <con:default xsi:nil="true"/>
+          </con:parameter>
+        </con:parameters>
+        <con:method name="GET - getAllParcelEvents" method="GET">
+          <con:settings/>
+          <con:parameters/>
+          <con:representation type="RESPONSE" id="">
+            <con:mediaType>application/json</con:mediaType>
+            <con:params/>
+            <con:element xsi:nil="true"/>
+            <con:description xsi:nil="true"/>
+          </con:representation>
+          <con:representation type="RESPONSE" id="">
+            <con:mediaType>application/xml</con:mediaType>
+            <con:params/>
+            <con:element xsi:nil="true"/>
+            <con:description xsi:nil="true"/>
+          </con:representation>
+          <con:request name="Request 1">
+            <con:settings/>
+            <con:endpoint>http://127.0.0.1:7101</con:endpoint>
+            <con:parameters/>
+          </con:request>
+        </con:method>
+      </con:resource>
+      <con:resource name="/validate" path="/validate">
+        <con:settings/>
+        <con:parameters/>
+        <con:method name="GET - testParcelManagerAvailable" method="GET">
+          <con:settings/>
+          <con:parameters/>
+          <con:representation type="RESPONSE" id="">
+            <con:mediaType>text/html</con:mediaType>
+            <con:params/>
+            <con:element xsi:nil="true"/>
+            <con:description xsi:nil="true"/>
+          </con:representation>
+          <con:request name="Request 1">
+            <con:settings/>
+            <con:endpoint>http://127.0.0.1:7101</con:endpoint>
+            <con:parameters/>
+          </con:request>
+        </con:method>
+      </con:resource>
+      <con:resource name="{id}" path="{id}">
+        <con:settings/>
+        <con:parameters>
+          <con:parameter>
+            <con:name>id</con:name>
+            <con:value xsi:nil="true"/>
+            <con:style>TEMPLATE</con:style>
+            <con:type xmlns:xs="http://www.w3.org/2001/XMLSchema">xs:int</con:type>
+            <con:default xsi:nil="true"/>
+          </con:parameter>
+        </con:parameters>
+        <con:method name="GET - getParcelById_default" method="GET">
+          <con:settings/>
+          <con:parameters/>
+          <con:representation type="RESPONSE" id="">
+            <con:mediaType>application/xml</con:mediaType>
+            <con:params/>
+            <con:element xmlns:ship="http://demo.oracle.com/ops/domain/schema/shipping">ship:Parcel</con:element>
+            <con:description xsi:nil="true"/>
+          </con:representation>
+          <con:representation type="RESPONSE" id="">
+            <con:mediaType>application/json</con:mediaType>
+            <con:params/>
+            <con:element xmlns:ship="http://demo.oracle.com/ops/domain/schema/shipping">ship:Parcel</con:element>
+            <con:description xsi:nil="true"/>
+          </con:representation>
+          <con:request name="Request 1">
+            <con:settings/>
+            <con:endpoint>http://127.0.0.1:7101</con:endpoint>
+            <con:parameters/>
+          </con:request>
+        </con:method>
+      </con:resource>
+      <con:resource name="{id}.json" path="{id}.json">
+        <con:settings/>
+        <con:parameters>
+          <con:parameter>
+            <con:name>id</con:name>
+            <con:value xsi:nil="true"/>
+            <con:style>TEMPLATE</con:style>
+            <con:type xmlns:xs="http://www.w3.org/2001/XMLSchema">xs:int</con:type>
+            <con:default xsi:nil="true"/>
+          </con:parameter>
+        </con:parameters>
+        <con:method name="GET - getParcelById_json" method="GET">
+          <con:settings/>
+          <con:parameters/>
+          <con:representation type="RESPONSE" id="">
+            <con:mediaType>application/json</con:mediaType>
+            <con:params/>
+            <con:element xmlns:ship="http://demo.oracle.com/ops/domain/schema/shipping">ship:Parcel</con:element>
+            <con:description xsi:nil="true"/>
+          </con:representation>
+          <con:request name="Request 1">
+            <con:settings/>
+            <con:endpoint>http://127.0.0.1:7101</con:endpoint>
+            <con:parameters/>
+          </con:request>
+        </con:method>
+      </con:resource>
+      <con:resource name="{id}.xml" path="{id}.xml">
+        <con:settings/>
+        <con:parameters>
+          <con:parameter>
+            <con:name>id</con:name>
+            <con:value xsi:nil="true"/>
+            <con:style>TEMPLATE</con:style>
+            <con:type xmlns:xs="http://www.w3.org/2001/XMLSchema">xs:int</con:type>
+            <con:default xsi:nil="true"/>
+          </con:parameter>
+        </con:parameters>
+        <con:method name="GET - getParcelById_xml" method="GET">
+          <con:settings/>
+          <con:parameters/>
+          <con:representation type="RESPONSE" id="">
+            <con:mediaType>text/xml</con:mediaType>
+            <con:params/>
+            <con:element xmlns:ship="http://demo.oracle.com/ops/domain/schema/shipping">ship:Parcel</con:element>
+            <con:description xsi:nil="true"/>
+          </con:representation>
+          <con:request name="Request 1">
+            <con:settings/>
+            <con:endpoint>http://127.0.0.1:7101</con:endpoint>
+            <con:parameters/>
+          </con:request>
+        </con:method>
+      </con:resource>
+      <con:resource name="{id}/log" path="{id}/log">
+        <con:settings/>
+        <con:parameters>
+          <con:parameter>
+            <con:name>id</con:name>
+            <con:value xsi:nil="true"/>
+            <con:style>TEMPLATE</con:style>
+            <con:type xmlns:xs="http://www.w3.org/2001/XMLSchema">xs:int</con:type>
+            <con:default xsi:nil="true"/>
+          </con:parameter>
+        </con:parameters>
+        <con:method name="GET - getParcelEvents_default" method="GET">
+          <con:settings/>
+          <con:parameters/>
+          <con:representation type="RESPONSE" id="">
+            <con:mediaType>application/json</con:mediaType>
+            <con:params/>
+            <con:element xmlns:ship="http://demo.oracle.com/ops/domain/schema/shipping">ship:ParcelEvent</con:element>
+            <con:description xsi:nil="true"/>
+          </con:representation>
+          <con:representation type="RESPONSE" id="">
+            <con:mediaType>application/xml</con:mediaType>
+            <con:params/>
+            <con:element xmlns:ship="http://demo.oracle.com/ops/domain/schema/shipping">ship:ParcelEvent</con:element>
+            <con:description xsi:nil="true"/>
+          </con:representation>
+          <con:request name="Request 1">
+            <con:settings/>
+            <con:endpoint>http://127.0.0.1:7101</con:endpoint>
+            <con:parameters/>
+          </con:request>
+        </con:method>
+      </con:resource>
+      <con:resource name="{id}/log.json" path="{id}/log.json">
+        <con:settings/>
+        <con:parameters>
+          <con:parameter>
+            <con:name>id</con:name>
+            <con:value xsi:nil="true"/>
+            <con:style>TEMPLATE</con:style>
+            <con:type xmlns:xs="http://www.w3.org/2001/XMLSchema">xs:int</con:type>
+            <con:default xsi:nil="true"/>
+          </con:parameter>
+        </con:parameters>
+        <con:method name="GET - getParcelEvents_json" method="GET">
+          <con:settings/>
+          <con:parameters/>
+          <con:representation type="RESPONSE" id="">
+            <con:mediaType>application/json</con:mediaType>
+            <con:params/>
+            <con:element xmlns:ship="http://demo.oracle.com/ops/domain/schema/shipping">ship:ParcelEvent</con:element>
+            <con:description xsi:nil="true"/>
+          </con:representation>
+          <con:representation type="RESPONSE" id="">
+            <con:mediaType>application/xml</con:mediaType>
+            <con:params/>
+            <con:element xmlns:ship="http://demo.oracle.com/ops/domain/schema/shipping">ship:ParcelEvent</con:element>
+            <con:description xsi:nil="true"/>
+          </con:representation>
+          <con:request name="Request 1">
+            <con:settings/>
+            <con:endpoint>http://127.0.0.1:7101</con:endpoint>
+            <con:parameters/>
+          </con:request>
+        </con:method>
+      </con:resource>
+      <con:resource name="{id}/log.xml" path="{id}/log.xml">
+        <con:settings/>
+        <con:parameters>
+          <con:parameter>
+            <con:name>id</con:name>
+            <con:value xsi:nil="true"/>
+            <con:style>TEMPLATE</con:style>
+            <con:type xmlns:xs="http://www.w3.org/2001/XMLSchema">xs:int</con:type>
+            <con:default xsi:nil="true"/>
+          </con:parameter>
+        </con:parameters>
+        <con:method name="GET - getParcelEvents_xml" method="GET">
+          <con:settings/>
+          <con:parameters/>
+          <con:representation type="RESPONSE" id="">
+            <con:mediaType>application/xml</con:mediaType>
+            <con:params/>
+            <con:element xmlns:ship="http://demo.oracle.com/ops/domain/schema/shipping">ship:ParcelEvent</con:element>
+            <con:description xsi:nil="true"/>
+          </con:representation>
+          <con:request name="Request 1">
+            <con:settings/>
+            <con:endpoint>http://127.0.0.1:7101</con:endpoint>
+            <con:parameters/>
+          </con:request>
+        </con:method>
+      </con:resource>
+      <con:resource name="/log/{id}/add.json" path="/log/{id}/add.json">
+        <con:settings/>
+        <con:parameters>
+          <con:parameter>
+            <con:name>id</con:name>
+            <con:value xsi:nil="true"/>
+            <con:style>TEMPLATE</con:style>
+            <con:type xmlns:xs="http://www.w3.org/2001/XMLSchema">xs:int</con:type>
+            <con:default xsi:nil="true"/>
+          </con:parameter>
+        </con:parameters>
+        <con:method name="POST - postLogEvent2" method="POST">
+          <con:settings/>
+          <con:parameters/>
+          <con:representation type="REQUEST" id="">
+            <con:mediaType>application/json</con:mediaType>
+            <con:params/>
+            <con:element xmlns:ship="http://demo.oracle.com/ops/domain/schema/shipping">ship:ParcelEvent</con:element>
+            <con:description xsi:nil="true"/>
+          </con:representation>
+          <con:representation type="REQUEST" id="">
+            <con:mediaType>application/xml</con:mediaType>
+            <con:params/>
+            <con:element xmlns:ship="http://demo.oracle.com/ops/domain/schema/shipping">ship:ParcelEvent</con:element>
+            <con:description xsi:nil="true"/>
+          </con:representation>
+          <con:representation type="RESPONSE" id="">
+            <con:mediaType>application/json</con:mediaType>
+            <con:params/>
+            <con:element xsi:nil="true"/>
+            <con:description xsi:nil="true"/>
+          </con:representation>
+          <con:representation type="RESPONSE" id="">
+            <con:mediaType>application/xml</con:mediaType>
+            <con:params/>
+            <con:element xsi:nil="true"/>
+            <con:description xsi:nil="true"/>
+          </con:representation>
+          <con:request name="Request 1">
+            <con:settings/>
+            <con:endpoint>http://127.0.0.1:7101</con:endpoint>
+            <con:parameters/>
+          </con:request>
+        </con:method>
+      </con:resource>
+      <con:resource name="/log/prototype.json" path="/log/prototype.json">
+        <con:settings/>
+        <con:parameters/>
+        <con:method name="POST - parcelLogPrototype" method="POST">
+          <con:settings/>
+          <con:parameters/>
+          <con:representation type="RESPONSE" id="">
+            <con:mediaType>application/json</con:mediaType>
+            <con:params/>
+            <con:element xsi:nil="true"/>
+            <con:description xsi:nil="true"/>
+          </con:representation>
+          <con:representation type="RESPONSE" id="">
+            <con:mediaType>application/xml</con:mediaType>
+            <con:params/>
+            <con:element xsi:nil="true"/>
+            <con:description xsi:nil="true"/>
+          </con:representation>
+          <con:request name="Request 1">
+            <con:settings/>
+            <con:endpoint>http://127.0.0.1:7101</con:endpoint>
+            <con:parameters/>
+          </con:request>
+        </con:method>
+      </con:resource>
+      <con:method name="GET - listParcels_json" method="GET">
+        <con:settings/>
+        <con:parameters/>
+        <con:representation type="RESPONSE" id="">
+          <con:mediaType>application/json</con:mediaType>
+          <con:params/>
+          <con:element xsi:nil="true"/>
+          <con:description xsi:nil="true"/>
+        </con:representation>
+        <con:representation type="RESPONSE" id="">
+          <con:mediaType>application/xml</con:mediaType>
+          <con:params/>
+          <con:element xsi:nil="true"/>
+          <con:description xsi:nil="true"/>
+        </con:representation>
+        <con:request name="Request 1">
+          <con:settings/>
+          <con:endpoint>http://127.0.0.1:7101</con:endpoint>
+          <con:parameters/>
+        </con:request>
+      </con:method>
+    </con:resource>
+    <con:resource name="geolocation" path="geolocation">
+      <con:settings/>
+      <con:parameters/>
+      <con:resource name="/{postalCode}" path="/{postalCode}">
+        <con:settings/>
+        <con:parameters>
+          <con:parameter>
+            <con:name>postalCode</con:name>
+            <con:value xsi:nil="true"/>
+            <con:style>TEMPLATE</con:style>
+            <con:type xmlns:xs="http://www.w3.org/2001/XMLSchema">xs:string</con:type>
+            <con:default xsi:nil="true"/>
+          </con:parameter>
+        </con:parameters>
+        <con:method name="GET - searchPostalCode" method="GET">
+          <con:settings/>
+          <con:parameters/>
+          <con:representation type="RESPONSE" id="">
+            <con:mediaType>application/json</con:mediaType>
+            <con:params/>
+            <con:element xmlns:com="http://demo.oracle.com/ops/domain/schema/common">com:PostalGeolocation</con:element>
+            <con:description xsi:nil="true"/>
+          </con:representation>
+          <con:request name="Request 1" mediaType="application/xml">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+            </con:settings>
+            <con:endpoint>http://127.0.0.1:7101</con:endpoint>
+            <con:request/>
+            <con:credentials>
+              <con:authType>Global HTTP Settings</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:jmsPropertyConfig/>
+            <con:parameters>
+              <entry key="postalCode" value="28504" xmlns="http://eviware.com/soapui/config"/>
+            </con:parameters>
+          </con:request>
+        </con:method>
+      </con:resource>
+    </con:resource>
+    <con:resource name="parcelService" path="parcelService">
+      <con:settings/>
+      <con:parameters/>
+      <con:resource name="/parcel/create" path="/parcel/create">
+        <con:settings/>
+        <con:parameters/>
+        <con:method name="POST - createParcel" method="POST">
+          <con:settings/>
+          <con:parameters/>
+          <con:representation type="REQUEST" id="">
+            <con:mediaType>application/json</con:mediaType>
+            <con:params/>
+            <con:element xmlns:ship="http://demo.oracle.com/ops/domain/schema/shipping">ship:Parcel</con:element>
+            <con:description xsi:nil="true"/>
+          </con:representation>
+          <con:representation type="RESPONSE" id="">
+            <con:mediaType>application/json</con:mediaType>
+            <con:params/>
+            <con:element xmlns:ship="http://demo.oracle.com/ops/domain/schema/shipping">ship:Parcel</con:element>
+            <con:description xsi:nil="true"/>
+          </con:representation>
+          <con:request name="Request 1">
+            <con:settings/>
+            <con:endpoint>http://127.0.0.1:7101</con:endpoint>
+            <con:parameters/>
+          </con:request>
+        </con:method>
+      </con:resource>
+      <con:resource name="parcel/test" path="parcel/test">
+        <con:settings/>
+        <con:parameters/>
+        <con:method name="GET - testParcelManagerAvailable" method="GET">
+          <con:settings/>
+          <con:parameters/>
+          <con:representation type="RESPONSE" id="">
+            <con:mediaType>text/html</con:mediaType>
+            <con:params/>
+            <con:element xsi:nil="true"/>
+            <con:description xsi:nil="true"/>
+          </con:representation>
+          <con:request name="Request 1">
+            <con:settings/>
+            <con:endpoint>http://127.0.0.1:7101</con:endpoint>
+            <con:parameters/>
+          </con:request>
+        </con:method>
+      </con:resource>
+      <con:resource name="/parcel/list" path="/parcel/list">
+        <con:settings/>
+        <con:parameters/>
+        <con:method name="GET - listParcels" method="GET">
+          <con:settings/>
+          <con:parameters/>
+          <con:representation type="RESPONSE" id="">
+            <con:mediaType>application/json</con:mediaType>
+            <con:params/>
+            <con:element xsi:nil="true"/>
+            <con:description xsi:nil="true"/>
+          </con:representation>
+          <con:request name="Request 1">
+            <con:settings/>
+            <con:endpoint>http://127.0.0.1:7101</con:endpoint>
+            <con:parameters/>
+          </con:request>
+        </con:method>
+      </con:resource>
+      <con:resource name="/shipment/list" path="/shipment/list">
+        <con:settings/>
+        <con:parameters/>
+        <con:method name="GET - listShipments" method="GET">
+          <con:settings/>
+          <con:parameters/>
+          <con:representation type="RESPONSE" id="">
+            <con:mediaType>application/json</con:mediaType>
+            <con:params/>
+            <con:element xsi:nil="true"/>
+            <con:description xsi:nil="true"/>
+          </con:representation>
+          <con:request name="Request 1">
+            <con:settings/>
+            <con:endpoint>http://127.0.0.1:7101</con:endpoint>
+            <con:parameters/>
+          </con:request>
+        </con:method>
+      </con:resource>
+      <con:resource name="shipment/test" path="shipment/test">
+        <con:settings/>
+        <con:parameters/>
+        <con:method name="GET - testShipmentManagerAvailable" method="GET">
+          <con:settings/>
+          <con:parameters/>
+          <con:representation type="RESPONSE" id="">
+            <con:mediaType>text/html</con:mediaType>
+            <con:params/>
+            <con:element xsi:nil="true"/>
+            <con:description xsi:nil="true"/>
+          </con:representation>
+          <con:request name="Request 1">
+            <con:settings/>
+            <con:endpoint>http://127.0.0.1:7101</con:endpoint>
+            <con:parameters/>
+          </con:request>
+        </con:method>
+      </con:resource>
+      <con:resource name="/shipment/track/{id}" path="/shipment/track/{id}">
+        <con:settings/>
+        <con:parameters>
+          <con:parameter>
+            <con:name>id</con:name>
+            <con:value xsi:nil="true"/>
+            <con:style>TEMPLATE</con:style>
+            <con:type xmlns:xs="http://www.w3.org/2001/XMLSchema">xs:int</con:type>
+            <con:default xsi:nil="true"/>
+          </con:parameter>
+        </con:parameters>
+        <con:method name="GET - locateShipment" method="GET">
+          <con:settings/>
+          <con:parameters/>
+          <con:representation type="RESPONSE" id="">
+            <con:mediaType>application/json</con:mediaType>
+            <con:params/>
+            <con:element xmlns:ship="http://demo.oracle.com/ops/domain/schema/shipping">ship:Shipment</con:element>
+            <con:description xsi:nil="true"/>
+          </con:representation>
+          <con:request name="Request 1">
+            <con:settings/>
+            <con:endpoint>http://127.0.0.1:7101</con:endpoint>
+            <con:parameters/>
+          </con:request>
+        </con:method>
+      </con:resource>
+      <con:resource name="/shipment/create1" path="/shipment/create1">
+        <con:settings/>
+        <con:parameters/>
+        <con:method name="POST - createShipmentFromWizard" method="POST">
+          <con:settings/>
+          <con:parameters/>
+          <con:representation type="REQUEST" id="">
+            <con:mediaType>application/json</con:mediaType>
+            <con:params/>
+            <con:element xmlns:ship="http://demo.oracle.com/ops/domain/schema/shipping">ship:Shipment</con:element>
+            <con:description xsi:nil="true"/>
+          </con:representation>
+          <con:representation type="RESPONSE" id="">
+            <con:mediaType>application/json</con:mediaType>
+            <con:params/>
+            <con:element xmlns:ship="http://demo.oracle.com/ops/domain/schema/shipping">ship:Shipment</con:element>
+            <con:description xsi:nil="true"/>
+          </con:representation>
+          <con:request name="Request 1">
+            <con:settings/>
+            <con:endpoint>http://127.0.0.1:7101</con:endpoint>
+            <con:parameters/>
+          </con:request>
+        </con:method>
+      </con:resource>
+      <con:resource name="/shipment/create" path="/shipment/create">
+        <con:settings/>
+        <con:parameters/>
+        <con:method name="POST - createShipmentFromWizard" method="POST">
+          <con:settings/>
+          <con:parameters/>
+          <con:representation type="REQUEST" id="">
+            <con:mediaType>application/x-www-form-urlencoded</con:mediaType>
+            <con:params/>
+            <con:element xsi:nil="true"/>
+            <con:description xsi:nil="true"/>
+          </con:representation>
+          <con:representation type="RESPONSE" id="">
+            <con:mediaType>application/json</con:mediaType>
+            <con:params/>
+            <con:element xmlns:ship="http://demo.oracle.com/ops/domain/schema/shipping">ship:Shipment</con:element>
+            <con:description xsi:nil="true"/>
+          </con:representation>
+          <con:request name="Request 1">
+            <con:settings/>
+            <con:endpoint>http://127.0.0.1:7101</con:endpoint>
+            <con:parameters/>
+          </con:request>
+        </con:method>
+      </con:resource>
+      <con:method name="GET - getXml" method="GET">
+        <con:settings/>
+        <con:parameters/>
+        <con:representation type="RESPONSE" id="">
+          <con:mediaType>application/xml</con:mediaType>
+          <con:params/>
+          <con:element xsi:nil="true"/>
+          <con:description xsi:nil="true"/>
+        </con:representation>
+        <con:request name="Request 1">
+          <con:settings/>
+          <con:endpoint>http://127.0.0.1:7101</con:endpoint>
+          <con:parameters/>
+        </con:request>
+      </con:method>
+      <con:method name="PUT - putXml" method="PUT">
+        <con:settings/>
+        <con:parameters/>
+        <con:representation type="REQUEST" id="">
+          <con:mediaType>application/xml</con:mediaType>
+          <con:params/>
+          <con:element xsi:nil="true"/>
+          <con:description xsi:nil="true"/>
+        </con:representation>
+        <con:request name="Request 1">
+          <con:settings/>
+          <con:endpoint>http://127.0.0.1:7101</con:endpoint>
+          <con:parameters/>
+        </con:request>
+      </con:method>
+    </con:resource>
+    <con:resource name="2/shipment" path="2/shipment">
+      <con:settings/>
+      <con:parameters/>
+      <con:resource name="{id}{path:.*}" path="{id}{path:.*}">
+        <con:settings/>
+        <con:parameters>
+          <con:parameter>
+            <con:name>id</con:name>
+            <con:value xsi:nil="true"/>
+            <con:style>TEMPLATE</con:style>
+            <con:type xmlns:xs="http://www.w3.org/2001/XMLSchema">xs:int</con:type>
+            <con:default xsi:nil="true"/>
+          </con:parameter>
+          <con:parameter>
+            <con:name>path</con:name>
+            <con:value xsi:nil="true"/>
+            <con:style>TEMPLATE</con:style>
+            <con:type xmlns:xs="http://www.w3.org/2001/XMLSchema">xs:string</con:type>
+            <con:default xsi:nil="true"/>
+          </con:parameter>
+        </con:parameters>
+        <con:method name="GET - getShipmentById" method="GET">
+          <con:settings/>
+          <con:parameters/>
+          <con:representation type="RESPONSE" id="">
+            <con:mediaType>application/json</con:mediaType>
+            <con:params/>
+            <con:element xsi:nil="true"/>
+            <con:description xsi:nil="true"/>
+          </con:representation>
+          <con:representation type="RESPONSE" id="">
+            <con:mediaType>text/xml</con:mediaType>
+            <con:params/>
+            <con:element xsi:nil="true"/>
+            <con:description xsi:nil="true"/>
+          </con:representation>
+          <con:request name="Request 1">
+            <con:settings/>
+            <con:endpoint>http://127.0.0.1:7101</con:endpoint>
+            <con:parameters/>
+          </con:request>
+        </con:method>
+      </con:resource>
+      <con:resource name="/prototype.json" path="/prototype.json">
+        <con:settings/>
+        <con:parameters/>
+        <con:method name="GET - getShipmentPrototype" method="GET">
+          <con:settings/>
+          <con:parameters/>
+          <con:representation type="RESPONSE" id="">
+            <con:mediaType>application/json</con:mediaType>
+            <con:params/>
+            <con:element xmlns:ship="http://demo.oracle.com/ops/domain/schema/shipping">ship:Shipment</con:element>
+            <con:description xsi:nil="true"/>
+          </con:representation>
+          <con:request name="Request 1">
+            <con:settings/>
+            <con:endpoint>http://127.0.0.1:7101</con:endpoint>
+            <con:parameters/>
+          </con:request>
+        </con:method>
+      </con:resource>
+      <con:resource name="/all{path:.*}" path="/all{path:.*}">
+        <con:settings/>
+        <con:parameters>
+          <con:parameter>
+            <con:name>path</con:name>
+            <con:value xsi:nil="true"/>
+            <con:style>TEMPLATE</con:style>
+            <con:type xmlns:xs="http://www.w3.org/2001/XMLSchema">xs:string</con:type>
+            <con:default xsi:nil="true"/>
+          </con:parameter>
+        </con:parameters>
+        <con:method name="GET - listShipments" method="GET">
+          <con:settings/>
+          <con:parameters/>
+          <con:representation type="RESPONSE" id="">
+            <con:mediaType>application/json</con:mediaType>
+            <con:params/>
+            <con:element xsi:nil="true"/>
+            <con:description xsi:nil="true"/>
+          </con:representation>
+          <con:representation type="RESPONSE" id="">
+            <con:mediaType>text/xml</con:mediaType>
+            <con:params/>
+            <con:element xsi:nil="true"/>
+            <con:description xsi:nil="true"/>
+          </con:representation>
+          <con:request name="Request 1">
+            <con:settings/>
+            <con:endpoint>http://127.0.0.1:7101</con:endpoint>
+            <con:parameters/>
+          </con:request>
+        </con:method>
+      </con:resource>
+      <con:method name="PUT - putJSON" method="PUT">
+        <con:settings/>
+        <con:parameters/>
+        <con:representation type="REQUEST" id="">
+          <con:mediaType>application/json</con:mediaType>
+          <con:params/>
+          <con:element xmlns:ship="http://demo.oracle.com/ops/domain/schema/shipping">ship:Shipment</con:element>
+          <con:description xsi:nil="true"/>
+        </con:representation>
+        <con:representation type="RESPONSE" id="">
+          <con:mediaType>application/json</con:mediaType>
+          <con:params/>
+          <con:element xmlns:ship="http://demo.oracle.com/ops/domain/schema/shipping">ship:Shipment</con:element>
+          <con:description xsi:nil="true"/>
+        </con:representation>
+        <con:request name="Request 1">
+          <con:settings/>
+          <con:endpoint>http://127.0.0.1:7101</con:endpoint>
+          <con:parameters/>
+        </con:request>
+      </con:method>
+      <con:method name="POST - postJSON" method="POST">
+        <con:settings/>
+        <con:parameters/>
+        <con:representation type="REQUEST" id="">
+          <con:mediaType>application/json</con:mediaType>
+          <con:params/>
+          <con:element xmlns:ship="http://demo.oracle.com/ops/domain/schema/shipping">ship:Shipment</con:element>
+          <con:description xsi:nil="true"/>
+        </con:representation>
+        <con:representation type="RESPONSE" id="">
+          <con:mediaType>application/json</con:mediaType>
+          <con:params/>
+          <con:element xmlns:ship="http://demo.oracle.com/ops/domain/schema/shipping">ship:Shipment</con:element>
+          <con:description xsi:nil="true"/>
+        </con:representation>
+        <con:request name="Request 1">
+          <con:settings/>
+          <con:endpoint>http://127.0.0.1:7101</con:endpoint>
+          <con:parameters/>
+        </con:request>
+      </con:method>
+    </con:resource>
+  </con:interface>
+  <con:testSuite name="GeolocationTest">
+    <con:settings/>
+    <con:runType>SEQUENTIAL</con:runType>
+    <con:testCase failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="TestKinstonPositive"
+                  searchProperties="true" id="fd709f28-4e7b-429c-9f35-140539b7e8de">
+      <con:settings/>
+      <con:testStep type="restrequest" name="REST Call">
+        <con:settings/>
+        <con:config service="OPS EE6 REST" resourcePath="/ops-rest/resource/geolocation/{postalCode}" methodName="GET - searchPostalCode"
+                    xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:restRequest name="REST Call" mediaType="application/xml">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+            </con:settings>
+            <con:endpoint>http://127.0.0.1:7101</con:endpoint>
+            <con:request/>
+            <con:assertion type="Invalid HTTP Status Codes" name="Invalid HTTP Status Codes">
+              <con:configuration>
+                <codes>404 503 403 500</codes>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="MessageContentAssertion" name="Message Content Assertion">
+              <con:configuration xsi:type="con:MessageContentAssertion">
+                <con:elements>
+                  <con:xpath>declare namespace ns1='http://127.0.0.1/ops-rest/resource/geolocation/28504';
+                    //ns1:Response[1]/ns1:City[1]
+                  </con:xpath>
+                  <con:element>City</con:element>
+                  <con:type xsi:nil="true"/>
+                  <con:operator>=</con:operator>
+                  <con:enabled>true</con:enabled>
+                  <con:expectedValue>Kinston</con:expectedValue>
+                  <con:hasValue>false</con:hasValue>
+                  <con:numberType>false</con:numberType>
+                </con:elements>
+                <con:elements>
+                  <con:xpath>declare namespace ns1='http://127.0.0.1/ops-rest/resource/geolocation/28504';
+                    //ns1:Response[1]/ns1:Latitude[1]
+                  </con:xpath>
+                  <con:element>Latitude</con:element>
+                  <con:type xsi:nil="true"/>
+                  <con:operator>=</con:operator>
+                  <con:enabled>true</con:enabled>
+                  <con:expectedValue>35.2134024</con:expectedValue>
+                  <con:hasValue>false</con:hasValue>
+                  <con:numberType>false</con:numberType>
+                </con:elements>
+                <con:elements>
+                  <con:xpath>declare namespace ns1='http://127.0.0.1/ops-rest/resource/geolocation/28504';
+                    //ns1:Response[1]/ns1:Longitude[1]
+                  </con:xpath>
+                  <con:element>Longitude</con:element>
+                  <con:type xsi:nil="true"/>
+                  <con:operator>=</con:operator>
+                  <con:enabled>true</con:enabled>
+                  <con:expectedValue>-77.6307018</con:expectedValue>
+                  <con:hasValue>false</con:hasValue>
+                  <con:numberType>false</con:numberType>
+                </con:elements>
+                <con:elements>
+                  <con:xpath>declare namespace ns1='http://127.0.0.1/ops-rest/resource/geolocation/28504';
+                    //ns1:Response[1]/ns1:PostalCode[1]
+                  </con:xpath>
+                  <con:element>PostalCode</con:element>
+                  <con:type xsi:nil="true"/>
+                  <con:operator>=</con:operator>
+                  <con:enabled>true</con:enabled>
+                  <con:expectedValue>28504</con:expectedValue>
+                  <con:hasValue>false</con:hasValue>
+                  <con:numberType>false</con:numberType>
+                </con:elements>
+                <con:elements>
+                  <con:xpath>declare namespace ns1='http://127.0.0.1/ops-rest/resource/geolocation/28504';
+                    //ns1:Response[1]/ns1:State[1]
+                  </con:xpath>
+                  <con:element>State</con:element>
+                  <con:type xsi:nil="true"/>
+                  <con:operator>=</con:operator>
+                  <con:enabled>true</con:enabled>
+                  <con:expectedValue>NC</con:expectedValue>
+                  <con:hasValue>false</con:hasValue>
+                  <con:numberType>false</con:numberType>
+                </con:elements>
+                <con:originalMessage><![CDATA[<Response xmlns="http://127.0.0.1/ops-rest/resource/geolocation/28504">
+   <City>Kinston</City>
+   <Latitude>35.2134024</Latitude>
+   <Longitude>-77.6307018</Longitude>
+   <PostalCode>28504</PostalCode>
+   <State>NC</State>
+</Response>]]></con:originalMessage>
+              </con:configuration>
+            </con:assertion>
+            <con:credentials>
+              <con:authType>Global HTTP Settings</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:jmsPropertyConfig/>
+            <con:parameters>
+              <entry key="postalCode" value="28504" xmlns="http://eviware.com/soapui/config"/>
+            </con:parameters>
+          </con:restRequest>
+        </con:config>
+      </con:testStep>
+      <con:properties/>
+      <con:reportParameters/>
+    </con:testCase>
+    <con:testCase failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="TestKinstonNegative"
+                  searchProperties="true" id="f30b2015-8b76-476a-99dd-880246062886">
+      <con:settings/>
+      <con:testStep type="restrequest" name="REST Test Request">
+        <con:settings/>
+        <con:config service="OPS EE6 REST" methodName="GET - searchPostalCode" resourcePath="/ops-rest/resource/geolocation/{postalCode}"
+                    xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:restRequest name="REST Test Request" mediaType="application/xml">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+            </con:settings>
+            <con:encoding>UTF-8</con:encoding>
+            <con:endpoint>http://127.0.0.1:7101</con:endpoint>
+            <con:request/>
+            <con:assertion type="Invalid HTTP Status Codes" name="Invalid HTTP Status Codes">
+              <con:configuration>
+                <codes>404 503 403 500</codes>
+              </con:configuration>
+            </con:assertion>
+            <con:credentials>
+              <con:authType>Global HTTP Settings</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:jmsPropertyConfig/>
+            <con:parameters>
+              <entry key="postalCode" value="28504" xmlns="http://eviware.com/soapui/config"/>
+            </con:parameters>
+          </con:restRequest>
+        </con:config>
+      </con:testStep>
+      <con:properties/>
+      <con:reportParameters/>
+    </con:testCase>
+    <con:properties/>
+    <con:reportParameters/>
+  </con:testSuite>
+  <con:requirements/>
+  <con:properties/>
+  <con:wssContainer/>
+  <con:databaseConnectionContainer/>
+  <con:reporting>
+    <con:reportTemplates/>
+    <con:xmlTemplates/>
+    <con:parameters/>
+  </con:reporting>
+  <con:sensitiveInformation/>
+</con:soapui-project>

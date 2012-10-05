@@ -1,0 +1,44 @@
+<ui:composition
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:cc="http://java.sun.com/jsf/composite"
+    xmlns:parcel="http://java.sun.com/jsf/composite/parcel"
+    xmlns:address="http://java.sun.com/jsf/composite/address"
+    >
+
+  <cc:interface>
+
+    <cc:attribute name="shipment"
+                  type="com.oracle.demo.ops.domain.Shipment"/>
+
+  </cc:interface>
+
+  <cc:implementation>
+
+    <h:panelGrid columns="2"
+                 columnClasses="label, value"
+                 styleClass="data-table"
+                 rowClasses="row-odd,row-even">
+
+      <h:outputText value="ID"/>
+      <h:outputText value="#{cc.attrs.shipment.id}"/>
+
+      <h:outputText value="To Address"/>
+      <address:fourLine address="#{cc.attrs.shipment.toAddress}"/>
+
+      <h:outputText value="From Address"/>
+      <address:fourLine address="#{cc.attrs.shipment.fromAddress}"/>
+
+      <h:outputText value="Service"/>
+      <h:outputText value="#{cc.attrs.shipment.shippingServiceName}"/>
+
+      <h:outputText value="Parcels"/>
+
+      <parcel:dataTableWithLinks
+          parcelList="#{cc.attrs.shipment.parcels}"/>
+
+    </h:panelGrid>
+  </cc:implementation>
+
+</ui:composition>

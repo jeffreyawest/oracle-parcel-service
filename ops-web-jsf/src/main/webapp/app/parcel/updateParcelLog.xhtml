@@ -1,0 +1,94 @@
+<ui:composition
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:p="http://primefaces.org/ui"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:parcelLog="http://java.sun.com/jsf/composite/parcelLog"
+    xmlns:parcel="http://java.sun.com/jsf/composite/parcel"
+    template="/templates/common/layout.xhtml">
+
+  <ui:define name="head">
+    <h:outputScript library="javascript" name="jquery-1.5.js" target="head" id="jq_script"/>
+    <script type="text/javascript">
+      $.ready(function ()
+      {
+      });
+    </script>
+  </ui:define>
+
+  <ui:define name="content">
+    <h:form prependId="false" id="top_form">
+
+      <p:ajaxStatus>
+        <f:facet name="start">
+          <p:graphicImage value="/resources/images/ajaxloadingbar.gif"/>
+        </f:facet>
+
+        <f:facet name="complete">
+          <h:outputText value="Done!"/>
+        </f:facet>
+      </p:ajaxStatus>
+
+      <h:panelGrid id="outer_grid"
+                   columns="2"
+                   border="2"
+                   rowClasses="row-top-align">
+
+        <p:panel header="Input Details">
+
+          <h:panelGrid id="jeff_grid_1"
+                       columns="1"
+                       rowClasses="row-top-align">
+
+            <h:outputText value="Parcel ID: (&lt;Enter&gt; when done)"/>
+            <p:inputText id="inputParcelId"
+                         immediate="true"
+                         valueChangeListener="#{parcelControllerBean.parcelIdValueChangeListener}"
+                         value="#{parcelControllerBean.inputParcelId}">
+
+              <p:ajax event="blur"
+                      process="inputParcelId parcelLogInput"
+                      update="parcel_details panel_parcel_log_events"/>
+            </p:inputText>
+
+            <parcelLog:inputParcelEvent event="#{parcelControllerBean.parcelEvent}"
+                                        id="parcelLogInput"
+                                        tableId="parcelLogInput"/>
+            <h:outputText value=""/>
+
+            <p:commandButton value="Submit"
+                             actionListener="#{parcelControllerBean.publishLogEventEventListener}"
+                             ajax="true">
+              <p:ajax event="click"
+                      process="inputParcelId parcelLogInput"
+                      update="parcel_details panel_parcel_log_events inputParcelId parcelLogInput"/>
+
+            </p:commandButton>
+          </h:panelGrid>
+        </p:panel>
+
+        <h:panelGrid columns="1">
+
+          <p:panel header="Parcel Details" id="parcel_details">
+
+            <parcel:table id="page_parcel_table"
+                          tableId="parcelTable"
+                          parcel="#{parcelControllerBean.parcel}"/>
+
+          </p:panel>
+
+          <p:panel header="Parcel Log Events" id="panel_parcel_log_events">
+
+            <parcelLog:dataTable id="page_parcel_log_table"
+                                 tableId="parcelLogTable"
+                                 parcelLogEventList="#{parcelControllerBean.parcelLog}"/>
+          </p:panel>
+        </h:panelGrid>
+      </h:panelGrid>
+
+    </h:form>
+
+  </ui:define>
+
+</ui:composition>

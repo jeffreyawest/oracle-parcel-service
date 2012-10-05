@@ -1,0 +1,15 @@
+#!/bin/bash
+
+MAIN_CLASS=${1}
+COHERENCE_HOME="${HOME}/Oracle/Middleware/coherence_3.7"
+TOPLINK_HOME="${HOME}/Oracle/Middleware/toplink_11.1.1.4"
+APAC_LAB_HOME="${HOME}/src/apac-lab"
+OPS_SHIPMENT_NOTIFIER="${APAC_LAB_HOME}/ops-shipment-notifier"
+COHERENCE_CONFIG_DIR="${APAC_LAB_HOME}/coherence-config"
+COHERENCE_OPT="-Dtangosol.coherence.cacheconfig=${COHERENCE_CONFIG_DIR}/coherence-cache-config.xml  -Dtangosol.coherence.override=${COHERENCE_CONFIG_DIR}/tangosol-coherence-override.xml  -Dtangosol.pof.config=${COHERENCE_CONFIG_DIR}/ops-pof-config.xml"
+CP="${COHERENCE_HOME}/lib/coherence.jar:${OPS_SHIPMENT_NOTIFIER}/lib/ops-domain-model-2.0.jar:${OPS_SHIPMENT_NOTIFIER}/lib/ops-shipment-notifier.jar:${COHERENCE_CONFIG_DIR}:${TOPLINK_HOME}/jlib/toplink-grid.jar"
+JMX_OPTIONS="${JAVA_OPTIONS} -Xmanagement:autodiscovery=true,authenticate=false,remote=true,ssl=false,port=8191"
+
+JAVA_OPT="${JMX_OPTIONS} ${COHERENCE_OPT}"
+
+java ${JAVA_OPT} -cp ${CP} ${MAIN_CLASS}

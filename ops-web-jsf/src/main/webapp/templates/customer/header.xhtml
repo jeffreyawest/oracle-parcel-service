@@ -1,0 +1,37 @@
+<ui:composition
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:p="http://primefaces.org/ui"
+    >
+
+  <table width="100%">
+    <tr>
+      <td align="left">
+        <h:outputLink value="/ops/index.faces">
+          <h:graphicImage library="images"
+                          name="logo.png"/>
+        </h:outputLink>
+      </td>
+
+      <td align="right">
+        <h:graphicImage library="images"
+                        style="width:127px; height: 42px;"
+                        name="logo_weblogic12c_white.gif"/>
+      </td>
+    </tr>
+  </table>
+
+  <h:form prependId="false" id="menuBar_" style="background-color:red; color: blue; font-size:14px; font-weight: bold;" action="post">
+
+    <p:menubar autoSubmenuDisplay="true">
+      <p:menuitem ajax="false" value="Ship" url="/app/ship/ship.faces"/>
+      <p:menuitem ajax="false" value="Track" url="/app/track/track.faces"/>
+      <p:menuitem ajax="false" value="Services" url="/app/shipment/displayShippingServices.faces"/>
+      <!--<p:menuitem ajax="false" value="About" url="/app/about/about.faces"/>-->
+
+    </p:menubar>
+
+  </h:form>
+  <hr/>
+</ui:composition>

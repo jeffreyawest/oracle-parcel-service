@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core" xmlns:p="http://primefaces.org/ui"
+    >
+<f:view contentType="text/html">
+
+  <h:head>
+    <f:facet name="first">
+      <meta content='text/html; charset=UTF-8' http-equiv="Content-Type"/>
+      <title>Oracle Parcel Service</title>
+    </f:facet>
+
+    <h:outputStylesheet name="main.css" library="css"/>
+    <h:outputStylesheet name="override.css" library="css"/>
+    <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+
+    <ui:insert name="head"/>
+
+  </h:head>
+
+  <h:body style="width: 1024px;margin: auto;background-image:url('/ops/resources/images/bg1.png');background-repeat: repeat-x;">
+
+    <div id="page">
+
+      <div id="header">
+        <ui:insert name="header" class="header">
+          <ui:include src="/templates/#{sessionControllerBean.userMode}/header.xhtml"/>
+        </ui:insert>
+      </div>
+
+      <div id="content" class="content" style="height:537px;overflow: auto;">
+        <ui:insert name="content"/>
+      </div>
+
+      <hr/>
+
+      <div id="readme" class="readme">
+        <ui:insert name="readme"/>
+      </div>
+
+      <hr/>
+
+      <div id="footer" class="footer">
+        <ui:insert name="footer">
+          <ui:include src="/templates/#{sessionControllerBean.userMode}/footer.xhtml"/>
+        </ui:insert>
+      </div>
+
+    </div>
+
+    <ui:insert name="status">
+      <p:ajaxStatus style="width:64px;height:64px;position:fixed;right:5px;bottom:5px">
+        <f:facet name="start">
+          <p:graphicImage value="/resources/images/loading.gif"/>
+        </f:facet>
+
+        <f:facet name="complete">
+          <h:outputText value=""/>
+        </f:facet>
+      </p:ajaxStatus>
+    </ui:insert>
+
+  </h:body>
+
+</f:view>
+</html>

@@ -1,0 +1,19 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:p="http://primefaces.org/ui">
+
+  <h:panelGroup layout="block" id="copyright" class="copyright">Copyright 2011-2012 - Oracle Corporation</h:panelGroup>
+  <h:panelGroup layout="block" id="disclaimer" class="disclaimer">This code and application are for example purposes only</h:panelGroup>
+
+  <br/>
+
+  <h:form prependId="false">
+    <p:commandLink ajax="false"
+                   value="Switch to Admin Mode"
+                   action="#{sessionControllerBean.changeUserModeAction}"/>
+  </h:form>
+
+  <br/>
+
+</ui:composition>

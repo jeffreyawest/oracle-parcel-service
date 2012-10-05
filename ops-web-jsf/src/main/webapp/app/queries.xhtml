@@ -1,0 +1,78 @@
+<ui:composition
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:p="http://primefaces.org/ui"
+    template="/templates/common/layout.xhtml">
+
+    <ui:define name="content">
+      <p:panel header="Welcome!">
+        <h:form prependId="false">
+          <p:accordionPanel autoHeight="false">
+
+            <p:tab title="Parcel Queries">
+              <h:panelGrid columns="3" cellpadding="10">
+                
+                <h:outputText value="Parcel ID:"/>
+                <p:inputText value="#{parcelControllerBean.inputParcelId}"/>
+                <p:commandButton value="Submit" action="#{parcelControllerBean.queryParcelsByParcelId}"/>
+
+                <h:outputText value="Contents:"/>
+                <p:inputText value="#{parcelControllerBean.inputParcelContents}"/>
+                <p:commandButton value="Submit" action="#{parcelControllerBean.queryParcelsByContents}"/>
+
+              </h:panelGrid>
+            </p:tab>
+
+            <p:tab title="Event Queries">
+              <h:panelGrid columns="3" cellpadding="10">
+
+                <h:outputText value="Event ID:"/>
+                <p:inputText value="#{parcelControllerBean.inputParcelEventId}"/>
+                <p:commandButton value="Submit" action="#{parcelControllerBean.queryEventById}"/>
+
+                <h:outputText value="Parcel ID:"/>
+                <p:inputText value="#{parcelControllerBean.inputParcelId}"/>
+                <p:commandButton value="Submit" action="#{parcelControllerBean.queryEventsByParcelId}"/>
+
+                <h:outputText value="Location:"/>
+                <p:inputText value="#{parcelControllerBean.inputParcelLocation}"/>
+                <p:commandButton value="Submit" action="#{parcelControllerBean.queryEventsByLocation}"/>
+
+              </h:panelGrid>
+            </p:tab>
+
+            <p:tab title="Shipment Actions and Queries">
+
+              <h:panelGrid columns="3" cellpadding="10">
+                <h:outputText value="Query By Shipment ID"/>
+                <p:inputText value="#{shipmentControllerBean.inputShipmentId}"/>
+                <p:commandButton value="Submit"
+                                 action="#{shipmentControllerBean.queryShipmentsByShipmentId}"/>
+
+                <h:outputText value="Query By External Ref ID"/>
+                <p:inputText value="#{shipmentControllerBean.inputExternalId}"/>
+                <p:commandButton value="Submit" action="#{shipmentControllerBean.queryByExternalId}"/>
+
+                <h:outputText value="Query By Destination Zip"/>
+                <p:inputText value="#{shipmentControllerBean.inputZip}"/>
+                <p:commandButton value="Submit"
+                                 action="#{shipmentControllerBean.queryByDestinationZip}"/>
+
+                <h:outputText value="Query By Destination State"/>
+                <p:inputText value="#{shipmentControllerBean.inputState}"/>
+                <p:commandButton value="Submit" action="#{shipmentControllerBean.queryByState}"/>
+
+              </h:panelGrid>
+
+            </p:tab>
+
+          </p:accordionPanel>
+        </h:form>
+      </p:panel>
+
+      <h:form prependId="false">
+      </h:form>
+    </ui:define>
+
+  </ui:composition>

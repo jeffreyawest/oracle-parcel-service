@@ -1,0 +1,32 @@
+<ui:composition
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:p="http://primefaces.org/ui"
+    template="/templates/common/layout.xhtml">
+
+  <ui:define name="content">
+    <p:panel header="Welcome!">
+      <p>
+        Welcome to the Oracle Parcel Service JSF 2.0 + PrimeFaces Example application!
+      </p>
+
+      <p>
+        This application has two core use cases: 'Ship' and 'Track'.
+        You can create a Shipment with multiple Parcels and then use the 'Track' function to track it's whereabouts.
+      </p>
+
+      <p>
+        The application has the ability to simulate tracking events for packages
+        that are submitted through the web application.
+      </p>
+
+      <p>
+        This application also has two modes - Customer mode and Admin Mode. Admin mode has utility
+        functionas that are not applicable to the core use cases of the application.
+        To change modes, click the link at the bottom of the page.
+      </p>
+
+    </p:panel>
+  </ui:define>
+
+</ui:composition>

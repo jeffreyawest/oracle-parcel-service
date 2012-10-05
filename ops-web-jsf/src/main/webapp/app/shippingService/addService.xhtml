@@ -1,0 +1,21 @@
+<ui:composition
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:p="http://primefaces.org/ui"
+    xmlns:shippingService="http://java.sun.com/jsf/composite/shippingService"
+    template="/templates/common/layout.xhtml">
+
+    <ui:define name="content">
+
+      <p:panel id="Add_service_panel" header="Add Shipping Service">
+
+        <h:form prependId="false">
+          <shippingService:gridInput shippingService="#{serviceControllerBean.newShippingService}"/>
+          <p:commandButton id="add_button" value="Add" action="/app/shippingService/listServices" actionListener="#{serviceControllerBean.addShippingServiceActionListener}"/>
+        </h:form>
+        
+      </p:panel>
+
+    </ui:define>
+  </ui:composition>

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wldf-resource xmlns="http://www.bea.com/ns/weblogic/weblogic-diagnostics" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.bea.com/ns/weblogic/weblogic-diagnostics
+http://www.bea.com/ns/weblogic/weblogic-diagnostics/1.1/weblogic-diagnostics.xsd">
+	<name>mywldf1</name>
+	<!-- Instrumentation must be configured and enabled for instrumentation 
+       watches -->
+	<instrumentation>
+		<enabled>true</enabled>
+		<wldf-instrumentation-monitor>
+			<name>DyeInjection</name>
+			<description>Dye Injection monitor</description>
+			<dye-mask xsi:nil="true"/>
+			<properties>ADDR1=127.0.0.1</properties>
+		</wldf-instrumentation-monitor>
+	</instrumentation>
+	<!-- Harvesting does not have to be configured and enabled for harvester
+       watches. However, configuring the Harvester can provide advantages;
+       for example the data will be archived. -->
+	<harvester>
+		<name>mywldf1</name>
+		<sample-period>20000</sample-period>
+		<harvested-type>
+			<name>weblogic.management.runtime.ServerRuntimeMBean</name>
+		</harvested-type>
+		<harvested-type>
+			<name>weblogic.management.runtime.WLDFHarvesterRuntimeMBean</name>
+		</harvested-type>
+	</harvester>
+	<!-- All watches and notifications are defined under the 
+       watch-notification element -->
+	<watch-notification>
+		<enabled>true</enabled>
+		<log-watch-severity>Info</log-watch-severity>
+		<!-- A harvester watch configuration -->
+		<watch>
+			<name>myWatch</name>
+			<enabled>true</enabled>
+			<rule-type>Harvester</rule-type>
+			<rule-expression>${com.bea:Name=myserver,Type=ServerRuntime//SocketsOpenedTotalCount} &gt;= 1</rule-expression>
+			<alarm-type>AutomaticReset</alarm-type>
+			<alarm-reset-period>60000</alarm-reset-period>
+			<notification>myMailNotif,myJMXNotif,mySNMPNotif</notification>
+		</watch>
+		<!-- An instrumentation watch configuration -->
+		<watch>
+			<name>myWatch2</name>
+			<enabled>true</enabled>
+			<rule-type>EventData</rule-type>
+			<rule-expression>
+      (MONITOR LIKE JDBC_After_Execute) AND
+      (DOMAIN = MedRecDomain) AND
+      (SERVER = medrec-adminServer) AND
+      ((TYPE = ThreadDumpAction) OR (TYPE = TraceElapsedTimeAction)) AND
+      (SCOPE = MedRecEAR)
+      </rule-expression>
+			<notification>JMXNotifInstr</notification>
+		</watch>
+		<!-- A log watch configuration -->
+		<watch>
+			<name>myLogWatch</name>
+			<rule-type>Log</rule-type>
+			<rule-expression>MSGID='BEA-000360'</rule-expression>
+			<severity>Info</severity>
+			<notification>myMailNotif2</notification>
+		</watch>
+		<!-- A JMX notification -->
+		<jmx-notification>
+			<name>myJMXNotif</name>
+		</jmx-notification>
+		<!-- Two SMTP notifications -->
+		<smtp-notification>
+			<name>myMailNotif</name>
+			<enabled>true</enabled>
+			<mail-session-jndi-name>myMailSession</mail-session-jndi-name>
+			<subject>This is a harvester alert</subject>
+			<recipient>username@emailservice.com</recipient>
+		</smtp-notification>
+		<smtp-notification>
+			<name>myMailNotif2</name>
+			<enabled>true</enabled>
+			<mail-session-jndi-name>myMailSession</mail-session-jndi-name>
+			<subject>This is a log alert</subject>
+			<recipient>username@emailservice.com</recipient>
+		</smtp-notification>
+		<!-- An SNMP notification -->
+		<snmp-notification>
+			<name>mySNMPNotif</name>
+			<enabled>true</enabled>
+		</snmp-notification>
+	</watch-notification>
+</wldf-resource>

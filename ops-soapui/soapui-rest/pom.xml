@@ -1,0 +1,99 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+  <!-- ==================================================================================== -->
+
+  <parent>
+    <groupId>com.oracle.demo.ops</groupId>
+    <artifactId>ops-common</artifactId>
+    <version>3.0</version>
+    <relativePath>../../ops-common/pom.xml</relativePath>
+  </parent>
+
+  <!-- ==================================================================================== -->
+
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.oracle.demo.ops</groupId>
+  <artifactId>soapui-rest</artifactId>
+  <version>3.0</version>
+  <packaging>pom</packaging>
+
+  <name>soapui-rest</name>
+
+  <!-- ==================================================================================== -->
+
+  <properties>
+    <path.from.top>oracle-parcel-service/${project.artifactId}</path.from.top>
+  </properties>
+
+  <!-- ==================================================================================== -->
+
+  <scm>
+    <connection>scm:svn:${project.scm.url}</connection>
+    <developerConnection>scm:svn:${project.scm.url}</developerConnection>
+    <url>${ops.scm.url}/${path.from.top}</url>
+  </scm>
+
+  <!-- ==================================================================================== -->
+  <profiles>
+    <profile>
+      <id>continuous-build</id>
+
+      <build>
+        <defaultGoal>integration-test</defaultGoal>
+
+        <plugins>
+
+          <plugin>
+            <groupId>eviware</groupId>
+            <artifactId>maven-soapui-plugin</artifactId>
+            <version>4.5.1</version>
+
+            <executions>
+              <execution>
+                <phase>integration-test</phase>
+                <goals>
+                  <goal>test</goal>
+                </goals>
+
+                <configuration>
+                  <projectFile>${project.basedir}/OPS-EE6-REST.xml</projectFile>
+                  <junitReport>true</junitReport>
+                  <outputFolder>${project.build.directory}/surefire-reports</outputFolder>
+                  <host>127.0.0.1:7001</host>
+                  <testSuite>GeolocationTest</testSuite>
+                </configuration>
+
+              </execution>
+            </executions>
+
+            <configuration>
+              <projectFile>OPS-EE6-WS.xml</projectFile>
+              <host>127.0.0.1:7001</host>
+              <testSuite>Create Test Suite</testSuite>
+            </configuration>
+
+          </plugin>
+
+        </plugins>
+
+      </build>
+    </profile>
+  </profiles>
+
+
+  <repositories>
+    <repository>
+      <id>eviwarePluginRepository</id>
+      <url>http://www.soapui.org/repository/maven2/</url>
+    </repository>
+  </repositories>
+
+  <pluginRepositories>
+    <pluginRepository>
+      <id>eviwarePluginRepository</id>
+      <url>http://www.soapui.org/repository/maven2/</url>
+    </pluginRepository>
+  </pluginRepositories>
+
+</project>

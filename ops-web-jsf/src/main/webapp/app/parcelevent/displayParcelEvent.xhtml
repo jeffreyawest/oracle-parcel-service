@@ -1,0 +1,11 @@
+<ui:composition
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:parcelLog="http://java.sun.com/jsf/composite/parcelLog"
+    template="/templates/common/layout.xhtml">
+
+  <ui:define name="content">
+    <parcelLog:dataGrid parcelEvent="#{parcelControllerBean.parcelEvent}"/>
+  </ui:define>
+
+</ui:composition>

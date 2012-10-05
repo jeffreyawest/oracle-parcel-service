@@ -1,0 +1,31 @@
+<ui:composition
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:p="http://primefaces.org/ui"
+    template="/templates/common/layout.xhtml">
+
+  <ui:define name="content">
+
+    <p:panel header="Track a Package or Shipment">
+      <h:form prependId="false">
+
+        <h:panelGrid columns="3" cellpadding="10">
+
+          <h:outputText value="Postal Code:"/>
+          <p:inputText value="#{geolocationControllerBean.inputPostalCode}"/>
+          <p:commandButton value="Submit" action="#{geolocationControllerBean.lookupGeo}"/>
+
+        </h:panelGrid>
+
+      </h:form>
+    </p:panel>
+
+  </ui:define>
+
+  <ui:define name="readme">
+    This page allows you to look up the Geolocation data by Postal code.
+  </ui:define>
+
+
+</ui:composition>

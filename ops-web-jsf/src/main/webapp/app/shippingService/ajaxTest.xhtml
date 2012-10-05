@@ -1,0 +1,64 @@
+<ui:composition
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:p="http://primefaces.org/ui"
+    xmlns:f="http://java.sun.com/jsf/core"
+    template="/templates/common/layout.xhtml">
+
+  <ui:define name="content">
+    <h:form prependId="false">
+      <p:panel id="myPanel">
+
+        <h:outputText id="selected_service_name" value="#{shipmentWizardBean.selectedService.name}"/>
+
+        <h:dataTable value="#{shipmentWizardBean.shippingServiceList}"
+                     id="service_dataTable"
+                     var="service"
+                     styleClass="data-table"
+                     headerClass="table-header"
+                     rowClasses="row-odd,row-even"
+                     columnClasses="column-center">
+
+          <f:facet name="header">Shipping Services</f:facet>
+
+          <h:column>
+            <f:facet name="header">Name</f:facet>
+            <p:commandLink update="myPanel">
+              <h:outputText value="#{service.name}"/>
+              <f:setPropertyActionListener value="#{service}" target="#{shipmentWizardBean.selectedService}"/>
+              <p:ajax process="selected_service_name" update="selected_service_name"/>
+            </p:commandLink>
+          </h:column>
+
+          <h:column>
+            <f:facet name="header">Description</f:facet>
+            <h:outputText value="#{service.description}"/>
+          </h:column>
+
+          <h:column>
+            <f:facet name="header">Cost</f:facet>
+            <h:outputText value="#{service.cost}"/>
+          </h:column>
+
+        </h:dataTable>
+
+        <br/>
+
+        <h:panelGrid id="selected_service_tbl" columns="2" title="Selected Service">
+          <h:outputText value="Name: "/>
+          <h:outputText id="selected_servsice_name" value="#{shipmentWizardBean.selectedService.name}"/>
+
+          <h:outputText value="Description: "/>
+          <h:outputText id="selected_service_desc" value="#{shipmentWizardBean.selectedService.description}"/>
+
+          <h:outputText value="Cost: "/>
+          <h:outputText id="selected_service_cost" value="#{shipmentWizardBean.selectedService.cost}"/>
+        </h:panelGrid>
+
+      </p:panel>
+
+    </h:form>
+
+  </ui:define>
+</ui:composition>

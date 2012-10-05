@@ -1,0 +1,74 @@
+<ui:composition
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:p="http://primefaces.org/ui"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:shipment="http://java.sun.com/jsf/composite/shipment"
+    template="/templates/common/layout.xhtml">
+
+  <h:form prependId="false">
+
+    <h:dataTable var="car" value="#{tableBean.lazyModel}"
+                 paginator="true"
+                 rows="10"
+                 lazy="true"
+                 paginatorTemplate="{RowsPerPageDropdown} {FirstPageLink} {PreviousPageLink} {CurrentPageReport} {NextPageLink} {LastPageLink}"
+                 rowsPerPageTemplate="5,10,15"
+                 selection="#{tableBean.selectedCar}"
+                 selectionMode="single"
+                 onRowSelectComplete="carDialog.show()"
+                 onRowSelectUpdate="display">
+
+      <f:facet name="header">
+        Displaying 100,000,000 Cars
+      </f:facet>
+
+      <p:column headerText="Model">
+        <h:outputText value="#{car.model}"/>
+      </p:column>
+
+      <p:column headerText="Year">
+        <h:outputText value="#{car.year}"/>
+      </p:column>
+
+      <p:column headerText="Manufacturer">
+        <h:outputText value="#{car.manufacturer}"/>
+      </p:column>
+
+      <p:column headerText="Color">
+        <h:outputText value="#{car.color}"/>
+      </p:column>
+    </h:dataTable>
+
+    <p:dialog header="Car Detail" widgetVar="carDialog" resizable="false"
+              width="200" showEffect="explode" hideEffect="explode">
+
+      <h:panelGrid id="display" columns="2" cellpadding="4">
+
+        <f:facet name="header">
+          <p:graphicImage value="/images/cars/#{tableBean.selectedCar.manufacturer}.jpg"/>
+        </f:facet>
+
+        <h:outputText value="Model:"/>
+        <h:outputText value="#{tableBean.selectedCar.model}"/>
+
+        <h:outputText value="Year:"/>
+        <h:outputText value="#{tableBean.selectedCar.year}"/>
+
+        <h:outputText value="Manufacturer:"/>
+        <h:outputText value="#{tableBean.selectedCar.manufacturer}"/>
+
+        <h:outputText value="Color:"/>
+        <h:outputText value="#{tableBean.selectedCar.color}"/>
+      </h:panelGrid>
+    </p:dialog>
+
+  </h:form>
+
+  <ui:define name="content">
+    <shipment:dataTable shipmentList="#{shipmentControllerBean.allShipments}"/>
+  </ui:define>
+
+
+</ui:composition>

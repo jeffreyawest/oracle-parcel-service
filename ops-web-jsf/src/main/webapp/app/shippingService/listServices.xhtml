@@ -1,0 +1,39 @@
+  <ui:composition
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:shippingService="http://java.sun.com/jsf/composite/shippingService"
+      template="/templates/common/layout.xhtml">
+
+    <ui:define name="content">
+
+      <p:panel id="List_service_panel" header="Shipping Service List">
+        <h:form prependId="false">
+
+          <h:panelGrid id="panelList" columns="2" border="10">
+
+            <h:outputText value="From Database (SQL)"/>
+            <h:outputText value="From TopLink (Grid if enabled)"/>
+
+            <shippingService:dataTable id="list_from_SQL"
+                                       shippingServiceList="#{serviceControllerBean.shippingServicesListSQL}"/>
+
+            <shippingService:dataTableWithLinks id="list_from_TopLink"
+                                                shippingServiceList="#{serviceControllerBean.shippingServicesListTopLink}"/>
+          </h:panelGrid>
+
+          <p:commandButton value="Warm Cache"
+                           id="btn_warm_cache"
+                           actionListener="#{serviceControllerBean.warmCacheActionListner}">
+            <f:ajax execute="panelList"
+                    render="panelList"/>
+          </p:commandButton>
+
+        </h:form>
+      </p:panel>
+
+    </ui:define>
+
+  </ui:composition>

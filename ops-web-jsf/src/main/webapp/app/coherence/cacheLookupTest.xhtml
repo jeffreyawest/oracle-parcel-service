@@ -1,0 +1,36 @@
+<ui:composition
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:p="http://primefaces.org/ui"
+    template="/templates/common/layout.xhtml">
+
+  <ui:define name="content">
+    <h:form prependId="false">
+      <p:panel id="panel" header="Named Cache Lookup">
+
+        <p:messages/>
+
+        <p>
+          This page will allow you to retireve a Coherence Cache by name!
+        </p>
+
+        <h:panelGrid columns="3" cellpadding="10">
+          <h:outputText value="Coherence Cache Name"/>
+          <p:inputText value="#{coherenceControllerBean.inputCacheName}"/>
+          <p:commandButton value="Lookup"
+                           update="panel"
+                           actionListener="#{coherenceControllerBean.performCacheLookupActionListener}"/>
+        </h:panelGrid>
+
+      </p:panel>
+    </h:form>
+  </ui:define>
+
+  <ui:define name="readme">
+    This page allows you to do a lookup on a Coherence cache by name.  A Growl notification will
+    be displayed that indicates whether or not teh cache is found.  This is useful for testing if
+    the (typically storage-disabled) Application Coherence-client node is connected to the (typically storage-enabled) Coherence Servers/Cluster.
+  </ui:define>
+
+</ui:composition>

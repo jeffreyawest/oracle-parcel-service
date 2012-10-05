@@ -1,0 +1,1922 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" readonly="true" id="95ad4a6a-8bf7-4230-b569-5cb750321bad" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ops-domain-services" afterPath="$PROJECT_DIR$/ops-domain-services" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ops-event-handlers" afterPath="$PROJECT_DIR$/ops-event-handlers" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ops-message-driven" afterPath="$PROJECT_DIR$/ops-message-driven" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ops-rest" afterPath="$PROJECT_DIR$/ops-rest" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ops-services" afterPath="$PROJECT_DIR$/ops-services" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ops-util" afterPath="$PROJECT_DIR$/ops-util" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ops-web-jsf" afterPath="$PROJECT_DIR$/ops-web-jsf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/oracle-parcel-service.iws" afterPath="$PROJECT_DIR$/oracle-parcel-service.iws" />
+    </list>
+    <ignored path="oracle-parcel-service.iws" />
+    <ignored path=".idea/workspace.xml" />
+    <ignored path="ops-shipment-notifier/target/generated-sources/" />
+    <ignored path="ops-shipment-notifier/target/generated-sources/annotations/" />
+    <ignored path="ops-shipment-notifier/target/" />
+    <ignored path="ops-ee/ops-util/target/" />
+    <ignored path="ops-ee/ops-util/target/generated-sources/annotations/" />
+    <ignored path="ops-ee/ops-util/target/generated-sources/" />
+    <ignored path="ops-ee/ops-services/target/" />
+    <ignored path="ops-ee/ops-services/target/generated-sources/annotations/" />
+    <ignored path="ops-ee/ops-services/target/generated-sources/" />
+    <ignored path="ops-ee/ops-ee-interfaces/ops-ee-ws/ops-jax-ws-parcel/target/generated-sources/annotations/" />
+    <ignored path="ops-ee/ops-ee-interfaces/ops-ee-ws/ops-jax-ws-shipment/target/generated-sources/" />
+    <ignored path="ops-ee/ops-ee-interfaces/ops-ee-ws/ops-jax-ws-parcel/target/generated-sources/" />
+    <ignored path="ops-ee/ops-ee-interfaces/ops-ee-ws/ops-jax-ws-shipment/target/" />
+    <ignored path="ops-ee/ops-ee-interfaces/ops-ee-ws/ops-jax-ws-parcel/target/" />
+    <ignored path="ops-ee/ops-ee-interfaces/ops-ee-ws/ops-jax-ws-shipment/target/generated-sources/annotations/" />
+    <ignored path="ops-ee/ops-event-handlers/target/" />
+    <ignored path="ops-ee/ops-ee-web-jsf/target/generated-sources/annotations/" />
+    <ignored path="ops-ee/ops-ee-web-jsf/target/generated-sources/" />
+    <ignored path="ops-ee/ops-event-handlers/target/generated-sources/annotations/" />
+    <ignored path="ops-ee/ops-event-handlers/target/generated-sources/" />
+    <ignored path="ops-ee/ops-ee-web-jsf/target/" />
+    <ignored path="ops-ee/ops-domain-services/target/" />
+    <ignored path="ops-ee/ops-ee-interfaces/ops-ee-message-driven/target/" />
+    <ignored path="ops-domain-model-tlg/target/generated-sources/annotations/" />
+    <ignored path="ops-domain-model-tlg/target/generated-sources/" />
+    <ignored path="ops-ee/ops-domain-services/target/generated-sources/annotations/" />
+    <ignored path="ops-ee/ops-domain-services/target/generated-sources/" />
+    <ignored path="ops-ee/ops-domain-services-tlg/target/classes/" />
+    <ignored path="ops-ee/ops-ee-interfaces/ops-ee-message-driven/target/generated-sources/annotations/" />
+    <ignored path="ops-ee/ops-ee-interfaces/ops-ee-message-driven/target/generated-sources/" />
+    <ignored path="ops-ee/ops-domain-services-tlg/target/maven-archiver/" />
+    <ignored path="ops-ee/ops-domain-services-tlg/target/generated-sources/" />
+    <ignored path="ops-ee/ops-domain-services-tlg/target/classes/com/" />
+    <ignored path="ops-ee/ops-domain-services-tlg/target/classes/META-INF/" />
+    <ignored path="ops-ee/ops-domain-services-tlg/target/classes/com/oracle/demo/ops/" />
+    <ignored path="ops-ee/ops-ee-interfaces/ops-ee-rest/target/" />
+    <ignored path="ops-ee/ops-domain-services-tlg/target/classes/com/oracle/demo/ops/entitymanager/" />
+    <ignored path="ops-ee/ops-ee-interfaces/ops-ee-rest/target/generated-sources/annotations/" />
+    <ignored path="ops-ee/ops-domain-services-tlg/target/classes/com/oracle/" />
+    <ignored path="ops-ee/ops-domain-services-tlg/target/classes/com/oracle/demo/" />
+    <ignored path="ops-ee/ops-ee-interfaces/ops-ee-rest/target/generated-sources/" />
+    <ignored path="ops-ee/ops-domain-services-tlg/target/classes/com/oracle/demo/ops/entitymanager/ejb/" />
+    <ignored path="ops-ee/ops-domain-services-tlg/target/classes/com/oracle/demo/ops/entitymanager/ejb/impl/" />
+    <ignored path="ops-ee/ops-domain-services-tlg/target/generated-sources/annotations/" />
+    <ignored path="ops-ee/ops-domain-services-tlg/target/" />
+    <ignored path="ops-domain-model-tlg/target/" />
+    <ignored path="ops-cache/ops-cache-listener/target/generated-sources/annotations/" />
+    <ignored path="ops-cache/ops-cache-listener/target/generated-sources/" />
+    <ignored path="ops-domain-model/target/" />
+    <ignored path="ops-cache/ops-cache-listener/target/" />
+    <ignored path="ops-domain-model/target/generated-sources/annotations/" />
+    <ignored path="ops-domain-model/target/generated-sources/" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ChangesViewManager" flattened_view="false" show_ignored="false" />
+  <component name="CreatePatchCommitExecutor">
+    <option name="PATCH_PATH" value="" />
+  </component>
+  <component name="DaemonCodeAnalyzer">
+    <disable_hints />
+  </component>
+  <component name="DatabaseView">
+    <flatten value="false" />
+    <groupTables value="false" />
+  </component>
+  <component name="DebuggerManager">
+    <breakpoint_any>
+      <breakpoint>
+        <option name="NOTIFY_CAUGHT" value="true" />
+        <option name="NOTIFY_UNCAUGHT" value="true" />
+        <option name="ENABLED" value="false" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="false" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+      <breakpoint>
+        <option name="NOTIFY_CAUGHT" value="true" />
+        <option name="NOTIFY_UNCAUGHT" value="true" />
+        <option name="ENABLED" value="false" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="false" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+    </breakpoint_any>
+    <breakpoint_rules />
+    <ui_properties />
+  </component>
+  <component name="FavoritesManager">
+    <favorites_list name="oracle-parcel-service" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file leaf-file-name="ship.xhtml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ops-web-jsf/src/main/webapp/app/ship/ship.xhtml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="52" column="0" selection-start="1609" selection-end="1657" vertical-scroll-proportion="0.0">
+              <folding>
+                <marker date="1349297978000" expanded="true" signature="1165:1304" placeholder="{...}" />
+                <marker date="1349297978000" expanded="true" signature="1781:1920" placeholder="{...}" />
+                <marker date="1349297978000" expanded="true" signature="2317:2336" placeholder="{...}" />
+                <marker date="1349297978000" expanded="true" signature="4838:4867" placeholder="{...}" />
+                <marker date="1349297978000" expanded="true" signature="6448:6460" placeholder="{...}" />
+                <marker date="1349297978000" expanded="true" signature="6611:6623" placeholder="{...}" />
+                <marker date="1349297978000" expanded="true" signature="8086:8209" placeholder="{...}" />
+                <marker date="1349297978000" expanded="true" signature="8561:8579" placeholder="{...}" />
+                <marker date="1349297978000" expanded="true" signature="8640:8658" placeholder="{...}" />
+                <marker date="1349297978000" expanded="true" signature="8723:8741" placeholder="{...}" />
+                <marker date="1349297978000" expanded="true" signature="8776:8794" placeholder="{...}" />
+                <marker date="1349297978000" expanded="true" signature="9000:9018" placeholder="{...}" />
+                <marker date="1349297978000" expanded="true" signature="11398:11452" placeholder="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.xhtml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ops-web-jsf/src/main/webapp/index.xhtml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="layout.xhtml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ops-web-jsf/src/main/webapp/templates/common/layout.xhtml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="46" column="21" selection-start="1458" selection-end="1464" vertical-scroll-proportion="0.0">
+              <folding>
+                <marker date="1348815396000" expanded="true" signature="871:980" placeholder="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="pom.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ops-common/ops-common-deployable/pom.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="40" column="0" selection-start="1049" selection-end="1547" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="pom.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ops-weblogic/pom.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="170" column="28" selection-start="4918" selection-end="4922" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="pom.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ops-rest/pom.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="pom.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ops-soapui/pom.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="pom.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ops-soapui/soapui-ws/pom.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="94" column="9" selection-start="2873" selection-end="2931" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="pom.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ops-common/pom.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="135" column="18" selection-start="4560" selection-end="4560" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="pom.xml" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/ops-domain-model/pom.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="20" column="31" selection-start="806" selection-end="806" vertical-scroll-proportion="0.035971224">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FindManager">
+    <FindUsagesManager>
+      <setting name="OPEN_NEW_TAB" value="false" />
+    </FindUsagesManager>
+  </component>
+  <component name="Git.Settings">
+    <option name="SSH_EXECUTABLE" value="NATIVE_SSH" />
+    <option name="SYNC_SETTING" value="DONT" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="changedFiles">
+      <list>
+        <option value="$PROJECT_DIR$/ops-web-jsf/src/main/webapp/resources/css/override.css" />
+        <option value="$PROJECT_DIR$/ops-web-jsf/src/main/webapp/resources/css/main.css" />
+        <option value="$PROJECT_DIR$/ops-web-jsf/src/main/webapp/app/shippingService/listServices.xhtml" />
+        <option value="$PROJECT_DIR$/ops-web-jsf/src/main/webapp/app/shipment/displayShippingServices.xhtml" />
+        <option value="$PROJECT_DIR$/ops-web-jsf/src/main/webapp/app/track/track.xhtml" />
+        <option value="$PROJECT_DIR$/ops-web-jsf/src/main/java/com/oracle/demo/ops/web/beans/gmap/MapModelWrapper.java" />
+        <option value="$PROJECT_DIR$/ops-services/src/main/java/com/oracle/demo/ops/services/ejb/EventService.java" />
+        <option value="$PROJECT_DIR$/ops-util/src/main/java/com/oracle/demo/ops/geo/GoogleGeocodeResponse.java" />
+        <option value="$PROJECT_DIR$/ops-web-jsf/src/main/webapp/resources/parcel/actionDataTable.xhtml" />
+        <option value="$PROJECT_DIR$/ops-web-jsf/src/main/webapp/resources/parcel/parcelRow.xhtml" />
+        <option value="$PROJECT_DIR$/ops-web-jsf/src/main/webapp/app/track/displayTracking.xhtml" />
+        <option value="$PROJECT_DIR$/ops-web-jsf/src/main/webapp/resources/parcel/dataTable.xhtml" />
+        <option value="$PROJECT_DIR$/ops-web-jsf/src/main/webapp/resources/address/gridInput.xhtml" />
+        <option value="$PROJECT_DIR$/ops-services/src/main/java/com/oracle/demo/ops/services/ejb/GeolocationService.java" />
+        <option value="$PROJECT_DIR$/ops-web-jsf/src/main/webapp/app/ship/ship.xhtml" />
+        <option value="$PROJECT_DIR$/ops-domain-model/pom.xml" />
+      </list>
+    </option>
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="printErrorStackTraces" value="true" />
+        <option name="workOffline" value="true" />
+      </MavenGeneralSettings>
+    </option>
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="createModuleGroups" value="true" />
+        <option name="importAutomatically" value="true" />
+        <option name="keepSourceFolders" value="false" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="MavenProjectNavigator">
+    <option name="groupStructurally" value="true" />
+    <treeState>
+      <PATH>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="" />
+          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$RootNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="oracle-parcel-service" />
+          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$ProjectNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="Modules" />
+          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$ModulesNode" />
+        </PATH_ELEMENT>
+      </PATH>
+      <PATH>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="" />
+          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$RootNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="oracle-parcel-service" />
+          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$ProjectNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="Modules" />
+          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$ModulesNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="ops-web-jsf" />
+          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$ProjectNode" />
+        </PATH_ELEMENT>
+      </PATH>
+      <PATH>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="" />
+          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$RootNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="oracle-parcel-service" />
+          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$ProjectNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="Modules" />
+          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$ModulesNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="ops-web-jsf" />
+          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$ProjectNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="Lifecycle" />
+          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$LifecycleNode" />
+        </PATH_ELEMENT>
+      </PATH>
+      <PATH>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="" />
+          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$RootNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="oracle-parcel-service" />
+          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$ProjectNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="Plugins" />
+          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$PluginsNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="deploy" />
+          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$PluginNode" />
+        </PATH_ELEMENT>
+      </PATH>
+      <PATH>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="" />
+          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$RootNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="oracle-parcel-service" />
+          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$ProjectNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="Lifecycle" />
+          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$LifecycleNode" />
+        </PATH_ELEMENT>
+      </PATH>
+      <PATH>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="" />
+          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$RootNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="Profiles" />
+          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$ProfilesNode" />
+        </PATH_ELEMENT>
+      </PATH>
+    </treeState>
+  </component>
+  <component name="MavenRunner">
+    <option name="skipTests" value="true" />
+    <option name="vmOptions" value="-Xms1g -Xmx1g -XX:MaxPermSize=512m -XX:PermSize=512m" />
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="x" value="60" />
+    <option name="y" value="22" />
+    <option name="width" value="1390" />
+    <option name="height" value="869" />
+  </component>
+  <component name="ProjectInspectionProfilesVisibleTreeState">
+    <entry key="Project Default">
+      <profile-state>
+        <expanded-state>
+          <State>
+            <id />
+          </State>
+          <State>
+            <id>AOP</id>
+          </State>
+          <State>
+            <id>Abstraction issues</id>
+          </State>
+          <State>
+            <id>Android</id>
+          </State>
+          <State>
+            <id>Application Server Specific Inspections</id>
+          </State>
+          <State>
+            <id>Assignment issues</id>
+          </State>
+          <State>
+            <id>Bean Validation issues</id>
+          </State>
+          <State>
+            <id>Bitwise operation issues</id>
+          </State>
+          <State>
+            <id>Bitwise operation issuesJavaScript</id>
+          </State>
+          <State>
+            <id>CDI(Contexts and Dependency Injection) issues</id>
+          </State>
+          <State>
+            <id>CSS</id>
+          </State>
+          <State>
+            <id>Class metrics</id>
+          </State>
+          <State>
+            <id>Class structure</id>
+          </State>
+          <State>
+            <id>Code maturity issues</id>
+          </State>
+          <State>
+            <id>Code style issues</id>
+          </State>
+          <State>
+            <id>Code style issuesJavaScript</id>
+          </State>
+          <State>
+            <id>Control FlowGroovy</id>
+          </State>
+          <State>
+            <id>Control flow issues</id>
+          </State>
+          <State>
+            <id>Control flow issuesJavaScript</id>
+          </State>
+          <State>
+            <id>CorrectnessLintAndroid</id>
+          </State>
+          <State>
+            <id>Data flow issues</id>
+          </State>
+          <State>
+            <id>Declaration redundancy</id>
+          </State>
+          <State>
+            <id>Dependency issues</id>
+          </State>
+          <State>
+            <id>Django</id>
+          </State>
+          <State>
+            <id>Encapsulation issues</id>
+          </State>
+          <State>
+            <id>Error handling</id>
+          </State>
+          <State>
+            <id>Error handlingGroovy</id>
+          </State>
+          <State>
+            <id>Error handlingJavaScript</id>
+          </State>
+          <State>
+            <id>Facelet format detection</id>
+          </State>
+          <State>
+            <id>Faces Model</id>
+          </State>
+          <State>
+            <id>FreeMarker inspections</id>
+          </State>
+          <State>
+            <id>GPath inspectionsGroovy</id>
+          </State>
+          <State>
+            <id>GSPGrailsGroovy</id>
+          </State>
+          <State>
+            <id>General</id>
+          </State>
+          <State>
+            <id>GeneralJavaScript</id>
+          </State>
+          <State>
+            <id>Google Web Toolkit issues</id>
+          </State>
+          <State>
+            <id>GrailsGroovy</id>
+          </State>
+          <State>
+            <id>Groovy</id>
+          </State>
+          <State>
+            <id>Guice Inspections</id>
+          </State>
+          <State>
+            <id>HTML</id>
+          </State>
+          <State>
+            <id>Hibernate Issues</id>
+          </State>
+          <State>
+            <id>IconsUsabilityLintAndroid</id>
+          </State>
+          <State>
+            <id>Inheritance issues</id>
+          </State>
+          <State>
+            <id>Initialization issues</id>
+          </State>
+          <State>
+            <id>Internationalization issues</id>
+          </State>
+          <State>
+            <id>J2ME issues</id>
+          </State>
+          <State>
+            <id>JBoss Seam issues</id>
+          </State>
+          <State>
+            <id>JSP Inspections</id>
+          </State>
+          <State>
+            <id>JUnit issues</id>
+          </State>
+          <State>
+            <id>Java EE issues</id>
+          </State>
+          <State>
+            <id>Java language level migration aids</id>
+          </State>
+          <State>
+            <id>JavaScript</id>
+          </State>
+          <State>
+            <id>JavaScript function metricsJavaScript</id>
+          </State>
+          <State>
+            <id>Javadoc issues</id>
+          </State>
+          <State>
+            <id>Language Injection</id>
+          </State>
+          <State>
+            <id>LintAndroid</id>
+          </State>
+          <State>
+            <id>Logging issues</id>
+          </State>
+          <State>
+            <id>Mako</id>
+          </State>
+          <State>
+            <id>Maven</id>
+          </State>
+          <State>
+            <id>MessagesCorrectnessLintAndroid</id>
+          </State>
+          <State>
+            <id>Method MetricsGroovy</id>
+          </State>
+          <State>
+            <id>Method metrics</id>
+          </State>
+          <State>
+            <id>Modularization issues</id>
+          </State>
+          <State>
+            <id>Naming ConventionsGroovy</id>
+          </State>
+          <State>
+            <id>Naming conventions</id>
+          </State>
+          <State>
+            <id>Naming conventionsJavaScript</id>
+          </State>
+          <State>
+            <id>Numeric issues</id>
+          </State>
+          <State>
+            <id>OSGi</id>
+          </State>
+          <State>
+            <id>Packaging issues</id>
+          </State>
+          <State>
+            <id>Pattern Validation</id>
+          </State>
+          <State>
+            <id>Performance issues</id>
+          </State>
+          <State>
+            <id>PerformanceLintAndroid</id>
+          </State>
+          <State>
+            <id>Plugin DevKit</id>
+          </State>
+          <State>
+            <id>Portability issues</id>
+          </State>
+          <State>
+            <id>Potentially confusing code constructsGroovy</id>
+          </State>
+          <State>
+            <id>Potentially confusing code constructsJavaScript</id>
+          </State>
+          <State>
+            <id>Probable BugsJavaScript</id>
+          </State>
+          <State>
+            <id>Probable bugs</id>
+          </State>
+          <State>
+            <id>Properties Files</id>
+          </State>
+          <State>
+            <id>Python</id>
+          </State>
+          <State>
+            <id>RELAX NG</id>
+          </State>
+          <State>
+            <id>Resource management issues</id>
+          </State>
+          <State>
+            <id>SQL</id>
+          </State>
+          <State>
+            <id>Security issues</id>
+          </State>
+          <State>
+            <id>SecurityLintAndroid</id>
+          </State>
+          <State>
+            <id>Serialization issues</id>
+          </State>
+          <State>
+            <id>Spring Model</id>
+          </State>
+          <State>
+            <id>Struts</id>
+          </State>
+          <State>
+            <id>Struts 1Struts</id>
+          </State>
+          <State>
+            <id>Threading issues</id>
+          </State>
+          <State>
+            <id>Threading issuesGroovy</id>
+          </State>
+          <State>
+            <id>TypographyUsabilityLintAndroid</id>
+          </State>
+          <State>
+            <id>UI Form Problems</id>
+          </State>
+          <State>
+            <id>UsabilityLintAndroid</id>
+          </State>
+          <State>
+            <id>Velocity inspections</id>
+          </State>
+          <State>
+            <id>Verbose or redundant code constructs</id>
+          </State>
+          <State>
+            <id>Visibility issues</id>
+          </State>
+          <State>
+            <id>XML</id>
+          </State>
+          <State>
+            <id>XPath</id>
+          </State>
+          <State>
+            <id>XSLT</id>
+          </State>
+        </expanded-state>
+        <selected-state>
+          <State>
+            <id>Abstraction issues</id>
+          </State>
+        </selected-state>
+      </profile-state>
+    </entry>
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <OptionsSetting value="true" id="Add" />
+    <OptionsSetting value="true" id="Remove" />
+    <OptionsSetting value="true" id="Checkout" />
+    <OptionsSetting value="false" id="Update" />
+    <OptionsSetting value="true" id="Status" />
+    <OptionsSetting value="true" id="Edit" />
+    <OptionsSetting value="true" id="Undo Check Out" />
+    <OptionsSetting value="true" id="Get Latest Version" />
+    <ConfirmationsSetting value="2" id="Add" />
+    <ConfirmationsSetting value="2" id="Remove" />
+  </component>
+  <component name="ProjectReloadState">
+    <option name="STATE" value="0" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1" splitterProportion="0.5">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages ProjectPane="true" />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+    </navigator>
+    <panes>
+      <pane id="PackagesPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="oracle-parcel-service" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="oracle-parcel-service" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="oracle-parcel-service" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="oracle-parcel-service" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="oracle-parcel-service" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="oracle-parcel-service" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ops-weblogic" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+      <pane id="Scope">
+        <subPane subId="Project Files">
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_flatWidth1" value="133" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_flatWidth0" value="131" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_flatWidth3" value="74" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_flatWidth2" value="136" />
+    <property name="OverrideImplement.combined" value="true" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_flatOrder1" value="1" />
+    <property name="options.splitter.main.proportions" value="0.3" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_flatOrder0" value="0" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_flatOrder3" value="3" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_flatOrder2" value="2" />
+    <property name="recentsLimit" value="5" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_treeWidth2" value="127" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_flatOrder5" value="5" />
+    <property name="MemberChooser.sorted" value="false" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_treeWidth1" value="123" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_flatOrder4" value="4" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_treeWidth0" value="122" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_treeWidth5" value="914" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_treeWidth4" value="122" />
+    <property name="GoToClass.includeJavaFiles" value="false" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_treeWidth3" value="121" />
+    <property name="GoToClass.toSaveIncludeLibraries" value="false" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="MemberChooser.showClasses" value="true" />
+    <property name="FullScreen" value="false" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_flatWidth4" value="131" />
+    <property name="GoToClass.includeLibraries" value="false" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_flatWidth5" value="924" />
+    <property name="options.splitter.details.proportions" value="0.43301436" />
+    <property name="last_directory_selection" value="$PROJECT_DIR$/ops-ee/ops-domain-services/src/main/java/com/oracle/demo/ops/entitymanager" />
+    <property name="GoToFile.includeJavaFiles" value="false" />
+    <property name="options.lastSelected" value="preferences.sourceCode.Java" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_treeOrder5" value="5" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_treeOrder3" value="3" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_treeOrder4" value="4" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_treeOrder1" value="1" />
+    <property name="DefaultHtmlFileTemplate" value="Xhtml" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_treeOrder2" value="2" />
+    <property name="MemberChooser.copyJavadoc" value="false" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_treeOrder0" value="0" />
+    <property name="dynamic.classpath" value="false" />
+    <property name="options.searchVisible" value="true" />
+  </component>
+  <component name="PyConsoleOptionsProvider">
+    <option name="myPythonConsoleState">
+      <PyConsoleSettings />
+    </option>
+    <option name="myDjangoConsoleState">
+      <PyConsoleSettings />
+    </option>
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.oracle.demo.ops.rest" />
+      <recent name="com.oracle.demo.ops.web.beans.tracking" />
+      <recent name="com.oracle.demo.ops.entitymanager" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/ops-web-jsf/src/main/webapp/resources/parcel" />
+      <recent name="$PROJECT_DIR$/ops-soapui/soapui-ws" />
+      <recent name="$PROJECT_DIR$/ops-soapui/soapui-rest" />
+      <recent name="$PROJECT_DIR$/ops-ee/ops-ee-web-jsf/src/main/webapp/templates/common/customer" />
+      <recent name="$PROJECT_DIR$/ops-ee/ops-ee-web-jsf/src/main/webapp/templates/common/admin" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/ops-soapui/soapui-ws" />
+      <recent name="$PROJECT_DIR$/ops-soapui/soapui-rest" />
+      <recent name="$PROJECT_DIR$/ops-cache/ops-cache-config/src/main/java" />
+      <recent name="$PROJECT_DIR$/ops-web-jsf/src/main/webapp/resources/css" />
+      <recent name="$PROJECT_DIR$" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.oracle.demo.ops.entitymanager" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.CacheTester">
+    <configuration default="false" name="GeolocationService" type="Application" factoryName="Application" temporary="true">
+      <extension name="coverage" enabled="false" merge="false" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="com.oracle.demo.ops.services.ejb.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="MAIN_CLASS_NAME" value="com.oracle.demo.ops.services.ejb.GeolocationService" />
+      <option name="VM_PARAMETERS" value="-Dhttp.proxyHost=www-proxy.us.oracle.com" />
+      <option name="PROGRAM_PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" value="" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="ops-services" />
+      <envs />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="" />
+        <option name="TRANSPORT" value="0" />
+        <option name="LOCAL" value="true" />
+      </RunnerSettings>
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Debug" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method />
+    </configuration>
+    <configuration default="true" type="MavenRunConfiguration" factoryName="Maven">
+      <MavenSettings>
+        <option name="myGeneralSettings" />
+        <option name="myRunnerSettings" />
+        <option name="myRunnerParameters">
+          <MavenRunnerParameters>
+            <option name="profiles">
+              <set />
+            </option>
+            <option name="goals">
+              <list />
+            </option>
+            <option name="profilesMap">
+              <map />
+            </option>
+            <option name="workingDirPath" value="" />
+          </MavenRunnerParameters>
+        </option>
+      </MavenSettings>
+      <method>
+        <option name="AntTarget" enabled="false" />
+        <option name="BuildArtifacts" enabled="false" />
+        <option name="Make" enabled="false" />
+        <option name="Maven.BeforeRunTask" enabled="false" />
+      </method>
+    </configuration>
+    <configuration default="true" type="PythonConfigurationType" factoryName="Python">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <module name="ops-weblogic" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="PARAMETERS" value="" />
+      <option name="MULTIPROCESS" value="false" />
+      <method>
+        <option name="AntTarget" enabled="false" />
+        <option name="BuildArtifacts" enabled="false" />
+        <option name="Make" enabled="true" />
+        <option name="Maven.BeforeRunTask" enabled="false" />
+      </method>
+    </configuration>
+    <configuration default="true" type="Remote" factoryName="Remote">
+      <option name="USE_SOCKET_TRANSPORT" value="true" />
+      <option name="SERVER_MODE" value="false" />
+      <option name="SHMEM_ADDRESS" value="javadebug" />
+      <option name="HOST" value="localhost" />
+      <option name="PORT" value="5005" />
+      <method>
+        <option name="AntTarget" enabled="false" />
+        <option name="BuildArtifacts" enabled="false" />
+        <option name="Maven.BeforeRunTask" enabled="false" />
+      </method>
+    </configuration>
+    <configuration default="true" type="tests" factoryName="Unittests">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <module name="ops-weblogic" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_SCRIPT" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <option name="PUREUNITTEST" value="true" />
+      <method>
+        <option name="AntTarget" enabled="false" />
+        <option name="BuildArtifacts" enabled="false" />
+        <option name="Make" enabled="true" />
+        <option name="Maven.BeforeRunTask" enabled="false" />
+      </method>
+    </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <module name="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="HTML_FILE_NAME" />
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <option name="VM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <method>
+        <option name="AntTarget" enabled="false" />
+        <option name="BuildArtifacts" enabled="false" />
+        <option name="Make" enabled="true" />
+        <option name="Maven.BeforeRunTask" enabled="false" />
+      </method>
+    </configuration>
+    <configuration default="true" type="Application" factoryName="Application">
+      <extension name="coverage" enabled="false" merge="false" runner="idea" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="" />
+      <envs />
+      <method>
+        <option name="AntTarget" enabled="false" />
+        <option name="BuildArtifacts" enabled="false" />
+        <option name="Make" enabled="true" />
+        <option name="Maven.BeforeRunTask" enabled="false" />
+      </method>
+    </configuration>
+    <configuration default="true" type="tests" factoryName="Doctests">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <module name="oracle-parcel-service" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_SCRIPT" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <method>
+        <option name="AntTarget" enabled="false" />
+        <option name="BuildArtifacts" enabled="false" />
+        <option name="Make" enabled="true" />
+        <option name="Maven.BeforeRunTask" enabled="false" />
+      </method>
+    </configuration>
+    <configuration default="true" type="JUnit" factoryName="JUnit">
+      <extension name="coverage" enabled="false" merge="false" runner="idea" />
+      <extension name="snapshooter" />
+      <module name="" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <envs />
+      <patterns />
+      <method>
+        <option name="AntTarget" enabled="false" />
+        <option name="BuildArtifacts" enabled="false" />
+        <option name="Make" enabled="true" />
+        <option name="Maven.BeforeRunTask" enabled="false" />
+      </method>
+    </configuration>
+    <configuration default="true" type="JavascriptDebugSession" factoryName="Local">
+      <JSDebuggerConfigurationSettings>
+        <option name="engineId" value="embedded" />
+        <option name="fileUrl" />
+      </JSDebuggerConfigurationSettings>
+      <method>
+        <option name="AntTarget" enabled="false" />
+        <option name="BuildArtifacts" enabled="false" />
+        <option name="Maven.BeforeRunTask" enabled="false" />
+      </method>
+    </configuration>
+    <configuration default="false" name="CacheTester" type="Application" factoryName="Application">
+      <extension name="coverage" enabled="false" merge="false" runner="idea" />
+      <option name="MAIN_CLASS_NAME" value="CacheTester" />
+      <option name="VM_PARAMETERS" value="-Dtangosol.coherence.cacheconfig=$PROJECT_DIR$/ops-cache/ops-cache-config/coherence-cache-config.xml  -Dtangosol.coherence.override=$USER_HOME$/Documents/workspaceFastSwap/CoherenceConfig/src/tangosol-coherence-override.xml" />
+      <option name="PROGRAM_PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" value="" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="ops-cache-config" />
+      <envs />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method />
+    </configuration>
+    <list size="2">
+      <item index="0" class="java.lang.String" itemvalue="Application.GeolocationService" />
+      <item index="1" class="java.lang.String" itemvalue="Application.CacheTester" />
+    </list>
+    <configuration name="&lt;template&gt;" type="WebApp" default="true" selected="false">
+      <Host>localhost</Host>
+      <Port>5050</Port>
+    </configuration>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false" />
+  <component name="SvnConfiguration" maxAnnotateRevisions="500" myUseAcceleration="nothing" myAutoUpdateAfterCommit="false" cleanupOnStartRun="true">
+    <option name="USER" value="" />
+    <option name="PASSWORD" value="" />
+    <option name="mySSHConnectionTimeout" value="30000" />
+    <option name="mySSHReadTimeout" value="30000" />
+    <option name="LAST_MERGED_REVISION" />
+    <option name="MERGE_DRY_RUN" value="false" />
+    <option name="MERGE_DIFF_USE_ANCESTRY" value="true" />
+    <option name="UPDATE_LOCK_ON_DEMAND" value="false" />
+    <option name="IGNORE_SPACES_IN_MERGE" value="false" />
+    <option name="DETECT_NESTED_COPIES" value="true" />
+    <option name="CHECK_NESTED_FOR_QUICK_MERGE" value="false" />
+    <option name="IGNORE_SPACES_IN_ANNOTATE" value="true" />
+    <option name="SHOW_MERGE_SOURCES_IN_ANNOTATE" value="true" />
+    <option name="FORCE_UPDATE" value="false" />
+    <option name="IGNORE_EXTERNALS" value="false" />
+    <configuration useDefault="true">$USER_HOME$/.subversion</configuration>
+    <myIsUseDefaultProxy>false</myIsUseDefaultProxy>
+    <supportedVersion>125</supportedVersion>
+  </component>
+  <component name="SvnFileUrlMappingImpl">
+    <option name="myMappingRoots">
+      <list>
+        <SvnCopyRootSimple>
+          <option name="myVcsRoot" value="$PROJECT_DIR$" />
+          <option name="myCopyRoot" value="$PROJECT_DIR$" />
+        </SvnCopyRootSimple>
+      </list>
+    </option>
+    <option name="myMoreRealMappingRoots">
+      <list>
+        <SvnCopyRootSimple>
+          <option name="myVcsRoot" value="$PROJECT_DIR$" />
+          <option name="myCopyRoot" value="$PROJECT_DIR$" />
+        </SvnCopyRootSimple>
+      </list>
+    </option>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="95ad4a6a-8bf7-4230-b569-5cb750321bad" name="Default" comment="" />
+      <created>1339008209616</created>
+      <updated>1339008209616</updated>
+    </task>
+    <task id="LOCAL-00001" summary="first checkin to git">
+      <created>1339016316422</created>
+      <updated>1339016316422</updated>
+    </task>
+    <task id="LOCAL-00002" summary="first checkin to git">
+      <created>1343879934274</created>
+      <updated>1343879934274</updated>
+    </task>
+    <task id="LOCAL-00003" summary="updating IntelliJ Project Files">
+      <created>1344549497104</created>
+      <updated>1344549497104</updated>
+    </task>
+    <task id="LOCAL-00004" summary="updated with subdeployment for JMS Queues.">
+      <created>1344551103102</created>
+      <updated>1344551103102</updated>
+    </task>
+    <task id="LOCAL-00005" summary="updated managed server and cluster names">
+      <created>1344551122101</created>
+      <updated>1344551122101</updated>
+    </task>
+    <task id="LOCAL-00006" summary="renamed">
+      <created>1344551155102</created>
+      <updated>1344551155102</updated>
+    </task>
+    <task id="LOCAL-00007" summary="updated WLST to work all offline">
+      <created>1345157831104</created>
+      <updated>1345157831104</updated>
+    </task>
+    <task id="LOCAL-00008" summary="refactored and added nodemanager, and WLS Maven Plugin install script.">
+      <created>1345251174102</created>
+      <updated>1345251174102</updated>
+    </task>
+    <task id="LOCAL-00009" summary="removed">
+      <created>1345251550102</created>
+      <updated>1345251550102</updated>
+    </task>
+    <task id="LOCAL-00010" summary="finalized initial config to match intro video">
+      <created>1345310904105</created>
+      <updated>1345310904105</updated>
+    </task>
+    <task id="LOCAL-00011" summary="new script for Windows">
+      <created>1345736733106</created>
+      <updated>1345736733106</updated>
+    </task>
+    <task id="LOCAL-00012" summary="new script for Windows">
+      <created>1345736978102</created>
+      <updated>1345736978102</updated>
+    </task>
+    <task id="LOCAL-00013" summary="new script for Windows">
+      <created>1345737040102</created>
+      <updated>1345737040102</updated>
+    </task>
+    <task id="LOCAL-00014" summary="new script for Windows">
+      <created>1345737090102</created>
+      <updated>1345737090102</updated>
+    </task>
+    <task id="LOCAL-00015" summary="new script for Windows">
+      <created>1345737156100</created>
+      <updated>1345737156100</updated>
+    </task>
+    <task id="LOCAL-00016" summary="added deploy-local-admin">
+      <created>1346262177104</created>
+      <updated>1346262177104</updated>
+    </task>
+    <task id="LOCAL-00017" summary="moved to top level">
+      <created>1346351334104</created>
+      <updated>1346351334104</updated>
+    </task>
+    <task id="LOCAL-00018" summary="merged services API and IMPL">
+      <created>1346367877101</created>
+      <updated>1346367877101</updated>
+    </task>
+    <task id="LOCAL-00019" summary="merged services API and IMPL">
+      <created>1346367910102</created>
+      <updated>1346367910102</updated>
+    </task>
+    <task id="LOCAL-00020" summary="merged services API and IMPL">
+      <created>1346430058102</created>
+      <updated>1346430058102</updated>
+    </task>
+    <task id="LOCAL-00021" summary="merged services API and IMPL">
+      <created>1346448982103</created>
+      <updated>1346448982103</updated>
+    </task>
+    <task id="LOCAL-00022" summary="removed jackson">
+      <created>1346450481102</created>
+      <updated>1346450481102</updated>
+    </task>
+    <task id="LOCAL-00023" summary="removed exit()">
+      <created>1346471033214</created>
+      <updated>1346471033214</updated>
+    </task>
+    <task id="LOCAL-00024" summary="moved">
+      <created>1346478281102</created>
+      <updated>1346478281102</updated>
+    </task>
+    <task id="LOCAL-00025" summary="moved ops-weblogic to top level">
+      <created>1346479931100</created>
+      <updated>1346479931100</updated>
+    </task>
+    <task id="LOCAL-00026" summary="added weblogicHome setting to POMs">
+      <created>1348001845105</created>
+      <updated>1348001845105</updated>
+    </task>
+    <task id="LOCAL-00027" summary="adding new facelet&#10;">
+      <created>1348001882102</created>
+      <updated>1348001882102</updated>
+    </task>
+    <task id="LOCAL-00028" summary="updated to deploy shared libs and work with nodemanager">
+      <created>1348004161102</created>
+      <updated>1348004161102</updated>
+    </task>
+    <task id="LOCAL-00029" summary="updated to have correct MBean path to create shipment queue">
+      <created>1348004456101</created>
+      <updated>1348004456101</updated>
+    </task>
+    <task id="LOCAL-00030" summary="added weblogic context root">
+      <created>1348007234196</created>
+      <updated>1348007234196</updated>
+    </task>
+    <task id="LOCAL-00031" summary="updated to match SOAP UI script&#10;">
+      <created>1348014692101</created>
+      <updated>1348014692101</updated>
+    </task>
+    <task id="LOCAL-00032" summary="updated to match SOAP UI script&#10;">
+      <created>1348014802101</created>
+      <updated>1348014802101</updated>
+    </task>
+    <task id="LOCAL-00033" summary="updated to make message more meaningful">
+      <created>1348016110101</created>
+      <updated>1348016110101</updated>
+    </task>
+    <task id="LOCAL-00034" summary="updates to style and UI">
+      <created>1348163093157</created>
+      <updated>1348163093157</updated>
+    </task>
+    <task id="LOCAL-00035" summary="new&#10;">
+      <created>1348185526104</created>
+      <updated>1348185526105</updated>
+    </task>
+    <task id="LOCAL-00036" summary="updated with new UI">
+      <created>1348185639102</created>
+      <updated>1348185639102</updated>
+    </task>
+    <task id="LOCAL-00037" summary="updated weblogic config stuff">
+      <created>1348185850101</created>
+      <updated>1348185850101</updated>
+    </task>
+    <task id="LOCAL-00038" summary="updating with most recent code">
+      <created>1348185891101</created>
+      <updated>1348185891101</updated>
+    </task>
+    <task id="LOCAL-00039" summary="adding Oracle images">
+      <created>1348200036101</created>
+      <updated>1348200036101</updated>
+    </task>
+    <task id="LOCAL-00040" summary="new zip code geo function">
+      <created>1348247120103</created>
+      <updated>1348247120103</updated>
+    </task>
+    <task id="LOCAL-00041" summary="new zip code geo function">
+      <created>1348247136103</created>
+      <updated>1348247136103</updated>
+    </task>
+    <task id="LOCAL-00042" summary="changed zip to postal&#10;">
+      <created>1348248290101</created>
+      <updated>1348248290101</updated>
+    </task>
+    <task id="LOCAL-00043" summary="added geolocation">
+      <created>1348248340101</created>
+      <updated>1348248340101</updated>
+    </task>
+    <task id="LOCAL-00044" summary="changed zip to postal&#10;">
+      <created>1348248353101</created>
+      <updated>1348248353101</updated>
+    </task>
+    <task id="LOCAL-00045" summary="added goepostal entity">
+      <created>1348249965100</created>
+      <updated>1348249965100</updated>
+    </task>
+    <task id="LOCAL-00046" summary="added goepostal entity">
+      <created>1348286215102</created>
+      <updated>1348286215102</updated>
+    </task>
+    <task id="LOCAL-00047" summary="added goepostal entity support">
+      <created>1348286248101</created>
+      <updated>1348286248101</updated>
+    </task>
+    <task id="LOCAL-00048" summary="new">
+      <created>1348453845103</created>
+      <updated>1348453845103</updated>
+    </task>
+    <task id="LOCAL-00049" summary="checkpoint&#10;">
+      <created>1348458105102</created>
+      <updated>1348458105102</updated>
+    </task>
+    <task id="LOCAL-00050" summary="checkpoint&#10;">
+      <created>1348458225102</created>
+      <updated>1348458225102</updated>
+    </task>
+    <task id="LOCAL-00051" summary="removed in favor of a new strategy">
+      <created>1348462233101</created>
+      <updated>1348462233102</updated>
+    </task>
+    <task id="LOCAL-00052" summary="checkpoint 2">
+      <created>1348502020101</created>
+      <updated>1348502020102</updated>
+    </task>
+    <task id="LOCAL-00053" summary="checkpoint 3">
+      <created>1348502075102</created>
+      <updated>1348502075102</updated>
+    </task>
+    <task id="LOCAL-00054" summary="checkpoint 3">
+      <created>1348530610101</created>
+      <updated>1348530610101</updated>
+    </task>
+    <task id="LOCAL-00055" summary="removed coherence code">
+      <created>1348532482103</created>
+      <updated>1348532482103</updated>
+    </task>
+    <task id="LOCAL-00056" summary="removed coherence code">
+      <created>1348532826217</created>
+      <updated>1348532826217</updated>
+    </task>
+    <task id="LOCAL-00057" summary="removed coherence code">
+      <created>1348532872102</created>
+      <updated>1348532872102</updated>
+    </task>
+    <task id="LOCAL-00058" summary="updated to have adressee in the composite for address">
+      <created>1348533358102</created>
+      <updated>1348533358102</updated>
+    </task>
+    <task id="LOCAL-00059" summary="reduced image sizes">
+      <created>1348533999102</created>
+      <updated>1348533999102</updated>
+    </task>
+    <task id="LOCAL-00060" summary="updated for cluster high level steps">
+      <created>1348535494212</created>
+      <updated>1348535494213</updated>
+    </task>
+    <task id="LOCAL-00061" summary="Updated logo filenames and references">
+      <created>1348543115103</created>
+      <updated>1348543115103</updated>
+    </task>
+    <task id="LOCAL-00062" summary="Updated and made consistent with README">
+      <created>1348550311107</created>
+      <updated>1348550311110</updated>
+    </task>
+    <task id="LOCAL-00063" summary="added ddl for schema">
+      <created>1348550958102</created>
+      <updated>1348550958102</updated>
+    </task>
+    <task id="LOCAL-00064" summary="rationalized WL_HOME and associated params, updated all POM files to have install as default">
+      <created>1348551144101</created>
+      <updated>1348551144102</updated>
+    </task>
+    <task id="LOCAL-00065" summary="updated with comments about DDL">
+      <created>1348551311101</created>
+      <updated>1348551311102</updated>
+    </task>
+    <task id="LOCAL-00066" summary="updated to point to hosted machine">
+      <created>1348552945101</created>
+      <updated>1348552945102</updated>
+    </task>
+    <task id="LOCAL-00067" summary="updated header to point to 'about' section.  added null handling">
+      <created>1348553058101</created>
+      <updated>1348553058102</updated>
+    </task>
+    <task id="LOCAL-00068" summary="added @Statless to make it work with EJBs">
+      <created>1348553452102</created>
+      <updated>1348553452102</updated>
+    </task>
+    <task id="LOCAL-00069" summary="updated to use injection appropriately&#10;">
+      <created>1348553834101</created>
+      <updated>1348553834102</updated>
+    </task>
+    <task id="LOCAL-00070" summary="added putXML">
+      <created>1348555349101</created>
+      <updated>1348555349102</updated>
+    </task>
+    <task id="LOCAL-00071" summary="added simulate events support in core app">
+      <created>1348586598101</created>
+      <updated>1348586598102</updated>
+    </task>
+    <task id="LOCAL-00072" summary="changed order of header items&#10;">
+      <created>1348606268108</created>
+      <updated>1348606268109</updated>
+    </task>
+    <task id="LOCAL-00073" summary="reduced image size">
+      <created>1348607545103</created>
+      <updated>1348607545103</updated>
+    </task>
+    <task id="LOCAL-00074" summary="reduced image size">
+      <created>1348607960101</created>
+      <updated>1348607960102</updated>
+    </task>
+    <task id="LOCAL-00075" summary="refactored">
+      <created>1348614742102</created>
+      <updated>1348614742102</updated>
+    </task>
+    <task id="LOCAL-00076" summary="refactored">
+      <created>1348614767102</created>
+      <updated>1348614767102</updated>
+    </task>
+    <task id="LOCAL-00077" summary="refactored">
+      <created>1348615015102</created>
+      <updated>1348615015102</updated>
+    </task>
+    <task id="LOCAL-00078" summary="refactored">
+      <created>1348617236352</created>
+      <updated>1348617236352</updated>
+    </task>
+    <task id="LOCAL-00079" summary="refactored">
+      <created>1348619654103</created>
+      <updated>1348619654103</updated>
+    </task>
+    <task id="LOCAL-00080" summary="refactored">
+      <created>1348621204102</created>
+      <updated>1348621204102</updated>
+    </task>
+    <task id="LOCAL-00081" summary="made images smaller&#10;">
+      <created>1348621389102</created>
+      <updated>1348621389102</updated>
+    </task>
+    <task id="LOCAL-00082" summary="made images smaller&#10;">
+      <created>1348621876221</created>
+      <updated>1348621876222</updated>
+    </task>
+    <task id="LOCAL-00083" summary="updated to run SOAPUI plugin">
+      <created>1348629109101</created>
+      <updated>1348629109102</updated>
+    </task>
+    <task id="LOCAL-00084" summary="added partial processing on tracking page">
+      <created>1348669404101</created>
+      <updated>1348669404101</updated>
+    </task>
+    <task id="LOCAL-00085" summary="added continuous build profile">
+      <created>1348704640101</created>
+      <updated>1348704640101</updated>
+    </task>
+    <task id="LOCAL-00086" summary="updated trakcing page, changed event simulation to start at the from address">
+      <created>1348705840133</created>
+      <updated>1348705840133</updated>
+    </task>
+    <task id="LOCAL-00087" summary="testing XE URL change">
+      <created>1348712195102</created>
+      <updated>1348712195102</updated>
+    </task>
+    <task id="LOCAL-00088" summary="bound soapui to integration test">
+      <created>1348723335106</created>
+      <updated>1348723335107</updated>
+    </task>
+    <task id="LOCAL-00089" summary="updated port to 7001">
+      <created>1348723671104</created>
+      <updated>1348723671104</updated>
+    </task>
+    <task id="LOCAL-00090" summary="changed path of project file">
+      <created>1348723908102</created>
+      <updated>1348723908102</updated>
+    </task>
+    <task id="LOCAL-00091" summary="added junit report">
+      <created>1348725644102</created>
+      <updated>1348725644103</updated>
+    </task>
+    <task id="LOCAL-00092" summary="fixed report path">
+      <created>1348725825102</created>
+      <updated>1348725825103</updated>
+    </task>
+    <task id="LOCAL-00093" summary="added overrides for primefaces">
+      <created>1348766134101</created>
+      <updated>1348766134101</updated>
+    </task>
+    <task id="LOCAL-00094" summary="added overrides css">
+      <created>1348766406101</created>
+      <updated>1348766406102</updated>
+    </task>
+    <task id="LOCAL-00095" summary="updated EJB resolution">
+      <created>1348782643113</created>
+      <updated>1348782643114</updated>
+    </task>
+    <task id="LOCAL-00096" summary="updated EJB resolution">
+      <created>1348782689101</created>
+      <updated>1348782689101</updated>
+    </task>
+    <task id="LOCAL-00097" summary="checkpoint&#10;">
+      <created>1348787051103</created>
+      <updated>1348787051104</updated>
+    </task>
+    <task id="LOCAL-00098" summary="checkpoint - maps and CSS">
+      <created>1348818883105</created>
+      <updated>1348818883106</updated>
+    </task>
+    <task id="LOCAL-00099" summary="UI updates, added Google geolocation service">
+      <created>1349077716125</created>
+      <updated>1349077716126</updated>
+    </task>
+    <task id="LOCAL-00100" summary="fixed duplicate id">
+      <created>1349078863101</created>
+      <updated>1349078863101</updated>
+    </task>
+    <task id="LOCAL-00101" summary="checkpoint">
+      <created>1349156032107</created>
+      <updated>1349156032107</updated>
+    </task>
+    <task id="LOCAL-00102" summary="checkpoint">
+      <created>1349160710103</created>
+      <updated>1349160710103</updated>
+    </task>
+    <task id="LOCAL-00103" summary="added postalgeo as an element">
+      <created>1349162538103</created>
+      <updated>1349162538104</updated>
+    </task>
+    <task id="LOCAL-00104" summary="added REST tests">
+      <created>1349163107101</created>
+      <updated>1349163107101</updated>
+    </task>
+    <task id="LOCAL-00105" summary="checkpoint&#10;">
+      <created>1349243812103</created>
+      <updated>1349243812104</updated>
+    </task>
+    <task id="LOCAL-00106" summary="checkpoint&#10;">
+      <created>1349245047102</created>
+      <updated>1349245047102</updated>
+    </task>
+    <task id="LOCAL-00107" summary="checkpoint&#10;">
+      <created>1349245185101</created>
+      <updated>1349245185102</updated>
+    </task>
+    <task id="LOCAL-00108" summary="changed domain name">
+      <created>1349245489101</created>
+      <updated>1349245489101</updated>
+    </task>
+    <task id="LOCAL-00109" summary="OOW Session Version">
+      <created>1349294070100</created>
+      <updated>1349294070100</updated>
+    </task>
+    <task id="LOCAL-00110" summary="final push before github">
+      <created>1349475974102</created>
+      <updated>1349475974102</updated>
+    </task>
+    <option name="localTasksCounter" value="111" />
+    <servers />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="60" y="22" width="1390" height="869" extended-state="0" />
+    <editor active="false" />
+    <layout>
+      <window_info id="Data Sources" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3299428" sideWeight="0.57552373" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32855567" sideWeight="0.98061496" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2495238" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39911798" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
+      <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3296582" sideWeight="0.5" order="11" side_tool="true" content_ui="tabs" />
+      <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32745314" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="JSF" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.328" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="CDI" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.30730158" sideWeight="0.23153253" order="4" side_tool="true" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="EJB" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18852459" sideWeight="0.6403743" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24962743" sideWeight="0.6403743" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.35962567" sideWeight="0.9977645" order="2" side_tool="false" content_ui="tabs" x="188" y="631" width="1240" height="361" />
+      <window_info id="JavaEE:App" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25874126" sideWeight="0.24145535" order="6" side_tool="true" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
+      <window_info id="Thumbnails" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3296582" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3274559" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+    </layout>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="OFFER_MOVE_TO_ANOTHER_CHANGELIST_ON_PARTIAL_COMMIT" value="true" />
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
+    <option name="CHECK_NEW_TODO" value="true" />
+    <option name="myTodoPanelSettings">
+      <value>
+        <are-packages-shown value="false" />
+        <are-modules-shown value="false" />
+        <flatten-packages value="false" />
+        <is-autoscroll-to-source value="false" />
+      </value>
+    </option>
+    <option name="PERFORM_UPDATE_IN_BACKGROUND" value="true" />
+    <option name="PERFORM_COMMIT_IN_BACKGROUND" value="true" />
+    <option name="PERFORM_EDIT_IN_BACKGROUND" value="true" />
+    <option name="PERFORM_CHECKOUT_IN_BACKGROUND" value="true" />
+    <option name="PERFORM_ADD_REMOVE_IN_BACKGROUND" value="true" />
+    <option name="PERFORM_ROLLBACK_IN_BACKGROUND" value="false" />
+    <option name="CHECK_LOCALLY_CHANGED_CONFLICTS_IN_BACKGROUND" value="false" />
+    <option name="ENABLE_BACKGROUND_PROCESSES" value="false" />
+    <option name="CHANGED_ON_SERVER_INTERVAL" value="60" />
+    <option name="SHOW_ONLY_CHANGED_IN_SELECTION_DIFF" value="true" />
+    <option name="CHECK_COMMIT_MESSAGE_SPELLING" value="true" />
+    <option name="DEFAULT_PATCH_EXTENSION" value="patch" />
+    <option name="SHORT_DIFF_HORISONTALLY" value="true" />
+    <option name="SHORT_DIFF_EXTRA_LINES" value="2" />
+    <option name="SOFT_WRAPS_IN_SHORT_DIFF" value="true" />
+    <option name="INCLUDE_TEXT_INTO_PATCH" value="false" />
+    <option name="INCLUDE_TEXT_INTO_SHELF" value="false" />
+    <option name="CREATE_PATCH_EXPAND_DETAILS_DEFAULT" value="true" />
+    <option name="SHOW_FILE_HISTORY_DETAILS" value="true" />
+    <option name="SHOW_VCS_ERROR_NOTIFICATIONS" value="true" />
+    <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
+    <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
+    <option name="LAST_COMMIT_MESSAGE" value="final push before github" />
+    <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
+    <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
+    <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
+    <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="false" />
+    <option name="REFORMAT_BEFORE_FILE_COMMIT" value="false" />
+    <option name="FILE_HISTORY_DIALOG_COMMENTS_SPLITTER_PROPORTION" value="0.8" />
+    <option name="FILE_HISTORY_DIALOG_SPLITTER_PROPORTION" value="0.5" />
+    <option name="ACTIVE_VCS_NAME" />
+    <option name="UPDATE_GROUP_BY_PACKAGES" value="false" />
+    <option name="UPDATE_GROUP_BY_CHANGELIST" value="false" />
+    <option name="SHOW_FILE_HISTORY_AS_TREE" value="false" />
+    <option name="FILE_HISTORY_SPLITTER_PROPORTION" value="0.6" />
+    <confirmMoveToFailedCommit value="1" />
+    <MESSAGE value="refactored" />
+    <MESSAGE value="made images smaller&#10;" />
+    <MESSAGE value="updated to run SOAPUI plugin" />
+    <MESSAGE value="added partial processing on tracking page" />
+    <MESSAGE value="added continuous build profile" />
+    <MESSAGE value="updated trakcing page, changed event simulation to start at the from address" />
+    <MESSAGE value="testing XE URL change" />
+    <MESSAGE value="bound soapui to integration test" />
+    <MESSAGE value="updated port to 7001" />
+    <MESSAGE value="changed path of project file" />
+    <MESSAGE value="added junit report" />
+    <MESSAGE value="fixed report path" />
+    <MESSAGE value="added overrides for primefaces" />
+    <MESSAGE value="added overrides css" />
+    <MESSAGE value="updated EJB resolution" />
+    <MESSAGE value="checkpoint - maps and CSS" />
+    <MESSAGE value="UI updates, added Google geolocation service" />
+    <MESSAGE value="fixed duplicate id" />
+    <MESSAGE value="checkpoint" />
+    <MESSAGE value="added postalgeo as an element" />
+    <MESSAGE value="added REST tests" />
+    <MESSAGE value="checkpoint&#10;" />
+    <MESSAGE value="changed domain name" />
+    <MESSAGE value="OOW Session Version" />
+    <MESSAGE value="final push before github" />
+  </component>
+  <component name="VssConfiguration">
+    <option name="CLIENT_PATH" value="" />
+    <option name="SRCSAFEINI_PATH" value="" />
+    <option name="USER_NAME" value="" />
+    <option name="PWD" value="" />
+    <CheckoutOptions>
+      <option name="COMMENT" value="" />
+      <option name="DO_NOT_GET_LATEST_VERSION" value="false" />
+      <option name="REPLACE_WRITABLE" value="false" />
+      <option name="RECURSIVE" value="false" />
+    </CheckoutOptions>
+    <CheckinOptions>
+      <option name="COMMENT" value="" />
+      <option name="KEEP_CHECKED_OUT" value="false" />
+      <option name="RECURSIVE" value="false" />
+    </CheckinOptions>
+    <AddOptions>
+      <option name="STORE_ONLY_LATEST_VERSION" value="false" />
+      <option name="CHECK_OUT_IMMEDIATELY" value="false" />
+    </AddOptions>
+    <UndocheckoutOptions>
+      <option name="MAKE_WRITABLE" value="false" />
+      <option name="REPLACE_LOCAL_COPY" value="2" />
+      <option name="RECURSIVE" value="false" />
+    </UndocheckoutOptions>
+    <GetOptions>
+      <option name="REPLACE_WRITABLE" value="0" />
+      <option name="MAKE_WRITABLE" value="false" />
+      <option name="ANSWER_NEGATIVELY" value="false" />
+      <option name="ANSWER_POSITIVELY" value="false" />
+      <option name="RECURSIVE" value="false" />
+      <option name="VERSION" />
+    </GetOptions>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager />
+  </component>
+  <component name="antWorkspaceConfiguration">
+    <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
+    <option name="FILTER_TARGETS" value="false" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/ops-services/src/main/java/com/oracle/demo/ops/services/ejb/ParcelService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="30" column="13" selection-start="1056" selection-end="1056" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ops-services/src/main/java/com/oracle/demo/ops/services/ejb/GeolocationService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="95" column="45" selection-start="2630" selection-end="2630" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ops-rest/src/main/java/com/oracle/demo/ops/rest/geo/GeolocationResource.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="26" column="94" selection-start="629" selection-end="639" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ops-web-jsf/src/main/java/com/oracle/demo/ops/web/beans/ship/ShipmentWizardBean.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="42" column="13" selection-start="1571" selection-end="1571" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ops-web-jsf/src/main/webapp/app/track/displayTracking.xhtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="65" selection-start="227" selection-end="227" vertical-scroll-proportion="-2.5" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ops-web-jsf/src/main/webapp/resources/address/gridInput.xhtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="29" selection-start="357" selection-end="369" vertical-scroll-proportion="-2.0416667" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ops-web-jsf/src/main/webapp/app/ship/ship.xhtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="52" column="0" selection-start="1609" selection-end="1657" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ops-web-jsf/src/main/webapp/index.xhtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ops-web-jsf/src/main/webapp/templates/common/layout.xhtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="46" column="21" selection-start="1458" selection-end="1464" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ops-common/ops-common-deployable/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="40" column="0" selection-start="1049" selection-end="1547" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ops-weblogic/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="170" column="28" selection-start="4918" selection-end="4922" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ops-rest/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ops-soapui/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ops-soapui/soapui-ws/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="94" column="9" selection-start="2873" selection-end="2931" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ops-common/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="135" column="18" selection-start="4560" selection-end="4560" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ops-domain-model/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="20" column="31" selection-start="806" selection-end="806" vertical-scroll-proportion="0.035971224">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <last-edited>ops-domain-services-api:ejb</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+                <option value="0.5" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>EJB</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>1.6</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>ops-weblogic</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+                <option value="0.5" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectJDKs.UI">
+        <settings>
+          <last-edited>1.6</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <last-edited>Maven: com.oracle.coherence:coherence:3.7.1</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>
+

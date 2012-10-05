@@ -1,0 +1,228 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+  <!-- ==================================================================================== -->
+
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.oracle.demo.ops</groupId>
+  <artifactId>ops-weblogic</artifactId>
+  <version>3.0</version>
+  <name>ops-weblogic</name>
+  <packaging>jar</packaging>
+
+  <!-- ==================================================================================== -->
+
+  <properties>
+
+  </properties>
+
+  <!-- ==================================================================================== -->
+
+  <profiles>
+
+    <profile>
+      <id>stop-embedded-wls</id>
+      <build>
+        <defaultGoal>clean</defaultGoal>
+        <plugins>
+          <plugin>
+            <groupId>com.oracle.weblogic</groupId>
+            <artifactId>wls-maven-plugin</artifactId>
+            <version>12.1.1.0</version>
+
+            <executions>
+              <execution>
+                <phase>pre-clean</phase>
+                <goals>
+                  <goal>stop-server</goal>
+                </goals>
+              </execution>
+
+            </executions>
+
+            <configuration>
+
+              <user>weblogic</user>
+              <password>welcome1</password>
+
+              <domainHome>target/domains/ops_domain</domainHome>
+              <middlewareHome>${project.basedir}/Oracle</middlewareHome>
+              <weblogicHome>${project.basedir}/Oracle/wlserver</weblogicHome>
+            </configuration>
+
+          </plugin>
+
+        </plugins>
+      </build>
+    </profile>
+
+    <profile>
+      <id>configure-embedded-wls</id>
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>com.oracle.weblogic</groupId>
+            <artifactId>wls-maven-plugin</artifactId>
+            <version>12.1.1.0</version>
+
+            <executions>
+              <execution>
+                <id>weblogic-deploy</id>
+                <phase>install</phase>
+                <goals>
+                  <goal>install</goal>
+                  <goal>create-domain</goal>
+                  <goal>start-server</goal>
+                  <goal>wlst</goal>
+                  <goal>stop-server</goal>
+                </goals>
+              </execution>
+
+              <execution>
+                <id>weblogic-stop-on-clean</id>
+                <phase>pre-clean</phase>
+
+                <goals>
+                  <goal>stop-server</goal>
+                </goals>
+              </execution>
+
+            </executions>
+
+            <configuration>
+              <fileName>${project.basedir}/configure-ops-standalone.py</fileName>
+              <propertiesFile>${project.basedir}/ops-domain.properties</propertiesFile>
+
+              <user>weblogic</user>
+              <password>welcome1</password>
+
+              <artifactLocation>com.oracle.weblogic:wls-dev:zip:12.1.1.0</artifactLocation>
+
+              <domainHome>target/domains/ops_domain</domainHome>
+              <middlewareHome>${project.basedir}/Oracle</middlewareHome>
+              <weblogicHome>${project.basedir}/Oracle/wlserver</weblogicHome>
+            </configuration>
+
+          </plugin>
+
+        </plugins>
+      </build>
+    </profile>
+
+    <profile>
+      <id>enable-embedded-wls</id>
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>com.oracle.weblogic</groupId>
+            <artifactId>wls-maven-plugin</artifactId>
+            <version>12.1.1.0</version>
+
+            <executions>
+              <execution>
+                <id>weblogic-deploy</id>
+                <phase>install</phase>
+                <goals>
+                  <goal>start-server</goal>
+                </goals>
+              </execution>
+
+            </executions>
+
+            <configuration>
+
+              <artifactLocation>com.oracle.weblogic:wls-dev:zip:12.1.1.0</artifactLocation>
+
+              <user>weblogic</user>
+              <password>welcome1</password>
+
+              <domainHome>target/domains/ops_domain</domainHome>
+              <middlewareHome>${project.basedir}/Oracle</middlewareHome>
+              <weblogicHome>${project.basedir}/Oracle/wlserver</weblogicHome>
+            </configuration>
+
+          </plugin>
+
+        </plugins>
+      </build>
+    </profile>
+
+    <profile>
+      <id>continuous-build</id>
+
+      <build>
+
+        <plugins>
+
+          <plugin>
+            <groupId>com.oracle.weblogic</groupId>
+            <artifactId>wls-maven-plugin</artifactId>
+            <version>12.1.1.0</version>
+
+            <executions>
+              <execution>
+                <id>weblogic-deploy</id>
+                <phase>install</phase>
+
+                <goals>
+                  <goal>install</goal>
+                  <goal>create-domain</goal>
+                  <goal>start-server</goal>
+                  <goal>wlst</goal>
+                </goals>
+              </execution>
+
+            </executions>
+
+            <configuration>
+
+              <artifactLocation>com.oracle.weblogic:wls-dev:zip:12.1.1.0</artifactLocation>
+
+              <user>weblogic</user>
+              <password>welcome1</password>
+
+              <fileName>${project.basedir}/configure-ops-standalone.py</fileName>
+              <propertiesFile>${project.basedir}/ops-domain.properties</propertiesFile>
+              <domainHome>target/domains/ops_domain</domainHome>
+              <middlewareHome>${project.basedir}/Oracle</middlewareHome>
+              <weblogicHome>${project.basedir}/Oracle/wlserver</weblogicHome>
+            </configuration>
+
+          </plugin>
+
+        </plugins>
+
+      </build>
+
+    </profile>
+
+  </profiles>
+
+  <!-- ==================================================================================== -->
+
+  <build>
+    <defaultGoal>install</defaultGoal>
+    <plugins>
+      <plugin>
+        <groupId>com.oracle.weblogic</groupId>
+        <artifactId>wls-maven-plugin</artifactId>
+        <version>12.1.1.0</version>
+
+        <configuration>
+
+
+          <user>weblogic</user>
+          <password>welcome1</password>
+
+          <artifactLocation>com.oracle.weblogic:wls-dev:zip:12.1.1.0</artifactLocation>
+
+          <middlewareHome>${project.basedir}/Oracle</middlewareHome>
+          <weblogicHome>${project.basedir}/Oracle/wlserver</weblogicHome>
+        </configuration>
+
+      </plugin>
+
+    </plugins>
+  </build>
+
+</project>

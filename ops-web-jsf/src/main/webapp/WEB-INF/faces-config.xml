@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<faces-config version="2.0"
+              xmlns="http://java.sun.com/xml/ns/javaee"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    >
+
+  <navigation-rule>
+    <from-view-id>/app/shipmentWizard/shipmentWizard.xhtml/shipment/wizard/shipmentWizard.xhtml</from-view-id>
+    <navigation-case>
+      <to-view-id>/app/shipmentWizard/confirmationPage.xhtml/shipment/wizard/confirmationPage.xhtml</to-view-id>
+      <from-action>#{ShipmentWizardBean.finish}</from-action>
+    </navigation-case>
+  </navigation-rule>
+
+  <navigation-rule>
+    <navigation-case>
+      <to-view-id>/app/shipment/displayShipment.xhtml</to-view-id>
+      <from-outcome>displayShipment</from-outcome>
+      <display-name>Display Shipment</display-name>
+    </navigation-case>
+    <display-name>Display Shipment</display-name>
+    <description>Display Single Shipment</description>
+  </navigation-rule>
+
+  <navigation-rule>
+    <navigation-case>
+      <to-view-id>/app/shipment/displayShipmentArray.xhtml</to-view-id>
+      <from-outcome>displayShipmentArray</from-outcome>
+    </navigation-case>
+  </navigation-rule>
+</faces-config>

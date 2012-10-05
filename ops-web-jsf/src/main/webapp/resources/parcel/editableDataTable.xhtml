@@ -1,0 +1,73 @@
+<ui:composition
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:cc="http://java.sun.com/jsf/composite"
+    xmlns:p="http://primefaces.org/ui"
+    xmlns:f="http://java.sun.com/jsf/core"
+    >
+
+<cc:interface>
+    <cc:attribute
+        name="parcelList"
+        type="java.util.List"/>
+    
+    <cc:attribute
+        name="actionListener"/>
+  </cc:interface>
+
+  <cc:implementation>
+
+    <h:dataTable value="#{cc.attrs.parcelList}"
+                 var="parcel"
+                 styleClass="data-table"
+                 headerClass="table-header"
+                 rowClasses="row-odd,row-even"
+                 columnClasses="column-center">
+
+      <f:facet name="header">All Parcels</f:facet>
+
+      <h:column>
+        <f:facet name="header">Parcel ID</f:facet>
+        <h:outputText value="#{parcel.id}"/>
+      </h:column>
+
+      <h:column>
+        <f:facet name="header">Status</f:facet>
+        <h:outputText value="#{parcel.parcelStatus}"/>
+      </h:column>
+
+      <h:column>
+        <f:facet name="header">Contents</f:facet>
+        <h:outputText value="#{parcel.contents}"/>
+      </h:column>
+
+      <h:column>
+        <f:facet name="header">Weight</f:facet>
+        <h:outputText value="#{parcel.weight}"/>
+      </h:column>
+
+      <h:column>
+        <f:facet name="header">Height</f:facet>
+        <h:outputText value="#{parcel.height}"/>
+      </h:column>
+
+      <h:column>
+        <f:facet name="header">Length</f:facet>
+        <h:outputText value="#{parcel.length}"/>
+      </h:column>
+
+      <h:column>
+        <f:facet name="header">Width</f:facet>
+        <h:outputText value="#{parcel.width}"/>
+      </h:column>
+
+      <h:column>
+        <f:facet name="header">Action</f:facet>
+        <p:commandLink value="Delete"
+                       action="#{order.deleteAction(o)}"/>
+      </h:column>
+    </h:dataTable>
+  </cc:implementation>
+
+</ui:composition>
