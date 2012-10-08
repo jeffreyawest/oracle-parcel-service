@@ -1,0 +1,37 @@
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html>
+     <head>
+        <script src="http://code.jquery.com/jquery-1.4.2.min.js"></script>
+        <script src="js/datatable.js"></script>
+        <script type="text/javascript" src="js/HttpGet.js"></script>
+        <script type="text/javascript" src="js/toggle.js"></script>
+    </head>
+    <body style="width: 1024px;margin: auto;background-image:url('image/bg1.png');background-repeat: repeat-x;">
+        <table width="100%">
+            <tr>
+                <td align="left">
+                    <img src="image/logo.png" />
+                </td>
+                    
+                <td align="right">
+                    <img src="image/logo_weblogic12c_black.gif" style="width:127px;height: 42px;" />
+                </td>
+            </tr>
+        </table>
+        
+        Enter Parcel ID :<input id="parcel_input"  name="test" type="text"  onchange="testFun()"/>
+        <div id="parcel_output_wrapper1">
+            <div id="parcel_table1"></div>
+        </div>
+        <input type="button" value="ShowLogDetail" id="toggle_message" />
+        <div id="parcel_output_wrapper">
+           <table id="parcel_table" border='1'>
+            </table>
+        </div>
+        
+    </body>
+</html>
