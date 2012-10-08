@@ -40,7 +40,7 @@
     <profile>
       <id>enable-spring</id>
       <activation>
-        <activeByDefault>false</activeByDefault>
+        <activeByDefault>true</activeByDefault>
       </activation>
 
       <modules>	  

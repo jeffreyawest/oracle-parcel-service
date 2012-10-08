@@ -68,18 +68,18 @@
     <!-- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ -->
     <dependency>
       <groupId>com.oracle.demo.ops</groupId>
-      <artifactId>ops-services-api</artifactId>
+      <artifactId>ops-services</artifactId>
       <scope>compile</scope>
     </dependency>
 
     <dependency>
       <groupId>com.oracle.demo.ops</groupId>
-      <artifactId>ops-domain-services-api</artifactId>
+      <artifactId>ops-domain-services</artifactId>
     </dependency>
 
     <dependency>
       <groupId>com.oracle.demo.ops</groupId>
-      <artifactId>ops-domain-services-impl</artifactId>
+      <artifactId>ops-domain-services</artifactId>
     </dependency>
 
     <!-- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ -->

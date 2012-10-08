@@ -73,7 +73,7 @@
 
     <dependency>
       <groupId>com.oracle.demo.ops</groupId>
-      <artifactId>ops-domain-services-api</artifactId>
+      <artifactId>ops-domain-services</artifactId>
     </dependency>
 
     <!-- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ -->
