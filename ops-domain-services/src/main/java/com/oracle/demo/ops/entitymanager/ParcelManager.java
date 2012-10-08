@@ -13,6 +13,17 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+/*
+ * **************************************************************************
+ * <p/>
+ * This code is provided for example purposes only.  Oracle does not assume
+ * any responsibility or liability for the consequences of using this code.
+ * If you choose to use this code for any reason, including but not limited
+ * to its use as an example you do so at your own risk and without the support
+ * of Oracle.
+ * <p/>
+ * ****************************************************************************
+ */
 @Stateless (name = "ParcelManagerBean", mappedName = "ejb/ParcelManager")
 @LocalBean
 public class ParcelManager implements java.io.Serializable
