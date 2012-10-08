@@ -1,0 +1,138 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+  <!-- ==================================================================================== -->
+
+  <parent>
+    <groupId>com.oracle.demo.ops</groupId>
+    <artifactId>ops-common-spring</artifactId>
+    <version>3.0</version>
+    <relativePath>../../ops-common/ops-common-spring/pom.xml</relativePath>
+  </parent>
+
+  <!-- ==================================================================================== -->
+
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.oracle.demo.ops</groupId>
+  <artifactId>ops-spring-rest</artifactId>
+  <packaging>war</packaging>
+  <version>3.0</version>
+  <name>ops-spring-rest</name>
+
+  <!-- ==================================================================================== -->
+
+  <properties>
+    <path.from.top>oracle-parcel-service/ops-spring/${project.artifactId}</path.from.top>
+  </properties>
+
+  <!-- ==================================================================================== -->
+
+    <scm>
+      <connection>scm:svn:${project.scm.url}</connection>
+      <developerConnection>scm:svn:${project.scm.url}</developerConnection>
+      <url>${ops.scm.url}/${path.from.top}</url>
+    </scm>
+  
+  <!-- ==================================================================================== -->
+
+  <profiles>
+
+  </profiles>
+
+  <!-- ==================================================================================== -->
+
+  <build>
+    <defaultGoal>deploy</defaultGoal>
+
+  </build>
+
+  <!-- ==================================================================================== -->
+
+  <dependencies>
+
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-webmvc</artifactId>
+    </dependency>
+
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-web</artifactId>
+    </dependency>
+
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-jpa</artifactId>
+    </dependency>
+
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-aop</artifactId>
+    </dependency>
+
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-tx</artifactId>
+    </dependency>
+
+    <dependency>
+      <groupId>org.springframework.ws</groupId>
+      <artifactId>spring-ws-core</artifactId>
+    </dependency>
+
+    <dependency>
+      <groupId>cglib</groupId>
+      <artifactId>cglib</artifactId>
+      <version>2.2.2</version>
+    </dependency>
+
+    <!-- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ -->
+
+    <dependency>
+      <groupId>com.oracle.demo.ops</groupId>
+      <artifactId>ops-spring-services</artifactId>
+      <scope>compile</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>com.oracle.demo.ops</groupId>
+      <artifactId>ops-domain-services-api</artifactId>
+      <scope>compile</scope>
+    </dependency>
+
+    <!-- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ -->
+
+    <dependency>
+      <groupId>org.apache.ws.commons.schema</groupId>
+      <artifactId>XmlSchema</artifactId>
+    </dependency>
+
+    <dependency>
+      <groupId>org.codehaus.jackson</groupId>
+      <artifactId>jackson-jaxrs</artifactId>
+      <version>1.1.1</version>
+      <scope>provided</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>com.sun.jersey</groupId>
+      <artifactId>jersey-bundle</artifactId>
+      <version>1.1.5.1</version>
+      <scope>provided</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>commons-httpclient</groupId>
+      <artifactId>commons-httpclient</artifactId>
+      <version>3.1</version>
+    </dependency>
+
+    <dependency>
+      <groupId>com.oracle.demo.ops</groupId>
+      <artifactId>ops-domain-model</artifactId>
+      <scope>compile</scope>
+    </dependency>
+
+  </dependencies>
+
+</project>

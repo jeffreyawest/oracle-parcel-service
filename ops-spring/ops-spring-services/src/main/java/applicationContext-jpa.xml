@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:jee="http://www.springframework.org/schema/jee"
+       xmlns:util="http://www.springframework.org/schema/util"
+
+       xmlns:context="http://www.springframework.org/schema/context" xmlns:tx="http://www.springframework.org/schema/tx"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee-3.0.xsd http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-2.0.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.5.xsd">
+
+  <context:annotation-config/>
+
+  <tx:annotation-driven transaction-manager="myTransactionManager"/>
+
+  <bean id="myTransactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
+    <property name="entityManagerFactory" ref="entityManagerFactory"/>
+  </bean>
+
+  <bean id="jpaAdapter" class="org.springframework.orm.jpa.vendor.EclipseLinkJpaVendorAdapter">
+    <property name="databasePlatform" value="org.eclipse.persistence.platform.database.OraclePlatform"/>
+    <property name="showSql" value="true"/>
+  </bean>
+
+  <bean id="entityManagerFactory" class="org.springframework.orm.jpa.LocalEntityManagerFactoryBean">
+    <property name="persistenceUnitName" value="ops_domain_pu"/>
+    <property name="jpaVendorAdapter" ref="jpaAdapter"/>
+  </bean>
+
+  <bean id="parcelManager" class="com.oracle.demo.ops.entitymanager.impl.ejb.ParcelManagerImpl"/>
+  <bean id="parcelLogEventManager" class="com.oracle.demo.ops.entitymanager.impl.ejb.ParcelLogEventManagerImpl"/>
+  <bean id="shipmentManager" class="com.oracle.demo.ops.entitymanager.impl.ejb.ShipmentManagerImpl"/>
+  <bean id="shippingServiceManager" class="com.oracle.demo.ops.entitymanager.impl.ejb.ShippingServiceManagerImpl"/>
+
+</beans>

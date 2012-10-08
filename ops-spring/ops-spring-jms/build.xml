@@ -1,0 +1,7 @@
+<project name="deployment" default="build-cc">
+
+  <target name="build-cc">
+    <echo>Project Name: ${project.name}</echo>
+    <echo>Project External Lib Dir: ${project.external.lib.dir}</echo>
+  </target>
+</project>

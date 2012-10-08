@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-2.0.xsd">
+
+  <import resource="applicationContext-jpa.xml"/>
+
+  <bean id="eventService" class="com.oracle.demo.ops.spring.services.impl.EventServiceImpl"/>
+
+  <bean id="shipmentService" class="com.oracle.demo.ops.spring.services.impl.ShipmentServiceImpl">
+    <property name="parcelManager" ref="parcelManager"/>
+    <property name="shipmentManager" ref="shipmentManager"/>
+  </bean>
+
+  <bean id="parcelService" class="com.oracle.demo.ops.spring.services.impl.ParcelServiceImpl">
+    <property name="parcelManager" ref="parcelManager"/>
+    <property name="parcelEventManager" ref="parcelLogEventManager"/>
+    <property name="shipmentManager" ref="shipmentManager"/>
+    <property name="eventService" ref="eventService"/>
+  </bean>
+
+  <bean id="jmxRuntime" class="org.springframework.jndi.JndiObjectFactoryBean">
+    <property name="jndiName" value="java:comp/env/jmx/runtime"/>
+  </bean>
+
+  <bean id="runtimeMBeanServerConnection2" class="org.springframework.jmx.support.MBeanServerConnectionFactoryBean">
+    <property name="serviceUrl"
+              value="service:jmx:t3://127.0.0.1:7001/jndi/weblogic.management.mbeanservers.runtime"/>
+    <property name="environment">
+      <props>
+        <prop key="java.naming.security.principal">weblogic</prop>
+        <prop key="java.naming.security.credentials">welcome1</prop>
+        <prop key="jmx.remote.protocol.provider.pkgs">weblogic.management.remote</prop>
+      </props>
+    </property>
+  </bean>
+ 
+</beans>
