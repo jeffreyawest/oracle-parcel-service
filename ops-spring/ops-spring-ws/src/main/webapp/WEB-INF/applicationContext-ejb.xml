@@ -20,25 +20,25 @@
   -->
 
   <jee:local-slsb id="shpimentService"
-                  business-interface="com.oracle.demo.ops.services.ShipmentService"
+                  business-interface="com.oracle.demo.ops.services.ejb.ShipmentService"
                   environment-ref="jndiEnvironmentProperties"
                   resource-ref="true"
                   jndi-name="ejb/ShipmentService"/>
 
   <jee:local-slsb id="parcelService"
-                  business-interface="com.oracle.demo.ops.services.ParcelService"
+                  business-interface="com.oracle.demo.ops.services.ejb.ParcelService"
                   environment-ref="jndiEnvironmentProperties"
                   resource-ref="true"
                   jndi-name="ejb/ParcelService"/>
 
   <jee:local-slsb id="shpimentJMSClient"
-                  business-interface="com.oracle.demo.ops.services.ShipmentJMSClient"
+                  business-interface="com.oracle.demo.ops.services.ejb.ShipmentJMSClient"
                   environment-ref="jndiEnvironmentProperties"
                   resource-ref="true"
                   jndi-name="ejb/ShipmentJMSClient"/>
 
   <jee:local-slsb id="EventService"
-                  business-interface="com.oracle.demo.ops.services.EventService"
+                  business-interface="com.oracle.demo.ops.services.ejb.EventService"
                   environment-ref="jndiEnvironmentProperties"
                   resource-ref="true"
                   jndi-name="ejb/EventService"/>

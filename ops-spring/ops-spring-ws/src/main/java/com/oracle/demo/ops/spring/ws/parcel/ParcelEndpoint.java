@@ -2,7 +2,7 @@ package com.oracle.demo.ops.spring.ws.parcel;
 
 import com.oracle.demo.ops.domain.*;
 import com.oracle.demo.ops.domain.ParcelEvent;
-import com.oracle.demo.ops.services.ParcelService;
+import com.oracle.demo.ops.services.ejb.ParcelService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ws.server.endpoint.annotation.Endpoint;
 import org.springframework.ws.server.endpoint.annotation.PayloadRoot;
@@ -26,7 +26,6 @@ import org.springframework.ws.server.endpoint.annotation.ResponsePayload;
  */
 @Endpoint
 public class ParcelEndpoint
-        implements ParcelService
 {
   private ParcelService parcelService;
 
@@ -61,7 +60,6 @@ public class ParcelEndpoint
     return parcelService.getParcelById(pRequest);
   }
 
-  @Override
   public void publishParcelEvent(ParcelEvent event)
   {
     //To change body of implemented methods use File | Settings | File Templates.

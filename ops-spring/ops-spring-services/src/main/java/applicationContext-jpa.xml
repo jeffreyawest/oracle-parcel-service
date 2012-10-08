@@ -25,9 +25,9 @@
     <property name="jpaVendorAdapter" ref="jpaAdapter"/>
   </bean>
 
-  <bean id="parcelManager" class="com.oracle.demo.ops.entitymanager.impl.ejb.ParcelManagerImpl"/>
-  <bean id="parcelLogEventManager" class="com.oracle.demo.ops.entitymanager.impl.ejb.ParcelLogEventManagerImpl"/>
-  <bean id="shipmentManager" class="com.oracle.demo.ops.entitymanager.impl.ejb.ShipmentManagerImpl"/>
-  <bean id="shippingServiceManager" class="com.oracle.demo.ops.entitymanager.impl.ejb.ShippingServiceManagerImpl"/>
+  <bean id="parcelManager" class="com.oracle.demo.ops.entitymanager.ParcelManager"/>
+  <bean id="parcelLogEventManager" class="com.oracle.demo.ops.entitymanager.ParcelEventManager"/>
+  <bean id="shipmentManager" class="com.oracle.demo.ops.entitymanager.ShipmentManager"/>
+  <bean id="shippingServiceManager" class="com.oracle.demo.ops.entitymanager.ShippingServiceManager"/>
 
 </beans>

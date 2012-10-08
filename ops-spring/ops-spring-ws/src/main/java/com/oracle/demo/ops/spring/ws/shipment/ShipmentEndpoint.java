@@ -1,7 +1,7 @@
 package com.oracle.demo.ops.spring.ws.shipment;
 
 import com.oracle.demo.ops.domain.*;
-import com.oracle.demo.ops.services.ShipmentService;
+import com.oracle.demo.ops.services.ejb.ShipmentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ws.server.endpoint.annotation.Endpoint;
 import org.springframework.ws.server.endpoint.annotation.PayloadRoot;

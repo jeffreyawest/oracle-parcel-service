@@ -36,6 +36,7 @@
     <module>ops-common-deployable</module>
     <module>ops-common-ejb</module>
     <module>ops-common-ws</module>
+    <module>ops-common-spring</module>
   </modules>
 
   <!-- ==================================================================================== -->

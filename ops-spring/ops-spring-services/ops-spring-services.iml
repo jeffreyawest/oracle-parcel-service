@@ -1,5 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <module org.jetbrains.idea.maven.project.MavenProjectsManager.isMavenModule="true" type="JAVA_MODULE" version="4">
+  <component name="FacetManager">
+    <facet type="web" name="Web">
+      <configuration>
+        <descriptors>
+          <deploymentDescriptor name="web.xml" url="file://$MODULE_DIR$/src/main/webapp/WEB-INF/web.xml" />
+        </descriptors>
+        <webroots>
+          <root url="file://$MODULE_DIR$/src/main/webapp" relative="/" />
+        </webroots>
+      </configuration>
+    </facet>
+    <facet type="Spring" name="Spring">
+      <configuration>
+        <fileset id="fileset1" name="Xml Application Context" removed="false">
+          <file>file://$MODULE_DIR$/src/main/java/applicationContext-services.xml</file>
+          <file>file://$MODULE_DIR$/src/main/java/applicationContext-jpa.xml</file>
+        </fileset>
+      </configuration>
+    </facet>
+  </component>
   <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_1_6" inherit-compiler-output="false">
     <output url="file://$MODULE_DIR$/target/classes" />
     <output-test url="file://$MODULE_DIR$/target/test-classes" />
@@ -28,6 +48,7 @@
     <orderEntry type="module" module-name="ops-domain-services" />
     <orderEntry type="library" name="Maven: com.oracle.weblogic:wljmsclient:12.1.1.0" level="project" />
     <orderEntry type="library" name="Maven: com.oracle.coherence:coherence:3.7.1" level="project" />
+    <orderEntry type="module" module-name="ops-domain-services" />
     <orderEntry type="module" module-name="ops-domain-model" />
     <orderEntry type="module" module-name="ops-event-handlers" />
     <orderEntry type="library" name="Maven: com.oracle.weblogic:weblogic-spring:12.1.1.0" level="project" />

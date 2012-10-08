@@ -9,8 +9,7 @@ import com.oracle.demo.ops.domain.WebServiceResponseHeader;
 import com.oracle.demo.ops.entitymanager.ParcelEventManager;
 import com.oracle.demo.ops.entitymanager.ParcelManager;
 import com.oracle.demo.ops.entitymanager.ShipmentManager;
-import com.oracle.demo.ops.services.EventService;
-import com.oracle.demo.ops.services.ParcelService;
+import com.oracle.demo.ops.services.ejb.EventService;
 
 import java.util.List;
 
@@ -30,7 +29,6 @@ import java.util.List;
  */
 
 public class ParcelServiceImpl
-    implements ParcelService
 {
   private ParcelManager parcelManager;
 
@@ -38,7 +36,7 @@ public class ParcelServiceImpl
 
   private ShipmentManager shipmentManager;
 
-  private EventService EventService;
+  private EventService eventService;
 
 
   public ParcelServiceImpl()
@@ -55,10 +53,9 @@ public class ParcelServiceImpl
     return resp;
   }
 
-  @Override
   public AddParcelLogEventJMSPROXYResponse addParcelEventJMSPROXY(AddParcelLogEventJMSPROXYRequest pRequest)
   {
-    EventService.sendEventToQueue(pRequest.getParcelLogEvent());
+    eventService.sendEventToQueue(pRequest.getParcelLogEvent());
 
     AddParcelLogEventJMSPROXYResponse resp = new AddParcelLogEventJMSPROXYResponse();
     resp.setResponseHeader(new WebServiceResponseHeader());
@@ -67,13 +64,11 @@ public class ParcelServiceImpl
     return resp;
   }
 
-  @Override
   public void publishParcelEvent(ParcelEvent event)
   {
-    EventService.sendEventToQueue(event);
+    eventService.sendEventToQueue(event);
   }
 
-  @Override
   public GetParcelEventLogResponse getParcelEvents(GetParcelEventLogRequest pRequest)
   {
     //System.out.println("ParcelServiceImpl.getParcelEvents");
@@ -108,12 +103,12 @@ public class ParcelServiceImpl
 
   public EventService getEventService()
   {
-    return EventService;
+    return eventService;
   }
 
   public void setEventService(EventService eventService)
   {
-    EventService = eventService;
+    eventService = eventService;
   }
 
   public ParcelEventManager getParcelEventManager()

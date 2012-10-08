@@ -4,8 +4,7 @@ import com.oracle.demo.ops.domain.*;
 import com.oracle.demo.ops.entitymanager.ShipmentManager;
 import com.oracle.demo.ops.entitymanager.ShippingServiceManager;
 import com.oracle.demo.ops.entitymanager.ParcelManager;
-import com.oracle.demo.ops.services.ShipmentJMSClient;
-import com.oracle.demo.ops.services.ShipmentService;
+import com.oracle.demo.ops.services.ejb.ShipmentJMSClient;
 
 import java.util.Collection;
 
@@ -23,7 +22,7 @@ import java.util.Collection;
  * Date: Sep 23, 2011
  * Time: 11:56:07 AM
  */
-public class ShipmentServiceImpl implements ShipmentService
+public class ShipmentServiceImpl
 {
   private ParcelManager parcelManager;
 
@@ -37,7 +36,6 @@ public class ShipmentServiceImpl implements ShipmentService
   {
   }
 
-  @Override
   public CreateShipmentResponse createShipment(CreateShipmentRequest pRequest)
   {
     Shipment shipment = shipmentManager.createShipment(pRequest.getShipment());
@@ -49,7 +47,6 @@ public class ShipmentServiceImpl implements ShipmentService
     return response;
   }
 
-  @Override
   public SendNewShipmentViaJMSResponse sendNewShipmentViaJMS(SendNewShipmentViaJMSRequest pRequest)
   {
     SendNewShipmentViaJMSResponse response = new SendNewShipmentViaJMSResponse();
@@ -72,7 +69,6 @@ public class ShipmentServiceImpl implements ShipmentService
     return response;
   }
 
-  @Override
   public GetShipmentByIdResponse getShipmentById(GetShipmentByIdRequest pRequest)
   {
     Shipment shipment = shipmentManager.findShipmentById(pRequest.getShipmentId());
@@ -92,7 +88,6 @@ public class ShipmentServiceImpl implements ShipmentService
     }
   }
 
-  @Override
   public GetShipmentByExternalIdResponse getShipmentByExternalId(GetShipmentByExternalIdRequest pRequest)
   {
     Shipment shipment = shipmentManager.findShipmentByExternalId(pRequest.getExternalReferenceId());
@@ -112,7 +107,6 @@ public class ShipmentServiceImpl implements ShipmentService
     }
   }
 
-  @Override
   public Collection<ShippingService> getAllShippingServices(boolean direct)
   {
     if (direct)

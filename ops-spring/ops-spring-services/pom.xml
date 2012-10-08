@@ -69,17 +69,15 @@
     <dependency>
       <groupId>com.oracle.demo.ops</groupId>
       <artifactId>ops-services</artifactId>
-      <scope>compile</scope>
+      <type>ejb</type>
+      <version>3.0</version>
     </dependency>
 
     <dependency>
       <groupId>com.oracle.demo.ops</groupId>
       <artifactId>ops-domain-services</artifactId>
-    </dependency>
-
-    <dependency>
-      <groupId>com.oracle.demo.ops</groupId>
-      <artifactId>ops-domain-services</artifactId>
+      <type>ejb</type>
+      <version>3.0</version>
     </dependency>
 
     <!-- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ -->

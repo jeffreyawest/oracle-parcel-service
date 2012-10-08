@@ -1,7 +1,7 @@
 package com.oracle.demo.ops.jms.listener.event.queue;
 
 import com.oracle.demo.ops.domain.ParcelEvent;
-import com.oracle.demo.ops.services.EventService;
+import com.oracle.demo.ops.services.ejb.EventService;
 import com.oracle.demo.ops.xml.MyMarshaller;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -28,12 +28,12 @@ import javax.xml.bind.JAXBException;
 public class EventForwarderMessageListenerMDP
         implements MessageListener
 {
-  private EventService EventService;
+  private EventService eventService;
 
   @Autowired
   public void setForwarder(EventService eventForwarder)
   {
-    this.EventService = eventForwarder;
+    this.eventService = eventForwarder;
   }
 
   @Override
@@ -46,7 +46,7 @@ public class EventForwarderMessageListenerMDP
       try
       {
         ParcelEvent event = MyMarshaller.unmarshalEvent((TextMessage) message);
-        EventService.publishEventToTopic(event);
+        eventService.publishEventToTopic(event);
       }
       catch (JMSException e)
       {

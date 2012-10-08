@@ -11,6 +11,16 @@
         </webroots>
       </configuration>
     </facet>
+    <facet type="Spring" name="Spring">
+      <configuration>
+        <fileset id="fileset1" name="Xml Application Context" removed="false">
+          <file>file://$MODULE_DIR$/src/main/webapp/WEB-INF/applicationContext.xml</file>
+          <file>file://$MODULE_DIR$/src/main/webapp/WEB-INF/applicationContext-ejb.xml</file>
+          <file>file://$MODULE_DIR$/src/main/webapp/WEB-INF/shipment-servlet.xml</file>
+          <file>file://$MODULE_DIR$/src/main/webapp/WEB-INF/parcel-servlet.xml</file>
+        </fileset>
+      </configuration>
+    </facet>
   </component>
   <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_1_6" inherit-compiler-output="false">
     <output url="file://$MODULE_DIR$/target/classes" />
@@ -52,6 +62,7 @@
     <orderEntry type="module" module-name="ops-util" />
     <orderEntry type="library" name="Maven: com.oracle.weblogic:wljmsclient:12.1.1.0" level="project" />
     <orderEntry type="library" name="Maven: com.oracle.coherence:coherence:3.7.1" level="project" />
+    <orderEntry type="module" module-name="ops-domain-services" />
     <orderEntry type="module" module-name="ops-event-handlers" />
     <orderEntry type="library" name="Maven: com.oracle.weblogic:weblogic-spring:12.1.1.0" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: javax:javaee-api:6.0" level="project" />

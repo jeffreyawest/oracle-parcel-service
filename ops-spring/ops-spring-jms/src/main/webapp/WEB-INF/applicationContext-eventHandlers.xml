@@ -23,7 +23,7 @@
 
   <bean id="updateParcelLogEventHandler"
         parent="abstractEventHandler"
-        class="com.oracle.demo.event.handler.parcel.UpdateParcelLogEventHandler"/>
+        class="com.oracle.demo.event.handler.parcelLog.UpdateParcelLogEventHandler"/>
 
   <bean id="notifyPackageDeliveredEventHandler"
         parent="abstractEventHandler"

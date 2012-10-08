@@ -2,7 +2,6 @@ package com.oracle.demo.ops.spring.services.impl;
 
 import com.oracle.demo.ops.Constants;
 import com.oracle.demo.ops.domain.ParcelEvent;
-import com.oracle.demo.ops.services.EventService;
 import com.oracle.demo.ops.xml.MyMarshaller;
 
 import javax.annotation.PostConstruct;
@@ -25,7 +24,7 @@ import javax.xml.bind.JAXBException;
  * Date: Sep 26, 2011
  * Time: 4:18:14 PM
  */
-public class EventServiceImpl implements EventService
+public class EventServiceImpl
 {
  @Resource(name = Constants.CONNECTION_FACTORY_JNDI, type = ConnectionFactory.class)
   private ConnectionFactory connectionFactory;
@@ -84,7 +83,6 @@ public class EventServiceImpl implements EventService
     }
   }
 
-  @Override
   public void sendEventToQueue(final ParcelEvent event)
   {
     try
@@ -107,7 +105,6 @@ public class EventServiceImpl implements EventService
     return "ParcelId_"+event.getParcelId();
   }
 
-  @Override
   public void publishEventToTopic(final ParcelEvent event)
   {
     try
@@ -135,9 +132,9 @@ public class EventServiceImpl implements EventService
   {
     newMessage.setStringProperty("location", event.getLocation());
 
-    if (event.getDate() != null)
+    if (event.getEventDate() != null)
     {
-      newMessage.setStringProperty("date", event.getDate().toString());
+      newMessage.setStringProperty("date", event.getEventDate().toString());
     }
 
     newMessage.setStringProperty("parcelId", String.valueOf(event.getParcelId()));
