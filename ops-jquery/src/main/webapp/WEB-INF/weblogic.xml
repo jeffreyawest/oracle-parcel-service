@@ -4,8 +4,7 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://xmlns.oracle.com/weblogic/weblogic-web-app http://xmlns.oracle.com/weblogic/weblogic-web-app/1.4/weblogic-web-app.xsd">
 
-  <context-root>ops-rest</context-root>
-
+  <context-root>ops-jquery</context-root>
   <!--<coherence-cluster-ref>
     <coherence-cluster-name>coherence-cluster-1</coherence-cluster-name>
   </coherence-cluster-ref>-->
