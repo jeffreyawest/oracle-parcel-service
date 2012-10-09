@@ -31,21 +31,21 @@
   </xs:complexType>
 
   <!--     ***************************** Add Parcel Log Event *****************************    -->
-  <xs:element name="AddParcelLogEventJMSPROXYRequest" type="tns:AddParcelLogEventJMSPROXYRequestType"/>
+  <xs:element name="AddParcelEventJMSPROXYRequest" type="tns:AddParcelEventJMSPROXYRequestType"/>
 
-  <xs:complexType name="AddParcelLogEventJMSPROXYRequestType">
+  <xs:complexType name="AddParcelEventJMSPROXYRequestType">
     <xs:sequence>
       <xs:element name="RequestHeader" type="svc-common:WebServiceRequestHeaderType"/>
-      <xs:element name="ParcelLogEvent" type="shipping:ParcelEventType"/>
+      <xs:element name="ParcelEvent" type="shipping:ParcelEventType"/>
     </xs:sequence>
   </xs:complexType>
 
-  <xs:element name="AddParcelLogEventJMSPROXYResponse" type="tns:AddParcelLogEventJMSPROXYResponseType"/>
+  <xs:element name="AddParcelEventJMSPROXYResponse" type="tns:AddParcelEventJMSPROXYResponseType"/>
 
-  <xs:complexType name="AddParcelLogEventJMSPROXYResponseType">
+  <xs:complexType name="AddParcelEventJMSPROXYResponseType">
     <xs:sequence>
       <xs:element name="ResponseHeader" type="svc-common:WebServiceResponseHeaderType"/>
-      <xs:element name="ParcelLogEvent" type="shipping:ParcelEventType"/>
+      <xs:element name="ParcelEvent" type="shipping:ParcelEventType"/>
     </xs:sequence>
   </xs:complexType>
 
@@ -66,7 +66,7 @@
   <xs:complexType name="GetParcelEventLogResponseType">
     <xs:sequence>
       <xs:element name="ResponseHeader" type="svc-common:WebServiceResponseHeaderType"/>
-      <xs:element name="ParcelLogEvent" type="shipping:ParcelEventType" maxOccurs="unbounded"/>
+      <xs:element name="ParcelEvent" type="shipping:ParcelEventType" maxOccurs="unbounded"/>
     </xs:sequence>
   </xs:complexType>
 
