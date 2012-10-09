@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <xs:schema
-        targetNamespace="http://demo.oracle.com/ops/domain/schema/common"
-        xmlns:tns="http://demo.oracle.com/ops/domain/schema/common"
-        xmlns:xs="http://www.w3.org/2001/XMLSchema"
-        elementFormDefault="qualified"
-        version="1.0">
+    targetNamespace="http://demo.oracle.com/ops/domain/schema/common"
+    xmlns:tns="http://demo.oracle.com/ops/domain/schema/common"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    elementFormDefault="qualified"
+    version="1.0">
 
   <xs:complexType name="BaseObject" abstract="true">
     <xs:sequence>
@@ -47,6 +47,18 @@
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
+  </xs:complexType>
+
+  <xs:element name="PostalGeolocation" type="tns:PostalGeolocationType"/>
+
+  <xs:complexType name="PostalGeolocationType">
+    <xs:sequence>
+      <xs:element name="PostalCode" type="xs:string" minOccurs="1"/>
+      <xs:element name="City" type="xs:string" minOccurs="1"/>
+      <xs:element name="State" type="xs:string" minOccurs="1"/>
+      <xs:element name="Latitude" type="xs:double" minOccurs="1"/>
+      <xs:element name="Longitude" type="xs:double" minOccurs="1"/>
+    </xs:sequence>
   </xs:complexType>
 
 

@@ -38,8 +38,8 @@
     <module>ops-ws</module>
     <module>ops-soapui</module>
 
-    <module>ops-spring</module>
-
+    <module>ops-web-jquery</module>
+    <module>ops-web-jquery-old</module>
     <module>ops-cache</module>
     <module>ops-shipment-notifier</module>
 
