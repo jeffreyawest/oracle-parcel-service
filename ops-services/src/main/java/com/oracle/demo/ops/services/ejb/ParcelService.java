@@ -57,11 +57,11 @@ public class ParcelService implements Serializable
     return resp;
   }
 
-  public AddParcelLogEventJMSPROXYResponse addParcelEventJMSPROXY(AddParcelLogEventJMSPROXYRequest pRequest)
+  public AddParcelEventJMSPROXYResponse addParcelEventJMSPROXY(AddParcelEventJMSPROXYRequest pRequest)
   {
     EventService.sendEventToQueue(pRequest.getParcelEvent());
 
-    AddParcelLogEventJMSPROXYResponse resp = new AddParcelLogEventJMSPROXYResponse();
+    AddParcelEventJMSPROXYResponse resp = new AddParcelEventJMSPROXYResponse();
     resp.setResponseHeader(new WebServiceResponseHeader());
     resp.getResponseHeader().setRequestHeader(pRequest.getRequestHeader());
     resp.setParcelEvent(pRequest.getParcelEvent());
