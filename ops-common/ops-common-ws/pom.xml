@@ -70,6 +70,7 @@
             <dependency>
               <groupId>com.oracle.demo.ops</groupId>
               <artifactId>ops-domain-model</artifactId>
+              <version>${project.version}</version>
             </dependency>
 
           </dependencies>
