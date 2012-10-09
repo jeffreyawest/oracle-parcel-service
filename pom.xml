@@ -38,6 +38,7 @@
     <module>ops-ws</module>
     <module>ops-soapui</module>
 
+    <module>ops-jquery</module>
     <module>ops-cache</module>
     <module>ops-shipment-notifier</module>
 
