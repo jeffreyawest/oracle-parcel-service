@@ -6,7 +6,7 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
-import com.oracle.demo.ops.domain.AddParcelLogEventJMSPROXYResponse;
+import com.oracle.demo.ops.domain.AddParcelEventJMSPROXYResponse;
 
 @XmlRootElement(name = "addParcelLogEventJMSProxyResponse", namespace = "http://demo.oracle.com/ops/domain/services/parcel")
 @XmlAccessorType(XmlAccessType.FIELD)
@@ -14,14 +14,14 @@ import com.oracle.demo.ops.domain.AddParcelLogEventJMSPROXYResponse;
 public class AddParcelLogEventJMSProxyResponse {
 
     @XmlElement(name = "return", namespace = "")
-    private AddParcelLogEventJMSPROXYResponse _return;
+    private AddParcelEventJMSPROXYResponse _return;
 
     /**
      * 
      * @return
-     *     returns AddParcelLogEventJMSPROXYResponse
+     *     returns AddParcelEventJMSPROXYResponse
      */
-    public AddParcelLogEventJMSPROXYResponse getReturn() {
+    public AddParcelEventJMSPROXYResponse getReturn() {
         return this._return;
     }
 
@@ -30,7 +30,7 @@ public class AddParcelLogEventJMSProxyResponse {
      * @param _return
      *     the value for the _return property
      */
-    public void setReturn(AddParcelLogEventJMSPROXYResponse _return) {
+    public void setReturn(AddParcelEventJMSPROXYResponse _return) {
         this._return = _return;
     }
 

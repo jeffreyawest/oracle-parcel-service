@@ -8,7 +8,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 import com.oracle.demo.ops.domain.GetParcelEventLogRequest;
 
-@XmlRootElement(name = "getParcelEvents", namespace = "http://demo.oracle.com/ops/domain/services/parcel")
+@XmlRootElement(name = "getParcelEventLog", namespace = "http://demo.oracle.com/ops/domain/services/parcel")
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "getParcelEventLog", namespace = "http://demo.oracle.com/ops/domain/services/parcel")
 public class GetParcelEventLog {
