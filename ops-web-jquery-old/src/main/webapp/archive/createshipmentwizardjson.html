@@ -1,0 +1,380 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<title>Create Shipment</title>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+<link rel="stylesheet" type="text/css" href="../resources/css/excite-bike/jquery-ui-1.8.9.custom.css"/>
+
+<script type="text/javascript" src="../resources/js/jquery-1.5.js"></script>
+<script type="text/javascript" src="../resources/js/jquery.form.js"></script>
+<script type="text/javascript" src="../resources/js/jquery.validate.js"></script>
+<script type="text/javascript" src="../resources/js/bbq.js"></script>
+<script type="text/javascript" src="../resources/js/json2.js"></script>
+<script type="text/javascript" src="../resources/js/jquery.json-2.2.js"></script>
+<script type="text/javascript" src="../resources/js/jquery-ui-1.8.10.custom.min.js"></script>
+<script type="text/javascript" src="../resources/js/jquery.form.wizard-3.0.4.js"></script>
+
+<style type="text/css">
+  #demoWrapper {
+    padding: 1em;
+    width: 500px;
+    border-style: solid;
+    font-family: arial;
+  }
+
+  #fieldWrapper {
+  }
+
+  #demoNavigation {
+    margin-top: 0.5em;
+    margin-right: 1em;
+    text-align: right;
+  }
+
+  #data {
+    font-size: 0.7em;
+  }
+
+  #status {
+    text-align: right;
+  }
+
+  input {
+    margin-right: 0.1em;
+    margin-bottom: 0.5em;
+  }
+
+  .input_field_25em {
+    width: 2.5em;
+  }
+
+  .input_field_3em {
+    width: 3em;
+  }
+
+  .input_field_35em {
+    width: 3.5em;
+  }
+
+  .input_field_12em {
+    width: 12em;
+  }
+
+  label {
+    margin-bottom: 0.2em;
+    font-weight: bold;
+    font-size: 0.8em;
+  }
+
+  label.error {
+    color: red;
+    font-size: 0.8em;
+    margin-left: 0.5em;
+  }
+
+  .step span {
+    float: right;
+    font-weight: bold;
+    padding-right: 0.8em;
+  }
+
+  .navigation_button {
+    width: 70px;
+  }
+
+  #data {
+    overflow: auto;
+  }
+</style>
+
+<script type="text/javascript">
+
+  var shipmentJSONObject = {
+    "externalReferenceId":null,
+    "toAddress":
+    {
+      "addressee":"",
+      "addressLine1":"",
+      "addressLine2":null,
+      "city":"","state":"",
+      "postalCode":""
+    },
+    "fromAddress":
+    {
+      "addressee":"",
+      "addressLine1":"",
+      "addressLine2":null,
+      "city":"",
+      "state":"",
+      "postalCode":""
+    },
+    "parcels":[]
+  };
+
+  $(document).ready(function()
+  {
+    var cache = {}; // caching inputs for the visited steps
+
+
+    $("#createShipmentWizard").bind("step_shown", function(event, data)
+    {
+      alert('BIND');
+      if (data.isLastStep)
+      { // if this is the last step...then
+        $("#summaryContainer").empty(); // empty the container holding the
+        $.each(data.activatedSteps, function(i, id)
+        { // for each of the activated steps...do
+          alert('Id: ' + id);
+          if (id === "summary")
+          {
+            return;
+          } // if it is the summary page then just return
+          cache[id] = $("#" + id).find(".input"); // else, find the div:s with class="input" and cache them with a key equal to the current step id
+          cache[id].detach().appendTo('#summaryContainer').show().find(":input").removeAttr("disabled"); // detach the cached inputs and append them to the summary container, also show and enable them
+        });
+      } else if (data.previousStep === "summary")
+      { // if we are movin back from the summary page
+        $.each(cache, function(id, inputs)
+        { // for each of the keys in the cache...do
+          var i = inputs.detach().appendTo("#" + id).find(":input");  // put the input divs back into their normal step
+          if (id === data.currentStep)
+          { // (we are moving back from the summary page so...) if enable inputs on the current step
+            i.removeAttr("disabled");
+          }
+          else
+          { // disable the inputs on the rest of the steps
+            i.attr("disabled", "disabled");
+          }
+        });
+        cache = {}; // empty the cache again
+      }
+    })
+  });
+
+
+  function addParcel()
+  {
+    var parcel = {
+      "contents":$('#parcel_contents').val(),
+      "weight"  :parseInt($('#parcel_weight').val()),
+      "height"  :parseInt($('#parcel_height').val()),
+      "width"   :parseInt($('#parcel_width').val()),
+      "length"  :parseInt($('#parcel_length').val())
+    };
+
+    shipmentJSONObject.parcels.push(parcel);
+
+    var rowHTML = "<tr>";
+    rowHTML += "<td>" + $('#parcel_contents').val() + "</td>";
+    rowHTML += "<td>" + $('#parcel_weight').val() + "</td>";
+    rowHTML += "<td>" + $('#parcel_height').val() + "</td>";
+    rowHTML += "<td>" + $('#parcel_width').val() + "</td>";
+    rowHTML += "<td>" + $('#parcel_length').val() + "</td>";
+    rowHTML += "</tr>";
+
+    $("#parcelTable").append(rowHTML);
+
+    $('#parcel_contents').empty();
+    $('#parcel_weight').empty();
+    $('#parcel_height').empty();
+    $('#parcel_width').empty();
+    $('#parcel_length').empty();
+
+    $("#topLevelJSON").empty();
+    $("#topLevelJSON").append(JSON.stringify(shipmentJSONObject, replacer));
+  }
+
+
+  function submitShipment()
+  {
+    var createURL = "/ops-rest/resource/shipment/create.json";
+    $.ajax({
+      type: 'PUT',
+      url: createURL,
+      contentType: 'application/json',
+      data: JSON.stringify(shipmentJSONObject),
+      success: function(data)
+      {
+        alert("Shipment ID: " + data.id);
+      },
+      dataType: 'json'
+    });
+  }
+
+  $(function()
+  {
+    $("#createShipmentWizard").formwizard({
+      formPluginEnabled: true,
+      validationEnabled: true,
+      focusFirstInput : true,
+      formOptions :{
+        success: function(data)
+        {
+          alert('Call returned: ' + data);
+          $("#status").fadeTo(500, 1, function()
+          {
+            $(this).html("New shipment created as:" + data.id + " to postal code: " + data.fromAddress.postalCode + " for " + data.parcel[0].contents).fadeTo(10000, 0);
+          }
+                  )
+        },
+
+        beforeSubmit: function(data)
+        {
+          var formdata = $("#createShipmentWizard").serialize();
+
+          shipmentJSONObject.toAddress.addressee = $("#to_addressee").val();
+          shipmentJSONObject.toAddress.addressLine1 = $("#to_addressLine1").val();
+          shipmentJSONObject.toAddress.addressLine2 = $("#to_addressLine2").val();
+          shipmentJSONObject.toAddress.city = $("#to_city").val();
+          shipmentJSONObject.toAddress.state = $("#to_state").val();
+          shipmentJSONObject.toAddress.postalcode = $("#to_postalCode").val();
+
+          shipmentJSONObject.fromAddress.addressee = $("#from_addressee").val();
+          shipmentJSONObject.fromAddress.addressLine1 = $("#from_addressLine1").val();
+          shipmentJSONObject.fromAddress.addressLine2 = $("#from_addressLine2").val();
+          shipmentJSONObject.fromAddress.city = $("#from_city").val();
+          shipmentJSONObject.fromAddress.state = $("#from_state").val();
+          shipmentJSONObject.fromAddress.postalcode = $("#from_postalCode").val();
+
+          //alert('formdata: ' + formdata);
+          //var json = JSON.stringify({ formVars: formdata})
+          //alert('json data:: ' + json);
+          //json = $.toJSON(formdata);
+          //alert('json data:: ' + json);
+          //$("#data").html("data sent to the server: " + $.param(data));
+          $("#data").html("data sent to the server: " + formdata);
+        },
+
+        dataType: 'json',
+        //contentType: 'application/json',
+        resetForm: true
+
+      }
+    }
+            );
+  });
+
+  function showResponse(responseText, statusText, xhr, $form)
+  {
+    alert('status: ' + statusText + '\n\nresponseText: \n' + responseText +
+          '\n\nThe output div should have already been updated with the responseText.');
+  }
+</script>
+
+</head>
+
+<body>
+<div id="demoWrapper">
+  <h3>Create Shipment Wizard</h3>
+  <h5 id="status"></h5>
+  <!--
+  <form id="demoForm" method="post" action="/ops-rest/TestAjaxSubmit" class="bbq">
+  -->
+  <form id="createShipmentWizard" method="post" action="/ops-rest/resource/shipment/create.json"
+        onsubmit="submitShipment()" class="bbq">
+    <div id="fieldWrapper">
+
+      <div class="step" id="to_address">
+        <span class="font_normal_07em_black">Step 1: Recipient Address</span><br/>
+
+        <div class="input">
+          <label for="to_addressee">To Recipient</label><br/>
+          <input class="input_field_12em" name="to_addressee" id="to_addressee"/><br/>
+          <label for="to_addressLine1">Address Line 1</label><br/>
+          <input class="input_field_12em" name="to_addressLine1" id="to_addressLine1"/><br/>
+          <label for="to_addressLine2">Address Line 2</label><br/>
+          <input class="input_field_12em" name="to_addressLine2" id="to_addressLine2"/><br/>
+          <label for="to_city">City</label><br/>
+          <input class="input_field_12em" name="to_city" id="to_city"/><br/>
+          <label for="to_state">State</label><br/>
+          <input class="input_field_12em" name="to_state" id="to_state"/><br/>
+          <label for="to_postalCode">Postal Code</label><br/>
+          <input class="input_field_12em" name="to_postalCode" id="to_postalCode"/><br/>
+        </div>
+      </div>
+
+      <div class="step" id="from_address">
+        <span class="font_normal_07em_black">Step 2: Sender Address</span><br/>
+
+        <div class="input">
+          <label for="from_addressee">Sender</label><br/>
+          <input class="input_field_12em" name="from_addressee" id="from_addressee"/><br/>
+          <label for="from_addressLine1">Address Line 1</label><br/>
+          <input class="input_field_12em" name="from_addressLine1" id="from_addressLine1"/><br/>
+          <label for="from_addressLine2">Address Line 2</label><br/>
+          <input class="input_field_12em" name="from_addressLine2" id="from_addressLine2"/><br/>
+          <label for="from_city">City</label><br/>
+          <input class="input_field_12em" name="from_city" id="from_city"/><br/>
+          <label for="from_state">State</label><br/>
+          <input class="input_field_12em" name="from_state" id="from_state"/><br/>
+          <label for="from_postalCode">Postal Code</label><br/>
+          <input class="input_field_12em" name="from_postalCode" id="from_postalCode"/><br/>
+        </div>
+      </div>
+
+      <div class="step" id="parcel">
+        <span class="font_normal_07em_black">Step 3: Parcel Details</span><br/>
+
+        <div class="input">
+          <table>
+            <tr>
+              <td>
+                <label for="parcel_contents">Contents</label><br/>
+                <input class="input_field_12em" name="parcel_contents" id="parcel_contents"/><br/>
+                <label for="parcel_weight">Weight</label><br/>
+                <input class="input_field_12em" name="parcel_weight" id="parcel_weight"/><br/>
+                <label for="parcel_height">Height</label><br/>
+                <input class="input_field_12em" name="parcel_height" id="parcel_height"/><br/>
+                <label for="parcel_width">Width</label><br/>
+                <input class="input_field_12em" name="parcel_width" id="parcel_width"/><br/>
+                <label for="parcel_length">Length</label><br/>
+                <input class="input_field_12em" name="parcel_length" id="parcel_length"/><br/>
+                <input type="hidden" class="link" value="summary"/>
+                <button id="addParcelButton" onclick="addParcel()">Add Parcel</button>
+              </td>
+              <td>
+                <table id="parcelTable" border="1">
+                  <tr>
+                    <th>Contents</th>
+                    <th>Weight</th>
+                    <th>Height</th>
+                    <th>Width</th>
+                    <th>Length</th>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </div>
+
+      <div id="summary" class="step">
+        <span class="font_normal_07em_black">Summary page</span><br/>
+
+        <p>Please verify your information below.</p>
+
+        <div id="summaryContainer"></div>
+      </div>
+
+
+    </div>
+
+    <div id="demoNavigation">
+      <input class="navigation_button" id="back" value="Back" type="reset"/>
+      <input class="navigation_button" id="next" value="Next" type="submit"/>
+    </div>
+    <br/>
+
+  </form>
+  <hr/>
+
+  <p id="data"></p>
+
+
+  <div id="topLevelJSON">
+
+  </div>
+  <br/>
+  <br/>
+</div>
+</body>
+</html>

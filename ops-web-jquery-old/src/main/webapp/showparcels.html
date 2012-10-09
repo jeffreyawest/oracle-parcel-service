@@ -1,0 +1,55 @@
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+  <meta http-equiv="Content-Type" content="text/html; charset=MacRoman">
+  <script src="resources/js/jquery-1.5.js" type="text/javascript"></script>
+  <script src="resources/js/grid.locale-en.js" type="text/javascript"></script>
+  <script src="resources/js/jquery.jqGrid.min.js" type="text/javascript"></script>
+
+  <link rel="stylesheet" type="text/css" media="screen" href="resources/css/excite-bike/jquery-ui-1.8.9.custom.css"/>
+  <link rel="stylesheet" type="text/css" media="screen" href="resources/css/jqgrid/ui.jqgrid.css"/>
+  <script type="text/javascript">
+    //$(document).ready(function() {
+
+    $(function()
+    {
+      $("#list").jqGrid({
+        url:'http://127.0.0.1:7101/ops-rest/resource/parcel/list.json',
+        datatype: "json",
+        colNames:['ID', 'Contents', 'Weight', 'Height', 'Width', 'Length'],
+        colModel:[
+          {name:'id', jsonmap:'id', index:'id', width:55},
+          {name:'contents',jsonmap:'contents', index:'contents', width:55},
+          {name:'weight',jsonmap:'weight', index:'weight', width:55},
+          {name:'height',jsonmap:'height', index:'height', width:55},
+          {name:'width',jsonmap:'width', index:'width', width:55},
+          {name:'length',jsonmap:'length', index:'length', width:55}
+        ],
+        rowNum:10,
+        rowList:[10,20,30],
+        pager: '#pager2',
+        sortname: 'id',
+        viewrecords: true,
+        sortorder: "desc",
+        caption:"Parcels",
+        jsonReader : {
+          root: "parcel",
+          repeatitems: false,
+          id: "id"
+        }
+
+      });
+    });
+  </script>
+</head>
+<body>
+<h3>Oracle Parcel Service - WebUI</h3>
+<table id="list"></table>
+<div id="pager2"></div>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-type" content="text/html; charset=utf-8"/>
+
+  <title>List All Parcels</title>
+
+  <link type="text/css" rel="stylesheet" href="resources/css/layout-default-latest.css"/>
+  <link type="text/css" rel="stylesheet" href="resources/css/main.css"/>
+
+  <script type="text/javascript" src="resources/js/jquery-1.5.js"></script>
+  <script type="text/javascript" src="resources/js/jquery-ui-1.8.10.custom.min.js"></script>
+  <script type="text/javascript" src="resources/js/jquery.strings.js"></script>
+  <script type="text/javascript" src="resources/js/jquery.layout-latest.js"></script>
+  <script type="text/javascript" src="resources/js/ops.js"></script>
+
+  <script type="text/javascript">
+
+    $(document).ready(function ()
+    {
+      getAllEntities("parcel", function(parcelArray)
+      {
+        $("#ops-main").html(getParcelArrayTable(parcelArray));
+      });
+
+    });
+  </script>
+
+</head>
+<body>
+<div id="container">
+  <div id="ops-main">
+    <table id="parcelGrid"></table>
+    <div id="pager"></div>
+  </div>
+</div>
+</body>
+</html>
