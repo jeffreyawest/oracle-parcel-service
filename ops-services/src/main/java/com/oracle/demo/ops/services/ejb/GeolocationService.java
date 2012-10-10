@@ -39,7 +39,7 @@ public class GeolocationService
 {
   private static final String GOOGLE_URL = "http://maps.googleapis.com/maps/api/geocode/json";
 
-  private static final boolean CACHE_ENABLED = false;
+  private static final boolean CACHE_ENABLED = true;
   private static final String CACHE_NAME = "geolocation";
 
   @EJB
