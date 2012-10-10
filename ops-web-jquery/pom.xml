@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+         xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+  <!-- ==================================================================================== -->
+
+  <parent>
+    <artifactId>ops-common-deployable</artifactId>
+    <groupId>com.oracle.demo.ops</groupId>
+    <version>3.0</version>
+    <relativePath>../ops-common/ops-common-deployable/pom.xml</relativePath>
+  </parent>
+
+  <!-- ==================================================================================== -->
+
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.oracle.demo.ops</groupId>
+  <artifactId>ops-web-jquery</artifactId>
+  <version>3.0</version>
+  <packaging>war</packaging>
+  <name>ops-web-jquery</name>
+  <url>https://www.samplecode.oracle.com/sf/projects/oracle-parcel-svc</url>
+
+  <!-- ==================================================================================== -->
+
+  <build>
+    <defaultGoal>install</defaultGoal>
+
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-war-plugin</artifactId>
+        <version>2.1.1</version>
+        <configuration>
+          <failOnMissingWebXml>false</failOnMissingWebXml>
+          <archive>
+            <manifestEntries>
+              <Extension-Name>${project.artifactId}</Extension-Name>
+
+              <Specification-Title>${project.description}</Specification-Title>
+              <Specification-Version>${project.version}</Specification-Version>
+              <Specification-Vendor>Oracle</Specification-Vendor>
+
+              <Implementation-Title>${project.artifactId}</Implementation-Title>
+              <Implementation-Version>${project.version}.${maven.build.timestamp}</Implementation-Version>
+              <Implementation-Vendor>Oracle</Implementation-Vendor>
+              <Implementation-Vendor-Id>${project.groupId}</Implementation-Vendor-Id>
+
+            </manifestEntries>
+          </archive>
+        </configuration>
+      </plugin>
+
+      <plugin>
+        <groupId>com.oracle.weblogic</groupId>
+        <artifactId>wls-maven-plugin</artifactId>
+      </plugin>
+
+    </plugins>
+  </build>
+
+  <!-- ==================================================================================== -->
+
+  <dependencies>
+
+
+  </dependencies>
+    <properties>
+        <netbeans.hint.deploy.server>WebLogic9</netbeans.hint.deploy.server>
+    </properties>
+</project>

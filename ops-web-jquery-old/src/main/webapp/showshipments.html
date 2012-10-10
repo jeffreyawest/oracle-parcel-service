@@ -1,0 +1,55 @@
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+  <meta http-equiv="Content-Type" content="text/html; charset=MacRoman">
+  <script src="resources/js/jquery-1.5.js" type="text/javascript"></script>
+  <script src="resources/js/grid.locale-en.js" type="text/javascript"></script>
+  <script src="resources/js/jquery.jqGrid.min.js" type="text/javascript"></script>
+
+  <link rel="stylesheet" type="text/css" media="screen" href="resources/css/excite-bike/jquery-ui-1.8.9.custom.css"/>
+  <link rel="stylesheet" type="text/css" media="screen" href="resources/css/jqgrid/ui.jqgrid.css"/>
+  <script type="text/javascript">
+    //$(document).ready(function() {
+
+    $(function()
+    {
+      $("#list").jqGrid({
+        url:'/ops-rest/resource/shipment/list.json',
+        datatype: "json",
+        colNames:['ID', 'Sender', 'From Postal Code', 'Receiver', 'To Postal Code', 'Contents'],
+        colModel:[
+          {name:'id', jsonmap:'Id', index:'id', width:55},
+          {name:'sender',jsonmap:'FromAddress.AddressLine1', index:'Sender', width:110},
+          {name:'frompostalcode',jsonmap:'FromAddress.PostalCode', index:'From Postal Code', width:110},
+          {name:'receiver',jsonmap:'ToAddress.AddressLine1', index:'Receiver', width:110},
+          {name:'topostalcode',jsonmap:'ToAddress.PostalCode', index:'To Postal Code', width:110},
+          {name:'contents',jsonmap:'Parcel.Contents', index:'contents', width:200}
+        ],
+        rowNum:10,
+        rowList:[10,20,30],
+        pager: '#pager2',
+        sortname: 'id',
+        viewrecords: true,
+        sortorder: "desc",
+        caption:"Shipments",
+        jsonReader : {
+          root: "shipment",
+          repeatitems: false,
+          id: "id"
+        }
+
+      });
+    });
+  </script>
+</head>
+<body>
+<h3>Oracle Parcel Service - WebUI</h3>
+<table id="list"></table>
+<div id="pager2"></div>
+</body>
+</html>

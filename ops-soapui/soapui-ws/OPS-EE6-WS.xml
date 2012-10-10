@@ -19,11 +19,11 @@
   <message name="getParcelEventLogResponse">
     <part name="parameters" element="tns:getParcelEventLogResponse"/>
   </message>
-  <message name="addParcelLogEventJMSProxy">
-    <part name="parameters" element="tns:addParcelLogEventJMSProxy"/>
+  <message name="addParcelEventJMSProxy">
+    <part name="parameters" element="tns:addParcelEventJMSProxy"/>
   </message>
-  <message name="addParcelLogEventJMSProxyResponse">
-    <part name="parameters" element="tns:addParcelLogEventJMSProxyResponse"/>
+  <message name="addParcelEventJMSProxyResponse">
+    <part name="parameters" element="tns:addParcelEventJMSProxyResponse"/>
   </message>
   <message name="getParcelById">
     <part name="parameters" element="tns:getParcelById"/>
@@ -36,9 +36,9 @@
       <input message="tns:getParcelEventLog"/>
       <output message="tns:getParcelEventLogResponse"/>
     </operation>
-    <operation name="addParcelLogEventJMSProxy">
-      <input message="tns:addParcelLogEventJMSProxy"/>
-      <output message="tns:addParcelLogEventJMSProxyResponse"/>
+    <operation name="addParcelEventJMSProxy">
+      <input message="tns:addParcelEventJMSProxy"/>
+      <output message="tns:addParcelEventJMSProxyResponse"/>
     </operation>
     <operation name="getParcelById">
       <input message="tns:getParcelById"/>
@@ -56,7 +56,7 @@
         <soap:body use="literal"/>
       </output>
     </operation>
-    <operation name="addParcelLogEventJMSProxy">
+    <operation name="addParcelEventJMSProxy">
       <soap:operation soapAction=""/>
       <input>
         <soap:body use="literal"/>
@@ -84,14 +84,14 @@
 <xs:schema version="1.0" targetNamespace="http://demo.oracle.com/ops/domain/services/parcel" xmlns:tns="http://demo.oracle.com/ops/domain/services/parcel" xmlns:ns2="http://demo.oracle.com/ops/domain/schema/shipping" xmlns:ns1="http://demo.oracle.com/ops/domain/schema/common" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:import namespace="http://demo.oracle.com/ops/domain/schema/common" schemaLocation="http://127.0.0.1:7101/ops-jax-ws/parcelService?xsd=3"/>
   <xs:import namespace="http://demo.oracle.com/ops/domain/schema/shipping" schemaLocation="http://127.0.0.1:7101/ops-jax-ws/parcelService?xsd=2"/>
-  <xs:element name="AddParcelLogEventJMSPROXYRequest" type="tns:AddParcelLogEventJMSPROXYRequestType"/>
-  <xs:element name="AddParcelLogEventJMSPROXYResponse" type="tns:AddParcelLogEventJMSPROXYResponseType"/>
+  <xs:element name="AddParcelEventJMSPROXYRequest" type="tns:AddParcelEventJMSPROXYRequestType"/>
+  <xs:element name="AddParcelEventJMSPROXYResponse" type="tns:AddParcelEventJMSPROXYResponseType"/>
   <xs:element name="GetParcelByIdRequest" type="tns:GetParcelByIdRequestType"/>
   <xs:element name="GetParcelByIdResponse" type="tns:GetParcelByIdResponseType"/>
   <xs:element name="GetParcelEventLogRequest" type="tns:GetParcelEventLogRequestType"/>
   <xs:element name="GetParcelEventLogResponse" type="tns:GetParcelEventLogResponseType"/>
-  <xs:element name="addParcelLogEventJMSProxy" type="tns:addParcelLogEventJMSProxy"/>
-  <xs:element name="addParcelLogEventJMSProxyResponse" type="tns:addParcelLogEventJMSProxyResponse"/>
+  <xs:element name="addParcelEventJMSProxy" type="tns:addParcelEventJMSProxy"/>
+  <xs:element name="addParcelEventJMSProxyResponse" type="tns:addParcelEventJMSProxyResponse"/>
   <xs:element name="getParcelById" type="tns:getParcelById"/>
   <xs:element name="getParcelByIdResponse" type="tns:getParcelByIdResponse"/>
   <xs:element name="getParcelEventLog" type="tns:getParcelEventLog"/>
@@ -115,29 +115,29 @@
   <xs:complexType name="GetParcelEventLogResponseType">
     <xs:sequence>
       <xs:element name="ResponseHeader" type="ns1:WebServiceResponseHeaderType" form="qualified"/>
-      <xs:element name="ParcelLogEvent" type="ns2:ParcelLogEventType" form="qualified" maxOccurs="unbounded"/>
+      <xs:element name="ParcelEvent" type="ns2:ParcelEventType" form="qualified" maxOccurs="unbounded"/>
     </xs:sequence>
   </xs:complexType>
-  <xs:complexType name="addParcelLogEventJMSProxy">
+  <xs:complexType name="addParcelEventJMSProxy">
     <xs:sequence>
-      <xs:element name="arg0" type="tns:AddParcelLogEventJMSPROXYRequestType" minOccurs="0"/>
+      <xs:element name="arg0" type="tns:AddParcelEventJMSPROXYRequestType" minOccurs="0"/>
     </xs:sequence>
   </xs:complexType>
-  <xs:complexType name="AddParcelLogEventJMSPROXYRequestType">
+  <xs:complexType name="AddParcelEventJMSPROXYRequestType">
     <xs:sequence>
       <xs:element name="RequestHeader" type="ns1:WebServiceRequestHeaderType" form="qualified"/>
-      <xs:element name="ParcelLogEvent" type="ns2:ParcelLogEventType" form="qualified"/>
+      <xs:element name="ParcelEvent" type="ns2:ParcelEventType" form="qualified"/>
     </xs:sequence>
   </xs:complexType>
-  <xs:complexType name="addParcelLogEventJMSProxyResponse">
+  <xs:complexType name="addParcelEventJMSProxyResponse">
     <xs:sequence>
-      <xs:element name="return" type="tns:AddParcelLogEventJMSPROXYResponseType" minOccurs="0"/>
+      <xs:element name="return" type="tns:AddParcelEventJMSPROXYResponseType" minOccurs="0"/>
     </xs:sequence>
   </xs:complexType>
-  <xs:complexType name="AddParcelLogEventJMSPROXYResponseType">
+  <xs:complexType name="AddParcelEventJMSPROXYResponseType">
     <xs:sequence>
       <xs:element name="ResponseHeader" type="ns1:WebServiceResponseHeaderType" form="qualified"/>
-      <xs:element name="ParcelLogEvent" type="ns2:ParcelLogEventType" form="qualified"/>
+      <xs:element name="ParcelEvent" type="ns2:ParcelEventType" form="qualified"/>
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="getParcelById">
@@ -230,9 +230,9 @@
 <xs:schema version="1.0" targetNamespace="http://demo.oracle.com/ops/domain/schema/shipping" xmlns:tns="http://demo.oracle.com/ops/domain/schema/shipping" xmlns:ns1="http://demo.oracle.com/ops/domain/schema/common" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:import namespace="http://demo.oracle.com/ops/domain/schema/common" schemaLocation="http://127.0.0.1:7101/ops-jax-ws/parcelService?xsd=3"/>
   <xs:element name="Parcel" type="tns:ParcelType"/>
-  <xs:element name="ParcelLogEvent" type="tns:ParcelLogEventType"/>
+  <xs:element name="ParcelEvent" type="tns:ParcelEventType"/>
   <xs:element name="Shipment" type="tns:ShipmentType"/>
-  <xs:complexType name="ParcelLogEventType">
+  <xs:complexType name="ParcelEventType">
     <xs:complexContent>
       <xs:extension base="ns1:BaseEntity">
         <xs:sequence>
@@ -300,23 +300,23 @@
       <xs:enumeration value="NEXT_DAY_AIR"/>
     </xs:restriction>
   </xs:simpleType>
-</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://127.0.0.1:7101/ops-jax-ws-parcel/parcelService</con:endpoint><con:endpoint>http://127.0.0.1:7000/ops-jax-ws-parcel/parcelService</con:endpoint><con:endpoint>http://127.0.0.1:7101/ops-jax-ws-parcel/parcelService</con:endpoint><con:endpoint>http://adc2180341.us.oracle.com:7101/ops-jax-ws-parcel/parcelService</con:endpoint></con:endpoints><con:operation isOneWay="false" action="" name="addParcelLogEventJMSProxy" bindingOperationName="addParcelLogEventJMSProxy" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://127.0.0.1:7101/ops-jax-ws-parcel/parcelService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:par="http://demo.oracle.com/ops/domain/services/parcel" xmlns:com="http://demo.oracle.com/ops/domain/schema/common" xmlns:ship="http://demo.oracle.com/ops/domain/schema/shipping">
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://127.0.0.1:7101/ops-jax-ws-parcel/parcelService</con:endpoint><con:endpoint>http://127.0.0.1:7000/ops-jax-ws-parcel/parcelService</con:endpoint><con:endpoint>http://127.0.0.1:7101/ops-jax-ws-parcel/parcelService</con:endpoint><con:endpoint>http://adc2180341.us.oracle.com:7101/ops-jax-ws-parcel/parcelService</con:endpoint></con:endpoints><con:operation isOneWay="false" action="" name="addParcelEventJMSProxy" bindingOperationName="addParcelEventJMSProxy" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://127.0.0.1:7101/ops-jax-ws-parcel/parcelService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:par="http://demo.oracle.com/ops/domain/services/parcel" xmlns:com="http://demo.oracle.com/ops/domain/schema/common" xmlns:ship="http://demo.oracle.com/ops/domain/schema/shipping">
    <soapenv:Header/>
    <soapenv:Body>
-      <par:addParcelLogEventJMSProxy>
+      <par:addParcelEventJMSProxy>
          <!--Optional:-->
          <arg0>
-            <par:ParcelLogEvent>
+            <par:ParcelEvent>
                <ship:ParcelId>120</ship:ParcelId>
                <ship:EventDate></ship:EventDate>
                <ship:ParcelStatus>BILLING_INFO_RECEIVED</ship:ParcelStatus>
                <ship:Location>1</ship:Location>
                <ship:Message>hi</ship:Message>
-            </par:ParcelLogEvent>
+            </par:ParcelEvent>
          </arg0>
-      </par:addParcelLogEventJMSProxy>
+      </par:addParcelEventJMSProxy>
    </soapenv:Body>
-</soapenv:Envelope>]]></con:request><con:credentials><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://demo.oracle.com/ops/domain/services/parcel/parcel/addParcelLogEventJMSProxyRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation isOneWay="false" action="" name="getParcelById" bindingOperationName="getParcelById" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://127.0.0.1:7101/ops-jax-ws-parcel/parcelService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:par="http://demo.oracle.com/ops/domain/services/parcel" xmlns:com="http://demo.oracle.com/ops/domain/schema/common">
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://demo.oracle.com/ops/domain/services/parcel/parcel/addParcelEventJMSProxyRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation isOneWay="false" action="" name="getParcelById" bindingOperationName="getParcelById" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://127.0.0.1:7101/ops-jax-ws-parcel/parcelService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:par="http://demo.oracle.com/ops/domain/services/parcel" xmlns:com="http://demo.oracle.com/ops/domain/schema/common">
    <soapenv:Header/>
    <soapenv:Body>
       <par:getParcelById>
@@ -1290,19 +1290,19 @@ xmlns:ship="http://demo.oracle.com/ops/domain/services/shipment" xmlns:com="http
       </ship:getShipmentByExternalId>
    </soapenv:Body>
 </soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response"/><con:assertion type="SOAP Fault Assertion" name="Not SOAP Fault"/><con:credentials><con:username xsi:nil="true"/><con:password xsi:nil="true"/><con:domain xsi:nil="true"/><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="properties" name="currentDate" id="0471198a-58c8-4df2-b41a-02e7714fe5db"><con:settings/><con:config xsi:type="con:PropertiesStep" saveFirst="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:properties><con:property><con:name>date</con:name><con:value>2012-09-18T17:15:27</con:value></con:property></con:properties></con:config></con:testStep><con:testStep type="groovy" name="GenerateDate" id="a70c1edf-d9cf-4c22-aa4c-35e2a78a1d9b"><con:settings/><con:config><script>def currentDate = new Date();
-def dateString = currentDate.format("yyyy-MM-dd'T'HH:mm:ss");</script></con:config></con:testStep><con:testStep type="request" name="UpdateParcelLog-1-BILLING_INFO_RECEIVED"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>parcelPort_jaxwsBinding</con:interface><con:operation>addParcelLogEventJMSProxy</con:operation><con:request name="UpdateParcelLog-1-BILLING_INFO_RECEIVED"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://adc2180341.us.oracle.com:7101/ops-jax-ws-parcel/parcelService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://demo.oracle.com/ops/domain/services/parcel" xmlns:par="http://demo.oracle.com/ops/domain/services/parcel" xmlns:com="http://demo.oracle.com/ops/domain/schema/common" xmlns:ship="http://demo.oracle.com/ops/domain/schema/shipping">
+def dateString = currentDate.format("yyyy-MM-dd'T'HH:mm:ss");</script></con:config></con:testStep><con:testStep type="request" name="UpdateParcelLog-1-BILLING_INFO_RECEIVED"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>parcelPort_jaxwsBinding</con:interface><con:operation>addParcelEventJMSProxy</con:operation><con:request name="UpdateParcelLog-1-BILLING_INFO_RECEIVED"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://adc2180341.us.oracle.com:7101/ops-jax-ws-parcel/parcelService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://demo.oracle.com/ops/domain/services/parcel" xmlns:par="http://demo.oracle.com/ops/domain/services/parcel" xmlns:com="http://demo.oracle.com/ops/domain/schema/common" xmlns:ship="http://demo.oracle.com/ops/domain/schema/shipping">
    <soapenv:Header/>
    <soapenv:Body>
-      <ser:addParcelLogEventJMSProxy>
+      <ser:addParcelEventJMSProxy>
          <arg0>
-            <par:ParcelLogEvent>
+            <par:ParcelEvent>
                <com:Id/><ship:ParcelId>${ResponseProperties#ParcelId-1}</ship:ParcelId>
                <ship:EventDate>${GenerateDate#result}</ship:EventDate><ship:ParcelStatus>BILLING_INFO_RECEIVED</ship:ParcelStatus>
                <ship:Location>1</ship:Location>
                <ship:Message>Billing information Received</ship:Message>
-            </par:ParcelLogEvent>
+            </par:ParcelEvent>
          <par:RequestHeader/></arg0>
-      </ser:addParcelLogEventJMSProxy>
+      </ser:addParcelEventJMSProxy>
    </soapenv:Body>
 </soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response"/><con:assertion type="SOAP Fault Assertion" name="Not SOAP Fault"/><con:credentials><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="delay" name="Delay-500-1"><con:settings/><con:config><delay>1000</delay></con:config></con:testStep><con:testStep type="request" name="GetParcelLog-1-1"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>parcelPort_jaxwsBinding</con:interface><con:operation>getParcelEventLog</con:operation><con:request name="GetParcelLog-1-1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://adc2180341.us.oracle.com:7101/ops-jax-ws-parcel/parcelService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://demo.oracle.com/ops/domain/services/parcel" xmlns:par="http://demo.oracle.com/ops/domain/services/parcel" xmlns:com="http://demo.oracle.com/ops/domain/schema/common">
    <soapenv:Header/>
@@ -1315,19 +1315,19 @@ def dateString = currentDate.format("yyyy-MM-dd'T'HH:mm:ss");</script></con:conf
       </ser:getParcelEventLog>
    </soapenv:Body>
 </soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response"/><con:assertion type="SOAP Fault Assertion" name="Not SOAP Fault"/><con:credentials><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="groovy" name="GenerateDate2" id="91234569-79a9-461a-bddb-96b805f291d0"><con:settings/><con:config><script>def currentDate = new Date();
-def dateString = currentDate.format("yyyy-MM-dd'T'HH:mm:ss");</script></con:config></con:testStep><con:testStep type="request" name="UpdateParcelLog-1-PARCEL_RECEIVED"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>parcelPort_jaxwsBinding</con:interface><con:operation>addParcelLogEventJMSProxy</con:operation><con:request name="UpdateParcelLog-1-PARCEL_RECEIVED"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://adc2180341.us.oracle.com:7101/ops-jax-ws-parcel/parcelService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://demo.oracle.com/ops/domain/services/parcel" xmlns:par="http://demo.oracle.com/ops/domain/services/parcel" xmlns:com="http://demo.oracle.com/ops/domain/schema/common" xmlns:ship="http://demo.oracle.com/ops/domain/schema/shipping">
+def dateString = currentDate.format("yyyy-MM-dd'T'HH:mm:ss");</script></con:config></con:testStep><con:testStep type="request" name="UpdateParcelLog-1-PARCEL_RECEIVED"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>parcelPort_jaxwsBinding</con:interface><con:operation>addParcelEventJMSProxy</con:operation><con:request name="UpdateParcelLog-1-PARCEL_RECEIVED"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://adc2180341.us.oracle.com:7101/ops-jax-ws-parcel/parcelService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://demo.oracle.com/ops/domain/services/parcel" xmlns:par="http://demo.oracle.com/ops/domain/services/parcel" xmlns:com="http://demo.oracle.com/ops/domain/schema/common" xmlns:ship="http://demo.oracle.com/ops/domain/schema/shipping">
    <soapenv:Header/>
    <soapenv:Body>
-      <ser:addParcelLogEventJMSProxy>
+      <ser:addParcelEventJMSProxy>
          <arg0>
-            <par:ParcelLogEvent>
+            <par:ParcelEvent>
                <com:Id/><ship:ParcelId>${ResponseProperties#ParcelId-1}</ship:ParcelId>
                <ship:EventDate>${GenerateDate2#result}</ship:EventDate><ship:ParcelStatus>PARCEL_RECEIVED</ship:ParcelStatus>
                <ship:Location>2</ship:Location>
                <ship:Message>Parcel received!</ship:Message>
-            </par:ParcelLogEvent>
+            </par:ParcelEvent>
          <par:RequestHeader/></arg0>
-      </ser:addParcelLogEventJMSProxy>
+      </ser:addParcelEventJMSProxy>
    </soapenv:Body>
 </soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response"/><con:assertion type="SOAP Fault Assertion" name="Not SOAP Fault"/><con:credentials><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="delay" name="Delay 1s-1"><con:settings/><con:config><delay>1000</delay></con:config></con:testStep><con:testStep type="request" name="GetParcelLog-1-2"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>parcelPort_jaxwsBinding</con:interface><con:operation>getParcelEventLog</con:operation><con:request name="GetParcelLog-1-2"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://adc2180341.us.oracle.com:7101/ops-jax-ws-parcel/parcelService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://demo.oracle.com/ops/domain/services/parcel" xmlns:par="http://demo.oracle.com/ops/domain/services/parcel" xmlns:com="http://demo.oracle.com/ops/domain/schema/common">
    <soapenv:Header/>
@@ -1340,19 +1340,19 @@ def dateString = currentDate.format("yyyy-MM-dd'T'HH:mm:ss");</script></con:conf
       </ser:getParcelEventLog>
    </soapenv:Body>
 </soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response"/><con:assertion type="SOAP Fault Assertion" name="Not SOAP Fault"/><con:credentials><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="groovy" name="GenerateDate3" id="3e7bf837-3614-4867-98f1-56a20ace05cc"><con:settings/><con:config><script>def currentDate = new Date();
-def dateString = currentDate.format("yyyy-MM-dd'T'HH:mm:ss");</script></con:config></con:testStep><con:testStep type="request" name="UpdateParcelLog-1-IN_TRANSIT-1"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>parcelPort_jaxwsBinding</con:interface><con:operation>addParcelLogEventJMSProxy</con:operation><con:request name="UpdateParcelLog-1-IN_TRANSIT-1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://adc2180341.us.oracle.com:7101/ops-jax-ws-parcel/parcelService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://demo.oracle.com/ops/domain/services/parcel" xmlns:par="http://demo.oracle.com/ops/domain/services/parcel" xmlns:com="http://demo.oracle.com/ops/domain/schema/common" xmlns:ship="http://demo.oracle.com/ops/domain/schema/shipping">
+def dateString = currentDate.format("yyyy-MM-dd'T'HH:mm:ss");</script></con:config></con:testStep><con:testStep type="request" name="UpdateParcelLog-1-IN_TRANSIT-1"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>parcelPort_jaxwsBinding</con:interface><con:operation>addParcelEventJMSProxy</con:operation><con:request name="UpdateParcelLog-1-IN_TRANSIT-1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://adc2180341.us.oracle.com:7101/ops-jax-ws-parcel/parcelService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://demo.oracle.com/ops/domain/services/parcel" xmlns:par="http://demo.oracle.com/ops/domain/services/parcel" xmlns:com="http://demo.oracle.com/ops/domain/schema/common" xmlns:ship="http://demo.oracle.com/ops/domain/schema/shipping">
    <soapenv:Header/>
    <soapenv:Body>
-      <ser:addParcelLogEventJMSProxy>
+      <ser:addParcelEventJMSProxy>
          <arg0>
-            <par:ParcelLogEvent>
+            <par:ParcelEvent>
                <com:Id/><ship:ParcelId>${ResponseProperties#ParcelId-1}</ship:ParcelId>
                <ship:EventDate>${GenerateDate3#result}</ship:EventDate><ship:ParcelStatus>IN_TRANSIT</ship:ParcelStatus>
                <ship:Location>33012</ship:Location>
                <ship:Message>Package arrived at location 3</ship:Message>
-            </par:ParcelLogEvent>
+            </par:ParcelEvent>
          <par:RequestHeader/></arg0>
-      </ser:addParcelLogEventJMSProxy>
+      </ser:addParcelEventJMSProxy>
    </soapenv:Body>
 </soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response"/><con:assertion type="SOAP Fault Assertion" name="Not SOAP Fault"/><con:credentials><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="delay" name="Delay 1s-2" disabled="true"><con:settings/><con:config><delay>1000</delay></con:config></con:testStep><con:testStep type="request" name="Copy of getShipmentByExternalId-1"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>shipmentPort_jaxwsBinding</con:interface><con:operation>getShipmentByExternalId</con:operation><con:request name="Copy of getShipmentByExternalId-1" outgoingWss="" incomingWss=""><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://adc2180341.us.oracle.com:7101/ops-jax-ws-shipment/shipmentService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ship="http://demo.oracle.com/ops/domain/services/shipment" xmlns:ser="http://demo.oracle.com/ops/domain/services/shipment" xmlns:com="http://demo.oracle.com/ops/domain/schema/common">
 	<soapenv:Header/>
@@ -1411,19 +1411,19 @@ def dateString = currentDate.format("yyyy-MM-dd'T'HH:mm:ss");</script></con:conf
       </ser:getParcelEventLog>
    </soapenv:Body>
 </soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response"/><con:assertion type="SOAP Fault Assertion" name="Not SOAP Fault"/><con:credentials><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="groovy" name="GenerateDate4" id="49acf3bf-83ba-4d3e-8d14-d2e008cd27e0"><con:settings/><con:config><script>def currentDate4 = new Date();
-def dateString = currentDate4.format("yyyy-MM-dd'T'HH:mm:ss");</script></con:config></con:testStep><con:testStep type="request" name="UpdateParcelLog-1-IN_TRANSIT-2"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>parcelPort_jaxwsBinding</con:interface><con:operation>addParcelLogEventJMSProxy</con:operation><con:request name="UpdateParcelLog-1-IN_TRANSIT-2"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://adc2180341.us.oracle.com:7101/ops-jax-ws-parcel/parcelService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://demo.oracle.com/ops/domain/services/parcel" xmlns:par="http://demo.oracle.com/ops/domain/services/parcel" xmlns:com="http://demo.oracle.com/ops/domain/schema/common" xmlns:ship="http://demo.oracle.com/ops/domain/schema/shipping">
+def dateString = currentDate4.format("yyyy-MM-dd'T'HH:mm:ss");</script></con:config></con:testStep><con:testStep type="request" name="UpdateParcelLog-1-IN_TRANSIT-2"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>parcelPort_jaxwsBinding</con:interface><con:operation>addParcelEventJMSProxy</con:operation><con:request name="UpdateParcelLog-1-IN_TRANSIT-2"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://adc2180341.us.oracle.com:7101/ops-jax-ws-parcel/parcelService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://demo.oracle.com/ops/domain/services/parcel" xmlns:par="http://demo.oracle.com/ops/domain/services/parcel" xmlns:com="http://demo.oracle.com/ops/domain/schema/common" xmlns:ship="http://demo.oracle.com/ops/domain/schema/shipping">
    <soapenv:Header/>
    <soapenv:Body>
-      <ser:addParcelLogEventJMSProxy>
+      <ser:addParcelEventJMSProxy>
          <arg0>
-            <par:ParcelLogEvent>
+            <par:ParcelEvent>
                <com:Id/><ship:ParcelId>${ResponseProperties#ParcelId-1}</ship:ParcelId>
                <ship:EventDate>${GenerateDate4#result}</ship:EventDate><ship:ParcelStatus>IN_TRANSIT</ship:ParcelStatus>
                <ship:Location>38115</ship:Location>
                <ship:Message>Package arrived at location 2</ship:Message>
-            </par:ParcelLogEvent>
+            </par:ParcelEvent>
          <par:RequestHeader/></arg0>
-      </ser:addParcelLogEventJMSProxy>
+      </ser:addParcelEventJMSProxy>
    </soapenv:Body>
 </soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response"/><con:assertion type="SOAP Fault Assertion" name="Not SOAP Fault"/><con:credentials><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="delay" name="Delay 1s-3"><con:settings/><con:config><delay>1000</delay></con:config></con:testStep><con:testStep type="request" name="GetParcelLog-1-5"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>parcelPort_jaxwsBinding</con:interface><con:operation>getParcelEventLog</con:operation><con:request name="GetParcelLog-1-5"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://adc2180341.us.oracle.com:7101/ops-jax-ws-parcel/parcelService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://demo.oracle.com/ops/domain/services/parcel" xmlns:par="http://demo.oracle.com/ops/domain/services/parcel" xmlns:com="http://demo.oracle.com/ops/domain/schema/common">
    <soapenv:Header/>
@@ -1446,19 +1446,19 @@ def dateString = currentDate4.format("yyyy-MM-dd'T'HH:mm:ss");</script></con:con
       </ser:getParcelEventLog>
    </soapenv:Body>
 </soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response"/><con:assertion type="SOAP Fault Assertion" name="Not SOAP Fault"/><con:credentials><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="groovy" name="GenerateDate5" id="3efd6080-2bee-4ecf-8b75-a12a9e381808"><con:settings/><con:config><script>def currentDate = new Date();
-def dateString = currentDate.format("yyyy-MM-dd'T'HH:mm:ss");</script></con:config></con:testStep><con:testStep type="request" name="UpdateParcelLog-1-IN_TRANSIT-3"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>parcelPort_jaxwsBinding</con:interface><con:operation>addParcelLogEventJMSProxy</con:operation><con:request name="UpdateParcelLog-1-IN_TRANSIT-3"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://adc2180341.us.oracle.com:7101/ops-jax-ws-parcel/parcelService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://demo.oracle.com/ops/domain/services/parcel" xmlns:par="http://demo.oracle.com/ops/domain/services/parcel" xmlns:com="http://demo.oracle.com/ops/domain/schema/common" xmlns:ship="http://demo.oracle.com/ops/domain/schema/shipping">
+def dateString = currentDate.format("yyyy-MM-dd'T'HH:mm:ss");</script></con:config></con:testStep><con:testStep type="request" name="UpdateParcelLog-1-IN_TRANSIT-3"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>parcelPort_jaxwsBinding</con:interface><con:operation>addParcelEventJMSProxy</con:operation><con:request name="UpdateParcelLog-1-IN_TRANSIT-3"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://adc2180341.us.oracle.com:7101/ops-jax-ws-parcel/parcelService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://demo.oracle.com/ops/domain/services/parcel" xmlns:par="http://demo.oracle.com/ops/domain/services/parcel" xmlns:com="http://demo.oracle.com/ops/domain/schema/common" xmlns:ship="http://demo.oracle.com/ops/domain/schema/shipping">
    <soapenv:Header/>
    <soapenv:Body>
-      <ser:addParcelLogEventJMSProxy>
+      <ser:addParcelEventJMSProxy>
          <arg0>
-            <par:ParcelLogEvent>
+            <par:ParcelEvent>
                <com:Id/><ship:ParcelId>${ResponseProperties#ParcelId-1}</ship:ParcelId>
                <ship:EventDate>${GenerateDate5#result}</ship:EventDate><ship:ParcelStatus>IN_TRANSIT</ship:ParcelStatus>
                <ship:Location>44195</ship:Location>
                <ship:Message>Package arrived at location 3</ship:Message>
-            </par:ParcelLogEvent>
+            </par:ParcelEvent>
          <par:RequestHeader/></arg0>
-      </ser:addParcelLogEventJMSProxy>
+      </ser:addParcelEventJMSProxy>
    </soapenv:Body>
 </soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response"/><con:assertion type="SOAP Fault Assertion" name="Not SOAP Fault"/><con:credentials><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="delay" name="Delay 1s-4"><con:settings/><con:config><delay>1000</delay></con:config></con:testStep><con:testStep type="request" name="GetParcelLog-1-7"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>parcelPort_jaxwsBinding</con:interface><con:operation>getParcelEventLog</con:operation><con:request name="GetParcelLog-1-7"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://adc2180341.us.oracle.com:7101/ops-jax-ws-parcel/parcelService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://demo.oracle.com/ops/domain/services/parcel" xmlns:par="http://demo.oracle.com/ops/domain/services/parcel" xmlns:com="http://demo.oracle.com/ops/domain/schema/common">
    <soapenv:Header/>
@@ -1499,19 +1499,19 @@ def dateString = currentDate.format("yyyy-MM-dd'T'HH:mm:ss");</script></con:conf
       </ser:getParcelEventLog>
    </soapenv:Body>
 </soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response"/><con:assertion type="SOAP Fault Assertion" name="Not SOAP Fault"/><con:credentials><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="groovy" name="GenerateDate6" id="f97557c7-c1d7-4be7-b9e5-cbc805d5fc67"><con:settings/><con:config><script>def currentDate = new Date();
-def dateString = currentDate.format("yyyy-MM-dd'T'HH:mm:ss");</script></con:config></con:testStep><con:testStep type="request" name="UpdateParcelLog-1-DELIVERED"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>parcelPort_jaxwsBinding</con:interface><con:operation>addParcelLogEventJMSProxy</con:operation><con:request name="UpdateParcelLog-1-DELIVERED"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://adc2180341.us.oracle.com:7101/ops-jax-ws-parcel/parcelService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://demo.oracle.com/ops/domain/services/parcel" xmlns:par="http://demo.oracle.com/ops/domain/services/parcel" xmlns:com="http://demo.oracle.com/ops/domain/schema/common" xmlns:ship="http://demo.oracle.com/ops/domain/schema/shipping">
+def dateString = currentDate.format("yyyy-MM-dd'T'HH:mm:ss");</script></con:config></con:testStep><con:testStep type="request" name="UpdateParcelLog-1-DELIVERED"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>parcelPort_jaxwsBinding</con:interface><con:operation>addParcelEventJMSProxy</con:operation><con:request name="UpdateParcelLog-1-DELIVERED"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://adc2180341.us.oracle.com:7101/ops-jax-ws-parcel/parcelService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://demo.oracle.com/ops/domain/services/parcel" xmlns:par="http://demo.oracle.com/ops/domain/services/parcel" xmlns:com="http://demo.oracle.com/ops/domain/schema/common" xmlns:ship="http://demo.oracle.com/ops/domain/schema/shipping">
    <soapenv:Header/>
    <soapenv:Body>
-      <ser:addParcelLogEventJMSProxy>
+      <ser:addParcelEventJMSProxy>
          <arg0>
-            <par:ParcelLogEvent>
+            <par:ParcelEvent>
                <com:Id/><ship:ParcelId>${ResponseProperties#ParcelId-1}</ship:ParcelId>
                <ship:EventDate>${GenerateDate6#result}</ship:EventDate><ship:ParcelStatus>DELIVERED</ship:ParcelStatus>
                <ship:Location>94101</ship:Location>
                <ship:Message>Package delivered!</ship:Message>
-            </par:ParcelLogEvent>
+            </par:ParcelEvent>
          <par:RequestHeader/></arg0>
-      </ser:addParcelLogEventJMSProxy>
+      </ser:addParcelEventJMSProxy>
    </soapenv:Body>
 </soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response"/><con:credentials><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="request" name="getShipmentById-6"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>shipmentPort_jaxwsBinding</con:interface><con:operation>getShipmentById</con:operation><con:request name="getShipmentById-6" outgoingWss="" incomingWss="" timeout=""><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://adc2180341.us.oracle.com:7101/ops-jax-ws-shipment/shipmentService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ship="http://demo.oracle.com/ops/domain/services/shipment" xmlns:ser="http://demo.oracle.com/ops/domain/services/shipment" xmlns:com="http://demo.oracle.com/ops/domain/schema/common">
    <soapenv:Header/>
@@ -1542,19 +1542,19 @@ def dateString = currentDate.format("yyyy-MM-dd'T'HH:mm:ss");</script></con:conf
       </ser:getParcelEventLog>
    </soapenv:Body>
 </soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response"/><con:assertion type="SOAP Fault Assertion" name="Not SOAP Fault"/><con:credentials><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="groovy" name="GenerateDate7" id="c336f64f-b1c3-420f-9e63-98e9feef9d6e"><con:settings/><con:config><script>def currentDate = new Date();
-def dateString = currentDate.format("yyyy-MM-dd'T'HH:mm:ss");</script></con:config></con:testStep><con:testStep type="request" name="UpdateParcelLog-2-BILLING_INFO_RECEIVED"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>parcelPort_jaxwsBinding</con:interface><con:operation>addParcelLogEventJMSProxy</con:operation><con:request name="UpdateParcelLog-2-BILLING_INFO_RECEIVED"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://adc2180341.us.oracle.com:7101/ops-jax-ws-parcel/parcelService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://demo.oracle.com/ops/domain/services/parcel" xmlns:par="http://demo.oracle.com/ops/domain/services/parcel" xmlns:com="http://demo.oracle.com/ops/domain/schema/common" xmlns:ship="http://demo.oracle.com/ops/domain/schema/shipping">
+def dateString = currentDate.format("yyyy-MM-dd'T'HH:mm:ss");</script></con:config></con:testStep><con:testStep type="request" name="UpdateParcelLog-2-BILLING_INFO_RECEIVED"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>parcelPort_jaxwsBinding</con:interface><con:operation>addParcelEventJMSProxy</con:operation><con:request name="UpdateParcelLog-2-BILLING_INFO_RECEIVED"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://adc2180341.us.oracle.com:7101/ops-jax-ws-parcel/parcelService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://demo.oracle.com/ops/domain/services/parcel" xmlns:par="http://demo.oracle.com/ops/domain/services/parcel" xmlns:com="http://demo.oracle.com/ops/domain/schema/common" xmlns:ship="http://demo.oracle.com/ops/domain/schema/shipping">
    <soapenv:Header/>
    <soapenv:Body>
-      <ser:addParcelLogEventJMSProxy>
+      <ser:addParcelEventJMSProxy>
          <arg0>
-            <par:ParcelLogEvent>
+            <par:ParcelEvent>
                <com:Id/><ship:ParcelId>${ResponseProperties#ParcelId-2}</ship:ParcelId>
                <ship:EventDate>${GenerateDate7#result}</ship:EventDate><ship:ParcelStatus>BILLING_INFO_RECEIVED</ship:ParcelStatus>
                <ship:Location>33012</ship:Location>
                <ship:Message>Billing information Received</ship:Message>
-            </par:ParcelLogEvent>
+            </par:ParcelEvent>
          <par:RequestHeader/></arg0>
-      </ser:addParcelLogEventJMSProxy>
+      </ser:addParcelEventJMSProxy>
    </soapenv:Body>
 </soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response"/><con:assertion type="SOAP Fault Assertion" name="Not SOAP Fault"/><con:credentials><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="request" name="GetParcelLog-2-1"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>parcelPort_jaxwsBinding</con:interface><con:operation>getParcelEventLog</con:operation><con:request name="GetParcelLog-2-1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://adc2180341.us.oracle.com:7101/ops-jax-ws-parcel/parcelService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://demo.oracle.com/ops/domain/services/parcel" xmlns:par="http://demo.oracle.com/ops/domain/services/parcel" xmlns:com="http://demo.oracle.com/ops/domain/schema/common">
    <soapenv:Header/>
@@ -1567,19 +1567,19 @@ def dateString = currentDate.format("yyyy-MM-dd'T'HH:mm:ss");</script></con:conf
       </ser:getParcelEventLog>
    </soapenv:Body>
 </soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response"/><con:assertion type="SOAP Fault Assertion" name="Not SOAP Fault"/><con:credentials><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="groovy" name="GenerateDate8" id="d2dc648a-4313-474f-8fde-93345dbb9553"><con:settings/><con:config><script>def currentDate = new Date();
-def dateString = currentDate.format("yyyy-MM-dd'T'HH:mm:ss");</script></con:config></con:testStep><con:testStep type="request" name="UpdateParcelLog-2-PARCEL_RECEIVED"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>parcelPort_jaxwsBinding</con:interface><con:operation>addParcelLogEventJMSProxy</con:operation><con:request name="UpdateParcelLog-2-PARCEL_RECEIVED"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://adc2180341.us.oracle.com:7101/ops-jax-ws-parcel/parcelService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://demo.oracle.com/ops/domain/services/parcel" xmlns:par="http://demo.oracle.com/ops/domain/services/parcel" xmlns:com="http://demo.oracle.com/ops/domain/schema/common" xmlns:ship="http://demo.oracle.com/ops/domain/schema/shipping">
+def dateString = currentDate.format("yyyy-MM-dd'T'HH:mm:ss");</script></con:config></con:testStep><con:testStep type="request" name="UpdateParcelLog-2-PARCEL_RECEIVED"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>parcelPort_jaxwsBinding</con:interface><con:operation>addParcelEventJMSProxy</con:operation><con:request name="UpdateParcelLog-2-PARCEL_RECEIVED"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://adc2180341.us.oracle.com:7101/ops-jax-ws-parcel/parcelService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://demo.oracle.com/ops/domain/services/parcel" xmlns:par="http://demo.oracle.com/ops/domain/services/parcel" xmlns:com="http://demo.oracle.com/ops/domain/schema/common" xmlns:ship="http://demo.oracle.com/ops/domain/schema/shipping">
    <soapenv:Header/>
    <soapenv:Body>
-      <ser:addParcelLogEventJMSProxy>
+      <ser:addParcelEventJMSProxy>
          <arg0>
-            <par:ParcelLogEvent>
+            <par:ParcelEvent>
                <com:Id/><ship:ParcelId>${ResponseProperties#ParcelId-2}</ship:ParcelId>
                <ship:EventDate>${GenerateDate8#result}</ship:EventDate><ship:ParcelStatus>PARCEL_RECEIVED</ship:ParcelStatus>
                <ship:Location>28501</ship:Location>
                <ship:Message>Parcel received!</ship:Message>
-            </par:ParcelLogEvent>
+            </par:ParcelEvent>
          <par:RequestHeader/></arg0>
-      </ser:addParcelLogEventJMSProxy>
+      </ser:addParcelEventJMSProxy>
    </soapenv:Body>
 </soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response"/><con:assertion type="SOAP Fault Assertion" name="Not SOAP Fault"/><con:credentials><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="request" name="getShipmentById-5"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>shipmentPort_jaxwsBinding</con:interface><con:operation>getShipmentById</con:operation><con:request name="getShipmentById-5" outgoingWss="" incomingWss="" timeout=""><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://adc2180341.us.oracle.com:7101/ops-jax-ws-shipment/shipmentService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ship="http://demo.oracle.com/ops/domain/services/shipment" xmlns:ser="http://demo.oracle.com/ops/domain/services/shipment" xmlns:com="http://demo.oracle.com/ops/domain/schema/common">
    <soapenv:Header/>
@@ -1610,19 +1610,19 @@ def dateString = currentDate.format("yyyy-MM-dd'T'HH:mm:ss");</script></con:conf
       </ser:getParcelEventLog>
    </soapenv:Body>
 </soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response"/><con:assertion type="SOAP Fault Assertion" name="Not SOAP Fault"/><con:credentials><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="groovy" name="GenerateDate9" id="e2da1fd5-da57-4d49-b645-ee077f111006"><con:settings/><con:config><script>def currentDate = new Date();
-def dateString = currentDate.format("yyyy-MM-dd'T'HH:mm:ss");</script></con:config></con:testStep><con:testStep type="request" name="UpdateParcelLog-2-IN_TRANSIT-1"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>parcelPort_jaxwsBinding</con:interface><con:operation>addParcelLogEventJMSProxy</con:operation><con:request name="UpdateParcelLog-2-IN_TRANSIT-1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://adc2180341.us.oracle.com:7101/ops-jax-ws-parcel/parcelService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://demo.oracle.com/ops/domain/services/parcel" xmlns:par="http://demo.oracle.com/ops/domain/services/parcel" xmlns:com="http://demo.oracle.com/ops/domain/schema/common" xmlns:ship="http://demo.oracle.com/ops/domain/schema/shipping">
+def dateString = currentDate.format("yyyy-MM-dd'T'HH:mm:ss");</script></con:config></con:testStep><con:testStep type="request" name="UpdateParcelLog-2-IN_TRANSIT-1"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>parcelPort_jaxwsBinding</con:interface><con:operation>addParcelEventJMSProxy</con:operation><con:request name="UpdateParcelLog-2-IN_TRANSIT-1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://adc2180341.us.oracle.com:7101/ops-jax-ws-parcel/parcelService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://demo.oracle.com/ops/domain/services/parcel" xmlns:par="http://demo.oracle.com/ops/domain/services/parcel" xmlns:com="http://demo.oracle.com/ops/domain/schema/common" xmlns:ship="http://demo.oracle.com/ops/domain/schema/shipping">
    <soapenv:Header/>
    <soapenv:Body>
-      <ser:addParcelLogEventJMSProxy>
+      <ser:addParcelEventJMSProxy>
          <arg0>
-            <par:ParcelLogEvent>
+            <par:ParcelEvent>
                <com:Id/><ship:ParcelId>${ResponseProperties#ParcelId-2}</ship:ParcelId>
                <ship:EventDate>${GenerateDate9#result}</ship:EventDate><ship:ParcelStatus>IN_TRANSIT</ship:ParcelStatus>
                <ship:Location>22630</ship:Location>
                <ship:Message>Package arrived at location 3</ship:Message>
-            </par:ParcelLogEvent>
+            </par:ParcelEvent>
          <par:RequestHeader/></arg0>
-      </ser:addParcelLogEventJMSProxy>
+      </ser:addParcelEventJMSProxy>
    </soapenv:Body>
 </soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response"/><con:credentials><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="request" name="GetParcelLog-2-3"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>parcelPort_jaxwsBinding</con:interface><con:operation>getParcelEventLog</con:operation><con:request name="GetParcelLog-2-3"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://adc2180341.us.oracle.com:7101/ops-jax-ws-parcel/parcelService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://demo.oracle.com/ops/domain/services/parcel" xmlns:par="http://demo.oracle.com/ops/domain/services/parcel" xmlns:com="http://demo.oracle.com/ops/domain/schema/common">
    <soapenv:Header/>
@@ -1645,19 +1645,19 @@ def dateString = currentDate.format("yyyy-MM-dd'T'HH:mm:ss");</script></con:conf
       </ser:getParcelEventLog>
    </soapenv:Body>
 </soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response"/><con:assertion type="SOAP Fault Assertion" name="Not SOAP Fault"/><con:credentials><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="groovy" name="GenerateDate10" id="9467bf7b-f6c9-41df-92b2-e92ec1810e86"><con:settings/><con:config><script>def currentDate = new Date();
-def dateString = currentDate.format("yyyy-MM-dd'T'HH:mm:ss");</script></con:config></con:testStep><con:testStep type="request" name="UpdateParcelLog-2-IN_TRANSIT-2"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>parcelPort_jaxwsBinding</con:interface><con:operation>addParcelLogEventJMSProxy</con:operation><con:request name="UpdateParcelLog-2-IN_TRANSIT-2"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://adc2180341.us.oracle.com:7101/ops-jax-ws-parcel/parcelService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://demo.oracle.com/ops/domain/services/parcel" xmlns:par="http://demo.oracle.com/ops/domain/services/parcel" xmlns:com="http://demo.oracle.com/ops/domain/schema/common" xmlns:ship="http://demo.oracle.com/ops/domain/schema/shipping">
+def dateString = currentDate.format("yyyy-MM-dd'T'HH:mm:ss");</script></con:config></con:testStep><con:testStep type="request" name="UpdateParcelLog-2-IN_TRANSIT-2"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>parcelPort_jaxwsBinding</con:interface><con:operation>addParcelEventJMSProxy</con:operation><con:request name="UpdateParcelLog-2-IN_TRANSIT-2"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://adc2180341.us.oracle.com:7101/ops-jax-ws-parcel/parcelService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://demo.oracle.com/ops/domain/services/parcel" xmlns:par="http://demo.oracle.com/ops/domain/services/parcel" xmlns:com="http://demo.oracle.com/ops/domain/schema/common" xmlns:ship="http://demo.oracle.com/ops/domain/schema/shipping">
    <soapenv:Header/>
    <soapenv:Body>
-      <ser:addParcelLogEventJMSProxy>
+      <ser:addParcelEventJMSProxy>
          <arg0>
-            <par:ParcelLogEvent>
+            <par:ParcelEvent>
                <com:Id/><ship:ParcelId>${ResponseProperties#ParcelId-2}</ship:ParcelId>
                <ship:EventDate>${GenerateDate10#result}</ship:EventDate><ship:ParcelStatus>IN_TRANSIT</ship:ParcelStatus>
                <ship:Location>08051</ship:Location>
                <ship:Message>Package arrived at location 2</ship:Message>
-            </par:ParcelLogEvent>
+            </par:ParcelEvent>
          <par:RequestHeader/></arg0>
-      </ser:addParcelLogEventJMSProxy>
+      </ser:addParcelEventJMSProxy>
    </soapenv:Body>
 </soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response"/><con:assertion type="SOAP Fault Assertion" name="Not SOAP Fault"/><con:credentials><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="request" name="GetParcelLog-2-5"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>parcelPort_jaxwsBinding</con:interface><con:operation>getParcelEventLog</con:operation><con:request name="GetParcelLog-2-5"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://adc2180341.us.oracle.com:7101/ops-jax-ws-parcel/parcelService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://demo.oracle.com/ops/domain/services/parcel" xmlns:par="http://demo.oracle.com/ops/domain/services/parcel" xmlns:com="http://demo.oracle.com/ops/domain/schema/common">
    <soapenv:Header/>
@@ -1698,19 +1698,19 @@ def dateString = currentDate.format("yyyy-MM-dd'T'HH:mm:ss");</script></con:conf
       </ser:getParcelEventLog>
    </soapenv:Body>
 </soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response"/><con:assertion type="SOAP Fault Assertion" name="Not SOAP Fault"/><con:credentials><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="groovy" name="GenerateDate11" id="794ccd64-8baa-45d1-8bf6-429c278947df"><con:settings/><con:config><script>def currentDate = new Date();
-def dateString = currentDate.format("yyyy-MM-dd'T'HH:mm:ss");</script></con:config></con:testStep><con:testStep type="request" name="UpdateParcelLog-2-IN_TRANSIT-3"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>parcelPort_jaxwsBinding</con:interface><con:operation>addParcelLogEventJMSProxy</con:operation><con:request name="UpdateParcelLog-2-IN_TRANSIT-3"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://adc2180341.us.oracle.com:7101/ops-jax-ws-parcel/parcelService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://demo.oracle.com/ops/domain/services/parcel" xmlns:par="http://demo.oracle.com/ops/domain/services/parcel" xmlns:com="http://demo.oracle.com/ops/domain/schema/common" xmlns:ship="http://demo.oracle.com/ops/domain/schema/shipping">
+def dateString = currentDate.format("yyyy-MM-dd'T'HH:mm:ss");</script></con:config></con:testStep><con:testStep type="request" name="UpdateParcelLog-2-IN_TRANSIT-3"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>parcelPort_jaxwsBinding</con:interface><con:operation>addParcelEventJMSProxy</con:operation><con:request name="UpdateParcelLog-2-IN_TRANSIT-3"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://adc2180341.us.oracle.com:7101/ops-jax-ws-parcel/parcelService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://demo.oracle.com/ops/domain/services/parcel" xmlns:par="http://demo.oracle.com/ops/domain/services/parcel" xmlns:com="http://demo.oracle.com/ops/domain/schema/common" xmlns:ship="http://demo.oracle.com/ops/domain/schema/shipping">
    <soapenv:Header/>
    <soapenv:Body>
-      <ser:addParcelLogEventJMSProxy>
+      <ser:addParcelEventJMSProxy>
          <arg0>
-            <par:ParcelLogEvent>
+            <par:ParcelEvent>
                <com:Id/><ship:ParcelId>${ResponseProperties#ParcelId-2}</ship:ParcelId>
                <ship:EventDate>${GenerateDate11#result}</ship:EventDate><ship:ParcelStatus>IN_TRANSIT</ship:ParcelStatus>
                <ship:Location>90036</ship:Location>
                <ship:Message>Package arrived at location 3</ship:Message>
-            </par:ParcelLogEvent>
+            </par:ParcelEvent>
          <par:RequestHeader/></arg0>
-      </ser:addParcelLogEventJMSProxy>
+      </ser:addParcelEventJMSProxy>
    </soapenv:Body>
 </soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response"/><con:assertion type="SOAP Fault Assertion" name="Not SOAP Fault"/><con:credentials><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="request" name="GetParcelLog-2-7"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>parcelPort_jaxwsBinding</con:interface><con:operation>getParcelEventLog</con:operation><con:request name="GetParcelLog-2-7"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://adc2180341.us.oracle.com:7101/ops-jax-ws-parcel/parcelService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://demo.oracle.com/ops/domain/services/parcel" xmlns:par="http://demo.oracle.com/ops/domain/services/parcel" xmlns:com="http://demo.oracle.com/ops/domain/schema/common">
    <soapenv:Header/>
@@ -1733,19 +1733,19 @@ def dateString = currentDate.format("yyyy-MM-dd'T'HH:mm:ss");</script></con:conf
       </ser:getParcelEventLog>
    </soapenv:Body>
 </soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response"/><con:assertion type="SOAP Fault Assertion" name="Not SOAP Fault"/><con:credentials><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="groovy" name="GenerateDate12" id="cbc34305-0a5e-4417-a8ba-4f5a63d0f7e9"><con:settings/><con:config><script>def currentDate = new Date();
-def dateString = currentDate.format("yyyy-MM-dd'T'HH:mm:ss");</script></con:config></con:testStep><con:testStep type="request" name="UpdateParcelLog-2-DELIVERED"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>parcelPort_jaxwsBinding</con:interface><con:operation>addParcelLogEventJMSProxy</con:operation><con:request name="UpdateParcelLog-2-DELIVERED"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://adc2180341.us.oracle.com:7101/ops-jax-ws-parcel/parcelService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://demo.oracle.com/ops/domain/services/parcel" xmlns:par="http://demo.oracle.com/ops/domain/services/parcel" xmlns:com="http://demo.oracle.com/ops/domain/schema/common" xmlns:ship="http://demo.oracle.com/ops/domain/schema/shipping">
+def dateString = currentDate.format("yyyy-MM-dd'T'HH:mm:ss");</script></con:config></con:testStep><con:testStep type="request" name="UpdateParcelLog-2-DELIVERED"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>parcelPort_jaxwsBinding</con:interface><con:operation>addParcelEventJMSProxy</con:operation><con:request name="UpdateParcelLog-2-DELIVERED"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://adc2180341.us.oracle.com:7101/ops-jax-ws-parcel/parcelService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://demo.oracle.com/ops/domain/services/parcel" xmlns:par="http://demo.oracle.com/ops/domain/services/parcel" xmlns:com="http://demo.oracle.com/ops/domain/schema/common" xmlns:ship="http://demo.oracle.com/ops/domain/schema/shipping">
    <soapenv:Header/>
    <soapenv:Body>
-      <ser:addParcelLogEventJMSProxy>
+      <ser:addParcelEventJMSProxy>
          <arg0>
-            <par:ParcelLogEvent>
+            <par:ParcelEvent>
                <com:Id/><ship:ParcelId>${ResponseProperties#ParcelId-2}</ship:ParcelId>
                <ship:EventDate>${GenerateDate12#result}</ship:EventDate><ship:ParcelStatus>DELIVERED</ship:ParcelStatus>
                <ship:Location>90036</ship:Location>
                <ship:Message>Package delivered!</ship:Message>
-            </par:ParcelLogEvent>
+            </par:ParcelEvent>
          <par:RequestHeader/></arg0>
-      </ser:addParcelLogEventJMSProxy>
+      </ser:addParcelEventJMSProxy>
    </soapenv:Body>
 </soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response"/><con:assertion type="SOAP Fault Assertion" name="Not SOAP Fault"/><con:credentials><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="request" name="GetParcelLog-2-9"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>parcelPort_jaxwsBinding</con:interface><con:operation>getParcelEventLog</con:operation><con:request name="GetParcelLog-2-9"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://adc2180341.us.oracle.com:7101/ops-jax-ws-parcel/parcelService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://demo.oracle.com/ops/domain/services/parcel" xmlns:par="http://demo.oracle.com/ops/domain/services/parcel" xmlns:com="http://demo.oracle.com/ops/domain/schema/common">
    <soapenv:Header/>

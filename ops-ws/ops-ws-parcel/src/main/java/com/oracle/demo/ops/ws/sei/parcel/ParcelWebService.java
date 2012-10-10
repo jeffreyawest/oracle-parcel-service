@@ -38,7 +38,7 @@ public class ParcelWebService
   }
 
   @WebMethod
-  public AddParcelLogEventJMSPROXYResponse addParcelLogEventJMSProxy(AddParcelLogEventJMSPROXYRequest pRequest)
+  public AddParcelEventJMSPROXYResponse addParcelLogEventJMSProxy(AddParcelEventJMSPROXYRequest pRequest)
   {
     return parcelService.addParcelEventJMSPROXY(pRequest);
   }

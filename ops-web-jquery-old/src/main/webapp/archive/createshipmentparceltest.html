@@ -1,0 +1,94 @@
+<html>
+<head>
+  <style type="text/css">
+
+    .divclass {
+      margin: 10px;
+      width: 200px;
+      padding: 5px;
+    }
+
+  </style>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>OPS - WebUI</title>
+  <script type="text/javascript" src="../resources/js/jquery-1.5.js"></script>
+  <script type="text/javascript" src="../resources/js/jquery-ui-1.8.10.custom.min.js"></script>
+  <script type="text/javascript" src="../resources/js/jquery.form.js"></script>
+  <link type="text/css" href="../resources/css/excite-bike/jquery-ui-1.8.9.custom.css" rel="Stylesheet">
+  <script type="text/javascript">
+    $(document).ready(function()
+    {
+      $('#addShipmentButton').click(function()
+      {
+        var url = "/ops-rest/resource/shipment/create.json";
+        $.ajax({ url: url,
+          type: "POST",
+          contentType: "application/json",
+          data: "\"Shipment\":{\"ShippingServiceName\":\"BASIC\",\"ToAddress\":{\"AddressLine1\":\"a\",\"AddressLine2\":\"b\",\"City\":\"c\",\"State\":\"d\",\"{ostalCode\":\"e\"}, \"FromAddress\":{\"AddressLine1\":\"1\",\"AddressLine2\":\"2\",\"City\":\"3\",\"State\":\"4\",\"PostalCode\":\"5\"},\"Parcel\":{\"Contents\":\"a 1\",\"Height\":\"99\",\"Weight\":\"99\",\"Length\":\"99\"}",
+          //data: "{\"parcels\":[{\"length\":1,\"contents\":\"A package in a shipment\",\"weight\":1,\"height\":1, \"parcelStatus\":null,\"createdDate\":null,\"modifiedDate\":null}],\"externalReferenceId\":null,\"toAddress\":{\"state\":\"d\",\"addressLine1\":\"a\",\"addressLine2\":\"b\",\"city\":\"c\",\"postalCode\":\"e\",\"createdDate\":null,\"modifiedDate\":null},\"fromAddress\":{\"state\":\"dd\",\"addressLine1\":\"aa\",\"addressLine2\":\"bb\",\"city\":\"cc\",\"postalCode\":\"ee\",\"createdDate\":null,\"modifiedDate\":null},\"shippingServiceName\":\"BASIC\",\"createdDate\":null,\"modifiedDate\":null}",
+          dataType: "json",
+          success: function (result)
+          {
+            //$("#addShipmentResults").html(result.id + ", " + result.shippingServiceName + ", " + result.parcels[0].contents).fadeIn(2000);
+            $("#addShipmentResults").html(result.Id + ", " + result.ShippingServiceName + ", " + result.Parcel.Contents).fadeIn(2000);
+          },
+          error: function (xhr, status)
+          {
+            alert("An error occurred: " + status);
+          }
+        });
+      })
+
+      $('#addParcelButton').click(function()
+      {
+        var url = "/ops-rest/resource/parcel/create";
+        $.ajax({ url: url,
+          type: "POST",
+          contentType: "application/json",
+          data: "{\"Contents\":\"a 1\",\"Height\":\"99\",\"Weight\":\"99\",\"Length\":\"99\"}",
+          //data: "{\"length\":1,\"contents\":\"A JSON string insert\",\"weight\":1,\"height\":1,\"shipmentId\":205}",
+          dataType: "json",
+          success: function (result)
+          {
+            $("#addParcelResults").html(result.id + ", " + result.contents).fadeIn(2000);
+          },
+          error: function (xhr, status)
+          {
+            alert("An error occurred: " + status);
+          }
+        });
+      })
+
+
+    });
+
+
+  </script>
+</head>
+<!--
+<body style="font-family: Arial;">
+-->
+<body>
+<div style="font-family: arial">
+
+  <h3>Oracle Parcel Service - WebUI</h3>
+
+  <div class="divclass">
+    <div id="addShipmentButton">
+      <button>Add Shipment via JSON</button>
+    </div>
+    <div id="addShipmentResults"></div>
+  </div>
+
+  <div class="divclass">
+    <div id="addParcelButton">
+      <button>Add Parcel via JSON</button>
+    </div>
+    <div id="addParcelResults"></div>
+  </div>
+
+</div>
+
+
+</body>
+</html>

@@ -40,17 +40,17 @@ Generated on: 2011.03.04 at 03:36:16 PM PST
     <bindings scd="tns:GetParcelEventLogResponse">
       <class ref="com.oracle.demo.ops.domain.GetParcelEventLogResponse"/>
     </bindings>
-    <bindings scd="tns:AddParcelLogEventJMSPROXYResponse">
-      <class ref="com.oracle.demo.ops.domain.AddParcelLogEventJMSPROXYResponse"/>
+    <bindings scd="tns:AddParcelEventJMSPROXYResponse">
+      <class ref="com.oracle.demo.ops.domain.AddParcelEventJMSPROXYResponse"/>
     </bindings>
-    <bindings scd="tns:AddParcelLogEventJMSPROXYRequest">
-      <class ref="com.oracle.demo.ops.domain.AddParcelLogEventJMSPROXYRequest"/>
+    <bindings scd="tns:AddParcelEventJMSPROXYRequest">
+      <class ref="com.oracle.demo.ops.domain.AddParcelEventJMSPROXYRequest"/>
     </bindings>
-    <bindings scd="tns:AddParcelLogEventResponse">
-      <class ref="com.oracle.demo.ops.domain.AddParcelLogEventResponse"/>
+    <bindings scd="tns:AddParcelEventResponse">
+      <class ref="com.oracle.demo.ops.domain.AddParcelEventResponse"/>
     </bindings>
-    <bindings scd="tns:AddParcelLogEventRequest">
-      <class ref="com.oracle.demo.ops.domain.AddParcelLogEventRequest"/>
+    <bindings scd="tns:AddParcelEventRequest">
+      <class ref="com.oracle.demo.ops.domain.AddParcelEventRequest"/>
     </bindings>
     <bindings scd="tns:GetParcelEventLogRequest">
       <class ref="com.oracle.demo.ops.domain.GetParcelEventLogRequest"/>
@@ -64,7 +64,7 @@ Generated on: 2011.03.04 at 03:36:16 PM PST
   </bindings>
   <bindings scd="x-schema::tns" xmlns:tns="http://demo.oracle.com/ops/domain/schema/shipping">
     <schemaBindings map="false"/>
-    <bindings scd="~tns:ParcelLogEvent">
+    <bindings scd="~tns:ParcelEvent">
       <class ref="com.oracle.demo.ops.domain.ParcelEvent"/>
     </bindings>
     <bindings scd="~tns:Parcel">

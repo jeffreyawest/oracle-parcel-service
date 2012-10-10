@@ -57,14 +57,14 @@ public class ParcelService implements Serializable
     return resp;
   }
 
-  public AddParcelLogEventJMSPROXYResponse addParcelEventJMSPROXY(AddParcelLogEventJMSPROXYRequest pRequest)
+  public AddParcelEventJMSPROXYResponse addParcelEventJMSPROXY(AddParcelEventJMSPROXYRequest pRequest)
   {
-    EventService.sendEventToQueue(pRequest.getParcelLogEvent());
+    EventService.sendEventToQueue(pRequest.getParcelEvent());
 
-    AddParcelLogEventJMSPROXYResponse resp = new AddParcelLogEventJMSPROXYResponse();
+    AddParcelEventJMSPROXYResponse resp = new AddParcelEventJMSPROXYResponse();
     resp.setResponseHeader(new WebServiceResponseHeader());
     resp.getResponseHeader().setRequestHeader(pRequest.getRequestHeader());
-    resp.setParcelLogEvent(pRequest.getParcelLogEvent());
+    resp.setParcelEvent(pRequest.getParcelEvent());
     return resp;
   }
 
@@ -81,7 +81,7 @@ public class ParcelService implements Serializable
     List<com.oracle.demo.ops.domain.ParcelEvent> list = parcelEventManager.getParcelLogByParcelId(pRequest.getParcelId());
     resp.setResponseHeader(new WebServiceResponseHeader());
     resp.getResponseHeader().setRequestHeader(pRequest.getRequestHeader());
-    resp.getParcelLogEvents().addAll(list);
+    resp.getParcelEvents().addAll(list);
     return resp;
   }
 
