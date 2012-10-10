@@ -56,11 +56,17 @@
               <Implementation-Vendor>Oracle</Implementation-Vendor>
               <Implementation-Vendor-Id>${project.groupId}</Implementation-Vendor-Id>
 
-              <Extension-List>coherence</Extension-List>
-              <!--<Extension-List>coherence active-cache</Extension-List>-->
+              <!--<Extension-List>coherence</Extension-List>-->
+              <Extension-List>coherence active-cache coherence-web-spi</Extension-List>
 
               <coherence-Extension-Name>coherence</coherence-Extension-Name>
               <coherence-Specification-Version>3.7.1.1</coherence-Specification-Version>
+
+              <active-cache-Extension-Name>active-cache</active-cache-Extension-Name>
+              <active-cache-Specification-Version>1.0</active-cache-Specification-Version>
+
+              <coherence-web-spi-Extension-Name>coherence-web-spi</coherence-web-spi-Extension-Name>
+              <coherence-web-spi-Specification-Version>1.0.0.0</coherence-web-spi-Specification-Version>
 
             </manifestEntries>
           </archive>
