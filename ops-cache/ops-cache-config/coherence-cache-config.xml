@@ -56,7 +56,7 @@ Elements" page on the Coherence Wiki (http://wiki.tangosol.com).
       <init-params>
         <init-param>
           <param-name>back-size-limit</param-name>
-          <param-value>8MB</param-value>
+          <param-value>16MB</param-value>
         </init-param>
       </init-params>
     </cache-mapping>
