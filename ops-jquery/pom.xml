@@ -65,5 +65,7 @@
 
 
   </dependencies>
-
+    <properties>
+        <netbeans.hint.deploy.server>WebLogic9</netbeans.hint.deploy.server>
+    </properties>
 </project>

@@ -14,7 +14,7 @@
   <!-- ==================================================================================== -->
 
   <properties>
-    <MIDDLEWARE_HOME>/u01/wls1211/</MIDDLEWARE_HOME>
+    <MIDDLEWARE_HOME>C:/u01/wls1211/</MIDDLEWARE_HOME>
     <WEBLOGIC_HOME>${MIDDLEWARE_HOME}/wlserver_12.1</WEBLOGIC_HOME>
     <COHERENCE_HOME>${MIDDLEWARE_HOME}/coherence_3.7</COHERENCE_HOME>
 
