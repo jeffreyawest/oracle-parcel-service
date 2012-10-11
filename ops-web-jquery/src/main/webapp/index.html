@@ -5,60 +5,108 @@ and open the template in the editor.
 <!DOCTYPE html>
 <html>
      <head>
+         <link rel="stylesheet" type="text/css" href="css/mystyles.css" media="screen" />
         <script src="http://code.jquery.com/jquery-1.4.2.min.js"></script>
         <script src="js/datatable.js"></script>
         <script type="text/javascript" src="js/toggle.js"></script>
         <script>
-            
-                                          
-                                       
-        function testFun(){
-            
-            var id = $("#parcel_input").val(); //This id will be used with the REST back-end.
-            //This id will be used with the REST back-end.
-            
-            $.get("/ops-rest/resources/parcel/" + id, {} ,
-        function(Parcel) {
-           
-            $("#parcel_table1").replaceWith(
-            "<div id=\"parcel_table1\"><table  border='1'><tr>Parcel Information</tr><tr><td> Shipment Id </td><td> Contents </td><td> Height </td><td> Width</td><td>Length</td><td>Weight</td><td> Parcel Status</td></tr>"+
-                "<tr><td>" +Parcel.ShipmentId + 
-                "</td><td>" + Parcel.Contents +
-                "</td><td>"+ Parcel.Height + 
-                "</td><td>" + Parcel.Width + 
-                "</td><td>" + Parcel.Length +
-                "</td><td>" + Parcel.Weight + 
-                "</td><td>" + Parcel.ParcelStatus + "</td></tr></table></div>"
-        );
-            $("#parcel_output_wrapper1").slideDown("slow");
-        },
-        "json");
-                      
-           
-            
-            $.get("/ops-rest/resources/parcel/" + id + "/log", {} ,
-            function(response) { 
-                $("#parcel_table").replaceWith("<table id='parcel_table' border='1'><tr><td>Parcel ID</td><td>Event Date</td><td>Message</td><td>Location</td><td>Parcel Status</td></tr></table>");
-                $.each(response.ParcelEvent, function(index, event){
-                   
-                    $("#parcel_table").append(
-                    "<tr><td>" +response.ParcelEvent[index].ParcelId +
-                        "</td><td>" + response.ParcelEvent[index].EventDate +
-                        "</td><td>" + response.ParcelEvent[index].Message +
-                        "</td><td>" +response.ParcelEvent[index].Location + 
-                        "</td><td>" + response.ParcelEvent[index].ParcelStatus + "</td></tr>");
+            function trackfunction( td_inst){
+               var di = td_inst.innerHTML; 
+                $.get("/ops-rest/resources/parcel/" + di + "/log", {} ,
+                function(response) { 
+                    $("#parcel_table").replaceWith("<table id='parcel_table' border='1'><th><b>Parcel Log Detail</b></th><tr><th>Parcel ID</th><th>Event Date</th><th>Message</th><th>Location</th><th>Parcel Status</th></tr></table>");
+                    $.each(response.ParcelEvent, function(index, event){
+                        
+                        $("#parcel_table").append(
+                        "<tr><td>" +response.ParcelEvent[index].ParcelId +
+                            "</td><td>" + response.ParcelEvent[index].EventDate +
+                            "</td><td>" + response.ParcelEvent[index].Message +
+                            "</td><td>" +response.ParcelEvent[index].Location + 
+                            "</td><td>" + response.ParcelEvent[index].ParcelStatus + "</td></tr>");
+                        
+                        $("#parcel_output_wrapper").slideDown("slow");
+                        
+                    });
+                },"json");
+            }
+            function testFun(){
+                
+                var id = $("#parcel_input").val(); //This id will be used with the REST back-end.
+                //This id will be used with the REST back-end.
+                
+                $.get("/ops-rest/resources/parcel/" + id, {} ,
+                function(Parcel) {
                     
-                    $("#parcel_output_wrapper").slideDown("slow");
                     
-                });
-            },"json");
-        }
+                    $.get("/ops-rest/resources/shipment/" + Parcel.ShipmentId, {} ,
+                    function(response1) { 
+                        
+                        $("#from_address").replaceWith("<table id='from_address'border='1' ><th>From Address</th></table>");
+                         $("#from_address").append(
+                        
+                         "<tr><td>" +      response1.FromAddress.Addressee + 
+                         "</td><td>" + response1.FromAddress.AddressLine1 + 
+                         "</td><td>" + response1.FromAddress.City + 
+                         "</td><td>" + response1.FromAddress.State + 
+                         "</td><td>" + response1.FromAddress.PostalCode + "</td></tr>"
+                     );
+                         $("#to_address").replaceWith("<table id='to_address' border='1'><th>To Address</th></table>");
+                        $("#to_address").append(
+                        "<tr><td>" +  response1.ToAddress.Addressee + 
+                        "</td><td>" + response1.ToAddress.AddressLine1 + 
+                        "</td><td>" + response1.ToAddress.City + 
+                        "</td><td>" + response1.ToAddress.State + 
+                        "</td><td>" + response1.ToAddress.PostalCode + "</td></tr>"
+                    );$("#service_table").replaceWith("<table id='service_table' border='1' ><th>Service Detail</th></table>");
+                        
+                         $("#service_table").append(
+                         "<tr><td>" + response1.ShippingServiceName + "</td></tr>"
+                     );
+                     
+                        
+                        $("#parcel_table1").replaceWith("<table id='parcel_table1' border='1'><th>Shipment Detail</th><tr><th>Parcel ID</th><th>Status</th><th>Contents</th><th>Weight</th><th> W * L * H</th></tr></table>");
+                        $.each(response1.Parcel, function(index, event){
+                            
+                            $("#parcel_table1").append(
+                            "<tr><b><u><td id='parcel_id' onclick='trackfunction(this)'>"+ response1.Parcel[index].Id +
+                                "</td></u></b><td>" + response1.Parcel[index].ParcelStatus +
+                                "</td><td>" + response1.Parcel[index].Contents +
+                                "</td><td>" +response1.Parcel[index].Weight + 
+                                "</td><td>" + response1.Parcel[index].Width + "*" + response1.Parcel[index].Length + "*" + response1.
+                                Parcel[index].Height +"</td></tr>");
+                            
+                            $("#parcel_output_wrapper1").slideDown("slow");
+                            
+                        });
+                    },"json");
+                },
+                "json");
+                
+                
+                
+                $.get("/ops-rest/resources/parcel/" + id + "/log", {} ,
+                function(response) { 
+                    $("#parcel_table").replaceWith("<table id='parcel_table' border='1'><th align='center'><b>Parcel Log Detail</b></th><tr><th>Parcel ID</th><th>Event Date</th><th>Message</th><th>Location</th><th>Parcel Status</th></tr></table>");
+                    $.each(response.ParcelEvent, function(index, event){
+                        
+                        $("#parcel_table").append(
+                        "<tr><td>" +response.ParcelEvent[index].ParcelId +
+                            "</td><td>" + response.ParcelEvent[index].EventDate +
+                            "</td><td>" + response.ParcelEvent[index].Message +
+                            "</td><td>" +response.ParcelEvent[index].Location + 
+                            "</td><td>" + response.ParcelEvent[index].ParcelStatus + "</td></tr>");
+                        
+                        $("#parcel_output_wrapper").slideDown("slow");
+                        
+                    });
+                },"json");
+            }
         
         
                                         
         </script>
     </head>
-    <body style="width: 1024px;margin: auto;background-image:url('image/bg1.png');background-repeat: repeat-x;">
+    <body style="width: 1024px;height:537px;margin: auto;overflow: scroll; background-image:url('image/bg1.png');background-repeat: repeat-x;">
         <table width="100%">
             <tr>
                 <td align="left">
@@ -71,7 +119,16 @@ and open the template in the editor.
             </tr>
         </table>
         
-        Enter Parcel ID :<input id="parcel_input"  name="test" type="text"  onchange="testFun()"/>
+        <font face="verdana" >Enter Parcel ID :</font><input id="parcel_input"  name="test" type="text"  onchange="testFun()"/>
+        <div id="parcel_address_wrapper">
+            <table id="address_table">
+            </table>
+            <table id="from_address"></table>
+            <table id="to_address" ></table>
+        </div>
+        <div>
+            <table id="service_table"></table>
+        </div>
         <div id="parcel_output_wrapper1">
             <div id="parcel_table1"></div>
         </div>
