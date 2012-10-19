@@ -1,0 +1,133 @@
+#navigation{
+    width:100%;
+    height:40px;
+    background-color:#E34444;
+    border:2px;
+    border-radius:25px;
+    -moz-border-radius:25px;
+}
+#welcome{
+    width: 100%;
+    background-color:#E34444;
+    border:2px;
+    border-radius:15px;
+    -moz-border-radius:25px;
+    height:30px;
+    float:left;
+    list-style:none;
+    position:relative;
+    top: 4px;
+    font-size: 14px;
+    display:inline;
+    color:#fff;
+    text-decoration:blink;
+    text-shadow: 1px 2px black;
+}
+#create_shipment{
+    font: bold 11px "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif;
+    width: 40%;
+    background-color:#E34444;
+    border:2px;
+    border-radius:15px;
+    -moz-border-radius:25px;
+    height:25px;
+    float:left;
+    list-style:none;
+    position:relative;
+    top: 10px;
+    left: 15px;
+    font-size: 14px;
+    display:inline;
+    color:#fff;
+    text-decoration:none;
+    
+}
+#copyright{
+    width: 100%;
+    background-color:#E34444;
+    border:2px;
+    border-radius:15px;
+    -moz-border-radius:25px;
+    height:50px;
+    float:left;
+    list-style:none;
+    position:relative;
+    top: 4px;
+    font-size: 12px;
+    display:inline;
+    color:#fff;
+    text-decoration:none;
+    text-shadow: 1px 2px black;
+}
+#navigation ul{
+    margin:0px;
+    padding:0px;
+    border-radius: 20px;
+    -moz-border-radius: 20px;
+    -webkit-border-radius: 20px;
+}
+
+#navigation ul li
+{
+    display:inline;
+    height:30px;
+    float:left;
+    list-style:none;
+    margin-left:15px;
+    position:relative;
+    top: 4px;
+    font-size: 18px;
+    text-shadow: 1px 2px black;
+}
+#navigation li a{
+    color:#fff; 
+    text-decoration:none;
+}
+
+#navigation li a:hover{
+    text-decoration:underline;
+   
+}
+#navigation li ul
+{
+    margin:0px;
+    padding:0px;
+    display:none;
+    position:absolute;
+    left:0px;
+    top:20px;
+    background-color:#E34444;
+    
+   
+    
+}
+#navigation li:hover ul
+{
+    display:block;
+    width:160px;
+}
+
+#navigation li li
+{
+    list-style:none;
+    display:list-item;
+    width:100%;
+    font-size: 16px;
+    
+}
+#navigation li li a{
+    color:#fff;
+    text-decoration:none;
+    
+}
+
+#navigation li li a:hover{
+    text-decoration:underline;
+    
+}
+iframe {
+   overflow: hidden;
+}
+label{
+    font-weight: bold;
+}

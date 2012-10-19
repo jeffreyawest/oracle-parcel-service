@@ -191,13 +191,15 @@ public class ParcelResourceV1
     return getParcelEvents(id);
   }
 
+  
+  
   @GET
-  @Path("all/log.json")
-  public Response getAllParcelEvents(@PathParam("path") String path)
+  @Path("all/log")
+  public List<ParcelEvent> getAllParcelEvents(@PathParam("path") String path)
   {
     List<ParcelEvent> list = parcelEventManager.getAllParcelEvents();
 
-    return Response.status(200).type(MediaType.APPLICATION_JSON).entity(list).build();
+    return list;
   }
 
   @POST

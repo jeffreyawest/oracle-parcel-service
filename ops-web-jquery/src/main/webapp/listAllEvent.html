@@ -4,11 +4,14 @@ and open the template in the editor.
 -->
 <!DOCTYPE html>
 <html>
-    <head>
-        <link rel="stylesheet" type="text/css" href="css/mystyles.css" media="screen" />
-        <link rel="stylesheet" type="text/css" href="css/temp.css" media="screen" />
+     <head>
+         <link rel="stylesheet" type="text/css" href="css/mystyles.css" media="screen" />
         <script src="http://code.jquery.com/jquery-1.4.2.min.js"></script>
+        <script src="js/datatable.js"></script>
+        <script type="text/javascript" src="js/AllEvents.js"></script>
+        
         <script type="text/javascript" src="js/HttpGet.js"></script>
+        <link rel="stylesheet" type="text/css" href="css/temp.css" media="screen" />
     </head>
     <body style="width: 1024px;margin: auto; background-image:url('image/bg1.png');background-repeat: repeat-x;">
         <div>
@@ -17,7 +20,7 @@ and open the template in the editor.
                     <td align="left">
                         <img src="image/logo.png" />
                     </td>
-                        
+
                     <td align="right">
                         <img src="image/logo_weblogic12c_black.gif" style="width:127px;height: 42px;" />
                     </td>
@@ -53,37 +56,11 @@ and open the template in the editor.
                     </li>
                 </ul>   
             </div> 
-            <div style="height:530px;overflow: auto;"> 
-            <font face="verdana" >Enter Parcel ID :</font><input id="parcel_input"  name="test" type="text"  onchange="testFun()"/>
-            <div id="parcel_address_wrapper">
-                <table id="address_table">
-                    <tr>
-                        <td>
-                            <table id="from_address"></table>
-                        </td>
-                        <td>
-                            <table id="to_address" ></table>
-                        </td>
-                    </tr>
-                </table>
-                    
-                    
-            </div>
-            <div id="parcel_service_wrapper1">
-                <table id="service_table"></table>
-            </div>
-            <div id="parcel_output_wrapper1">
-                <div id="parcel_table1"></div>
-            </div>
-                
-            <div id="parcel_output_wrapper">
-                <table id="parcel_table" border='1'>
-                </table>
-            </div>
-            </div> 
-            
-             <iframe src="footer.html" width="1000" height="80" frameborder="0" ></iframe>
+           
+           <div style="height:530px;overflow: auto;">
+                <table id="event_table"></table>
+           </div>
+            <iframe src="footer.html" width="1000" height="80" frameborder="0" ></iframe>
         </div>
     </body>
 </html>
-    

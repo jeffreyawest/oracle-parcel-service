@@ -13,6 +13,7 @@ package com.oracle.demo.ops.rest.v1;
 import com.oracle.demo.ops.domain.Address;
 import com.oracle.demo.ops.domain.Parcel;
 import com.oracle.demo.ops.domain.Shipment;
+import com.oracle.demo.ops.domain.ShippingServiceName;
 import com.oracle.demo.ops.entitymanager.ParcelManager;
 import com.oracle.demo.ops.entitymanager.ShipmentManager;
 
@@ -183,27 +184,33 @@ public class ShipmentResourceV1
   @Produces(MediaType.APPLICATION_JSON)
   public Shipment createShipment(
           // toAddress
-          @FormParam("to_addressLine1") String to_addressLine1,
-          @FormParam("to_addressLine2") String to_addressLine2,
-          @FormParam("to_city") String to_city,
-          @FormParam("to_state") String to_state,
-          @FormParam("to_postalCode") String to_postalCode,
+          @FormParam("to_addressee_h") String to_addressee,
+          @FormParam("to_addressLine1_h") String to_addressLine1,
+          @FormParam("to_addressLine2_h") String to_addressLine2,
+          @FormParam("to_city_h") String to_city,
+          @FormParam("to_state_h") String to_state,
+          @FormParam("to_postalCode_h") String to_postalCode,
           // fromAddress
-          @FormParam("from_addressLine1") String from_addressLine1,
-          @FormParam("from_addressLine2") String from_addressLine2,
-          @FormParam("from_city") String from_city,
-          @FormParam("from_state") String from_state,
-          @FormParam("from_postalCode") String from_postalCode,
+          @FormParam("from_addressee_h") String from_addressee,
+          @FormParam("from_addressLine1_h") String from_addressLine1,
+          @FormParam("from_addressLine2_h") String from_addressLine2,
+          @FormParam("from_city_h") String from_city,
+          @FormParam("from_state_h") String from_state,
+          @FormParam("from_postalCode_h") String from_postalCode,
+          //shipping service
+          @FormParam("shipping_service_name_h") ShippingServiceName shipping_service_name,  
           // Parcel
           @FormParam("parcel_contents") String parcel_contents,
           @FormParam("parcel_weight") String parcel_weight,
           @FormParam("parcel_height") String parcel_height,
           @FormParam("parcel_width") String parcel_width,
           @FormParam("parcel_length") String parcel_length
+          
                                 )
   {
 
     Address toAddress = new Address();
+    toAddress.setAddressee(to_addressee);
     toAddress.setAddressLine1(to_addressLine1);
     toAddress.setAddressLine2(to_addressLine2);
     toAddress.setCity(to_city);
@@ -211,11 +218,14 @@ public class ShipmentResourceV1
     toAddress.setPostalCode(to_postalCode);
 
     Address fromAddress = new Address();
+    fromAddress.setAddressee(from_addressee);
     fromAddress.setAddressLine1(from_addressLine1);
     fromAddress.setAddressLine2(from_addressLine2);
     fromAddress.setCity(from_city);
     fromAddress.setState(from_state);
     fromAddress.setPostalCode(from_postalCode);
+    
+    
 
     Parcel parcel = new Parcel();
     parcel.setContents(parcel_contents);
@@ -227,7 +237,7 @@ public class ShipmentResourceV1
     shipment.setToAddress(toAddress);
     shipment.setFromAddress(fromAddress);
     shipment.getParcels().add(parcel);
-
+    shipment.setShippingServiceName(shipping_service_name);
     Shipment ret = shipmentManager.createShipment(shipment);
     return ret;
   }
