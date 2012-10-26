@@ -250,115 +250,117 @@
 
 <p:tab id="confirm_tab" title="Confirm &amp; Submit">
 
-  <p:panel id="confirmation_panel"
-           header="Confirmation">
+  <h:panelGroup style="position:relative;">
+    <p:panel id="confirmation_panel"
+             header="Confirmation">
 
-    <h:panelGrid columns="2"
-                 width="100%"
-                 style="position:relative;">
-
-      <h:panelGrid columns="1"
+      <h:panelGrid columns="2"
+                   width="100%"
                    style="position:relative;">
 
-        <h:panelGrid columns="2"
+        <h:panelGrid columns="1"
                      style="position:relative;">
 
-          <h:panelGroup style="position:relative;">
-            <p:panel header="From Address">
-              <address:fourLine address="#{shipmentWizardBean.fromAddress}"/>
-            </p:panel>
-          </h:panelGroup>
+          <h:panelGrid columns="2"
+                       style="position:relative;">
 
-          <h:panelGroup style="position:relative;">
-            <p:panel header="To Address">
-              <address:fourLine address="#{shipmentWizardBean.toAddress}"/>
-            </p:panel>
-          </h:panelGroup>
+            <h:panelGroup style="position:relative;">
+              <p:panel header="From Address">
+                <address:fourLine address="#{shipmentWizardBean.fromAddress}"/>
+              </p:panel>
+            </h:panelGroup>
+
+            <h:panelGroup style="position:relative;">
+              <p:panel header="To Address">
+                <address:fourLine address="#{shipmentWizardBean.toAddress}"/>
+              </p:panel>
+            </h:panelGroup>
+
+          </h:panelGrid>
+
+          <p:panel header="Service">
+            <h:outputText value="Service: "/>
+            <h:outputText value="#{shipmentWizardBean.selectedServiceName}"/>
+          </p:panel>
+
+          <p:panel header="Parcels">
+            <p:dataTable value="#{shipmentWizardBean.parcelList}"
+                         id="parcelDataTable"
+                         var="parcel"
+                         widgetVar="varParcelDataRable"
+                         styleClass="data-table"
+                         headerClass="table-header"
+                         rowClasses="row-odd,row-even"
+                         columnClasses="column-center">
+
+              <p:column>
+                <f:facet name="header">Contents</f:facet>
+                <h:outputText value="#{parcel.contents}"/>
+              </p:column>
+
+              <p:column>
+                <f:facet name="header">Weight</f:facet>
+                <h:outputText value="#{parcel.weight}"/>
+              </p:column>
+
+              <p:column>
+                <f:facet name="header">W x L x H</f:facet>
+                <h:outputText value="#{parcel.width} x #{parcel.length} x #{parcel.height}"/>
+              </p:column>
+
+            </p:dataTable>
+          </p:panel>
 
         </h:panelGrid>
 
-        <p:panel header="Service">
-          <h:outputText value="Service: "/>
-          <h:outputText value="#{shipmentWizardBean.selectedServiceName}"/>
-        </p:panel>
+        <h:panelGroup>
 
-        <p:panel header="Parcels">
-          <p:dataTable value="#{shipmentWizardBean.parcelList}"
-                       id="parcelDataTable"
-                       var="parcel"
-                       widgetVar="varParcelDataRable"
-                       styleClass="data-table"
-                       headerClass="table-header"
-                       rowClasses="row-odd,row-even"
-                       columnClasses="column-center">
+          <p:panel header="Tracking Map" style="position:absolute;top:0px;right:0px;">
 
-            <p:column>
-              <f:facet name="header">Contents</f:facet>
-              <h:outputText value="#{parcel.contents}"/>
-            </p:column>
+            <f:view contentType="text/html">
 
-            <p:column>
-              <f:facet name="header">Weight</f:facet>
-              <h:outputText value="#{parcel.weight}"/>
-            </p:column>
+              <p:gmap center="#{shipmentWizardBean.mapModelWrapper.mapCenter}"
+                      zoom="3"
+                      id="trackingMap"
+                      type="HYBRID"
+                      style="width:400px;height:300px;"
+                      streetView="false"
+                      model="#{shipmentWizardBean.mapModelWrapper.mapModel}">
 
-            <p:column>
-              <f:facet name="header">W x L x H</f:facet>
-              <h:outputText value="#{parcel.width} x #{parcel.length} x #{parcel.height}"/>
-            </p:column>
+                <p:ajax event="overlaySelect" listener="#{shipmentWizardBean.onMarkerSelect}"/>
 
-          </p:dataTable>
-        </p:panel>
+                <p:gmapInfoWindow>
+
+                  <p:outputPanel style="text-align:center;display:block;margin:auto:">
+                    <h:outputText value="#{shipmentWizardBean.marker.title}"/>
+                  </p:outputPanel>
+
+                </p:gmapInfoWindow>
+              </p:gmap>
+
+            </f:view>
+
+          </p:panel>
+
+        </h:panelGroup>
 
       </h:panelGrid>
 
-      <h:panelGroup>
+      <h:panelGroup style="position: absolute;float:right;right:10px;bottom:10px;">
 
-        <p:panel header="Tracking Map" style="position:absolute;top:0px;right:0px;">
+        <h:outputText value="Simulate Tracking Events after Submit??"/>
+        <h:selectBooleanCheckbox value="#{shipmentWizardBean.simulateEvents}"/>
 
-          <f:view contentType="text/html">
-
-            <p:gmap center="#{shipmentWizardBean.mapModelWrapper.mapCenter}"
-                    zoom="3"
-                    id="trackingMap"
-                    type="HYBRID"
-                    style="width:400px;height:300px;"
-                    streetView="false"
-                    model="#{shipmentWizardBean.mapModelWrapper.mapModel}">
-
-              <p:ajax event="overlaySelect" listener="#{shipmentWizardBean.onMarkerSelect}"/>
-
-              <p:gmapInfoWindow>
-
-                <p:outputPanel style="text-align:center;display:block;margin:auto:">
-                  <h:outputText value="#{shipmentWizardBean.marker.title}"/>
-                </p:outputPanel>
-
-              </p:gmapInfoWindow>
-            </p:gmap>
-
-          </f:view>
-
-        </p:panel>
+        <p:commandButton value="Submit"
+                         style="float:right;"
+                         ajax="false"
+                         action="#{shipmentWizardBean.finish}">
+        </p:commandButton>
 
       </h:panelGroup>
 
-    </h:panelGrid>
-
-    <h:panelGroup style="position: absolute;float:right;right:10px;bottom:10px;">
-
-      <h:outputText value="Simulate Tracking Events after Submit??"/>
-      <h:selectBooleanCheckbox value="#{shipmentWizardBean.simulateEvents}"/>
-
-      <p:commandButton value="Submit"
-                       style="float:right;"
-                       ajax="false"
-                       action="#{shipmentWizardBean.finish}">
-      </p:commandButton>
-
-    </h:panelGroup>
-
-  </p:panel>
+    </p:panel>
+  </h:panelGroup>
 </p:tab>
 
 <!-- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ -->

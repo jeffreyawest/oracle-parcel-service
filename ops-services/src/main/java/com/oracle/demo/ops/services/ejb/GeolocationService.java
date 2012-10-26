@@ -39,7 +39,7 @@ public class GeolocationService
 {
   private static final String GOOGLE_URL = "http://maps.googleapis.com/maps/api/geocode/json";
 
-  private static final boolean CACHE_ENABLED = false;
+  private static final boolean CACHE_ENABLED = true;
   private static final String CACHE_NAME = "geolocation";
 
   @EJB
@@ -111,13 +111,12 @@ public class GeolocationService
 
           if (fromCache != null)
           {
-            System.out.println("+++FROM CACHE!!!");
             return fromCache;
           }
         }
         else
         {
-          System.out.println("NULL CACHE");
+          System.out.println("Unable to find CACHE");
         }
 
       }
@@ -138,7 +137,6 @@ public class GeolocationService
 
       if (cache != null)
       {
-        System.out.println("PUT TO CACHE");
         cache.put(pPostalCode, location);
       }
 
