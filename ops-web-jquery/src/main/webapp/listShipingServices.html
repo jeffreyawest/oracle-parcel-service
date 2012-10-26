@@ -26,20 +26,20 @@ and open the template in the editor.
                     </td>
                 </tr>
             </table>
-            <div id="navigation">
+             <div id="cssmenu">
                 <ul>
                     <li><a href="index.html">Home</a></li>
-                    <li><a href="CreateShipment.html">Ship</a></li>
+                    <li class='has-sub '><a href="CreateShipment.html">Ship</a></li>
                     <li><a href="track.html">Track</a></li>
                     <li><a href="#">Services</a>
                         <ul>
                             <li><a href="listAllService.html">List All Services</a></li>
-                            <li><a href="#">Add Service</a></li>
+                            <li><a href="addService.html">Add Service</a></li>
                         </ul>
                     </li>
-                    <li><a href="#">Shipment</a>
+                    <li class='active'><a href="#">Shipment</a>
                         <ul>
-                            <li><a href="listAllShipment.html">List All Shipment</a></li>
+                            <li ><a href="listAllShipment.html">List All Shipment</a></li>
                             <li><a href="listShipingServices.html">List Shipping Services</a></li>
                         </ul>
                     </li>
@@ -55,10 +55,20 @@ and open the template in the editor.
                         </ul>
                     </li>
                 </ul>   
-            </div> 
+            </div>
            
            <div style="height:530px;overflow: auto;">
-                <table id="ship_service"></table>
+               <table>
+                   <tr>
+                       <td>
+                           <table id="ship_service"></table>
+                       </td>
+                       <td>
+                           <image id='from_image' src='image/shippingservice.jpg' style='height: 300px; width: 400px;'/>
+                       </td>
+                   </tr>
+               </table>
+                
            </div>
              <iframe src="footer.html" width="1000" height="80" frameborder="0" ></iframe>
         </div>

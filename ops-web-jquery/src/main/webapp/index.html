@@ -7,10 +7,10 @@ and open the template in the editor.
      <head>
          <link rel="stylesheet" type="text/css" href="css/mystyles.css" media="screen" />
         <script src="http://code.jquery.com/jquery-1.4.2.min.js"></script>
-        
+        <link rel="stylesheet" type="text/css" href="css/temp.css" media="screen" />
         
         <script type="text/javascript" src="js/HttpGet.js"></script>
-        <link rel="stylesheet" type="text/css" href="css/temp.css" media="screen" />
+        
     </head>
     <body style="width: 1024px;margin: auto; background-image:url('image/bg1.png');background-repeat: repeat-x;">
           <table width="100%">
@@ -24,15 +24,15 @@ and open the template in the editor.
                     </td>
                 </tr>
             </table>
-            <div id="navigation">
+            <div id="cssmenu">
                 <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="CreateShipment.html">Ship</a></li>
+                    <li class='active'><a href="index.html">Home</a></li>
+                    <li class='has-sub '><a href="CreateShipment.html">Ship</a></li>
                     <li><a href="track.html">Track</a></li>
                     <li><a href="#">Services</a>
                         <ul>
                             <li><a href="listAllService.html">List All Services</a></li>
-                            <li><a href="#">Add Service</a></li>
+                            <li><a href="addService.html">Add Service</a></li>
                         </ul>
                     </li>
                     <li><a href="#">Shipment</a>
@@ -56,7 +56,7 @@ and open the template in the editor.
             </div> 
         
         <div>
-            <div id="welcome" style="top: 50px;">
+            <div id="welcome" style="top: 50px;" >
                 <font style="position: relative;left: 15px;top: 6px;text-shadow: 1px 2px black;font-size: 16px;"> Welcome!</font>
             </div>
             

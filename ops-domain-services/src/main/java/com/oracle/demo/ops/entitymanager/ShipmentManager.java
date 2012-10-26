@@ -54,7 +54,7 @@ public class ShipmentManager implements Serializable
 
     for (Parcel parcel : parcels)
     {
-      //em.persist(parcel);
+      em.persist(parcel);
 
       com.oracle.demo.ops.domain.ParcelEvent event = new com.oracle.demo.ops.domain.ParcelEvent();
       event.setParcelId(parcel.getId());
@@ -63,7 +63,7 @@ public class ShipmentManager implements Serializable
       event.setEventDate(Calendar.getInstance());
       event.setParcelStatus(ParcelStatus.BILLING_INFO_RECEIVED);
 
-      //em.merge(event);
+      em.merge(event);
     }
 
     em.persist(shipment);

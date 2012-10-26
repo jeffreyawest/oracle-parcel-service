@@ -23,15 +23,15 @@ and open the template in the editor.
                     </td>
                 </tr>
             </table>
-            <div id="navigation">
+             <div id="cssmenu">
                 <ul>
                     <li><a href="index.html">Home</a></li>
                     <li><a href="CreateShipment.html">Ship</a></li>
-                    <li><a href="track.html">Track</a></li>
+                    <li class='active' ><a href="track.html">Track</a></li>
                     <li><a href="#">Services</a>
                         <ul>
                             <li><a href="listAllService.html">List All Services</a></li>
-                            <li><a href="#">Add Service</a></li>
+                            <li><a href="addService.html">Add Service</a></li>
                         </ul>
                     </li>
                     <li><a href="#">Shipment</a>
@@ -54,7 +54,8 @@ and open the template in the editor.
                 </ul>   
             </div> 
             <div style="height:530px;overflow: auto;"> 
-            <font face="verdana" >Enter Parcel ID :</font><input id="parcel_input"  name="test" type="text"  onchange="testFun()"/>
+           <label for='parcel_input'>Enter Parcel Id:</label><input id="parcel_input"  name="test" type="text"  onchange="testParcel()"/>
+           <label for='shipment_input'>Enter Shipment Id:</label><input id="shipment_input"  name="test" type="text"  onchange="testShipment()"/>
             <div id="parcel_address_wrapper">
                 <table id="address_table">
                     <tr>
@@ -66,18 +67,16 @@ and open the template in the editor.
                         </td>
                     </tr>
                 </table>
-                    
-                    
-            </div>
+             </div>
             <div id="parcel_service_wrapper1">
                 <table id="service_table"></table>
             </div>
             <div id="parcel_output_wrapper1">
-                <div id="parcel_table1"></div>
+                <div id="parcel_table"></div>
             </div>
                 
             <div id="parcel_output_wrapper">
-                <table id="parcel_table" border='1'>
+                <table id="parcel_table1" border='1'>
                 </table>
             </div>
             </div> 

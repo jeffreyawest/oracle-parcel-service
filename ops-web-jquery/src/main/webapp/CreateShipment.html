@@ -5,33 +5,33 @@ and open the template in the editor.
 <!DOCTYPE html>
 <html>
     <head>
-        <link rel="stylesheet" type="text/css" href="css/mystyles.css" media="screen" />
-        <script src="http://code.jquery.com/jquery-1.4.2.min.js"></script>
-        <script type="text/javascript" src="js/CreateShipment.js"></script>
-        <link rel="stylesheet" type="text/css" href="css/temp.css" media="screen" />
+        <link rel='stylesheet' type='text/css' href='css/mystyles.css' media='screen' />
+        <script src='http://code.jquery.com/jquery-1.4.2.min.js'></script>
+        <script type='text/javascript' src='js/CreateShipment.js'></script>
+        <link rel='stylesheet' type='text/css' href='css/temp.css' media='screen' />
     </head>
     <body style="width: 1024px;margin: auto; background-image:url('image/bg1.png');background-repeat: repeat-x;">
 
-           <table width="100%">
+           <table width='100%'>
                 <tr>
-                    <td align="left">
-                        <img src="image/logo.png" />
+                    <td align='left'>
+                        <img src='image/logo.png' />
                     </td>
 
-                    <td align="right">
-                        <img src="image/logo_weblogic12c_black.gif" style="width:127px;height: 42px;" />
+                    <td align='right'>
+                        <img src='image/logo_weblogic12c_black.gif' style='width:127px;height: 42px;' />
                     </td>
                 </tr>
             </table>
-            <div id="navigation">
+             <div id="cssmenu">
                 <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="CreateShipment.html">Ship</a></li>
+                    <li ><a href="index.html">Home</a></li>
+                    <li class='active'><a href="CreateShipment.html">Ship</a></li>
                     <li><a href="track.html">Track</a></li>
                     <li><a href="#">Services</a>
                         <ul>
                             <li><a href="listAllService.html">List All Services</a></li>
-                            <li><a href="#">Add Service</a></li>
+                            <li><a href="addService.html">Add Service</a></li>
                         </ul>
                     </li>
                     <li><a href="#">Shipment</a>
@@ -52,84 +52,82 @@ and open the template in the editor.
                         </ul>
                     </li>
                 </ul>   
-            </div> 
-
-            <div style="height:530px; position: relative; top:50px;">
-
-                <div id="create_shipment"><p style="position: relative;bottom: 10px;left: 20px;">Create a Shipment Wizard</p>
-                </div>
-
-
-
-                <form action="http://localhost:7001/ops-rest/resources/shipment/create" method="post">
-
-                    <div id="from_info" style="position: relative;top: 50px;right: 0px;" >
-                        <table>
-                            <tr>
-                                <td>
-                                    <table id="from_address_table" >
-                                        <tr><th style="alignment-adjust: middle;">Sender Information</th></tr>
-                                        <tr>
-                                            <td><label for="from_addressee">In Care of: *</label></td>
-                                            <td><input type="text" name="from_addressee" id="from_addressee" onblur='validateEmpty(from_addressee)'/></td>
-                                        </tr>
-                                        <tr>
-                                            <td><label for="from_addressLine1">Address Line 1: *</label></td>
-                                            <td><input type="text" name="from_addressLine1" id="from_addressLine1" onblur='validateEmpty(from_addressLine1)'/></td>
-                                        </tr>
-                                        <tr>
-                                            <td><label for="from_addressLine2">Address Line 2:</label></td>
-                                            <td><input type="text" name="from_addressLine2" id="from_addressLine2" /></td>
-                                        </tr>
-                                        <tr>
-                                            <td><label for="from_city">City : </label></td>
-                                            <td><input type="text" name="from_city" id="from_city"/></td>
-                                        </tr>
-                                        <tr>
-                                            <td><label for="from_state">State :</label></td>
-                                            <td><input type="text" name="from_state" id="from_state"/></td>
-                                        </tr>
-                                        <tr>
-                                            <td><label for="from_postalCode">Postal Code :</label></td>
-                                            <td><input type="text" name="from_postalCode" id="from_postalCode" onblur='validateEmpty(from_postalCode)'/></td>
-                                        </tr>
-                                        <tr>
-                                            
-                                            <td><button type='button' onclick='from()'>Next</button></td> 
-                                        </tr>
-                                    </table>
-                                </td>
-                                <td>
-                                    <image id='from_image' src='image/from.jpg' style='height: 300px; width: 400px;'/>
-                                </td>
-                            </tr>
-                        </table>
-                        
-
-                        <input type="hidden" name="from_addressee_h" id="from_addressee_h" />
-                        <input type="hidden" name="from_addressLine1_h" id="from_addressLine1_h" />
-                        <input type="hidden" name="from_addressLine2_h" id="from_addressLine2_h" />
-                        <input type="hidden" name="from_city_h" id="from_city_h" />
-                        <input type="hidden" name="from_state_h" id="from_state_h" />
-                        <input type="hidden" name="from_postalCode_h" id="from_postalCode_h" />
-
-                        <input type='hidden' name='to_addressee_h' id='to_addressee_h' />
-                        <input type='hidden' name='to_addressLine1_h' id='to_addressLine1_h' />
-                        <input type='hidden' name='to_addressLine2_h' id='to_addressLine2_h' />
-                        <input type='hidden' name='to_city_h' id='to_city_h' />
-                        <input type='hidden' name='to_state_h' id='to_state_h' />
-                        <input type='hidden' name='to_postalCode_h' id='to_postalCode_h' />
-
-                        <input type='hidden' name='shipping_service_name_h' id='shipping_service_name_h' />
-
-                        
-                 </div>
-                </form>
-            
             </div>
-            
-                <iframe src="footer.html" width="1000" height="80" frameborder="0" ></iframe>
-            
+
+            <div style='height:530px;overflow: auto;'>
+                <form action='http://localhost:7001/ops-rest/resources/shipment/create' method='post' name='createshipment'>
+                    <div id='create_shipment'><p style="-webkit-margin-start: 16px;-webkit-margin-before: 0em;position:relative;top: 5px;">Create a Shipment Wizard</p>
+                        <div id="navigation1" style="vertical-align: top;">
+                            <ul>
+                                <li><a href='#' id="sender">Sender Info</a></li>
+                                <li><a href='#' id="receiver">Receiver Info</a></li>
+                                <li><a href='#' id="shipping">Shipping Detail</a></li>
+                                <li><a href='#' id="parcel">Add Parcel Detail</a></li>
+                            </ul>
+                            <div style="vertical-align: top;">
+                                <table>                            
+                                    <tr>
+                                        <td>
+                                            <table id='from_address_table' style="float: left;">
+                                                <tr><th colspan='2' >Sender Information</th></tr>
+                                                <tr>
+                                                    <td><label for='from_addressee'>In Care of: *</label></td>
+                                                    <td><input type='text' name='from_addressee' id='from_addressee' onblur='validateEmpty(from_addressee)'/></td>
+                                                </tr>
+                                                <tr>
+                                                    <td><label for='from_addressLine1'>Address Line 1: *</label></td>
+                                                    <td><input type='text' name='from_addressLine1' id='from_addressLine1' onblur='validateEmpty(from_addressLine1)'/></td>
+                                                </tr>
+                                                <tr>
+                                                    <td><label for='from_addressLine2'>Address Line 2:</label></td>
+                                                    <td><input type='text' name='from_addressLine2' id='from_addressLine2' /></td>
+                                                </tr>
+                                                <tr>
+                                                    <td><label for='from_city'>City : </label></td>
+                                                    <td><input type='text' name='from_city' id='from_city'/></td>
+                                                </tr>
+                                                <tr>
+                                                    <td><label for='from_state'>State :</label></td>
+                                                    <td><input type='text' name='from_state' id='from_state'/></td>
+                                                </tr>
+                                                <tr>
+                                                    <td><label for='from_postalCode'>Postal Code :</label></td>
+                                                    <td><input type='text' name='from_postalCode' id='from_postalCode' onblur='validateEmpty(from_postalCode)'/></td>
+                                                </tr>
+                                                    <tr>
+                                                        
+                                                    <td><button type='button' style='background-color: #74b0c6;font-family:Helvetica,Arial,Verdana,sans-serif;'  onclick='from()'>Next</button></td> 
+                                                </tr>
+                                            </table>
+                                        </td>
+                                        <td>
+                                            <image id='from_image' src='image/from.jpg' style='height: 300px; width: 400px;'/>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>                       
+                    </div>              
+
+
+                    <input type='hidden' name='from_addressee_h' id='from_addressee_h' />
+                    <input type='hidden' name='from_addressLine1_h' id='from_addressLine1_h' />
+                    <input type='hidden' name='from_addressLine2_h' id='from_addressLine2_h' />
+                    <input type='hidden' name='from_city_h' id='from_city_h' />
+                    <input type='hidden' name='from_state_h' id='from_state_h' />
+                    <input type='hidden' name='from_postalCode_h' id='from_postalCode_h' />
+
+                    <input type='hidden' name='to_addressee_h' id='to_addressee_h' />
+                    <input type='hidden' name='to_addressLine1_h' id='to_addressLine1_h' />
+                    <input type='hidden' name='to_addressLine2_h' id='to_addressLine2_h' />
+                    <input type='hidden' name='to_city_h' id='to_city_h' />
+                    <input type='hidden' name='to_state_h' id='to_state_h' />
+                    <input type='hidden' name='to_postalCode_h' id='to_postalCode_h' />
+
+                    <input type='hidden' name='shipping_service_name_h' id='shipping_service_name_h' />                            
+                </form>            
+            </div>            
+                <iframe src='footer.html' width='1000' height='80' frameborder='0' ></iframe>       
 
 
     </body>

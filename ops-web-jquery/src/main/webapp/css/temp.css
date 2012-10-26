@@ -1,11 +1,84 @@
-#navigation{
-    width:100%;
-    height:40px;
-    background-color:#E34444;
-    border:2px;
-    border-radius:25px;
-    -moz-border-radius:25px;
-}
+#cssmenu{
+	border:none;
+	border:0px;
+	margin:0px;
+	padding:0px;
+	font-family:verdana,geneva,arial,helvetica,sans-serif;
+	font-size:14px;
+	font-weight:bold;
+	color:8e8e8e;
+	}
+#cssmenu ul{
+	background:url(images/menu-bg.gif) top left repeat-x;
+	height:43px;
+	list-style:none;
+	margin:0;
+	padding:0;
+	}
+	#cssmenu li{
+		float:left;
+		padding:0px 8px 0px 8px;
+		}
+	#cssmenu li a{
+		color:#666666;
+		display:block;
+		font-weight:bold;
+		line-height:43px;
+		padding:0px 25px;
+		text-align:center;
+		text-decoration:none;
+		}
+		#cssmenu li a:hover{
+			color:#000000;
+			text-decoration:none;
+			}
+	#cssmenu li ul{
+		background:#e0e0e0;
+		border-left:2px solid #a80329;
+		border-right:2px solid #a80329;
+		border-bottom:2px solid #a80329;
+		display:none;
+		height:auto;
+		filter:alpha(opacity=95);
+		opacity:0.95;
+		position:absolute;
+		width:225px;
+		z-index:200;
+		/*top:1em;
+		/*left:0;*/
+		}
+	#cssmenu li:hover ul{
+		display:block;
+		}
+	#cssmenu li li {
+		display:block;
+		float:none;
+		padding:0px;
+		width:225px;
+		}
+	#cssmenu li ul a{
+		display:block;
+		font-size:12px;
+		font-style:normal;
+		padding:0px 10px 0px 15px;
+		text-align:left;
+		}
+		#cssmenu li ul a:hover{
+			background:#949494;
+			color:#000000;
+			opacity:1.0;
+			filter:alpha(opacity=100);
+			}
+	#cssmenu p{
+		clear:left;
+		}	
+	#cssmenu .active > a{
+		background:url(images/current-bg.gif) top left repeat-x;
+		color:#ffffff;
+		}
+	#cssmenu .active > a:hover {
+		color:#ffffff;
+		}
 #welcome{
     width: 100%;
     background-color:#E34444;
@@ -30,12 +103,11 @@
     border:2px;
     border-radius:15px;
     -moz-border-radius:25px;
-    height:25px;
+    height:30px;
     float:left;
     list-style:none;
-    position:relative;
-    top: 10px;
-    left: 15px;
+    position: relative;
+    top: 40px;    
     font-size: 14px;
     display:inline;
     color:#fff;
@@ -59,75 +131,54 @@
     text-decoration:none;
     text-shadow: 1px 2px black;
 }
-#navigation ul{
-    margin:0px;
-    padding:0px;
-    border-radius: 20px;
-    -moz-border-radius: 20px;
-    -webkit-border-radius: 20px;
-}
 
-#navigation ul li
-{
-    display:inline;
-    height:30px;
-    float:left;
-    list-style:none;
-    margin-left:15px;
-    position:relative;
-    top: 4px;
-    font-size: 18px;
-    text-shadow: 1px 2px black;
-}
-#navigation li a{
-    color:#fff; 
-    text-decoration:none;
-}
-
-#navigation li a:hover{
-    text-decoration:underline;
-   
-}
-#navigation li ul
-{
-    margin:0px;
-    padding:0px;
-    display:none;
-    position:absolute;
-    left:0px;
-    top:20px;
-    background-color:#E34444;
-    
-   
-    
-}
-#navigation li:hover ul
-{
-    display:block;
-    width:160px;
-}
-
-#navigation li li
-{
-    list-style:none;
-    display:list-item;
-    width:100%;
-    font-size: 16px;
-    
-}
-#navigation li li a{
-    color:#fff;
-    text-decoration:none;
-    
-}
-
-#navigation li li a:hover{
-    text-decoration:underline;
-    
-}
-iframe {
+iframe{
    overflow: hidden;
 }
 label{
     font-weight: bold;
 }
+div#navigation1{
+    width: 800px;
+    font-family:Helvetica,Arial,Verdana,sans-serif;
+    text-transform:uppercase;
+}
+#navigation1 ul{
+	margin:0;
+	padding:0;
+	list-style-type:none;
+	width:auto;
+	position:relative;
+	display:block;
+	height:36px;
+	text-transform:uppercase;
+	font-size:12px;
+	font-weight:bold;
+	background:transparent url('images/OFF.gif') repeat-x top left;
+	font-family:Helvetica,Arial,Verdana,sans-serif;
+	border-bottom:4px solid #004c99;
+	border-top:1px solid #74b0c6;
+	float:left;
+}
+#navigation1 li{
+	display:block;
+	float:left;
+	margin:0;
+	padding:0;
+	}
+#navigation1 li a{
+	display:block;
+	float:left;
+	color:#6d7078;
+	text-decoration:none;
+	font-weight:bold;
+	padding:12px 20px 0 20px;
+	height:24px;
+	background:transparent url('images/DIVIDER.gif') no-repeat top right;
+	}
+#navigation1 li a:hover{
+	background:transparent url('images/HOVER.gif') no-repeat top right;	
+	}
+        #navigation1 li a#sender{
+          background:transparent url('images/HOVER.gif') no-repeat top right;  
+        }

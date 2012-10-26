@@ -1,6 +1,6 @@
 $.get("/ops-rest/resources/parcel/", {} ,
     function(response1) { 
-        $("#parcels_table").replaceWith("<table id='parcels_table' border='1'><tr><th>Parcels</th><tr><th>Id</th><th>Created Date</th><th>Shipment ID</th><th>Height</th><th>Weight</th><th>Width</th><th>Length</th><th>Parcel Status</th></tr></table>");
+        $("#parcels_table").replaceWith("<table id='parcels_table' border='1'><tr><th colspan='8' text-align='center'>Parcels</th><tr><th>Id</th><th>Created Date</th><th>Shipment ID</th><th>Height</th><th>Weight</th><th>Width</th><th>Length</th><th>Parcel Status</th></tr></table>");
         $.each(response1.Parcel, function(index, event){
         
             $("#parcels_table").append(

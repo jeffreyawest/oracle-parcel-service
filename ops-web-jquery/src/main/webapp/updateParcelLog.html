@@ -6,16 +6,106 @@ and open the template in the editor.
 <html>
      <head>
          <link rel="stylesheet" type="text/css" href="css/mystyles.css" media="screen" />
-        <script src="http://code.jquery.com/jquery-1.4.2.min.js"></script>
-        <script src="js/datatable.js"></script>
+        <script src="http://code.jquery.com/jquery-1.4.2.min.js"></script>    
         
-        <script type="text/javascript" src="js/HttpGet.js"></script>
+        <script type="text/javascript" src="js/updateLog.js"></script>
         <link rel="stylesheet" type="text/css" href="css/temp.css" media="screen" />
     </head>
     <body style="width: 1024px;margin: auto; background-image:url('image/bg1.png');background-repeat: repeat-x;">
-       
-            <div style="height:530px;overflow: auto;">
-            </div>
+        <table width="100%">
+            <tr>
+                <td align="left">
+                    <img src="image/logo.png" />
+                </td>
+
+                <td align="right">
+                    <img src="image/logo_weblogic12c_black.gif" style="width:127px;height: 42px;" />
+                </td>
+            </tr>
+        </table>
+        
+        <div id="cssmenu">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li class='has-sub '><a href="CreateShipment.html">Ship</a></li>
+                    <li><a href="track.html">Track</a></li>
+                    <li ><a href="#">Services</a>
+                        <ul>
+                            <li><a href="listAllService.html">List All Services</a></li>
+                            <li><a href="addService.html">Add Service</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Shipment</a>
+                        <ul>
+                            <li><a href="listAllShipment.html">List All Shipment</a></li>
+                            <li><a href="listShipingServices.html">List Shipping Services</a></li>
+                        </ul>
+                    </li>
+                    <li class='active'><a href="#">Parcel</a>
+                        <ul>
+                            <li><a href="listAllParcel.html">List All Parcels</a></li>
+                            <li><a href="updateParcelLog.html">Update Parcel Log</a></li>
+
+                        </ul></li>
+                    <li><a href="#">Events</a>
+                        <ul>
+                            <li><a href="listAllEvent.html">List All Events</a></li>
+                        </ul>
+                    </li>
+                </ul>   
+            </div> 
+         <div style='height:530px;overflow: auto;'>
+             <table>
+                 <tr>
+                     <td>
+                         <table>
+                             <th colspan="2">Input Parcel Detail</th>
+                             <tr>
+                                 <td><label for='parcel_id'>Parcel ID</label></td>
+                                 <td><input type='text' name='parcel_id' id='parcel_id' onchange="parcel_refresh()"/></td>
+                             </tr>
+                             <tr><td><label for='parcel_status'>Parcel Status</label></td>
+                                 <td><select name='parcel_status' id="parcel_status"> 
+                                         <option value="BILLING_INFO_RECEIVED" >BILLING_INFO_RECEIVED</option>
+                                         <option value="PARCEL_RECEIVED" >PARCEL_RECEIVED</option>
+                                         <option value="IN_TRANSIT" >IN_TRANSIT</option>
+                                         <option value="OUT_FOR_DELIVERY" >OUT_FOR_DELIVERY</option>
+                                         <option value="DELIVERED" >DELIVERED</option>
+                                         <option value="DELIVERY_EXCEPTION" >DELIVERY_EXCEPTION</option>
+                                     </select>
+                                 </td>
+                             </tr>
+                             <tr>
+                                 <td><label for='parcel_postal_code'>Parcel Location Postal Code</label></td>
+                                 <td><input type='text' name='parcel_postal_code' id='parcel_postal_code'/></td>
+                             </tr>
+                             <tr><td><label for='parcel_event_date'>Event Date</label></td>
+                                 <td><input type='datetime' name='parcel_event_date' id='parcel_event_date'/></td>
+                             </tr>
+                             <tr><td><label for='service_description'>Message</label></td>
+                                 <td><input type='text' name='service_description' id='service_description'/></td>
+                             </tr>
+                             <tr><td></td>
+                                 <td><input type='submit'  value="Submit"/></td>
+                             </tr>
+                         </table>
+                     </td>
+                     <td>
+                         <table border='1' id='parcel_update'>
+                             <tr>
+                                 <th colspan='2'> Parcel Detail</th>
+                             </tr>
+                             <tr><td>Shipment Created</td><td></td></tr>
+                             <tr><td>Shipment Id</td><td>0</td></tr>
+                             <tr><td> Status</td><td></td></tr>
+                             <tr><td>Contents</td><td></td></tr>
+                             <tr><td>Dimensions(H*W*L) </td><td>0*0*0</td></tr>
+                             <tr><td>Weight</td><td></td></tr>
+                         </table>
+                     </td>
+                 </tr>
+             </table>
+         </div>
             <iframe src="footer.html" width="1000" height="80" frameborder="0" ></iframe>
         
     </body>

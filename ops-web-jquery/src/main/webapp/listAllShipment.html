@@ -4,8 +4,8 @@ and open the template in the editor.
 -->
 <!DOCTYPE html>
 <html>
-     <head>
-         <link rel="stylesheet" type="text/css" href="css/mystyles.css" media="screen" />
+    <head>
+        <link rel="stylesheet" type="text/css" href="css/mystyles.css" media="screen" />
         <script src="http://code.jquery.com/jquery-1.4.2.min.js"></script>
         <script type="text/javascript" src="js/AllShipment.js"></script>
         <link rel="stylesheet" type="text/css" href="css/mystyles.css" media="screen" />
@@ -24,18 +24,18 @@ and open the template in the editor.
                     </td>
                 </tr>
             </table>
-            <div id="navigation">
+             <div id="cssmenu">
                 <ul>
                     <li><a href="index.html">Home</a></li>
-                    <li><a href="CreateShipment.html">Ship</a></li>
+                    <li class='has-sub '><a href="CreateShipment.html">Ship</a></li>
                     <li><a href="track.html">Track</a></li>
                     <li><a href="#">Services</a>
                         <ul>
                             <li><a href="listAllService.html">List All Services</a></li>
-                            <li><a href="#">Add Service</a></li>
+                            <li><a href="addService.html">Add Service</a></li>
                         </ul>
                     </li>
-                    <li><a href="#">Shipment</a>
+                    <li class='active'><a href="#">Shipment</a>
                         <ul>
                             <li><a href="listAllShipment.html">List All Shipment</a></li>
                             <li><a href="listShipingServices.html">List Shipping Services</a></li>
@@ -54,11 +54,11 @@ and open the template in the editor.
                     </li>
                 </ul>   
             </div> 
-            
+
             <div style="height:530px;overflow: auto;">
-            <table id="shipments_table"></table>
+                <table id="shipments_table"></table>
             </div>
-             <iframe src="footer.html" width="1000" height="80" frameborder="0" ></iframe>
+            <iframe src="footer.html" width="1000" height="80" frameborder="0" ></iframe>
         </div>
     </body>
 </html>

@@ -72,7 +72,7 @@ public class ShippingServiceManager implements Serializable
     return true;
   }
 
-  private void insertOrUpdateShippingService(ShippingServiceName pName, String pDescrition, double pCost, int pDeliveryEstimate)
+   public void insertOrUpdateShippingService(ShippingServiceName pName, String pDescrition, double pCost, int pDeliveryEstimate)
   {
     ShippingService service = findShippingServiceByName(pName);
 

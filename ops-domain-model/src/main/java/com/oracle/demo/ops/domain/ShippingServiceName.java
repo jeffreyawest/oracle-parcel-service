@@ -34,7 +34,11 @@ public enum ShippingServiceName {
 
     BASIC,
     EXPEDITED,
-    OVERNIGHT;
+    OVERNIGHT,
+    SUPERFAST,
+    BESTEST,
+    SUPERDUPER,
+    CHAMPS;
 
     public String value() {
         return name();
