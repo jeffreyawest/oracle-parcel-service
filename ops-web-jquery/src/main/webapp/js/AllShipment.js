@@ -27,10 +27,21 @@ $.get("/ops-rest/resources/shipment/all", {} ,
          
     $.get("/ops-rest/resources/shipment/" + shipment_id, {} ,
         function(response2) { 
-                 
+              // alert(Object.keys(response2).length);
+               //  alert(Object.keys(response2.Parcel).length);
             $('#parcel_log_temp'+ i).replaceWith("<table id='parcel_log_temp"+i+"' border='1'><tr><th>Parcel ID</th><th>Status</th><th>Contents</th><th>Weight</th><th> W * L * H</th></tr></table>");
-             if(Object.keys(response2.Parcel).length != 9)
-                 {
+             if( Object.keys(response2.Parcel).length == 10)
+                 {    
+                      $('#parcel_log_temp'+ i).append("<tr><td>"+ response2.Parcel.Id +
+                        "</td><td>" + response2.Parcel.ParcelStatus +
+                        "</td><td>" + response2.Parcel.Contents +
+                        "</td><td>" +response2.Parcel.Weight + 
+                        "</td><td>" + response2.Parcel.Width + "*" + response2.Parcel.Length + "*" + response2.Parcel.Height +"</td></tr>");
+                      
+                     
+                 }
+             else{
+                        
                       $.each(response2.Parcel, function(index, event){
                         $('#parcel_log_temp'+ i).append("<tr><td>"+ response2.Parcel[index].Id +
                         "</td><td>" + response2.Parcel[index].ParcelStatus +
@@ -38,13 +49,6 @@ $.get("/ops-rest/resources/shipment/all", {} ,
                         "</td><td>" +response2.Parcel[index].Weight + 
                         "</td><td>" + response2.Parcel[index].Width + "*" + response2.Parcel[index].Length + "*" + response2.Parcel[index].Height +"</td></tr>");
                 });
-                 }
-             else{
-                         $('#parcel_log_temp'+ i).append("<tr><td>"+ response2.Parcel.Id +
-                        "</td><td>" + response2.Parcel.ParcelStatus +
-                        "</td><td>" + response2.Parcel.Contents +
-                        "</td><td>" +response2.Parcel.Weight + 
-                        "</td><td>" + response2.Parcel.Width + "*" + response2.Parcel.Length + "*" + response2.Parcel.Height +"</td></tr>");
              }
            
         },"json");  
