@@ -13,14 +13,12 @@ package com.oracle.demo.ops.rest.v1;
 import com.oracle.demo.ops.Constants;
 import com.oracle.demo.ops.domain.Parcel;
 import com.oracle.demo.ops.domain.ParcelEvent;
-import com.oracle.demo.ops.domain.ParcelStatus;
 import com.oracle.demo.ops.entitymanager.ParcelEventManager;
 import com.oracle.demo.ops.entitymanager.ParcelManager;
 import com.oracle.demo.ops.entitymanager.ShipmentManager;
 import com.oracle.demo.ops.services.ejb.EventService;
 import com.oracle.demo.ops.services.ejb.ParcelService;
 import com.oracle.demo.ops.services.ejb.ShipmentService;
-import java.util.Calendar;
 
 import javax.annotation.PostConstruct;
 import javax.ejb.EJB;
@@ -193,15 +191,13 @@ public class ParcelResourceV1
     return getParcelEvents(id);
   }
 
-  
-  
   @GET
-  @Path("all/log")
-  public List<ParcelEvent> getAllParcelEvents(@PathParam("path") String path)
+  @Path("all/log.json")
+  public Response getAllParcelEvents(@PathParam("path") String path)
   {
     List<ParcelEvent> list = parcelEventManager.getAllParcelEvents();
 
-    return list;
+    return Response.status(200).type(MediaType.APPLICATION_JSON).entity(list).build();
   }
 
   @POST
@@ -227,5 +223,3 @@ public class ParcelResourceV1
     return Response.status(200).type(MediaType.APPLICATION_JSON).entity(new ParcelEvent()).build();
   }
 }
-
- 

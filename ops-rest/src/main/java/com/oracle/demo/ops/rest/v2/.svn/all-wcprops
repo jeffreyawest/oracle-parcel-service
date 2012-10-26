@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/oracle-pacel-svc~ops-ee6/!svn/ver/92/oracle-parcel-service/ops-rest/src/main/java/com/oracle/demo/ops/rest/v2
+END
+RestResource.java
+K 25
+svn:wc:ra_dav:version-url
+V 132
+/svn/oracle-pacel-svc~ops-ee6/!svn/ver/92/oracle-parcel-service/ops-rest/src/main/java/com/oracle/demo/ops/rest/v2/RestResource.java
+END
+ParcelResourceV2.java
+K 25
+svn:wc:ra_dav:version-url
+V 136
+/svn/oracle-pacel-svc~ops-ee6/!svn/ver/92/oracle-parcel-service/ops-rest/src/main/java/com/oracle/demo/ops/rest/v2/ParcelResourceV2.java
+END
+ShipmentResourceV2.java
+K 25
+svn:wc:ra_dav:version-url
+V 138
+/svn/oracle-pacel-svc~ops-ee6/!svn/ver/92/oracle-parcel-service/ops-rest/src/main/java/com/oracle/demo/ops/rest/v2/ShipmentResourceV2.java
+END
