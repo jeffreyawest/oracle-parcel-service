@@ -251,7 +251,9 @@
 <p:tab id="confirm_tab" title="Confirm &amp; Submit">
 
   <h:panelGroup style="position:relative;">
+
     <p:panel id="confirmation_panel"
+             style="position:relative;"
              header="Confirmation">
 
       <h:panelGrid columns="2"
@@ -344,23 +346,25 @@
 
         </h:panelGroup>
 
+        <h:panelGroup style="position: absolute;float:right;right:0px;bottom:0px;">
+
+          <h:outputText value="Simulate Tracking Events after Submit??"/>
+          <h:selectBooleanCheckbox value="#{shipmentWizardBean.simulateEvents}"/>
+
+          <p:commandButton value="Submit"
+                           style="float:right;"
+                           ajax="false"
+                           action="#{shipmentWizardBean.finish}">
+          </p:commandButton>
+
+        </h:panelGroup>
+
       </h:panelGrid>
 
-      <h:panelGroup style="position: absolute;float:right;right:10px;bottom:10px;">
-
-        <h:outputText value="Simulate Tracking Events after Submit??"/>
-        <h:selectBooleanCheckbox value="#{shipmentWizardBean.simulateEvents}"/>
-
-        <p:commandButton value="Submit"
-                         style="float:right;"
-                         ajax="false"
-                         action="#{shipmentWizardBean.finish}">
-        </p:commandButton>
-
-      </h:panelGroup>
-
     </p:panel>
+
   </h:panelGroup>
+
 </p:tab>
 
 <!-- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ -->
