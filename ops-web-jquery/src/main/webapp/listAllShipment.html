@@ -12,7 +12,7 @@ and open the template in the editor.
         <link rel="stylesheet" type="text/css" href="css/temp.css" media="screen" />
     </head>
     <body style="width: 1024px;margin: auto; background-image:url('image/bg1.png');background-repeat: repeat-x;">
-        <div>
+        
             <table width="100%">
                 <tr>
                     <td align="left">
@@ -55,10 +55,13 @@ and open the template in the editor.
                 </ul>   
             </div> 
 
-            <div style="height:530px;overflow: auto;">
+            <div style="height:530px;overflow: auto;position: relative;top: 40px;">
                 <table id="shipments_table"></table>
             </div>
-            <iframe src="footer.html" width="1000" height="80" frameborder="0" ></iframe>
-        </div>
+           
+            <div id="copyright" style="position: relative;top: 40px;">
+                <p style="position: relative;left: 20px;bottom: 10px;font-size: 10px;">Copyright 2011-2012 - Oracle Corporation</br>This code and application are for example purposes only</br></p>
+            </div>
+        
     </body>
 </html>

@@ -53,36 +53,30 @@ and open the template in the editor.
                     </li>
                 </ul>   
             </div> 
-            <div style="height:530px;overflow: auto;"> 
-           <label for='parcel_input'>Enter Parcel Id:</label><input id="parcel_input"  name="test" type="text"  onchange="testParcel()"/>
-           <label for='shipment_input'>Enter Shipment Id:</label><input id="shipment_input"  name="test" type="text"  onchange="testShipment()"/>
-            <div id="parcel_address_wrapper">
-                <table id="address_table">
-                    <tr>
-                        <td>
-                            <table id="from_address"></table>
-                        </td>
-                        <td>
-                            <table id="to_address" ></table>
-                        </td>
-                    </tr>
-                </table>
-             </div>
-            <div id="parcel_service_wrapper1">
-                <table id="service_table"></table>
+           <div style="height:550px;overflow: auto;position: relative;top: 40px;">            
+               <table id="main_table">
+                   <tr>
+                       <td>
+                           <div  style="border: 1px solid black;width: 370px;">
+                               <table>
+                                   <tr><td colspan="2"><div id="track"><p style="position: relative;bottom: 10px;">Track A Parcel</p></div></td></tr>
+                                   <tr><td><label for='parcel_input'>Enter Parcel Id:</label></td><td><input id="parcel_input"  name="test" type="text"  onchange="testParcel()"/></td></tr>
+                                   <tr><td><label for='shipment_input'>Enter Shipment Id:</label></td><td><input id="shipment_input"  name="test" type="text"  onchange="testShipment()"/></td></tr>
+                               </table>
+                           </div>
+                       </td>
+                   </tr>
+                   
+                       
+                                     
+                    
+               </table>
+           </div>
+         
+            <div id="copyright" style="position: relative;top:50px;">
+                <p style="position: relative;left: 20px;bottom: 10px;font-size: 10px;">Copyright 2011-2012 - Oracle Corporation</br>This code and application are for example purposes only</br></p>
             </div>
-            <div id="parcel_output_wrapper1">
-                <div id="parcel_table"></div>
-            </div>
-                
-            <div id="parcel_output_wrapper">
-                <table id="parcel_table1" border='1'>
-                </table>
-            </div>
-            </div> 
-            
-             <iframe src="footer.html" width="1000" height="80" frameborder="0" ></iframe>
-        </div>
+        
     </body>
 </html>
     

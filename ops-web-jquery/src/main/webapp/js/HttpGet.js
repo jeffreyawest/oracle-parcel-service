@@ -20,6 +20,14 @@ function trackfunction( parcel_id){
         },"json");
 }
 function testParcel(){
+    var oRows = document.getElementById('main_table').getElementsByTagName('tr');
+    var iRowCount = oRows.length;
+  //  alert(iRowCount);
+    if (iRowCount == 4 ){
+   $("#main_table").append("<tr><td><table id='address_table'><tr><td><table id='from_address'></table></td><td><table id='to_address' ></table></td><td><table id='service_table'></table></td></tr></table></td></tr>");
+   $("#main_table").append("<tr><td><table id='parcel_table'></table></td></tr>");
+   $("#main_table").append("<tr><td colspan='2'> <table id='parcel_table1'></table></td></tr>");
+    }
                 
     var id = $("#parcel_input").val(); //This id will be used with the REST back-end.
     //This id will be used with the REST back-end.
@@ -79,7 +87,14 @@ function testParcel(){
  function testShipment(){
     var id = $("#shipment_input").val(); //This id will be used with the REST back-end.
     //This id will be used with the REST back-end.
-                
+    
+    var oRows = document.getElementById('main_table').getElementsByTagName('tr');
+    var iRowCount = oRows.length;
+   // alert(iRowCount);
+    if (iRowCount == 4 ){
+  $("#main_table").append("<tr><td><table id='address_table'><tr><td><table id='from_address'></table></td><td><table id='to_address' ></table></td><td><table id='service_table'></table></td></tr></table></td></tr>");
+   $("#main_table").append("<tr><td><table id='parcel_table'></table></td></tr>");
+    }
     $.get("/ops-rest/resources/shipment/" + id, {} ,
         function(Shipment) {
              

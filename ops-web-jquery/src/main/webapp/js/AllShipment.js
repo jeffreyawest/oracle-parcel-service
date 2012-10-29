@@ -10,15 +10,15 @@ $.get("/ops-rest/resources/shipment/all", {} ,
            $("#shipments_table").append(
                 "<tr><td>"+ response1.Shipment[index].Id +
                 "</td><td>" + response1.Shipment[index].CreatedDate +
-                "</td><td><table id='from"+i+"' border='1'><tr><th width='20%'>Addressee</th><th width='20%' >Address</th><th width='20%' >City</th><th width='20%' >State</th><th width='20%'>Postal Code</th></tr><tr><td>"  + response1.Shipment[index].FromAddress.Addressee + 
-                "</td><td>" + response1.Shipment[index].FromAddress.AddressLine1 + 
-                "</td><td>" + response1.Shipment[index].FromAddress.City + 
-                "</td><td>" + response1.Shipment[index].FromAddress.State + 
-                "</td><td>" + response1.Shipment[index].FromAddress.PostalCode + "</td></tr></table></td><td><table id='to"+i+"' border='1'><tr><th>Addressee</th><th>Address</th><th>City</th><th>State</th><th>Postal Code</th></tr><tr><td>" +  response1.Shipment[index].ToAddress.Addressee + 
-                "</td><td>" + response1.Shipment[index].ToAddress.AddressLine1 + 
-                "</td><td>" + response1.Shipment[index].ToAddress.City + 
-                "</td><td>" + response1.Shipment[index].ToAddress.State + 
-                "</td><td>" + response1.Shipment[index].ToAddress.PostalCode + "</td></tr></table></td><td>" + response1.Shipment[index].ShippingServiceName +"</td><td onclick='parcel_log(" + response1.Shipment[index].Id + "," + i +")'><p id='parcel_log_temp"+i+"'>Click here to see all parcel</p></td></tr></table></td></tr>");
+                "</td><td><table id='from"+i+"' border='1'><tr><th>From Address</th></tr><tr><td>"  + response1.Shipment[index].FromAddress.Addressee + 
+                "</br>" + response1.Shipment[index].FromAddress.AddressLine1 + 
+                "</br>" + response1.Shipment[index].FromAddress.City + 
+                "</br>" + response1.Shipment[index].FromAddress.State + 
+                "</br>" + response1.Shipment[index].FromAddress.PostalCode + "</td></tr></table></td><td><table id='to"+i+"' border='1'><tr><th>To Address</th></tr><tr><td>" +  response1.Shipment[index].ToAddress.Addressee + 
+                "</br>" + response1.Shipment[index].ToAddress.AddressLine1 + 
+                "</br>" + response1.Shipment[index].ToAddress.City + 
+                "</br>" + response1.Shipment[index].ToAddress.State + 
+                "</br>" + response1.Shipment[index].ToAddress.PostalCode + "</td></tr></table></td><td>" + response1.Shipment[index].ShippingServiceName +"</td><td onclick='parcel_log(" + response1.Shipment[index].Id + "," + i +")'><p id='parcel_log_temp"+i+"' style='color: black;'>Click here to see all parcel</p></td></tr></table></td></tr>");
                       
         });
     },"json");

@@ -79,9 +79,9 @@
 	#cssmenu .active > a:hover {
 		color:#ffffff;
 		}
-#welcome{
+#welcome,#shippin_service,#create_shipment,#track{
     width: 100%;
-    background-color:#E34444;
+    background-color:#A80329;
     border:2px;
     border-radius:15px;
     -moz-border-radius:25px;
@@ -90,52 +90,38 @@
     list-style:none;
     position:relative;
     top: 4px;
-    font-size: 14px;
-    display:inline;
-    color:#fff;
-    text-decoration:blink;
-    text-shadow: 1px 2px black;
-}
-#create_shipment{
-    font: bold 11px "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif;
-    width: 40%;
-    background-color:#E34444;
-    border:2px;
-    border-radius:15px;
-    -moz-border-radius:25px;
-    height:30px;
-    float:left;
-    list-style:none;
-    position: relative;
-    top: 40px;    
     font-size: 14px;
     display:inline;
     color:#fff;
     text-decoration:none;
     
 }
+
 #copyright{
     width: 100%;
-    background-color:#E34444;
+    background-color:#A80329;
     border:2px;
     border-radius:15px;
     -moz-border-radius:25px;
-    height:50px;
+    height:40px;
     float:left;
     list-style:none;
     position:relative;
     top: 4px;
-    font-size: 12px;
     display:inline;
     color:#fff;
     text-decoration:none;
-    text-shadow: 1px 2px black;
+    
 }
 
 iframe{
    overflow: hidden;
 }
 label{
+    font: bold 11px "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 6px 6px 6px 12px;
     font-weight: bold;
 }
 div#navigation1{
@@ -181,4 +167,22 @@ div#navigation1{
 	}
         #navigation1 li a#sender{
           background:transparent url('images/HOVER.gif') no-repeat top right;  
+        }
+        
+        p{
+            font: bold 11px "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif;
+            color: #fff;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            padding: 6px 6px 6px 12px;
+            text-align:center;  
+        }
+        p#index_content{
+            font: bold 11px "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif;
+            color: black;
+            letter-spacing: 2px;
+            padding: 6px 6px 6px 12px;
+            text-transform: none;
+            text-align: left;
+            font-size:12px;
         }
