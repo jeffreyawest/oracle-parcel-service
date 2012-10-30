@@ -253,6 +253,10 @@ which is all projects in this app -->
       -->
       <url>http://www.eclipse.org/downloads/download.php?r=1&amp;nf=1&amp;file=/rt/eclipselink/maven.repo</url>
 
+      <releases>
+        <updatePolicy>never</updatePolicy>
+      </releases>
+
       <snapshots>
         <enabled>true</enabled>
       </snapshots>
@@ -262,6 +266,11 @@ which is all projects in this app -->
       <id>maven2-repository.dev.java.net</id>
       <name>Java.net Repository for Maven 2</name>
       <url>http://download.java.net/maven/2/</url>
+
+      <releases>
+        <updatePolicy>never</updatePolicy>
+      </releases>
+
     </repository>
 
   </repositories>
@@ -273,11 +282,19 @@ which is all projects in this app -->
     <pluginRepository>
       <id>maven2-repository.dev.java.net</id>
       <url>http://download.java.net/maven/2/</url>
+      <releases>
+        <updatePolicy>never</updatePolicy>
+      </releases>
     </pluginRepository>
 
     <pluginRepository>
       <id>eviwarePluginRepository</id>
       <url>http://www.soapui.org/repository/maven2/</url>
+
+      <releases>
+        <updatePolicy>never</updatePolicy>
+      </releases>
+
     </pluginRepository>
 
   </pluginRepositories>
