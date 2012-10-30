@@ -175,8 +175,7 @@ public class ShipmentResourceV1
     return shipment;
   }
 
-
-  @POST
+@POST
   @Path("/create")
   @Consumes(MediaType.APPLICATION_FORM_URLENCODED)
   @Produces("text/html")

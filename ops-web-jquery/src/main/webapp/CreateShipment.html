@@ -5,6 +5,7 @@ and open the template in the editor.
 <!DOCTYPE html>
 <html>
     <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
         <link rel='stylesheet' type='text/css' href='css/mystyles.css' media='screen' />
         <script src='http://code.jquery.com/jquery-1.4.2.min.js'></script>
         <script type='text/javascript' src='js/CreateShipment.js'></script>
@@ -83,17 +84,22 @@ and open the template in the editor.
                                                     <td><input type='text' name='from_addressLine2' id='from_addressLine2' /></td>
                                                 </tr>
                                                 <tr>
+                                                    <td><label for='from_postalCode'>Postal Code :</label></td>
+                                                    <td><input type='text' name='from_postalCode' id='from_postalCode'  onblur='validateEmpty(from_postalCode)'/></td>
+                                                </tr>
+                                                <tr>
+                                                    <td></td><td><input type='button' value='Validate' id='validate' style='background-color: #A80329;' onclick='from_validation()'/></td>
+                                                </tr>
+                                                
+                                                <tr>
                                                     <td><label for='from_city'>City : </label></td>
-                                                    <td><input type='text' name='from_city' id='from_city'/></td>
+                                                    <td><input type='text' name='from_city' id='from_city' readonly='readonly'/></td>
                                                 </tr>
                                                 <tr>
                                                     <td><label for='from_state'>State :</label></td>
-                                                    <td><input type='text' name='from_state' id='from_state'/></td>
+                                                    <td><input type='text' name='from_state' id='from_state' readonly='readonly'/></td>
                                                 </tr>
-                                                <tr>
-                                                    <td><label for='from_postalCode'>Postal Code :</label></td>
-                                                    <td><input type='text' name='from_postalCode' id='from_postalCode' onblur='validateEmpty(from_postalCode)'/></td>
-                                                </tr>
+                                                
                                                     <tr>
                                                         <td></td>
                                                     <td><img src="image/next-icon.png" style='height: 40px; width: 40px;position: relative;left: 100px;' onclick='from()'/></td> 

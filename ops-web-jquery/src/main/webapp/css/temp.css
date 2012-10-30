@@ -169,7 +169,7 @@ div#navigation1{
           background:transparent url('images/HOVER.gif') no-repeat top right;  
         }
         
-        p{
+        p,#validate{
             font: bold 11px "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif;
             color: #fff;
             letter-spacing: 2px;
@@ -186,3 +186,4 @@ div#navigation1{
             text-align: left;
             font-size:12px;
         }
+        
