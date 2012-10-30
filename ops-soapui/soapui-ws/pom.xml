@@ -86,6 +86,16 @@
     <repository>
       <id>eviwarePluginRepository</id>
       <url>http://www.soapui.org/repository/maven2/</url>
+
+      <releases>
+        <updatePolicy>never</updatePolicy>
+      </releases>
+
+      <snapshots>
+        <enabled>false</enabled>
+        <updatePolicy>never</updatePolicy>
+      </snapshots>
+
     </repository>
   </repositories>
 
@@ -93,6 +103,16 @@
     <pluginRepository>
       <id>eviwarePluginRepository</id>
       <url>http://www.soapui.org/repository/maven2/</url>
+
+      <releases>
+        <updatePolicy>never</updatePolicy>
+      </releases>
+
+      <snapshots>
+        <enabled>false</enabled>
+        <updatePolicy>never</updatePolicy>
+      </snapshots>
+
     </pluginRepository>
   </pluginRepositories>
 

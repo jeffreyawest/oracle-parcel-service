@@ -258,8 +258,10 @@ which is all projects in this app -->
       </releases>
 
       <snapshots>
-        <enabled>true</enabled>
+        <enabled>false</enabled>
+        <updatePolicy>never</updatePolicy>
       </snapshots>
+
     </repository>
 
     <repository>
@@ -270,6 +272,11 @@ which is all projects in this app -->
       <releases>
         <updatePolicy>never</updatePolicy>
       </releases>
+
+      <snapshots>
+        <enabled>false</enabled>
+        <updatePolicy>never</updatePolicy>
+      </snapshots>
 
     </repository>
 
@@ -282,9 +289,16 @@ which is all projects in this app -->
     <pluginRepository>
       <id>maven2-repository.dev.java.net</id>
       <url>http://download.java.net/maven/2/</url>
+
       <releases>
         <updatePolicy>never</updatePolicy>
       </releases>
+
+      <snapshots>
+        <enabled>false</enabled>
+        <updatePolicy>never</updatePolicy>
+      </snapshots>
+
     </pluginRepository>
 
     <pluginRepository>
@@ -294,6 +308,11 @@ which is all projects in this app -->
       <releases>
         <updatePolicy>never</updatePolicy>
       </releases>
+
+      <snapshots>
+        <enabled>false</enabled>
+        <updatePolicy>never</updatePolicy>
+      </snapshots>
 
     </pluginRepository>
 
