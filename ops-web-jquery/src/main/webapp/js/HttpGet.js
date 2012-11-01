@@ -46,8 +46,9 @@ function testParcel(){
                     $("#service_table").append(
                         "<tr><td>" + response1.ShippingServiceName + "</td></tr>"
                         );
+                     alert(Object.keys(response1).length);
                      
-                        
+                        if(Object.keys(response1).length != 7){
                     $("#parcel_table").replaceWith("<table id='parcel_table' border='1'><th colspan='6' text-align='center'>Shipment Detail</th><tr><th>Track</th><th>Parcel ID</th><th>Status</th><th>Contents</th><th>Weight</th><th> W * L * H</th></tr></table>");
                     $.each(response1.Parcel, function(index, event){
                         $("#parcel_table").append("<tr><td id='parcel_id' onclick='trackfunction(" + response1.Parcel[index].Id + ")'><img src='image/track.png'/></td><td>"+ response1.Parcel[index].Id +
@@ -60,6 +61,16 @@ function testParcel(){
                         $("#parcel_output_wrapper1").slideDown("slow");
                             
                     });
+                        }
+                        else{
+                           $("#parcel_table").replaceWith("<table id='parcel_table' border='1'><th colspan='6' text-align='center'>Shipment Detail</th><tr><th>Track</th><th>Parcel ID</th><th>Status</th><th>Contents</th><th>Weight</th><th> W * L * H</th></tr></table>");  
+                           $("#parcel_table").append("<tr><td id='parcel_id' onclick='trackfunction(" + response1.Parcel.Id + ")'><img src='image/track.png'/></td><td>"+ response1.Parcel.Id +
+                            "</td><td>" + response1.Parcel.ParcelStatus +
+                            "</td><td>" + response1.Parcel.Contents +
+                            "</td><td>" +response1.Parcel.Weight + 
+                            "</td><td>" + response1.Parcel.Width + "*" + response1.Parcel.Length + "*" + response1.
+                            Parcel.Height +"</td></tr>");     
+                    }
                 },"json");
         },
         "json");

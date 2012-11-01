@@ -4,16 +4,16 @@ and open the template in the editor.
 -->
 <!DOCTYPE html>
 <html>
-    <head>
-        <link rel="stylesheet" type="text/css" href="css/mystyles.css" media="screen" />
+     <head>
+         <link rel="stylesheet" type="text/css" href="css/mystyles.css" media="screen" />
         <script src="http://code.jquery.com/jquery-1.4.2.min.js"></script>
-        <script type="text/javascript" src="js/AllShipment.js"></script>
-        <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
         <link rel="stylesheet" type="text/css" href="css/temp.css" media="screen" />
+        <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+        <script type="text/javascript" src="js/Geolocation.js"></script>
+        
     </head>
     <body style="width: 1024px;margin: auto; background-image:url('image/bg1.png');background-repeat: repeat-x;">
-        
-            <table width="100%">
+          <table width="100%">
                 <tr>
                     <td align="left">
                         <img src="image/logo.png" />
@@ -24,7 +24,7 @@ and open the template in the editor.
                     </td>
                 </tr>
             </table>
-             <div id="cssmenu">
+            <div id="cssmenu">
                 <ul>
                     <li><a href="index.html">Home</a></li>
                     <li class='has-sub '><a href="CreateShipment.html">Ship</a></li>
@@ -35,7 +35,7 @@ and open the template in the editor.
                             <li><a href="addService.html">Add Service</a></li>
                         </ul>
                     </li>
-                    <li class='active'><a href="#">Shipment</a>
+                    <li><a href="#">Shipment</a>
                         <ul>
                             <li><a href="listAllShipment.html">List All Shipment</a></li>
                             <li><a href="listShipingServices.html">List Shipping Services</a></li>
@@ -52,22 +52,38 @@ and open the template in the editor.
                             <li><a href="listAllEvent.html">List All Events</a></li>
                         </ul>
                     </li>
-                    <li><a href="#">Geolocation</a>
+                    <li class='active'><a href="#">Geolocation</a>
                         <ul>
                             <li><a href="Geolocation.html">Lookup</a></li>
                             <li><a href="GeoSummary.html">Summary</a></li>
                         </ul>
                     </li>
                 </ul>   
+            </div>       
+            
+            
+            <div style="height: 570px; position: relative; top:70px; margin-left: 15px;" > 
+                <table id="main_table">
+                   <tr>
+                       <td>
+                           <div  style="border: 1px solid black;width: 370px;">
+                               <table>
+                                   <tr><td colspan="2"><div id="track"><p style="position: relative;bottom: 10px;">Lookup </p></div></td></tr>
+                                   <tr><td><label for='postal_code_input'>Enter Postal Code:</label></td><td><input id="postal_code_input"  name="postal_code_input" type="text"  onchange="testPostalCode()"/></td></tr>
+                      <!--             <tr><td><label for='city_input'>Enter City</label></td><td><input id="city_input"  name="city_input" type="text"  onchange="testCity()"/></td></tr> -->
+                               </table>
+                           </div>
+                       </td>
+                   </tr>
+               </table>
+                <div><table id="geo_table"></table></div>
+                
             </div> 
-
-            <div style="height:530px;overflow: auto;position: relative;top: 40px;">
-                <table id="shipments_table"></table>
-            </div>
-           
-            <div id="copyright" style="position: relative;top: 40px;">
+            
+            <div id="copyright">
                 <p style="position: relative;left: 20px;bottom: 10px;font-size: 10px;">Copyright 2011-2012 - Oracle Corporation</br>This code and application are for example purposes only</br></p>
-            </div>
+            </div>    
+            
         
     </body>
 </html>
