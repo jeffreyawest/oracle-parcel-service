@@ -146,8 +146,8 @@ public class ShipmentResourceV1
    */
   @POST
   @Path("/create")
-  @Consumes(MediaType.APPLICATION_JSON)
-  @Produces(MediaType.APPLICATION_JSON)
+  @Consumes("application/json")
+  @Produces("application/json")
   public Shipment postJSON(Shipment shipment)
   {
     return shipmentManager.createShipment(shipment);
@@ -175,11 +175,11 @@ public class ShipmentResourceV1
     return shipment;
   }
 
-@POST
+ @POST
   @Path("/create")
   @Consumes(MediaType.APPLICATION_FORM_URLENCODED)
-  @Produces("text/html")
-  public String createShipment(
+  @Produces(MediaType.APPLICATION_JSON)
+  public Shipment createShipment(
           // toAddress
           @FormParam("to_addressee_h") String to_addressee,
           @FormParam("to_addressLine1_h") String to_addressLine1,
@@ -229,12 +229,6 @@ public class ShipmentResourceV1
     parcel.setWeight(Integer.parseInt(parcel_weight));
     parcel.setHeight(Integer.parseInt(parcel_height));
     parcel.setLength(Integer.parseInt(parcel_length));
-    
-    ParcelEvent event= new ParcelEvent();
-      event.setLocation("ORIGIN");
-      event.setMessage("New Parcel");
-      event.setEventDate(Calendar.getInstance());
-      event.setParcelStatus(ParcelStatus.BILLING_INFO_RECEIVED);
 
     Shipment shipment = new Shipment();
     shipment.setToAddress(toAddress);
@@ -242,8 +236,7 @@ public class ShipmentResourceV1
     shipment.getParcels().add(parcel);
     shipment.setShippingServiceName(shipping_service_name);
     Shipment ret = shipmentManager.createShipment(shipment);
-    return "<html><head><meta http-equiv='refresh' content='2;url=http://localhost:7001/ops-jquery/CreateShipment.html'></head><body>You Successfully Created Shipment</body></html>";
+    return ret;
   }
-
 
 }
