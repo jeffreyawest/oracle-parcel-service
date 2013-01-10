@@ -8,11 +8,13 @@
  * of Oracle.
  * <p/>
  * *************************************************************************** */
-package com.oracle.demo.ops.rest.v1;
+package com.oracle.demo.ops.rest.resource;
 
 import com.oracle.demo.ops.domain.*;
 import com.oracle.demo.ops.entitymanager.ParcelManager;
 import com.oracle.demo.ops.entitymanager.ShipmentManager;
+import org.codehaus.jettison.json.JSONObject;
+
 import java.util.Calendar;
 
 import javax.ejb.EJB;
@@ -22,6 +24,7 @@ import javax.ws.rs.*;
 import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.UriInfo;
+import javax.xml.bind.JAXBElement;
 import java.util.Collection;
 
 /**
@@ -141,16 +144,52 @@ public class ShipmentResourceV1
   /**
    * POST method for updating or creating an instance of ParcelServiceResource
    *
-   * @param shipment representation for the resource
+   * @param jaxbShipment representation for the resource
    * @return an HTTP response with content of the updated or created resource.
    */
   @POST
-  @Path("/create")
+  @Path("/postJAXBElement")
   @Consumes("application/json")
   @Produces("application/json")
-  public Shipment postJSON(Shipment shipment)
+  public Shipment postJAXBElement(JAXBElement<Shipment> jaxbShipment)
   {
-    return shipmentManager.createShipment(shipment);
+
+    System.out.println("Type: " + jaxbShipment.getClass().getName());
+
+    return new Shipment();
+  }
+
+  @POST
+  @Path("/postJSONObject")
+  @Consumes("application/json")
+  @Produces("application/json")
+  public Shipment postJSONObject(JSONObject jaxbShipment)
+  {
+
+    System.out.println("Type: " + jaxbShipment.getClass().getName());
+
+    return new Shipment();
+  }
+
+  @POST
+  @Path("/postShipmentJSON")
+  @Consumes("application/json")
+  @Produces("application/json")
+  public Shipment postShipmentJSON(Shipment jaxbShipment)
+  {
+    System.out.println("Type: " + jaxbShipment.getClass().getName());
+    return shipmentManager.createShipment(jaxbShipment);
+  }
+
+  @POST
+  @Path("/postShipmentXML")
+  @Consumes("application/xml")
+  @Produces("application/xml")
+  public Shipment postShipmentXML(Shipment jaxbShipment)
+  {
+
+    System.out.println("Type: " + jaxbShipment.getClass().getName());
+    return shipmentManager.createShipment(jaxbShipment);
   }
 
   @GET
@@ -174,69 +213,4 @@ public class ShipmentResourceV1
 
     return shipment;
   }
-
- @POST
-  @Path("/create")
-  @Consumes(MediaType.APPLICATION_FORM_URLENCODED)
-  @Produces(MediaType.APPLICATION_JSON)
-  public Shipment createShipment(
-          // toAddress
-          @FormParam("to_addressee_h") String to_addressee,
-          @FormParam("to_addressLine1_h") String to_addressLine1,
-          @FormParam("to_addressLine2_h") String to_addressLine2,
-          @FormParam("to_city_h") String to_city,
-          @FormParam("to_state_h") String to_state,
-          @FormParam("to_postalCode_h") String to_postalCode,
-          // fromAddress
-          @FormParam("from_addressee_h") String from_addressee,
-          @FormParam("from_addressLine1_h") String from_addressLine1,
-          @FormParam("from_addressLine2_h") String from_addressLine2,
-          @FormParam("from_city_h") String from_city,
-          @FormParam("from_state_h") String from_state,
-          @FormParam("from_postalCode_h") String from_postalCode,
-          //shipping service
-          @FormParam("shipping_service_name_h") ShippingServiceName shipping_service_name,  
-          // Parcel
-          @FormParam("parcel_contents") String parcel_contents,
-          @FormParam("parcel_weight") String parcel_weight,
-          @FormParam("parcel_height") String parcel_height,
-          @FormParam("parcel_width") String parcel_width,
-          @FormParam("parcel_length") String parcel_length
-          
-                                )
-  {
-
-    Address toAddress = new Address();
-    toAddress.setAddressee(to_addressee);
-    toAddress.setAddressLine1(to_addressLine1);
-    toAddress.setAddressLine2(to_addressLine2);
-    toAddress.setCity(to_city);
-    toAddress.setState(to_state);
-    toAddress.setPostalCode(to_postalCode);
-
-    Address fromAddress = new Address();
-    fromAddress.setAddressee(from_addressee);
-    fromAddress.setAddressLine1(from_addressLine1);
-    fromAddress.setAddressLine2(from_addressLine2);
-    fromAddress.setCity(from_city);
-    fromAddress.setState(from_state);
-    fromAddress.setPostalCode(from_postalCode);
-    
-    
-
-    Parcel parcel = new Parcel();
-    parcel.setContents(parcel_contents);
-    parcel.setWeight(Integer.parseInt(parcel_weight));
-    parcel.setHeight(Integer.parseInt(parcel_height));
-    parcel.setLength(Integer.parseInt(parcel_length));
-
-    Shipment shipment = new Shipment();
-    shipment.setToAddress(toAddress);
-    shipment.setFromAddress(fromAddress);
-    shipment.getParcels().add(parcel);
-    shipment.setShippingServiceName(shipping_service_name);
-    Shipment ret = shipmentManager.createShipment(shipment);
-    return ret;
-  }
-
 }

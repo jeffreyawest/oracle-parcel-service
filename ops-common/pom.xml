@@ -20,7 +20,6 @@
 
     <WL_VERSION>12.1.1.0</WL_VERSION>
 
-
     <XmlSchema.version>1.4.7</XmlSchema.version>
     <coherence.version>3.7.1</coherence.version>
     <eclipselink.version>2.1.2</eclipselink.version>
@@ -71,6 +70,7 @@
           <groupId>com.oracle.weblogic</groupId>
           <artifactId>wls-maven-plugin</artifactId>
           <version>12.1.1.0</version>
+
           <configuration>
             <middlewareHome>${MIDDLEWARE_HOME}</middlewareHome>
             <weblogicHome>${WEBLOGIC_HOME}</weblogicHome>
@@ -190,6 +190,7 @@ which is all projects in this app -->
         <groupId>com.oracle.weblogic</groupId>
         <artifactId>weblogic-spring</artifactId>
         <version>${WL_VERSION}</version>
+
         <scope>system</scope>
         <systemPath>${WEBLOGIC_HOME}/server/lib/weblogic-spring.jar</systemPath>
       </dependency>
@@ -198,6 +199,7 @@ which is all projects in this app -->
         <groupId>com.oracle.weblogic</groupId>
         <artifactId>weblogic</artifactId>
         <version>${WL_VERSION}</version>
+
         <scope>system</scope>
         <systemPath>${WEBLOGIC_HOME}/server/lib/weblogic.jar</systemPath>
       </dependency>
@@ -206,8 +208,18 @@ which is all projects in this app -->
         <groupId>com.oracle.weblogic</groupId>
         <artifactId>wljmsclient</artifactId>
         <version>${WL_VERSION}</version>
+
         <scope>system</scope>
         <systemPath>${WEBLOGIC_HOME}/server/lib/wljmsclient.jar</systemPath>
+      </dependency>
+
+      <dependency>
+        <groupId>com.oracle.weblogic</groupId>
+        <artifactId>toplink-grid</artifactId>
+        <version>12.1.2.0</version>
+
+        <scope>system</scope>
+        <systemPath>${WEBLOGIC_HOME}/server/lib/wlclient.jar</systemPath>
       </dependency>
 
       <dependency>

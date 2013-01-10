@@ -1,12 +1,12 @@
-package com.oracle.demo.ops.entitymanager;
+package com.oracle.demo.ops.services.ejb;
 
 import com.oracle.demo.ops.domain.Address;
+import com.oracle.demo.ops.entitymanager.AddressManager;
+import com.oracle.demo.ops.entitymanager.GeolocationManager;
 
+import javax.ejb.EJB;
 import javax.ejb.LocalBean;
 import javax.ejb.Stateless;
-import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
-import java.io.Serializable;
 
 /**
  * **************************************************************************
@@ -18,19 +18,23 @@ import java.io.Serializable;
  * of Oracle.
  * <p/>
  * ****************************************************************************
- * User: jeffrey.a.west
- * Date: Sep 23, 2011
- * Time: 10:29:31 AM
+ * Created with IntelliJ IDEA because its awesome.
+ * User: jeffreyawest
+ * Date: 12/3/12
+ * Time: 5:10 PM
+ * To change this template use File | Settings | File Templates.
  */
-@Stateless (name = "AddressManagerBean", mappedName = "ejb/AddressManager")
-@LocalBean
-public class AddressManager implements Serializable
-{
-  @PersistenceContext(unitName = "ops_domain_pu")
-  private EntityManager em;
 
-  public Address findAddressById(int pId)
+@Stateless(name = "AddressServiceBean", mappedName = "ejb/AddressService")
+@LocalBean
+public class AddressService
+{
+  @EJB
+  private AddressManager addressManager;
+
+  public Address getAddressById(int pId)
   {
-    return em.find(Address.class, pId);
+    return addressManager.findAddressById(pId);
   }
+
 }

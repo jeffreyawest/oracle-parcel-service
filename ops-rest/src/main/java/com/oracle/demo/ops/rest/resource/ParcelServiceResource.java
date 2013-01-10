@@ -8,7 +8,7 @@
  * of Oracle.
  * <p/>
  * *************************************************************************** */
-package com.oracle.demo.ops.rest.services;
+package com.oracle.demo.ops.rest.resource;
 
 import com.oracle.demo.ops.domain.Address;
 import com.oracle.demo.ops.domain.Parcel;
@@ -50,18 +50,6 @@ public class ParcelServiceResource
    */
   public ParcelServiceResource()
   {
-  }
-
-  /**
-   * Retrieves representation of an instance of com.oracle.demo.ops.rest.services.ParcelServiceResource
-   *
-   * @return an instance of java.lang.String
-   */
-  @GET
-  @Produces("application/xml")
-  public String getXml()
-  {
-    return "<shipments><shipment><name>order1</name></shipment></shipments>";
   }
 
   @GET

@@ -34,7 +34,9 @@
     </xs:complexContent>
   </xs:complexType>
 
-  <xs:complexType name="Address">
+  <xs:element name="Address" type="tns:AddressType"/>
+
+  <xs:complexType name="AddressType">
     <xs:complexContent>
       <xs:extension base="tns:BaseEntity">
         <xs:sequence>

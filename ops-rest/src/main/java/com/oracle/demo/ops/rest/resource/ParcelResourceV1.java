@@ -1,4 +1,4 @@
-package com.oracle.demo.ops.rest.v1;
+package com.oracle.demo.ops.rest.resource;
 /**
  * **************************************************************************
  * <p/>

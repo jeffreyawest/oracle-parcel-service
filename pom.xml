@@ -20,6 +20,19 @@
 
   <name>oracle-parcel-service</name>
 
+  <profiles>
+    <profile>
+      <id>enable-sandbox</id>
+      <activation>
+        <activeByDefault>false</activeByDefault>
+      </activation>
+
+      <modules>
+        <module>ops-sandbox</module>
+      </modules>
+    </profile>
+  </profiles>
+
   <modules>
     <module>ops-common</module>
 
@@ -46,7 +59,7 @@
   </modules>
 
   <build>
-    <defaultGoal>install</defaultGoal>
+    <defaultGoal>compile</defaultGoal>
 
     <plugins>
       <plugin>

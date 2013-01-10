@@ -15,8 +15,8 @@
       <xs:extension base="common:BaseEntity">
         <xs:sequence>
           <xs:element name="ExternalReferenceId" type="xs:string" maxOccurs="1"/>
-          <xs:element name="ToAddress" type="common:Address" maxOccurs="1"/>
-          <xs:element name="FromAddress" type="common:Address" maxOccurs="1"/>
+          <xs:element name="ToAddress" type="common:AddressType" maxOccurs="1"/>
+          <xs:element name="FromAddress" type="common:AddressType" maxOccurs="1"/>
           <xs:element name="ShippingServiceName" type="tns:ShippingServiceName" minOccurs="1"/>
           <xs:element ref="tns:Parcel" maxOccurs="unbounded" minOccurs="1"/>
         </xs:sequence>

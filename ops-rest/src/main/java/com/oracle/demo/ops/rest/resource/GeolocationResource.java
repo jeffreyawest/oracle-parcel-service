@@ -1,4 +1,4 @@
-package com.oracle.demo.ops.rest.geo;
+package com.oracle.demo.ops.rest.resource;
 
 import com.oracle.demo.ops.domain.PostalGeolocation;
 import com.oracle.demo.ops.services.ejb.GeolocationService;
