@@ -13,7 +13,9 @@
   <!-- ==================================================================================== -->
 
   <properties>
-
+    <domain.Home>${project.basedir}/Oracle</domain.Home>
+    <middleware.Home>${project.basedir}/target/domains/ops_domain</middleware.Home>
+    <weblogic.Home>${project.basedir}/Oracle/wlserver</weblogic.Home>
   </properties>
 
   <!-- ==================================================================================== -->
@@ -45,9 +47,9 @@
               <user>weblogic</user>
               <password>welcome1</password>
 
-              <domainHome>target/domains/ops_domain</domainHome>
-              <middlewareHome>${project.basedir}/Oracle</middlewareHome>
-              <weblogicHome>${project.basedir}/Oracle/wlserver</weblogicHome>
+              <domainHome>${domain.Home}</domainHome>
+              <middlewareHome>${middleware.Home}</middlewareHome>
+              <weblogicHome>${weblogic.Home}</weblogicHome>
             </configuration>
 
           </plugin>
@@ -98,9 +100,9 @@
 
               <artifactLocation>com.oracle.weblogic:wls-dev:zip:12.1.1.0</artifactLocation>
 
-              <domainHome>target/domains/ops_domain</domainHome>
-              <middlewareHome>${project.basedir}/Oracle</middlewareHome>
-              <weblogicHome>${project.basedir}/Oracle/wlserver</weblogicHome>
+              <domainHome>${domain.Home}</domainHome>
+              <middlewareHome>${middleware.Home}</middlewareHome>
+              <weblogicHome>${weblogic.Home}</weblogicHome>
             </configuration>
 
           </plugin>
@@ -136,9 +138,9 @@
               <user>weblogic</user>
               <password>welcome1</password>
 
-              <domainHome>target/domains/ops_domain</domainHome>
-              <middlewareHome>${project.basedir}/Oracle</middlewareHome>
-              <weblogicHome>${project.basedir}/Oracle/wlserver</weblogicHome>
+              <domainHome>${domain.Home}</domainHome>
+              <middlewareHome>${middleware.Home}</middlewareHome>
+              <weblogicHome>${weblogic.Home}</weblogicHome>
             </configuration>
 
           </plugin>
@@ -183,9 +185,10 @@
 
               <fileName>${project.basedir}/configure-ops-standalone.py</fileName>
               <propertiesFile>${project.basedir}/ops-domain.properties</propertiesFile>
-              <domainHome>target/domains/ops_domain</domainHome>
-              <middlewareHome>${project.basedir}/Oracle</middlewareHome>
-              <weblogicHome>${project.basedir}/Oracle/wlserver</weblogicHome>
+
+              <domainHome>${domain.Home}</domainHome>
+              <middlewareHome>${middleware.Home}</middlewareHome>
+              <weblogicHome>${weblogic.Home}</weblogicHome>
             </configuration>
 
           </plugin>
@@ -216,8 +219,8 @@
 
           <artifactLocation>com.oracle.weblogic:wls-dev:zip:12.1.1.0</artifactLocation>
 
-          <middlewareHome>${project.basedir}/Oracle</middlewareHome>
-          <weblogicHome>${project.basedir}/Oracle/wlserver</weblogicHome>
+          <middlewareHome>${middleware.Home}</middlewareHome>
+          <weblogicHome>${weblogic.Home}</weblogicHome>
         </configuration>
 
       </plugin>
