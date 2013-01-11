@@ -13,8 +13,8 @@
   <!-- ==================================================================================== -->
 
   <properties>
-    <domain.Home>${project.basedir}/Oracle</domain.Home>
-    <middleware.Home>${project.basedir}/target/domains/ops_domain</middleware.Home>
+    <domain.Home>${project.basedir}/target/domains/ops_domain</domain.Home>
+    <middleware.Home>${project.basedir}/Oracle</middleware.Home>
     <weblogic.Home>${project.basedir}/Oracle/wlserver</weblogic.Home>
   </properties>
 
