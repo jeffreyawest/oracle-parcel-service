@@ -117,7 +117,7 @@ except:
     pass
 
 try:
-    progress = deploy(appName='coherence-web-spi', path=COHERENCE_HOME + '/lib/coherence-web-spi.war', targets='AdminServer,' + cluster_name,
+    progress = deploy(appName='coherence-web-spi', path=COHERENCE_HOME + '/lib/coherence-web-spi.war', targets='AdminServer',
         libraryModule='true', libImplVersion='1.0.0.0', libSpecVersion='1.0.0.0')
     progress.printStatus()
 except:
