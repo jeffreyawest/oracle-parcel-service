@@ -16,8 +16,14 @@ import java.util.logging.Logger;
  * If you choose to use this code for any reason, including but not limited
  * to its use as an example you do so at your own risk and without the support
  * of Oracle.
+ *
+ * This code is provided under the following licenses:
+ *
+ * GNU General Public License (GPL-2.0)
+ * COMMON DEVELOPMENT AND DISTRIBUTION LICENSE Version 1.0 (CDDL-1.0)
+ *
  * <p/>
- * ****************************************************************************
+ * **************************************************************************** *
  * User: jeffrey.a.west
  * Date: Feb 15, 2011
  * Time: 10:19:26 AM
@@ -29,20 +35,19 @@ public abstract class AbstractEventHandler
   @EJB(beanName = "ParcelManagerBean")
   protected ParcelManager parcelManager;
 
-  @EJB(beanName="ParcelEventManagerBean")
+  @EJB(beanName = "ParcelEventManagerBean")
   protected ParcelEventManager parcelEventManager;
 
-  @EJB(beanName="ShipmentManagerBean")
+  @EJB(beanName = "ShipmentManagerBean")
   protected ShipmentManager shipmentManager;
 
   private long messageCount;
   private long exceptionCount;
-  
+
   private String lastException;
 
   public void handleEvent(ParcelEvent pEvent)
-      throws
-      Exception
+      throws Exception
   {
     messageCount++;
 

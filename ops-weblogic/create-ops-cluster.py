@@ -1,53 +1,71 @@
+#/*
+#* **************************************************************************
+#* <p/>
+#* This code is provided for example purposes only.  Oracle does not assume
+#* any responsibility or liability for the consequences of using this code.
+#* If you choose to use this code for any reason, including but not limited
+#* to its use as an example you do so at your own risk and without the support
+#* of Oracle.
+#*
+#* This code is provided under the following licenses:
+#*
+#* GNU General Public License (GPL-2.0)
+#* COMMON DEVELOPMENT AND DISTRIBUTION LICENSE Version 1.0 (CDDL-1.0)
+#*
+#* <p/>
+#* ****************************************************************************
+#*/
+#
 def createStandaloneModules():
-    print 'Creating JMS Server Name=[jms-server-0]'
-    jmsserver = create('jms-server-0', 'JMSServer')
+  print 'Creating JMS Server Name=[jms-server-0]'
+  jmsserver = create('jms-server-0', 'JMSServer')
 
-    cd('/JMSServers/jms-server-0')
-    assign('JMSServer', 'jms-server-0', 'Target', 'AdminServer')
-    adminName = ObjectName('com.bea:Name=AdminServer,Type=Server')
+  cd('/JMSServers/jms-server-0')
+  assign('JMSServer', 'jms-server-0', 'Target', 'AdminServer')
+  adminName = ObjectName('com.bea:Name=AdminServer,Type=Server')
 
-    ########### Standalone JMS Module
-    cd('/')
-    jmsMySystemResource = create('jms-module-ops-standalone', 'JMSSystemResource')
-    #assign('JMSSystemResource', 'jms-module-ops-standalone', 'Target', jmsserver)
+  ########### Standalone JMS Module
+  cd('/')
+  jmsMySystemResource = create('jms-module-ops-standalone', 'JMSSystemResource')
+  #assign('JMSSystemResource', 'jms-module-ops-standalone', 'Target', jmsserver)
 
-    #jmsMySystemResource.setTargets(jarray.array([targets], weblogic.management.configuration.TargetMBean))
+  #jmsMySystemResource.setTargets(jarray.array([targets], weblogic.management.configuration.TargetMBean))
 
-    cd('/JMSSystemResources/jms-module-ops-standalone')
-    #cmo.addTarget(getMBean('/Servers/AdminServer'))
+  cd('/JMSSystemResources/jms-module-ops-standalone')
+  #cmo.addTarget(getMBean('/Servers/AdminServer'))
 
-    subdeployment = create('admin-subdeployment', 'SubDeployment')
-    #cmo.addTarget(getMBean('/Servers/AdminServer'))
+  subdeployment = create('admin-subdeployment', 'SubDeployment')
+  #cmo.addTarget(getMBean('/Servers/AdminServer'))
 
-    cd('/JMSSystemResource/jms-module-ops-standalone/JmsResource/NO_NAME_0')
+  cd('/JMSSystemResource/jms-module-ops-standalone/JmsResource/NO_NAME_0')
 
-    cf_name = 'com.oracle.demo.ops.jms.cf'
-    myCF = create(cf_name, 'ConnectionFactory')
+  cf_name = 'com.oracle.demo.ops.jms.cf'
+  myCF = create(cf_name, 'ConnectionFactory')
 
-    cd(
-        '/JMSSystemResources/jms-module-ops-standalone/JmsResource/NO_NAME_0/ConnectionFactories/com.oracle.demo.ops.jms.cf')
-    myCF.setJNDIName(cf_name)
-    myCF.setDefaultTargetingEnabled(true)
-    txParams = create(cf_name, 'TransactionParams')
-    txParams.setXAConnectionFactoryEnabled(true)
+  cd(
+    '/JMSSystemResources/jms-module-ops-standalone/JmsResource/NO_NAME_0/ConnectionFactories/com.oracle.demo.ops.jms.cf')
+  myCF.setJNDIName(cf_name)
+  myCF.setDefaultTargetingEnabled(true)
+  txParams = create(cf_name, 'TransactionParams')
+  txParams.setXAConnectionFactoryEnabled(true)
 
-    cd('/JMSSystemResources/jms-module-ops-standalone/JmsResource/NO_NAME_0')
-    eventQueue = create('com.oracle.demo.ops.jms.eventQueue', 'Queue')
-    eventQueue.setJNDIName('com.oracle.demo.ops.jms.eventQueue')
-    eventQueue.setDefaultTargetingEnabled(false)
-    eventQueue.setSubDeploymentName('admin-subdeployment')
+  cd('/JMSSystemResources/jms-module-ops-standalone/JmsResource/NO_NAME_0')
+  eventQueue = create('com.oracle.demo.ops.jms.eventQueue', 'Queue')
+  eventQueue.setJNDIName('com.oracle.demo.ops.jms.eventQueue')
+  eventQueue.setDefaultTargetingEnabled(false)
+  eventQueue.setSubDeploymentName('admin-subdeployment')
 
-    cd('/JMSSystemResources/jms-module-ops-standalone/JmsResource/NO_NAME_0')
-    shipmentQueue = create('com.oracle.demo.ops.jms.shipmentQueue', 'Queue')
-    shipmentQueue.setJNDIName('com.oracle.demo.ops.jms.shipmentQueue')
-    shipmentQueue.setDefaultTargetingEnabled(false)
-    shipmentQueue.setSubDeploymentName('admin-subdeployment')
+  cd('/JMSSystemResources/jms-module-ops-standalone/JmsResource/NO_NAME_0')
+  shipmentQueue = create('com.oracle.demo.ops.jms.shipmentQueue', 'Queue')
+  shipmentQueue.setJNDIName('com.oracle.demo.ops.jms.shipmentQueue')
+  shipmentQueue.setDefaultTargetingEnabled(false)
+  shipmentQueue.setSubDeploymentName('admin-subdeployment')
 
-    cd('/JMSSystemResources/jms-module-ops-standalone/JmsResource/NO_NAME_0')
-    eventTopic = create('com.oracle.demo.ops.jms.eventTopic', 'Topic')
-    eventTopic.setJNDIName('com.oracle.demo.ops.jms.eventTopic')
-    eventTopic.setDefaultTargetingEnabled(false)
-    eventTopic.setSubDeploymentName('admin-subdeployment')
+  cd('/JMSSystemResources/jms-module-ops-standalone/JmsResource/NO_NAME_0')
+  eventTopic = create('com.oracle.demo.ops.jms.eventTopic', 'Topic')
+  eventTopic.setJNDIName('com.oracle.demo.ops.jms.eventTopic')
+  eventTopic.setDefaultTargetingEnabled(false)
+  eventTopic.setSubDeploymentName('admin-subdeployment')
 
 
 ########### JMS Module
