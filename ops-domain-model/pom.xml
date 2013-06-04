@@ -116,6 +116,13 @@
       <artifactId>eclipselink</artifactId>
       <scope>provided</scope>
     </dependency>
+
+    <dependency>
+      <groupId>org.eclipse.persistence</groupId>
+      <artifactId>javax.persistence</artifactId>
+    </dependency>
+
   </dependencies>
+
 
 </project>

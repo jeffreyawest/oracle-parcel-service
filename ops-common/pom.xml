@@ -38,7 +38,7 @@
 
     <XmlSchema.version>1.4.7</XmlSchema.version>
     <coherence.version>3.7.1</coherence.version>
-    <eclipselink.version>2.1.2</eclipselink.version>
+    <eclipselink.version>2.3.0</eclipselink.version>
     <javax.persistence.version>2.0.0</javax.persistence.version>
 
     <ops.scm.url>https://svn.java.net/svn/oracle-pacel-svc~ops-ee6</ops.scm.url>
@@ -258,17 +258,14 @@ which is all projects in this app -->
       <dependency>
         <groupId>org.eclipse.persistence</groupId>
         <artifactId>eclipselink</artifactId>
-        <version>2.3.0</version>
+        <version>${eclipselink.version}</version>
       </dependency>
 
-      <!--
       <dependency>
         <groupId>org.eclipse.persistence</groupId>
         <artifactId>javax.persistence</artifactId>
-        <version>2.0.0</version>
-        <scope>system</scope>
-        <systemPath></systemPath>
-      </dependency>-->
+        <version>${javax.persistence.version}</version>
+      </dependency>
 
     </dependencies>
 
