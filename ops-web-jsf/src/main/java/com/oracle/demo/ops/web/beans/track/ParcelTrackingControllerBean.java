@@ -86,7 +86,7 @@ public class ParcelTrackingControllerBean
       return "";
     }
 
-e    parcelLog = getParcelEventManager().getParcelLogByParcelId(parcel.getId());
+    parcelLog = getParcelEventManager().getParcelLogByParcelId(parcel.getId());
 
     updateMapModel(parcelLog);
 
