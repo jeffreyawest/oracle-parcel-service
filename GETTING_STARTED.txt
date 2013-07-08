@@ -6,7 +6,7 @@ So... how do you get this running? :)  Lucky for you this is wired with maven an
 Prerequisites
 ========================================
 1) Oracle Database 11g (Express Edition works fine).
-  -- default application configuration: user/pass: ops_user/ops_user jdbc: localhost:1521:xe
+  -- default application configuration: user/pass: ops_user/ops_user jdbc: localhost:1521:PDBORCL
   -- DDL (SQL) can be found in oracle-parcel-service/ops-domain-model/src/main/resources/ddl
 
 2) Maven (3.0+) set on your path with the appropriate environment variables (like M2_HOME).
@@ -70,7 +70,7 @@ MIDDLEWARE_HOME=/u01/wls1211
 COHERENCE_HOME=/u01/wls1211/coherence_3.7
 USER_PROJECTS=/u01/wls1211/user_projects
 OPS_HOME=/labs/content/oracle-parcel-service
-JDBC_URL=jdbc:oracle:thin:@localhost:1521:xe
+JDBC_URL=jdbc:oracle:thin:@localhost:1521:PDBORCL
 
 3) from the oracle-parcel-service directory, execute 'mvn package' to validate that everything compiles.  If this is the
  first time using maven on your system, it will take some time to download dependencies and plugins.
