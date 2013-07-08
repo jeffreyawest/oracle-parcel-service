@@ -33,7 +33,7 @@
   <properties>
     <domain.Home>${project.basedir}/target/domains/ops_domain</domain.Home>
     <middleware.Home>${project.basedir}/Oracle</middleware.Home>
-    <weblogic.Home>${project.basedir}/Oracle/wlserver</weblogic.Home>
+    <weblogic.Home>${project.basedir}/Oracle/wlserver/wls12120</weblogic.Home>
   </properties>
 
   <!-- ==================================================================================== -->
@@ -151,7 +151,6 @@
             </executions>
 
             <configuration>
-
               <artifactLocation>com.oracle.weblogic:wls-dev:zip:12.1.2.0</artifactLocation>
 
               <user>weblogic</user>
@@ -235,7 +234,6 @@
 
           <user>weblogic</user>
           <password>welcome1</password>
-
           <artifactLocation>com.oracle.weblogic:wls-dev:zip:12.1.2.0</artifactLocation>
 
           <middlewareHome>${middleware.Home}</middlewareHome>
