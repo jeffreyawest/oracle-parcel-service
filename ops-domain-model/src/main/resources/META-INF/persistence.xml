@@ -45,9 +45,9 @@
   <persistence-unit name="ops_domain_pu_standalone" transaction-type="RESOURCE_LOCAL">
     <properties>
       <property name="javax.persistence.jdbc.driver" value="oracle.jdbc.OracleDriver"/>
-      <property name="javax.persistence.jdbc.url" value="jdbc:oracle:thin:@vbox1:1521:orcl"/>
-      <property name="javax.persistence.jdbc.user" value="jpauser"/>
-      <property name="javax.persistence.jdbc.password" value="jpauser"/>
+      <property name="javax.persistence.jdbc.url" value="jdbc:oracle:thin:@vbox1:1521:PDBORCL"/>
+      <property name="javax.persistence.jdbc.user" value="ops_user"/>
+      <property name="javax.persistence.jdbc.password" value="ops_user"/>
       <property name="eclipselink.jdbc.read-connections.shared" value="true"/>
       <property name="eclipselink.jdbc.read-connections.min" value="1"/>
       <property name="eclipselink.jdbc.read-connections.max" value="5"/>
