@@ -33,7 +33,7 @@
   <properties>
     <domain.Home>${project.basedir}/target/domains/ops_domain</domain.Home>
     <middleware.Home>${project.basedir}/Oracle</middleware.Home>
-    <weblogic.Home>${project.basedir}/Oracle/wlserver/wls12120</weblogic.Home>
+    <weblogic.Home>${project.basedir}/Oracle/wls12120/wlserver</weblogic.Home>
   </properties>
 
   <!-- ==================================================================================== -->
