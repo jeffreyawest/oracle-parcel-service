@@ -1,7 +1,8 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
-  <!-- /*
+  <!--
+  /*
   * **************************************************************************
  * <p/>
  * This code is provided for example purposes only.  Oracle does not assume
@@ -48,7 +49,7 @@
           <plugin>
             <groupId>com.oracle.weblogic</groupId>
             <artifactId>wls-maven-plugin</artifactId>
-            <version>12.1.1.0</version>
+            <version>12.1.2.0</version>
 
             <executions>
               <execution>
@@ -83,7 +84,7 @@
           <plugin>
             <groupId>com.oracle.weblogic</groupId>
             <artifactId>wls-maven-plugin</artifactId>
-            <version>12.1.1.0</version>
+            <version>12.1.2.0</version>
 
             <executions>
               <execution>
@@ -116,7 +117,7 @@
               <user>weblogic</user>
               <password>welcome1</password>
 
-              <artifactLocation>com.oracle.weblogic:wls-dev:zip:12.1.1.0</artifactLocation>
+              <artifactLocation>com.oracle.weblogic:wls-dev:zip:12.1.2.0</artifactLocation>
 
               <domainHome>${domain.Home}</domainHome>
               <middlewareHome>${middleware.Home}</middlewareHome>
@@ -136,7 +137,7 @@
           <plugin>
             <groupId>com.oracle.weblogic</groupId>
             <artifactId>wls-maven-plugin</artifactId>
-            <version>12.1.1.0</version>
+            <version>12.1.2.0</version>
 
             <executions>
               <execution>
@@ -151,7 +152,7 @@
 
             <configuration>
 
-              <artifactLocation>com.oracle.weblogic:wls-dev:zip:12.1.1.0</artifactLocation>
+              <artifactLocation>com.oracle.weblogic:wls-dev:zip:12.1.2.0</artifactLocation>
 
               <user>weblogic</user>
               <password>welcome1</password>
@@ -177,7 +178,7 @@
           <plugin>
             <groupId>com.oracle.weblogic</groupId>
             <artifactId>wls-maven-plugin</artifactId>
-            <version>12.1.1.0</version>
+            <version>12.1.2.0</version>
 
             <executions>
               <execution>
@@ -196,7 +197,7 @@
 
             <configuration>
 
-              <artifactLocation>com.oracle.weblogic:wls-dev:zip:12.1.1.0</artifactLocation>
+              <artifactLocation>com.oracle.weblogic:wls-dev:zip:12.1.2.0</artifactLocation>
 
               <user>weblogic</user>
               <password>welcome1</password>
@@ -227,7 +228,7 @@
       <plugin>
         <groupId>com.oracle.weblogic</groupId>
         <artifactId>wls-maven-plugin</artifactId>
-        <version>12.1.1.0</version>
+        <version>12.1.2.0</version>
 
         <configuration>
 
@@ -235,7 +236,7 @@
           <user>weblogic</user>
           <password>welcome1</password>
 
-          <artifactLocation>com.oracle.weblogic:wls-dev:zip:12.1.1.0</artifactLocation>
+          <artifactLocation>com.oracle.weblogic:wls-dev:zip:12.1.2.0</artifactLocation>
 
           <middlewareHome>${middleware.Home}</middlewareHome>
           <weblogicHome>${weblogic.Home}</weblogicHome>
