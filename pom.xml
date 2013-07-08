@@ -54,6 +54,7 @@
     <module>ops-web-jquery</module>
     <module>ops-cache</module>
     <module>ops-shipment-notifier</module>
+    <module>ops-event-producer</module>
 
   </modules>
 
