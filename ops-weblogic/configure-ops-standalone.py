@@ -19,6 +19,16 @@ import time
 
 loadProperties('ops-domain.properties')
 
+########################################################################################################################
+
+COHERENCE_LIB = COHERENCE_HOME + '/lib/coherence.jar'
+COHERENCE_WEB_LIB = COHERENCE_HOME + '/lib/coherence-web-spi.war'
+ACTIVE_CACHE_LIB = WL_HOME + '/common/deployable-libraries/active-cache-1.0.jar'
+WLS_SPRING_LIB = WL_HOME + '/server/lib/weblogic-spring.jar'
+TOPLINK_GRID_LIB = MW_HOME + '/oracle_common/modules/oracle.toplink_12.1.2/toplink-grid.jar'
+
+########################################################################################################################
+
 # change this to your domain name if you are configuring the domain outside the OPS project structure
 DOMAIN_NAME = 'ops_domain'
 
@@ -118,10 +128,32 @@ except:
     dumpStack()
     pass
 
+########################################################################################################################
+
+def deploySharedLibrary(appName, appPath, targetString):
+  progress = deploy(appName=appName, path=appPath, targets=targetString, libraryModule='true')
+  progress.printStatus()
+
+########################################################################################################################
+
+def deploySharedLibraries(targetString):
+  print '@@@ Deploying Shared Libraries @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@'
+
+  deploySharedLibrary('coherence', COHERENCE_LIB, targetString)
+  deploySharedLibrary('coherence-web-spi', COHERENCE_WEB_LIB, targetString)
+  deploySharedLibrary('active-cache', ACTIVE_CACHE_LIB, targetString)
+  deploySharedLibrary('weblogic-spring', WLS_SPRING_LIB, targetString)
+  deploySharedLibrary('toplink-grid', TOPLINK_GRID_LIB, targetString)
+
+########################################################################################################################
+
+
+deploySharedLibraries('AdminServer')
+
 try:
     progress = deploy(appName='weblogic-spring', path=WEBLOGIC_HOME + '/server/lib/weblogic-spring.jar', targets='AdminServer',
         libraryModule='true',
-        libImplVersion='12.1.1.0', libSpecVersion='12.1.1.0')
+        libImplVersion='12.1.2.0', libSpecVersion='12.1.2.0')
     progress.printStatus()
 except:
     pass
