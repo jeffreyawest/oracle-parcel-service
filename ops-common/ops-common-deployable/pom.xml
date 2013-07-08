@@ -143,43 +143,7 @@
     </profile>
 
     <profile>
-      <id>deploy-local</id>
-
-      <activation>
-        <activeByDefault>false</activeByDefault>
-      </activation>
-
-      <properties>
-        <weblogic.Deployer.adminurl>t3://127.0.0.1:7001</weblogic.Deployer.adminurl>
-        <weblogic.Deployer.user>weblogic</weblogic.Deployer.user>
-        <weblogic.Deployer.password>welcome1</weblogic.Deployer.password>
-        <weblogic.Deployer.application.targets>cluster-1</weblogic.Deployer.application.targets>
-        <weblogic.Deployer.remote>true</weblogic.Deployer.remote>
-        <weblogic.Deployer.upload>true</weblogic.Deployer.upload>
-      </properties>
-
-    </profile>
-
-    <profile>
-      <id>deploy-cloud</id>
-
-      <activation>
-        <activeByDefault>false</activeByDefault>
-      </activation>
-
-      <properties>
-        <weblogic.Deployer.adminurl>t3://10.133.158.90:7001</weblogic.Deployer.adminurl>
-        <weblogic.Deployer.user>weblogic</weblogic.Deployer.user>
-        <weblogic.Deployer.password>welcome1</weblogic.Deployer.password>
-        <weblogic.Deployer.application.targets>Cluster-1</weblogic.Deployer.application.targets>
-        <weblogic.Deployer.remote>true</weblogic.Deployer.remote>
-        <weblogic.Deployer.upload>true</weblogic.Deployer.upload>
-      </properties>
-
-    </profile>
-
-    <profile>
-      <id>deploy-local-admin</id>
+      <id>deploy-cluster</id>
 
       <activation>
         <activeByDefault>true</activeByDefault>
@@ -189,90 +153,12 @@
         <weblogic.Deployer.adminurl>t3://127.0.0.1:7001</weblogic.Deployer.adminurl>
         <weblogic.Deployer.user>weblogic</weblogic.Deployer.user>
         <weblogic.Deployer.password>welcome1</weblogic.Deployer.password>
-        <weblogic.Deployer.application.targets>AdminServer</weblogic.Deployer.application.targets>
-        <weblogic.Deployer.remote>true</weblogic.Deployer.remote>
-        <weblogic.Deployer.upload>true</weblogic.Deployer.upload>
-      </properties>
-
-    </profile>
-
-    <profile>
-      <id>deploy-vbox</id>
-
-      <activation>
-        <activeByDefault>false</activeByDefault>
-      </activation>
-
-      <properties>
-        <weblogic.Deployer.adminurl>t3://192.168.56.102:7001</weblogic.Deployer.adminurl>
-        <weblogic.Deployer.user>weblogic</weblogic.Deployer.user>
-        <weblogic.Deployer.password>welcome1</weblogic.Deployer.password>
         <weblogic.Deployer.application.targets>cluster-1</weblogic.Deployer.application.targets>
         <weblogic.Deployer.remote>true</weblogic.Deployer.remote>
         <weblogic.Deployer.upload>true</weblogic.Deployer.upload>
       </properties>
 
     </profile>
-
-    <!-- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ -->
-
-    <profile>
-      <id>deploy-managed</id>
-
-      <activation>
-        <activeByDefault>false</activeByDefault>
-      </activation>
-
-      <properties>
-        <weblogic.Deployer.adminurl>t3://adc2180341.us.oracle.com:7001</weblogic.Deployer.adminurl>
-        <weblogic.Deployer.user>weblogic</weblogic.Deployer.user>
-        <weblogic.Deployer.password>welcome1</weblogic.Deployer.password>
-        <weblogic.Deployer.application.targets>cluster-1</weblogic.Deployer.application.targets>
-        <weblogic.Deployer.remote>true</weblogic.Deployer.remote>
-        <weblogic.Deployer.upload>true</weblogic.Deployer.upload>
-      </properties>
-
-    </profile>
-
-    <!--############################### -->
-
-    <profile>
-      <id>deploy-beast</id>
-
-      <activation>
-        <activeByDefault>false</activeByDefault>
-      </activation>
-
-      <properties>
-        <weblogic.Deployer.adminurl>t3://beast:7001</weblogic.Deployer.adminurl>
-        <weblogic.Deployer.user>weblogic</weblogic.Deployer.user>
-        <weblogic.Deployer.password>welcome1</weblogic.Deployer.password>
-        <weblogic.Deployer.application.targets>cluster-1</weblogic.Deployer.application.targets>
-        <weblogic.Deployer.remote>true</weblogic.Deployer.remote>
-        <weblogic.Deployer.upload>true</weblogic.Deployer.upload>
-      </properties>
-
-    </profile>
-
-
-    <profile>
-      <id>deploy-beast-admin</id>
-
-      <activation>
-        <activeByDefault>false</activeByDefault>
-      </activation>
-
-      <properties>
-        <weblogic.Deployer.adminurl>t3://beast:8001</weblogic.Deployer.adminurl>
-        <weblogic.Deployer.user>weblogic</weblogic.Deployer.user>
-        <weblogic.Deployer.password>welcome1</weblogic.Deployer.password>
-        <weblogic.Deployer.application.targets>AdminServer</weblogic.Deployer.application.targets>
-        <weblogic.Deployer.remote>true</weblogic.Deployer.remote>
-        <weblogic.Deployer.upload>true</weblogic.Deployer.upload>
-      </properties>
-
-    </profile>
-
 
     <profile>
       <id>undeploy-on-clean</id>
@@ -306,44 +192,6 @@
             </plugin>
           </plugins>
         </pluginManagement>
-      </build>
-    </profile>
-
-    <profile>
-      <id>enable-weblogic-deployment</id>
-
-      <build>
-        <pluginManagement>
-          <plugins>
-
-            <plugin>
-              <groupId>com.oracle.weblogic</groupId>
-              <artifactId>wls-maven-plugin</artifactId>
-
-              <executions>
-                <execution>
-                  <id>weblogic-deploy</id>
-                  <phase>install</phase>
-                  <goals>
-                    <goal>deploy</goal>
-                  </goals>
-
-                  <configuration>
-                    <adminurl>${weblogic.Deployer.adminurl}</adminurl>
-                    <user>${weblogic.Deployer.user}</user>
-                    <password>${weblogic.Deployer.password}</password>
-                    <source>${project.build.directory}/${project.build.finalName}.${project.packaging}</source>
-                    <name>${project.artifactId}</name>
-                    <targets>${weblogic.Deployer.application.targets}</targets>
-                    <remote>${weblogic.Deployer.remote}</remote>
-                    <upload>${weblogic.Deployer.upload}</upload>
-                  </configuration>
-                </execution>
-              </executions>
-            </plugin>
-          </plugins>
-        </pluginManagement>
-
       </build>
     </profile>
 
