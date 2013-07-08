@@ -30,11 +30,11 @@
   <!-- ==================================================================================== -->
 
   <properties>
-    <MIDDLEWARE_HOME>/u01/wls1211/</MIDDLEWARE_HOME>
-    <WEBLOGIC_HOME>${MIDDLEWARE_HOME}/wlserver_12.1</WEBLOGIC_HOME>
+    <MIDDLEWARE_HOME>/u01/wls1212/</MIDDLEWARE_HOME>
+    <WEBLOGIC_HOME>${MIDDLEWARE_HOME}/wlserver</WEBLOGIC_HOME>
     <COHERENCE_HOME>${MIDDLEWARE_HOME}/coherence_3.7</COHERENCE_HOME>
 
-    <WL_VERSION>12.1.1.0</WL_VERSION>
+    <WL_VERSION>12.1.2.0</WL_VERSION>
 
     <XmlSchema.version>1.4.7</XmlSchema.version>
     <coherence.version>3.7.1</coherence.version>
