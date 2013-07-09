@@ -147,46 +147,7 @@ def deploySharedLibraries(targetString):
 
 ########################################################################################################################
 
-
 deploySharedLibraries('AdminServer')
-
-try:
-    progress = deploy(appName='weblogic-spring', path=WEBLOGIC_HOME + '/server/lib/weblogic-spring.jar', targets='AdminServer',
-        libraryModule='true',
-        libImplVersion='12.1.2.0', libSpecVersion='12.1.2.0')
-    progress.printStatus()
-except:
-    pass
-
-try:
-    progress = deploy(appName='coherence', path=COHERENCE_HOME + '/lib/coherence.jar', targets='AdminServer', libraryModule='true',
-        libImplVersion='3.7.1.1', libSpecVersion='3.7.1.1')
-    progress.printStatus()
-except:
-    pass
-
-try:
-    progress = deploy(appName='coherence-web-spi', path=COHERENCE_HOME + '/lib/coherence-web-spi.war', targets='AdminServer',
-        libraryModule='true', libImplVersion='1.0.0.0', libSpecVersion='1.0.0.0')
-    progress.printStatus()
-except:
-    pass
-
-try:
-    progress = deploy(appName='active-cache', path=WEBLOGIC_HOME + '/common/deployable-libraries/active-cache-1.0.jar',
-        targets='AdminServer',
-        libraryModule='true', libImplVersion='1.0', libSpecVersion='1.0')
-    progress.printStatus()
-except:
-    pass
-
-try:
-    progress = deploy(appName='toplink-grid', path=WEBLOGIC_HOME + '/common/deployable-libraries/toplink-grid-1.0.jar',
-        targets='AdminServer',
-        libraryModule='true', libImplVersion='1.0', libSpecVersion='1.0')
-    progress.printStatus()
-except:
-    pass
 
 startEdit()
 
@@ -208,7 +169,7 @@ except:
         cd(
             '/JDBCSystemResources/com.oracle.demo.ops.jdbc.cluster-ds/JDBCResource/com.oracle.demo.ops.jdbc.cluster-ds/JDBCDriverParams/com.oracle.demo.ops.jdbc.cluster-ds')
 
-        cmo.setUrl(JDBC_URL)
+        cmo.setUrl(datasource_jdbc_url)
         cmo.setDriverName('oracle.jdbc.OracleDriver')
         set('Password', 'ops_user')
 
@@ -233,6 +194,53 @@ except:
     except:
         dumpStack()
         pass
+
+
+
+try:
+  cd('/JDBCSystemResources/com.oracle.demo.ops.app-ds/JDBCResource/com.oracle.demo.ops.app-ds')
+except:
+  try:
+    print 'Creating datasource...'
+    cd('/')
+    cmo.createJDBCSystemResource('com.oracle.demo.ops.app-ds')
+
+    cd('/JDBCSystemResources/com.oracle.demo.ops.app-ds/JDBCResource/com.oracle.demo.ops.app-ds')
+    cmo.setName('com.oracle.demo.ops.app-ds')
+
+    cd(
+      '/JDBCSystemResources/com.oracle.demo.ops.app-ds/JDBCResource/com.oracle.demo.ops.app-ds/JDBCDataSourceParams/com.oracle.demo.ops.app-ds')
+    set('JNDINames', jarray.array([String('com.oracle.demo.ops.app-ds')], String))
+
+    cd(
+      '/JDBCSystemResources/com.oracle.demo.ops.app-ds/JDBCResource/com.oracle.demo.ops.app-ds/JDBCDriverParams/com.oracle.demo.ops.app-ds')
+
+    cmo.setUrl(datasource_jdbc_url)
+    cmo.setDriverName('oracle.jdbc.OracleDriver')
+    set('Password', 'ops_user')
+
+    cd(
+      '/JDBCSystemResources/com.oracle.demo.ops.app-ds/JDBCResource/com.oracle.demo.ops.app-ds/JDBCConnectionPoolParams/com.oracle.demo.ops.app-ds')
+    cmo.setTestTableName('SQL SELECT 1 FROM DUAL\r\n\r\n')
+
+    cd(
+      '/JDBCSystemResources/com.oracle.demo.ops.app-ds/JDBCResource/com.oracle.demo.ops.app-ds/JDBCDriverParams/com.oracle.demo.ops.app-ds/Properties/com.oracle.demo.ops.app-ds')
+    cmo.createProperty('user')
+
+    cd(
+      '/JDBCSystemResources/com.oracle.demo.ops.app-ds/JDBCResource/com.oracle.demo.ops.app-ds/JDBCDriverParams/com.oracle.demo.ops.app-ds/Properties/com.oracle.demo.ops.app-ds/Properties/user')
+    cmo.setValue('ops_user')
+
+    cd(
+      '/JDBCSystemResources/com.oracle.demo.ops.app-ds/JDBCResource/com.oracle.demo.ops.app-ds/JDBCDataSourceParams/com.oracle.demo.ops.app-ds')
+    cmo.setGlobalTransactionsProtocol('None')
+
+    cd('/JDBCSystemResources/com.oracle.demo.ops.app-ds')
+    set('Targets', jarray.array([ObjectName('com.bea:Name=AdminServer,Type=Server')], ObjectName))
+  except:
+    dumpStack()
+    pass
+
 
 try:
     save()

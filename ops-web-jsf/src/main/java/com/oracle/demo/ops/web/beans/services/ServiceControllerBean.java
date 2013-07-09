@@ -44,7 +44,7 @@ public class ServiceControllerBean
 {
   private static final Logger logger = Logger.getLogger(ServiceControllerBean.class.getName());
 
-  @Resource(mappedName = "com.oracle.demo.ops.jdbc.cluster-ds")
+  @Resource(mappedName = "com.oracle.demo.ops.app-ds")
   private DataSource dataSource;
 
   private List<ShippingService> allServices = new ArrayList<ShippingService>();

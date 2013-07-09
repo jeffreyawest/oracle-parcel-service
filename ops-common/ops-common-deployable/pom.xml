@@ -218,6 +218,34 @@
     <pluginManagement>
       <plugins>
         <!-- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ -->
+        <plugin>
+          <groupId>com.oracle.weblogic</groupId>
+          <artifactId>wls-maven-plugin</artifactId>
+
+          <executions>
+            <execution>
+              <id>weblogic-deploy</id>
+              <phase>install</phase>
+              <goals>
+                <goal>deploy</goal>
+              </goals>
+
+              <configuration>
+                <middlewareHome>${middleware.home}</middlewareHome>
+                <weblogicHome>${weblogic.home}</weblogicHome>
+
+                <adminurl>${weblogic.Deployer.adminurl}</adminurl>
+                <user>${weblogic.Deployer.user}</user>
+                <password>${weblogic.Deployer.password}</password>
+                <source>${project.build.directory}/${project.build.finalName}.${project.packaging}</source>
+                <name>${project.artifactId}</name>
+                <targets>${weblogic.Deployer.application.targets}</targets>
+                <remote>${weblogic.Deployer.remote}</remote>
+                <upload>${weblogic.Deployer.upload}</upload>
+              </configuration>
+            </execution>
+          </executions>
+        </plugin>
 
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>

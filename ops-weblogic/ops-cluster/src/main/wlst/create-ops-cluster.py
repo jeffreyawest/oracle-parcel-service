@@ -2,8 +2,8 @@ import time
 
 ########################################################################################################################
 
-domain_Name = 'ops_cluster'
-machine_ListenAddress = 'wins-vbox.localdomain'
+domain_Name = 'ops-cluster'
+machine_ListenAddress = '127.0.0.1'
 jmsServer_BaseName = 'jms-server'
 cluster_Name = 'cluster-1'
 machine_Name = 'wins-vbox.localdomain'
@@ -28,7 +28,7 @@ TOPLINK_GRID_LIB = MW_HOME + '/oracle_common/modules/oracle.toplink_12.1.2/topli
 
 ########################################################################################################################
 
-adminServer_ListenAddress = 'wins-vbox.localdomain'
+adminServer_ListenAddress = '127.0.0.1'
 adminServer_ListenPort = 7001
 adminServer_AdministrationPort = 7200
 adminServer_Username = 'weblogic'
@@ -53,8 +53,8 @@ managedServer_StartupArgs = '-XX:+UnlockCommercialFeatures -XX:+FlightRecorder '
 ########################################################################################################################
 
 cohCluster_Name = 'coherence-cluster-1'
-cohCluster_ListenAddress = 'wins-vbox.localdomain'
-cohCluster_ListenPort = 8088
+cohCluster_ListenAddress = '127.0.0.1'
+cohCluster_ListenPort = 9099
 cohCluster_TTL = 0
 cohServer_Count = 2
 cohServer_Classpath = MW_HOME + '/oracle_common/modules/oracle.toplink_12.1.2/toplink-grid.jar:'\
@@ -71,8 +71,6 @@ cohServer_StartupArgs = '-Dtangosol.coherence.management.remote=true'\
                         + ' -Dtangosol.coherence.session.localstorage=true'\
                         + ' -Dtangosol.coherence.cacheconfig=' + coherence_CacheConfig
 
-########################################################################################################################
-########################################################################################################################
 ########################################################################################################################
 ########################################################################################################################
 ########################################################################################################################
@@ -126,7 +124,7 @@ def createClusterDataSource(jndiNames, driver, globalTX, url, user, passwd, targ
 ########################################################################################################################
 
 def createApplicationDataSource(jndiNames, driver, globalTX, url, user, passwd, minSize, maxSize, target):
-  print '### createPhysicalDataSource #################################################################################'
+  print '### createApplicationDataSource #################################################################################'
 
   dsName = jndiNames[0]
 
@@ -171,12 +169,12 @@ def createApplicationDataSource(jndiNames, driver, globalTX, url, user, passwd, 
 
 ########################################################################################################################
 
-def createOPSJMSResources(moduleName, clusterTarget, jmsServerTargets):
+def createOPSJMSResources(moduleName, clusterMBean, jmsServerTargets):
   print '### createOPSJMSResources ####################################################################################'
 
   cd('/')
   jmsMySystemResource = create(moduleName, 'JMSSystemResource')
-  jmsMySystemResource.setTargets(jarray.array([clusterTarget], weblogic.management.configuration.TargetMBean))
+  jmsMySystemResource.setTargets(jarray.array([clusterMBean], weblogic.management.configuration.TargetMBean))
 
   cd('/JMSSystemResources/' + moduleName)
   subdeployment = create('cluster-subdeployment', 'SubDeployment')
@@ -224,7 +222,6 @@ def createOPSJMSResources(moduleName, clusterTarget, jmsServerTargets):
 def getJMSServerName(n):
   jms_server_name = jmsServer_BaseName + '-' + str(n)
   return jms_server_name
-
 
 ########################################################################################################################
 
@@ -425,7 +422,7 @@ try:
   cmo.setListenPortEnabled(true)
   cmo.setAdministrationPort(int(adminServer_AdministrationPort))
   cmo.setListenPort(int(adminServer_ListenPort))
-  cmo.setListenAddress(adminServer_ListenAddress)
+#  cmo.setListenAddress(adminServer_ListenAddress)
   cmo.setWeblogicPluginEnabled(false)
   cmo.setJavaCompiler('javac')
   cmo.setStartupMode('RUNNING')
@@ -455,23 +452,24 @@ except:
 machine = createMachine(machine_Name, 'Plain', machine_ListenAddress, 5556)
 
 cd('/')
+print 'Creating Cluster...'
 clusterMBean = create(cluster_Name, 'Cluster')
 
 try:
-  jdbcSystemResource = createClusterDataSource(['com.oracle.weblogic.demo.jdbc.cluster-ds'],
+  print 'createClusterDataSource...'
+
+  jdbcSystemResource = createClusterDataSource(['com.oracle.weblogic.demo.cluster-ds'],
                                                                                            appDatasource_JdbcDriver,
-                                                                                           appDatasource_GlobalTransactions
-                                                                                           ,
+                                                                                           appDatasource_GlobalTransactions,
                                                                                            datasource_jdbc_url,
                                                                                            database_User,
                                                                                            database_Password,
                                                                                            clusterMBean)
 
-  # changed from consensus by JAW
   clusterMBean.setMigrationBasis('database')
   clusterMBean.setDataSourceForAutomaticMigration(jdbcSystemResource)
-  ####### Create Managed Servers
 
+  ####### Create Managed Servers
   print 'Creating ' + str(managedServer_Count) + ' Managed Servers...'
 
   jmsServerMBeans = []
@@ -489,7 +487,7 @@ try:
     cd('/')
     managedServer = create(managedServer_Name, 'Server')
     managedServer.setListenPort(managedServer_ListenPort)
-    managedServer.setListenAddress(managedServer_ListenAddress)
+#    managedServer.setListenAddress(managedServer_ListenAddress)
     managedServer.setAdministrationPort(managedServer_AdminPort)
     managedServer.setCluster(clusterMBean)
     managedServer.setMachine(machine)
@@ -610,8 +608,6 @@ createCoherenceServers_online(cohCluster_Name,
                               cohServer_Count,
                               cohServer_Classpath,
                               machine_Name)
-
-createSpringWLDFModule_online()
 
 ## DEPLOY LIBRARIES #####################################################
 

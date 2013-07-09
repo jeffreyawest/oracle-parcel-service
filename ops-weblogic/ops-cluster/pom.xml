@@ -26,7 +26,7 @@
   <artifactId>ops-cluster</artifactId>
   <version>3.0</version>
   <name>ops-cluster</name>
-  <packaging>jar</packaging>
+  <packaging>pom</packaging>
 
   <!-- ==================================================================================== -->
 
@@ -53,7 +53,7 @@
     <profile>
       <id>create-domain</id>
       <build>
-        <defaultGoal>isntall</defaultGoal>
+        <defaultGoal>install</defaultGoal>
 
         <plugins>
           <plugin>
@@ -63,7 +63,7 @@
 
             <executions>
               <execution>
-                <id>weblogic-deploy</id>
+                <id>create-domain</id>
                 <phase>install</phase>
                 <goals>
                   <goal>wlst</goal>
@@ -92,11 +92,14 @@
 
         </plugins>
       </build>
+
     </profile>
 
     <profile>
-      <id>enable-embedded-wls</id>
+      <id>start-domain</id>
       <build>
+        <defaultGoal>install</defaultGoal>
+
         <plugins>
           <plugin>
             <groupId>com.oracle.weblogic</groupId>
@@ -105,53 +108,9 @@
 
             <executions>
               <execution>
-                <id>weblogic-deploy</id>
+                <id>start-domain</id>
                 <phase>install</phase>
                 <goals>
-                  <goal>start-server</goal>
-                </goals>
-              </execution>
-
-            </executions>
-
-            <configuration>
-              <artifactLocation>com.oracle.weblogic:wls-dev:zip:12.1.2.0</artifactLocation>
-
-              <user>weblogic</user>
-              <password>welcome1</password>
-
-              <domainHome>${domain.Home}</domainHome>
-              <middlewareHome>${middleware.Home}</middlewareHome>
-              <weblogicHome>${weblogic.Home}</weblogicHome>
-            </configuration>
-
-          </plugin>
-
-        </plugins>
-      </build>
-    </profile>
-
-    <profile>
-      <id>continuous-build</id>
-
-      <build>
-
-        <plugins>
-
-          <plugin>
-            <groupId>com.oracle.weblogic</groupId>
-            <artifactId>wls-maven-plugin</artifactId>
-            <version>12.1.2.0</version>
-
-            <executions>
-              <execution>
-                <id>weblogic-deploy</id>
-                <phase>install</phase>
-
-                <goals>
-                  <goal>install</goal>
-                  <goal>create-domain</goal>
-                  <goal>start-server</goal>
                   <goal>wlst</goal>
                 </goals>
               </execution>
@@ -159,54 +118,72 @@
             </executions>
 
             <configuration>
+              <middlewareHome>${middleware.home}</middlewareHome>
+              <weblogicHome>${weblogic.home}</weblogicHome>
+              <debug>true</debug>
 
-              <artifactLocation>com.oracle.weblogic:wls-dev:zip:12.1.2.0</artifactLocation>
+
+              <fileName>${project.basedir}/src/main/wlst/start-ops-cluster.py</fileName>
+              <propertiesFile>${project.basedir}/../ops-domain.properties</propertiesFile>
+              <args>-Dweblogic.security.SSL.ignoreHostnameVerification=true
+                -Dweblogic.security.TrustKeyStore=DemoTrust -skipWLSModuleScanning
+              </args>
 
               <user>weblogic</user>
               <password>welcome1</password>
-
-              <fileName>${project.basedir}/src/main/wlst/configure-ops-standalone.py</fileName>
-              <propertiesFile>${project.basedir}/../ops-domain.properties</propertiesFile>
-
-              <domainHome>${domain.Home}</domainHome>
-              <middlewareHome>${middleware.Home}</middlewareHome>
-              <weblogicHome>${weblogic.Home}</weblogicHome>
             </configuration>
 
           </plugin>
 
         </plugins>
+      </build>
 
+    </profile>
+    <profile>
+      <id>stop-domain</id>
+      <build>
+        <defaultGoal>install</defaultGoal>
+
+        <plugins>
+          <plugin>
+            <groupId>com.oracle.weblogic</groupId>
+            <artifactId>wls-maven-plugin</artifactId>
+            <version>12.1.2.0</version>
+
+            <executions>
+              <execution>
+                <id>stop-domain</id>
+                <phase>install</phase>
+                <goals>
+                  <goal>wlst</goal>
+                </goals>
+              </execution>
+
+            </executions>
+
+            <configuration>
+              <middlewareHome>${middleware.home}</middlewareHome>
+              <weblogicHome>${weblogic.home}</weblogicHome>
+              <debug>true</debug>
+
+
+              <fileName>${project.basedir}/src/main/wlst/stop-ops-cluster.py</fileName>
+              <propertiesFile>${project.basedir}/../ops-domain.properties</propertiesFile>
+              <args>-Dweblogic.security.SSL.ignoreHostnameVerification=true
+                -Dweblogic.security.TrustKeyStore=DemoTrust -skipWLSModuleScanning
+              </args>
+
+              <user>weblogic</user>
+              <password>welcome1</password>
+            </configuration>
+
+          </plugin>
+
+        </plugins>
       </build>
 
     </profile>
 
   </profiles>
-
-  <!-- ==================================================================================== -->
-
-  <build>
-    <defaultGoal>install</defaultGoal>
-    <plugins>
-      <plugin>
-        <groupId>com.oracle.weblogic</groupId>
-        <artifactId>wls-maven-plugin</artifactId>
-        <version>12.1.2.0</version>
-
-        <configuration>
-
-
-          <user>weblogic</user>
-          <password>welcome1</password>
-          <artifactLocation>com.oracle.weblogic:wls-dev:zip:12.1.2.0</artifactLocation>
-
-          <middlewareHome>${middleware.Home}</middlewareHome>
-          <weblogicHome>${weblogic.Home}</weblogicHome>
-        </configuration>
-
-      </plugin>
-
-    </plugins>
-  </build>
 
 </project>

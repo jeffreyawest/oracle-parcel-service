@@ -102,7 +102,7 @@ public class MapModelWrapper implements Serializable
   {
     List<PostalGeolocation> geoList = new ArrayList<PostalGeolocation>(pParcelLog.size());
 
-    logger.info("Size of Parcel Log: " + pParcelLog.size());
+    logger.log(Level.FINE, "Size of Parcel Log: " + pParcelLog.size());
 
     for (ParcelEvent event : pParcelLog)
     {
@@ -138,7 +138,7 @@ public class MapModelWrapper implements Serializable
       mMapModel = new DefaultMapModel();
     }
 
-    logger.info("Size of locations: " + postalLocations.size());
+    logger.log(Level.FINE, "Size of locations: " + postalLocations.size());
 
     Polyline polyline = new Polyline();
 

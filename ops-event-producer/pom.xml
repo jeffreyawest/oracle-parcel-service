@@ -21,6 +21,47 @@
   <name>ops-event-producer</name>
 
   <!-- ==================================================================================== -->
+  <profiles>
+    <profile>
+      <id>demo</id>
+      <activation>
+        <activeByDefault>false</activeByDefault>
+      </activation>
+
+      <build>
+        <finalName>${project.artifactId}</finalName>
+
+        <defaultGoal>test</defaultGoal>
+
+        <plugins>
+          <plugin>
+            <groupId>org.codehaus.mojo</groupId>
+            <artifactId>exec-maven-plugin</artifactId>
+            <version>1.2.1</version>
+
+            <executions>
+              <execution>
+                <phase>test</phase>
+                <goals>
+                  <goal>java</goal>
+                </goals>
+
+                <configuration>
+                  <includeProjectDependencies>true</includeProjectDependencies>
+                  <classpathScope>compile</classpathScope>
+                  <mainClass>com.oracle.demo.ops.event.producer.OPSEventProducer</mainClass>
+                </configuration>
+
+              </execution>
+            </executions>
+          </plugin>
+        </plugins>
+      </build>
+
+    </profile>
+  </profiles>
+
+  <!-- ==================================================================================== -->
 
   <build>
     <finalName>${project.artifactId}</finalName>
@@ -35,26 +76,6 @@
         <version>2.4</version>
       </plugin>
 
-      <plugin>
-        <groupId>org.codehaus.mojo</groupId>
-        <artifactId>exec-maven-plugin</artifactId>
-        <version>1.2.1</version>
-
-        <configuration>
-          <includeProjectDependencies>true</includeProjectDependencies>
-          <classpathScope>compile</classpathScope>
-          <executable>java</executable>
-          <detail>true</detail>
-          <arguments>
-            <argument>-classpath</argument>
-            <!-- automatically creates the classpath using all project dependencies,
-                 also adding the project build directory -->
-            <classpath/>
-            <argument>com.oracle.demo.ops.event.producer.OPSEventProducer</argument>
-            ...
-          </arguments>
-        </configuration>
-      </plugin>
 
     </plugins>
   </build>

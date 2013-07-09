@@ -26,7 +26,7 @@
   <artifactId>ops-embedded</artifactId>
   <version>3.0</version>
   <name>ops-embedded</name>
-  <packaging>jar</packaging>
+  <packaging>pom</packaging>
 
   <!-- ==================================================================================== -->
 

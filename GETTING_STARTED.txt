@@ -55,20 +55,20 @@ Cluster - It's not as hard as you think!
 1) edit the common/pom.xml file.  inside you will find some properties that may need to change, based on your environment.  Here is the default set:
 
   <properties>
-    <MIDDLEWARE_HOME>/u01/wls1211/</MIDDLEWARE_HOME>
-    <WEBLOGIC_HOME>${MIDDLEWARE_HOME}/wlserver_12.1</WEBLOGIC_HOME>
-    <COHERENCE_HOME>${MIDDLEWARE_HOME}/coherence_3.7</COHERENCE_HOME>
+    <MIDDLEWARE_HOME>/u01/wls1212/</MIDDLEWARE_HOME>
+    <WL_HOME>${MIDDLEWARE_HOME}/wlserver_12.1</WL_HOME>
+    <COHERENCE_HOME>${MIDDLEWARE_HOME}/coherence</COHERENCE_HOME>
     ...
 
 2) edit the ops-weblogic/ops-environment.properties file.  This is a separate file needed by the WLST scripts.  Yes, it would be ideal if they were in a single place, but I haven't gotten around to making that work :)
 
 Be sure to edit the JDBC URL to point to your Oracle XE Database.
 
-WEBLOGIC_HOME=/u01/wls1211/wlserver_12.1
-NM_HOME=/u01/wls1211/common/nodemanager
-MIDDLEWARE_HOME=/u01/wls1211
-COHERENCE_HOME=/u01/wls1211/coherence_3.7
-USER_PROJECTS=/u01/wls1211/user_projects
+WL_HOME=/u01/wls1212/wlserver_12.1
+NM_HOME=/u01/wls1212/common/nodemanager
+MIDDLEWARE_HOME=/u01/wls1212
+COHERENCE_HOME=/u01/wls1212/coherence
+USER_PROJECTS=/u01/wls1212/user_projects
 OPS_HOME=/labs/content/oracle-parcel-service
 JDBC_URL=jdbc:oracle:thin:@localhost:1521:PDBORCL
 
@@ -77,7 +77,7 @@ JDBC_URL=jdbc:oracle:thin:@localhost:1521:PDBORCL
 
 4) change to the ops-weblogic directory and execute the following command:
 
-  $WEBLOGIC_HOME/common/bin/wlst.sh/bat -loadProperties=ops-environment.properties
+  $WL_HOME/common/bin/wlst.sh/bat -loadProperties=ops-environment.properties
 
   This will do the following:
 

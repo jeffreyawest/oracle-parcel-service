@@ -22,8 +22,8 @@
   -->
 <context-root>/ops</context-root>
 
-  <!--<coherence-cluster-ref>-->
-    <!--<coherence-cluster-name>coherence-cluster-1</coherence-cluster-name>-->
-  <!--</coherence-cluster-ref>-->
+  <coherence-cluster-ref>
+    <coherence-cluster-name>coherence-cluster-1</coherence-cluster-name>
+  </coherence-cluster-ref>
 
 </weblogic-web-app>

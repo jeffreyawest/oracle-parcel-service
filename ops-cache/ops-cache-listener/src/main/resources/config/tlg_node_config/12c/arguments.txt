@@ -1,4 +1,4 @@
-  -javaagent:/labs/wls1211/modules/org.eclipse.persistence_2.0.0.0_2-3.jar
+  -javaagent:/labs/wls1212/modules/org.eclipse.persistence_2.0.0.0_2-3.jar
   -Dtangosol.coherence.management.remote=true
   -Dtangosol.coherence.management=all
   -Dtangosol.coherence.distributed.localstorage=true

@@ -49,7 +49,7 @@ public class CoherenceControllerBean
   private String inputCacheName;
   private List<ShippingService> shippingServicesList = new ArrayList(0);
 
-  @Resource(mappedName = "com.oracle.demo.ops.jdbc.cluster-ds")
+  @Resource(mappedName = "com.oracle.demo.ops.app-ds")
   private DataSource dataSource;
 
   //private ShipmentMapListener shipmentListener;

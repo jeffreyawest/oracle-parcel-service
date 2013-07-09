@@ -2,4 +2,4 @@
 
 . ops-domain.properties
 
-mvn install:install-file -Dfile=${WEBLOGIC_HOME}/server/lib/wls-maven-plugin.jar -DpomFile=${WEBLOGIC_HOME}/server/lib/pom.xml
+mvn install:install-file -Dfile=${WL_HOME}/server/lib/wls-maven-plugin.jar -DpomFile=${WL_HOME}/server/lib/pom.xml
