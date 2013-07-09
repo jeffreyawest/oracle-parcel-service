@@ -7,7 +7,6 @@ machine_ListenAddress = '127.0.0.1'
 jmsServer_BaseName = 'jms-server'
 cluster_Name = 'cluster-1'
 machine_Name = 'wins-vbox.localdomain'
-coherence_CacheConfig = '/u01/content/oracle-parcel-service/ops-cache/ops-cache-config/coherence-cache-config.xml'
 
 ########################################################################################################################
 
@@ -57,6 +56,7 @@ cohCluster_ListenAddress = '127.0.0.1'
 cohCluster_ListenPort = 9099
 cohCluster_TTL = 0
 cohServer_Count = 2
+coherence_CacheConfig = '/u01/content/oracle-parcel-service/ops-cache/ops-cache-config/coherence-cache-config.xml'
 cohServer_Classpath = MW_HOME + '/oracle_common/modules/oracle.toplink_12.1.2/toplink-grid.jar:'\
                       + MW_HOME + '/oracle_common/modules/oracle.toplink_12.1.2/eclipselink.jar:'\
                       + MW_HOME + '/coherence/lib/coherence.jar:'\
